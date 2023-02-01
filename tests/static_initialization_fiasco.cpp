@@ -6,11 +6,11 @@ namespace rl = raylib;
 constexpr std::string_view DEFAULT_TEXTURE_PATH =
     "../src/assets/Textures/test_old_button.png";
 
-// class View {
-//   inline static rl::Window window{};
-// };
+class View {
+  inline static rl::Window window{};
+};
 
-class Button { // NOLINT""
+class Button {
 public:
   Button() = default;
 
@@ -25,7 +25,7 @@ private:
 
 int main() {
 
-  // Button but;
+  Button but;
 
   auto counter = 500;
 

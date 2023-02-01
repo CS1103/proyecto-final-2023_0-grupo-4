@@ -4,7 +4,7 @@
 
 void System::run() {
 
-  // m_vista.startScreen();
+  m_vista.startScreen();
 
   SQUARE_TYPE W = SQUARE_TYPE::WALL;
   SQUARE_TYPE E = SQUARE_TYPE::EMPTY;
