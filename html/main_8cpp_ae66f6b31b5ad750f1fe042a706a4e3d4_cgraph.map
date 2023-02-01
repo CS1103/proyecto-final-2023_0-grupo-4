@@ -1,9 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,60,129"/>
-<area shape="rect" id="node2" href="$classSystem.html#afa39feb75f96798930f4bfb48205f40b" title=" " alt="" coords="108,104,208,129"/>
-<area shape="rect" id="node3" href="$classBot.html#a7c231f82ece501c1b2b36140b08aea6c" title=" " alt="" coords="256,5,417,31"/>
-<area shape="rect" id="node4" href="$classBot.html#aa687a314eb8b70c5cc3f7de5ffd6aa60" title=" " alt="" coords="273,55,400,80"/>
-<area shape="rect" id="node5" href="$classMaze.html#ae28e95ab2eab3dadaf84ff0a6b4da7fe" title=" " alt="" coords="273,104,400,129"/>
-<area shape="rect" id="node6" href="$classMaze.html#a03e0a826d218517bf909cf33987dc605" title=" " alt="" coords="271,153,402,179"/>
-<area shape="rect" id="node7" href="$classBot.html#a50c54f329c493e1947f72ab2b14165ef" title=" " alt="" coords="293,203,380,228"/>
-</map>
