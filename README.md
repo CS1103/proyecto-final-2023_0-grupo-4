@@ -57,7 +57,7 @@ links to humans using your project. You can include links like:
 
 ## Autores
 
-- autor 1
+- autor 1 :)
 - autor 2
 - autor 3
 - autor 4
