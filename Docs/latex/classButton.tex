@@ -1,0 +1,108 @@
+\doxysection{Button Class Reference}
+\label{classButton}\index{Button@{Button}}
+
+
+{\ttfamily \#include $<$Button.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Button} ()=delete
+\item 
+\textbf{ Button} (std\+::string\+\_\+view text, rl\+::\+Texture \&custom\+Texture=default\+Texture(), float font\+Size=\textbf{ DEFAULT\+\_\+\+FONT\+\_\+\+SIZE}, const rl\+::\+Color \&color=WHITE)
+\item 
+bool \textbf{ is\+Clicked} (const int \&posX, const int \&posY) const
+\item 
+void \textbf{ draw} (const int \&posX=0, const int \&posY=0) const
+\item 
+bool \textbf{ is\+Clicked} (const rl\+::\+Vector2 \&pos) const
+\item 
+void \textbf{ Draw} (const rl\+::\+Vector2 \&pos) const
+\item 
+rl\+::\+Vector2 \textbf{ Get\+Size} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 17} of file \textbf{ Button.\+hpp}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classButton_a8a98595f64fac75a8a01c6231047e15a}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{Button()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\label{classButton_abf38d76116c7020ec11198fcfc44364a}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\doxysubsubsection{Button()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{text,  }\item[{rl\+::\+Texture \&}]{custom\+Texture = {\ttfamily defaultTexture()},  }\item[{float}]{font\+Size = {\ttfamily \textbf{ DEFAULT\+\_\+\+FONT\+\_\+\+SIZE}},  }\item[{const rl\+::\+Color \&}]{color = {\ttfamily WHITE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \textbf{ 8} of file \textbf{ Button.\+cpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classButton_aadecf8edeabe8592f0519256b50e24b4}} 
+\index{Button@{Button}!draw@{draw}}
+\index{draw@{draw}!Button@{Button}}
+\doxysubsubsection{draw()}
+{\footnotesize\ttfamily void Button\+::draw (\begin{DoxyParamCaption}\item[{const int \&}]{posX = {\ttfamily 0},  }\item[{const int \&}]{posY = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 36} of file \textbf{ Button.\+cpp}.
+
+\mbox{\label{classButton_a7e79e8ff85d0bb88ea26c69938bc5728}} 
+\index{Button@{Button}!Draw@{Draw}}
+\index{Draw@{Draw}!Button@{Button}}
+\doxysubsubsection{Draw()}
+{\footnotesize\ttfamily void Button\+::\+Draw (\begin{DoxyParamCaption}\item[{const rl\+::\+Vector2 \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \textbf{ 35} of file \textbf{ Button.\+hpp}.
+
+\mbox{\label{classButton_ae77100bedafd0b7da598358aaa1e67d4}} 
+\index{Button@{Button}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!Button@{Button}}
+\doxysubsubsection{GetSize()}
+{\footnotesize\ttfamily rl\+::\+Vector2 Button\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Button.\+hpp}.
+
+\mbox{\label{classButton_a641ee65aa2352fdddfb994bfbc0b4760}} 
+\index{Button@{Button}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Button@{Button}}
+\doxysubsubsection{isClicked()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Button\+::is\+Clicked (\begin{DoxyParamCaption}\item[{const int \&}]{posX,  }\item[{const int \&}]{posY }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 53} of file \textbf{ Button.\+cpp}.
+
+\mbox{\label{classButton_aadfe2739e68980dae9ab910fdb0a5773}} 
+\index{Button@{Button}!isClicked@{isClicked}}
+\index{isClicked@{isClicked}!Button@{Button}}
+\doxysubsubsection{isClicked()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Button\+::is\+Clicked (\begin{DoxyParamCaption}\item[{const rl\+::\+Vector2 \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ Button.\+hpp}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+View/\+Button/\textbf{ Button.\+hpp}\item 
+src/\+View/\+Button/\textbf{ Button.\+cpp}\end{DoxyCompactItemize}

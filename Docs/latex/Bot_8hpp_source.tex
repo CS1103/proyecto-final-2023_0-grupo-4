@@ -1,0 +1,70 @@
+\doxysection{Bot.\+hpp}
+\label{Bot_8hpp_source}\index{src/Bot/Bot.hpp@{src/Bot/Bot.hpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BOT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Maze/Maze.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{enum\ class}\ ALGORITHM\ \{\ DFS,\ BFS,\ GBGS,\ A\_STAR\ \};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ clang-\/format\ off}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}\ <ALGORITHM\ T>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{concept\ }IsDFSOrBFS\ =\ }
+\DoxyCodeLine{00012\ T\ ==\ ALGORITHM::DFS\ ||}
+\DoxyCodeLine{00013\ T\ ==\ ALGORITHM::BFS;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <ALGORITHM\ T>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{concept\ }IsGBFSOrA\_STAR\ =\ }
+\DoxyCodeLine{00017\ T\ ==\ ALGORITHM::GBGS\ ||}
+\DoxyCodeLine{00018\ T\ ==\ ALGORITHM::A\_STAR;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }Bot\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ Bot()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{template}\ <ALGORITHM\ T>}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{bool}\ solve(\textcolor{keyword}{const}\ Maze\ \&maze);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{template}\ <ALGORITHM\ T>}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{requires}\ IsDFSOrBFS<T>\ \textcolor{keywordtype}{bool}}
+\DoxyCodeLine{00030\ \ \ solve(\textcolor{keyword}{const}\ Maze\ \&maze);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ [[nodiscard]]\ std::unordered\_set<square,\ Maze::HashPair>\ getSolution()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ \ \ [[nodiscard]]\ std::unordered\_set<square,\ Maze::HashPair>\ getSearchedPath()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{struct\ }Node:\ \textcolor{keyword}{public}\ square\{}
+\DoxyCodeLine{00038\ \ \ \ \ Node()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ \ \ \ \ Node(\textcolor{keyword}{const}\ square\ \&pos,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&score\ =\ 0);\ \textcolor{comment}{//NOLINT}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ square\ \&sqr);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ w\_score\{\};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ std::unordered\_set<square,\ Maze::HashPair>\ m\_solution;}
+\DoxyCodeLine{00047\ \ \ std::unordered\_set<square,\ Maze::HashPair>\ m\_searchedPath;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ std::optional<square>\ s\_goal\ =\ std::nullopt;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{template}\ <ALGORITHM\ T>}
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{class\ }Compare;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ [[nodiscard]]\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ heuristic(\textcolor{keyword}{const}\ square\ \&current,\ \textcolor{keyword}{const}\ square\ \&goal);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ explicit\ instantiate\ solve}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ extern\ template\ bool\ Bot::solve<ALGORITHM::DFS>(const\ Maze\ \&maze);}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ extern\ template\ bool\ Bot::solve<ALGORITHM::BFS>(const\ Maze\ \&maze);}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ extern\ template\ bool\ Bot::solve<ALGORITHM::GBGS>(const\ Maze\ \&maze);}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ extern\ template\ bool\ Bot::solve<ALGORITHM::A\_STAR>(const\ Maze\ \&maze);}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !BOT\_H}}
+
+\end{DoxyCode}

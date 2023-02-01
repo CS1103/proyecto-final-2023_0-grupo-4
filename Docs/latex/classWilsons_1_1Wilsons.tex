@@ -1,0 +1,276 @@
+\doxysection{Wilsons.\+Wilsons Class Reference}
+\label{classWilsons_1_1Wilsons}\index{Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \textbf{ w}, \textbf{ h}, hunt\+\_\+order=\char`\"{}random\char`\"{})
+\item 
+def \textbf{ generate} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ h}
+\item 
+\textbf{ w}
+\item 
+\textbf{ H}
+\item 
+\textbf{ W}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+hunt} (self, grid, count)
+\item 
+def \textbf{ \+\_\+hunt\+\_\+random} (self, grid, count)
+\item 
+def \textbf{ \+\_\+hunt\+\_\+serpentine} (self, grid, count)
+\item 
+def \textbf{ \+\_\+generate\+\_\+random\+\_\+walk} (self, grid, start)
+\item 
+def \textbf{ \+\_\+random\+\_\+dir} (self, current)
+\item 
+def \textbf{ \+\_\+move} (self, start, direction)
+\item 
+def \textbf{ \+\_\+solve\+\_\+random\+\_\+walk} (self, grid, walk, start)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ \+\_\+hunt\+\_\+order}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}The Algorithm
+
+1. Choose a random cell and add it to the Uniform Spanning Tree (UST).
+2. Select any cell that is not in the UST and perform a random walk until you find a cell that is.
+3. Add the cells and walls visited in the random walk to the UST.
+4. Repeat steps 2 and 3 until all cells have been added to the UST.
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 10} of file \textbf{ Wilsons.\+py}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classWilsons_1_1Wilsons_a4dd797856871b2be36d98f739c83ac50}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_\_init\_\_()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{w,  }\item[{}]{h,  }\item[{}]{hunt\+\_\+order = {\ttfamily \char`\"{}random\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Wilsons.\+py}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classWilsons_1_1Wilsons_aa01535ca37218f265032effc31b1931d}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_generate\_random\_walk@{\_generate\_random\_walk}}
+\index{\_generate\_random\_walk@{\_generate\_random\_walk}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_generate\_random\_walk()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+generate\+\_\+random\+\_\+walk (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}From a given starting position, walk randomly until you hit a visited cell.
+
+The returned walk object is a dictionary mapping your location (cell) to a
+direction. If you randomly walk over the same cell twice, you overwrite
+the direction at that location.
+
+Args:
+    grid (np.array): maze array
+    start (tuple): position to start from
+Returns:
+    dict: map of your location to the direction you want to travel
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 112} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_ae0902fcd19b35b9e8d0f7c448dd1b7b2}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_hunt@{\_hunt}}
+\index{\_hunt@{\_hunt}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_hunt()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+hunt (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Based on how this algorithm was configured, choose hunt for the next starting point.
+
+Args:
+    grid (np.array): maze array
+    count (int): max number of times to iterate
+Returns:
+    tuple: next cell
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 60} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_aac14743c3f63bb2c7fcf46f9678cce86}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_hunt\_random@{\_hunt\_random}}
+\index{\_hunt\_random@{\_hunt\_random}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_hunt\_random()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+hunt\+\_\+random (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Select the next cell to walk from, randomly.
+
+Args:
+    grid (np.array): maze array
+    count (int): max number of times to iterate
+Returns:
+    tuple: next cell
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 74} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_ab11c0c610bf7adab00213af5685825ed}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_hunt\_serpentine@{\_hunt\_serpentine}}
+\index{\_hunt\_serpentine@{\_hunt\_serpentine}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_hunt\_serpentine()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+hunt\+\_\+serpentine (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Select the next cell to walk from by cycling through every grid cell in order.
+
+Args:
+    grid (np.array): maze array
+    count (int): max number of times to iterate
+Returns:
+    tuple: next cell
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 88} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a4f6e17882a112a49bdfd084b519ef1cc}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_move@{\_move}}
+\index{\_move@{\_move}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_move()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+move (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{start,  }\item[{}]{direction }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Convolve a position tuple with a direction tuple to generate a new position.
+
+Args:
+    start (tuple): position to start from
+    direction (tuple): vector direction to travel to
+Returns:
+    tuple: position of next cell to travel to
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 166} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a608a49954512ff616f2715783d43c974}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_random\_dir@{\_random\_dir}}
+\index{\_random\_dir@{\_random\_dir}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_random\_dir()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+random\+\_\+dir (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Take a step on one random (but valid) direction
+
+Args:
+    current (tuple): cell to start from
+Returns:
+    tuple: random, valid direction to travel to
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 137} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a3408065a487f207e6f8bafc67188a8c7}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_solve\_random\_walk@{\_solve\_random\_walk}}
+\index{\_solve\_random\_walk@{\_solve\_random\_walk}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_solve\_random\_walk()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+\_\+solve\+\_\+random\+\_\+walk (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{grid,  }\item[{}]{walk,  }\item[{}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Move through the random walk, visiting all the cells you touch,
+and breaking down the walls you cross.
+
+Args:
+    grid (np.array): maze array
+    walk (dict): random walk directions, from each cell
+    start (tuple): position of cell to star the process at
+Returns:
+    int: number of steps taken to complete the process
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 177} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a577456249666445e9eece633abd086cd}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!generate@{generate}}
+\index{generate@{generate}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{generate()}
+{\footnotesize\ttfamily def Wilsons.\+Wilsons.\+generate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}highest-level method that implements the maze-generating algorithm
+
+Returns:
+    np.array: returned matrix
+\end{DoxyVerb}
+ 
+
+Definition at line \textbf{ 32} of file \textbf{ Wilsons.\+py}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{classWilsons_1_1Wilsons_a1689d4aa47f712cfe4c0f151c141fabf}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!\_hunt\_order@{\_hunt\_order}}
+\index{\_hunt\_order@{\_hunt\_order}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{\_hunt\_order}
+{\footnotesize\ttfamily Wilsons.\+Wilsons.\+\_\+hunt\+\_\+order\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \textbf{ 28} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a8775ed3d84280ef18d7e9f61874969d3}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!h@{h}}
+\index{h@{h}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{h}
+{\footnotesize\ttfamily Wilsons.\+Wilsons.\+h}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_aafc217bf39ca74903087a3b984625517}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!H@{H}}
+\index{H@{H}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{H}
+{\footnotesize\ttfamily Wilsons.\+Wilsons.\+H}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_a3db085952775d890b52d4b80d2947d65}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!w@{w}}
+\index{w@{w}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{w}
+{\footnotesize\ttfamily Wilsons.\+Wilsons.\+w}
+
+
+
+Definition at line \textbf{ 22} of file \textbf{ Wilsons.\+py}.
+
+\mbox{\label{classWilsons_1_1Wilsons_af5768b62345efde73ad03afca3b75bec}} 
+\index{Wilsons.Wilsons@{Wilsons.Wilsons}!W@{W}}
+\index{W@{W}!Wilsons.Wilsons@{Wilsons.Wilsons}}
+\doxysubsubsection{W}
+{\footnotesize\ttfamily Wilsons.\+Wilsons.\+W}
+
+
+
+Definition at line \textbf{ 24} of file \textbf{ Wilsons.\+py}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Maze/\textbf{ Wilsons.\+py}\end{DoxyCompactItemize}

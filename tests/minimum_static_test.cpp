@@ -1,45 +1,62 @@
 #include <iostream>
 #include <memory>
 #include <raylib-cpp.hpp>
-#include <raylib.h>
+// #include <raylib.h>
 
 namespace rl = raylib;
-constexpr std::string_view DEFAULT_TEXTURE_PATH =
-    "../src/assets/Textures/test_old_button.png";
+// constexpr std::string_view DEFAULT_TEXTURE_PATH =
+//     "../src/assets/Textures/test_old_button.png";
+// const std::string DEFAULT_TEXTURE_PATH =
+//     "../src/assets/Textures/test_old_button.png";
 
-class Button { // NOLINT
-public:
-  Button() {
+// class TextureWrapper {
+// public:
+//   static rl::Texture &instance() {
+//     static rl::Texture instance(DEFAULT_TEXTURE_PATH.data());
+//     return instance;
+//   }
+//   TextureWrapper() = delete;
+// };
 
-    if (!shared_texture) {
-      shared_texture =
-          std::make_unique<rl::Texture>(DEFAULT_TEXTURE_PATH.data());
-    }
-  }
+// class Button { // NOLINT
+// public:
+//   Button() = default;
 
-  void Draw(const int &posX, const int &posY) const {
-    shared_texture->Draw(posX, posY);
-  }
+//   // if (!shared_texture) {
+//   //   shared_texture =
+//   //       std::make_unique<rl::Texture>(DEFAULT_TEXTURE_PATH.data());
+//   // }
+//   // }
 
-private:
-  inline static std::unique_ptr<rl::Texture> shared_texture = nullptr;
-  // [[clang::no_destroy]] inline static std::unique_ptr<rl::Texture>
-  //     shared_texture = nullptr;
+//   void Draw(const int &posX, const int &posY) const {
+//     // shared_texture->Draw(posX, posY);
+//     TextureWrapper::instance().Draw(posX, posY);
+//   }
 
-  [[nodiscard]] static const rl::Texture &texture() { return *shared_texture; }
-};
+// private:
+//   // inline static std::unique_ptr<rl::Texture> shared_texture = nullptr;
+//   // [[clang::no_destroy]] inline static std::unique_ptr<rl::Texture>
+//   //     shared_texture = nullptr;
+
+//   // [[nodiscard]] static const rl::Texture &texture() { return
+//   *shared_texture;
+//   // }
+// };
 
 int main() {
 
   rl::Window window(800, 600, "Hello World");
-  Button but;
+  const std::string path = "../src/assets/Textures/test_old_button.png";
+  rl::Texture text_1(path);
+  // Button but;
 
   auto counter = 500;
 
   while (!window.ShouldClose()) {
     BeginDrawing();
 
-    but.Draw(100, 100);
+    // but.Draw(100, 100);
+    text_1.Draw(100, 100);
 
     std::cout << "Counter: " << counter << std::endl;
     if (--counter <= 0) {

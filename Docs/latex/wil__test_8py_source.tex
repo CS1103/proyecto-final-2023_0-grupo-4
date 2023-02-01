@@ -1,0 +1,188 @@
+\doxysection{wil\+\_\+test.\+py}
+\label{wil__test_8py_source}\index{src/Maze/wil\_test.py@{src/Maze/wil\_test.py}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{keyword}{from}\ random\ \textcolor{keyword}{import}\ choice,\ randrange}
+\DoxyCodeLine{00002\ \textcolor{keyword}{import}\ numpy\ \textcolor{keyword}{as}\ np}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{\#\ https://github.com/john-\/science/mazelib/blob/main/mazelib/generate/MazeGenAlgo.py}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ RANDOM\ =\ 1}
+\DoxyCodeLine{00007\ SERPENTINE\ =\ 2}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \_hunt\_order\ =\ RANDOM}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ h\ =\ 3}
+\DoxyCodeLine{00012\ w\ =\ 3}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{def\ }generate():}
+\DoxyCodeLine{00016\ \ \ \ \ H\ =\ (2\ *\ h)\ +\ 1}
+\DoxyCodeLine{00017\ \ \ \ \ W\ =\ (2\ *\ w)\ +\ 1}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{\#\ create\ empty\ grid}}
+\DoxyCodeLine{00019\ \ \ \ \ grid\ =\ np.empty((H,\ W),\ dtype=np.int8)}
+\DoxyCodeLine{00020\ \ \ \ \ grid.fill(1)}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{\#\ find\ an\ arbitrary\ starting\ position}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{\#\ 1\ 3\ 5\ 7\ 9\ \ 11}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{\#\ 1\ 2\ 3\ 4\ 5\ \ 6}}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{\#\ 2\ 4\ 6\ 8\ 10\ 12}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{\#\ 1\ 3\ 5\ 7\ 9\ \ 11}}
+\DoxyCodeLine{00028\ \ \ \ \ grid[randrange(1,\ H,\ 2)][randrange(1,\ W,\ 2)]\ =\ 0}
+\DoxyCodeLine{00029\ \ \ \ \ num\_visited\ =\ 1}
+\DoxyCodeLine{00030\ \ \ \ \ row,\ col\ =\ \_hunt(grid,\ num\_visited)}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{comment}{\#\ perform\ many\ random\ walks,\ to\ fill\ the\ maze}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{while}\ row\ !=\ -\/1\ \textcolor{keywordflow}{and}\ col\ !=\ -\/1:}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ walk\ =\ \_generate\_random\_walk(grid,\ (row,\ col))}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ num\_visited\ +=\ \_solve\_random\_walk(grid,\ walk,\ (row,\ col))}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ (row,\ col)\ =\ \_hunt(grid,\ num\_visited)}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ grid}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{def\ }\_hunt(grid,\ count):}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Based\ on\ how\ this\ algorithm\ was\ configured,\ choose\ hunt\ for\ the\ next\ starting\ point.}}
+\DoxyCodeLine{00043\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00044\ \textcolor{stringliteral}{\ \ \ \ Args:}}
+\DoxyCodeLine{00045\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ grid\ (np.array):\ maze\ array}}
+\DoxyCodeLine{00046\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ count\ (int):\ max\ number\ of\ times\ to\ iterate}}
+\DoxyCodeLine{00047\ \textcolor{stringliteral}{\ \ \ \ Returns:}}
+\DoxyCodeLine{00048\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ tuple:\ next\ cell}}
+\DoxyCodeLine{00049\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{00050\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordflow}{if}\ \_hunt\_order\ ==\ SERPENTINE:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_hunt\_serpentine(grid,\ count)}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_hunt\_random(grid,\ count)}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{def\ }\_hunt\_random(grid,\ count):}
+\DoxyCodeLine{00057\ \ \ \ \ print(h\ *\ w)}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}\ count\ >=\ (h\ *\ w):}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/1,\ -\/1)}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ H\ =\ (2\ *\ h)\ +\ 1}
+\DoxyCodeLine{00062\ \ \ \ \ W\ =\ (2\ *\ w)\ +\ 1}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ (randrange(1,\ H,\ 2),\ randrange(1,\ W,\ 2))}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{def\ }\_hunt\_serpentine(grid,\ count):}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ cell\ =\ (1,\ -\/1)}
+\DoxyCodeLine{00070\ \ \ \ \ found\ =\ \textcolor{keyword}{False}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ H\ =\ (2\ *\ h)\ +\ 1}
+\DoxyCodeLine{00073\ \ \ \ \ W\ =\ (2\ *\ w)\ +\ 1}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{while}\ \textcolor{keywordflow}{not}\ found:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ cell\ =\ (cell[0],\ cell[1]\ +\ 2)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ cell[1]\ >\ (W\ -\/\ 2):}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ cell\ =\ (cell[0]\ +\ 2,\ 1)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ cell[0]\ >\ (H\ -\/\ 2):}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/1,\ -\/1)}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ grid[cell[0]][cell[1]]\ !=\ 0:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ found\ =\ \textcolor{keyword}{True}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordflow}{return}\ cell}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{def\ }\_generate\_random\_walk(grid,\ start):}
+\DoxyCodeLine{00089\ \ \ \ \ direction\ =\ \_random\_dir(start)}
+\DoxyCodeLine{00090\ \ \ \ \ walk\ =\ \{\}}
+\DoxyCodeLine{00091\ \ \ \ \ walk[start]\ =\ direction}
+\DoxyCodeLine{00092\ \ \ \ \ current\ =\ \_move(start,\ direction)}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{while}\ grid[current[0]][current[1]]\ ==\ 1:}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ direction\ =\ \_random\_dir(current)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ walk[current]\ =\ direction}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ current\ =\ \_move(current,\ direction)}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ walk}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{def\ }\_random\_dir(current):}
+\DoxyCodeLine{00103\ \ \ \ \ H\ =\ (2\ *\ h)\ +\ 1}
+\DoxyCodeLine{00104\ \ \ \ \ W\ =\ (2\ *\ w)\ +\ 1}
+\DoxyCodeLine{00105\ \ \ \ \ r,\ c\ =\ current}
+\DoxyCodeLine{00106\ \ \ \ \ options\ =\ []}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{if}\ r\ >\ 1:}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ options.append(0)\ \ \textcolor{comment}{\#\ North}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ r\ <\ (H\ -\/\ 2):}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ options.append(1)\ \ \textcolor{comment}{\#\ South}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}\ c\ >\ 1:}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ options.append(2)\ \ \textcolor{comment}{\#\ East}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{if}\ c\ <\ (W\ -\/\ 2):}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ options.append(3)\ \ \textcolor{comment}{\#\ West}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ direction\ =\ choice(options)}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ direction\ ==\ 0:}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/2,\ 0)\ \ \textcolor{comment}{\#\ North}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{elif}\ direction\ ==\ 1:}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (2,\ 0)\ \ \textcolor{comment}{\#\ South}}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{elif}\ direction\ ==\ 2:}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0,\ -\/2)\ \ \textcolor{comment}{\#\ East}}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0,\ 2)\ \ \textcolor{comment}{\#\ West}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{def\ }\_move(start,\ direction):}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Convolve\ a\ position\ tuple\ with\ a\ direction\ tuple\ to\ generate\ a\ new\ position.}}
+\DoxyCodeLine{00129\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00130\ \textcolor{stringliteral}{\ \ \ \ Args:}}
+\DoxyCodeLine{00131\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ start\ (tuple):\ position\ to\ start\ }\textcolor{keyword}{from}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ direction\ (tuple):\ vector\ direction\ to\ travel\ to}
+\DoxyCodeLine{00133\ \ \ \ \ Returns:}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ tuple:\ position\ of\ next\ cell\ to\ travel\ to}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00136\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordflow}{return}\ (start[0]\ +\ direction[0],\ start[1]\ +\ direction[1])}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{def\ }\_solve\_random\_walk(grid,\ walk,\ start):}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}Move\ through\ the\ random\ walk,\ visiting\ all\ the\ cells\ you\ touch,}}
+\DoxyCodeLine{00141\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordflow}{and}\ breaking\ down\ the\ walls\ you\ cross.}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ Args:}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ grid\ (np.array):\ maze\ array}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ walk\ (dict):\ random\ walk\ directions,\ \textcolor{keyword}{from}\ each\ cell}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ start\ (tuple):\ position\ of\ cell\ to\ star\ the\ process\ at}
+\DoxyCodeLine{00147\ \ \ \ \ Returns:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ int:\ number\ of\ steps\ taken\ to\ complete\ the\ process}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{00150\ \textcolor{stringliteral}{\ \ \ \ visits\ =\ 0}}
+\DoxyCodeLine{00151\ \textcolor{stringliteral}{\ \ \ \ current\ =\ start}}
+\DoxyCodeLine{00152\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00153\ \textcolor{stringliteral}{\ \ \ \ }\textcolor{keywordflow}{while}\ grid[current[0]][current[1]]\ !=\ 0:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ grid[current]\ =\ 0}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ next1\ =\ \_move(current,\ walk[current])}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ new\_x\ =\ (next1[0]\ +\ current[0])\ //\ 2}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ new\_y\ =\ (next1[1]\ +\ current[1])\ //\ 2}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print(f"{}current:\ \{current\},\ next:\ \{next1\},\ new:\ \{new\_x,\ new\_y\}"{})}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ print()}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ grid[(next1[0]\ +\ current[0])\ //\ 2,\ (next1[1]\ +\ current[1])\ //\ 2]\ =\ 0}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ visits\ +=\ 1}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ current\ =\ next1}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ visits}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ x\ =\ generate()}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{keywordflow}{for}\ row\ \textcolor{keywordflow}{in}\ x:}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordflow}{for}\ col\ \textcolor{keywordflow}{in}\ row:}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ col\ ==\ 0:}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}\ \ "{}},\ end=\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}██"{}},\ end=\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00179\ \ \ \ \ print()}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{comment}{\#\ for\ i\ in\ range(20):}}
+\DoxyCodeLine{00182\ \textcolor{comment}{\#\ \ \ \ \ print(\_hunt\_random(x,\ 1))}}
+
+\end{DoxyCode}

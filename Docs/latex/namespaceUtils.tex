@@ -1,0 +1,71 @@
+\doxysection{Utils Namespace Reference}
+\label{namespaceUtils}\index{Utils@{Utils}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$std\+::integral T$>$ }\\T \textbf{ Random\+Num} (const T \&min, const T \&max)
+\item 
+template uint8\+\_\+t \textbf{ Random\+Num$<$ uint8\+\_\+t $>$} (const uint8\+\_\+t \&min, const uint8\+\_\+t \&max)
+\item 
+template size\+\_\+t \textbf{ Random\+Num$<$ size\+\_\+t $>$} (const size\+\_\+t \&min, const size\+\_\+t \&max)
+\item 
+template int \textbf{ Random\+Num$<$ int $>$} (const int \&min, const int \&max)
+\item 
+{\footnotesize template$<$std\+::unsigned\+\_\+integral T$>$ }\\constexpr auto \textbf{ Unsigned\+To\+Signed} (const T \&value)
+\item 
+{\footnotesize template$<$std\+::signed\+\_\+integral T$>$ }\\constexpr auto \textbf{ Signed\+To\+Unsigned} (const T \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{namespaceUtils_aaa7580f966b72ad15672403dbfaf8241}} 
+\index{Utils@{Utils}!RandomNum@{RandomNum}}
+\index{RandomNum@{RandomNum}!Utils@{Utils}}
+\doxysubsubsection{RandomNum()}
+{\footnotesize\ttfamily template$<$std\+::integral T$>$ \\
+T Utils\+::\+Random\+Num (\begin{DoxyParamCaption}\item[{const T \&}]{min,  }\item[{const T \&}]{max }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 12} of file \textbf{ Utils.\+cpp}.
+
+\mbox{\label{namespaceUtils_add831a01bc5ef1fa0469fe90b1d7125e}} 
+\index{Utils@{Utils}!RandomNum$<$ int $>$@{RandomNum$<$ int $>$}}
+\index{RandomNum$<$ int $>$@{RandomNum$<$ int $>$}!Utils@{Utils}}
+\doxysubsubsection{RandomNum$<$ int $>$()}
+{\footnotesize\ttfamily template int \textbf{ Utils\+::\+Random\+Num}$<$ int $>$ (\begin{DoxyParamCaption}\item[{const int \&}]{min,  }\item[{const int \&}]{max }\end{DoxyParamCaption})}
+
+\mbox{\label{namespaceUtils_aa22e73dd6853f94ead259c2da240336a}} 
+\index{Utils@{Utils}!RandomNum$<$ size\_t $>$@{RandomNum$<$ size\_t $>$}}
+\index{RandomNum$<$ size\_t $>$@{RandomNum$<$ size\_t $>$}!Utils@{Utils}}
+\doxysubsubsection{RandomNum$<$ size\_t $>$()}
+{\footnotesize\ttfamily template size\+\_\+t \textbf{ Utils\+::\+Random\+Num}$<$ size\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const size\+\_\+t \&}]{min,  }\item[{const size\+\_\+t \&}]{max }\end{DoxyParamCaption})}
+
+\mbox{\label{namespaceUtils_ae009418e1b52ba5beace163ba95cb2cc}} 
+\index{Utils@{Utils}!RandomNum$<$ uint8\_t $>$@{RandomNum$<$ uint8\_t $>$}}
+\index{RandomNum$<$ uint8\_t $>$@{RandomNum$<$ uint8\_t $>$}!Utils@{Utils}}
+\doxysubsubsection{RandomNum$<$ uint8\_t $>$()}
+{\footnotesize\ttfamily template uint8\+\_\+t \textbf{ Utils\+::\+Random\+Num}$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{min,  }\item[{const uint8\+\_\+t \&}]{max }\end{DoxyParamCaption})}
+
+\mbox{\label{namespaceUtils_ab462a3263ddd14d1abd3e63130dadf49}} 
+\index{Utils@{Utils}!SignedToUnsigned@{SignedToUnsigned}}
+\index{SignedToUnsigned@{SignedToUnsigned}!Utils@{Utils}}
+\doxysubsubsection{SignedToUnsigned()}
+{\footnotesize\ttfamily template$<$std\+::signed\+\_\+integral T$>$ \\
+constexpr auto Utils\+::\+Signed\+To\+Unsigned (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \textbf{ 26} of file \textbf{ Utils.\+h}.
+
+\mbox{\label{namespaceUtils_a2cdd8130044b3e6f4c96fc6ccec8326c}} 
+\index{Utils@{Utils}!UnsignedToSigned@{UnsignedToSigned}}
+\index{UnsignedToSigned@{UnsignedToSigned}!Utils@{Utils}}
+\doxysubsubsection{UnsignedToSigned()}
+{\footnotesize\ttfamily template$<$std\+::unsigned\+\_\+integral T$>$ \\
+constexpr auto Utils\+::\+Unsigned\+To\+Signed (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Utils.\+h}.
+

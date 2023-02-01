@@ -1,0 +1,49 @@
+\doxysection{System.\+cpp}
+\label{System_8cpp_source}\index{src/System/System.cpp@{src/System/System.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}System.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}../Bot/Bot.hpp"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../Maze/Maze.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keywordtype}{void}\ System::run()\ \{}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \ \ \textcolor{comment}{//\ m\_vista.startScreen();}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ SQUARE\_TYPE\ W\ =\ SQUARE\_TYPE::WALL;}
+\DoxyCodeLine{00010\ \ \ SQUARE\_TYPE\ E\ =\ SQUARE\_TYPE::EMPTY;}
+\DoxyCodeLine{00011\ \ \ SQUARE\_TYPE\ G\ =\ SQUARE\_TYPE::GOAL;}
+\DoxyCodeLine{00012\ \ \ SQUARE\_TYPE\ S\ =\ SQUARE\_TYPE::START;}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ std::vector<std::vector<SQUARE\_TYPE>>\ board\ =\ \{\{W,\ W,\ W,\ W,\ W,\ W,\ W,\ W\},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ E,\ E,\ E,\ E,\ E,\ W\},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ W,\ W,\ W,\ W,\ W,\ W\},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ W,\ W,\ E,\ W,\ W,\ W\},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ W,\ W,\ E,\ W,\ W,\ W\},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ W,\ W,\ E,\ E,\ E,\ W\},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ W,\ W,\ E,\ W,\ E,\ W\},}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ E,\ W,\ S,\ W,\ E,\ W\},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ W,\ E,\ W,\ E,\ W,\ E,\ W\},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ E,\ E,\ E,\ W,\ E,\ W\},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ W,\ E,\ W,\ W,\ W,\ W,\ W\},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ E,\ E,\ E,\ E,\ E,\ E,\ W\},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ W,\ E,\ W,\ W,\ W,\ G,\ W\},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{W,\ W,\ W,\ W,\ W,\ W,\ W,\ W\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ Maze\ tab;}
+\DoxyCodeLine{00032\ \ \ Bot\ bot;}
+\DoxyCodeLine{00033\ \ \ \textcolor{comment}{//\ bot.solve<ALGORITHM::BFS>(tab);}}
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ bot.solve<ALGORITHM::DFS>(tab);}}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ bot.solve<ALGORITHM::A\_STAR>(tab);}}
+\DoxyCodeLine{00036\ \ \ bot.solve<ALGORITHM::A\_STAR>(tab);}
+\DoxyCodeLine{00037\ \ \ tab.paintPath(bot.getSolution(),\ bot.getSearchedPath());}
+\DoxyCodeLine{00038\ \ \ tab.printMaze();}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ for\ (const\ auto\ \&sq\ :\ bot.getSearchedPath())\ \{}}
+\DoxyCodeLine{00040\ \ \ \textcolor{comment}{//\ \ \ std::cout\ <<\ static\_cast<int>(sq.first)\ <<\ "{}\ \ "{}}}
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ static\_cast<int>(sq.second)\ <<\ std::endl;}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{View.\+cpp}
+\label{View_8cpp_source}\index{src/View/View.cpp@{src/View/View.cpp}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}View.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Button/Button.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Temporal}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ TITLE\_SIZE\ =\ 50;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ View::View(\textcolor{keyword}{const}\ std::string\ \&title,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&width,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&height)}
+\DoxyCodeLine{00010\ \ \ \ \ :\ window(width,\ height,\ title)\ \{\}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keywordtype}{void}\ View::startScreen()\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{const}\ Button\ BUTTON1(\textcolor{stringliteral}{"{}Beggin\ game"{}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{const}\ rl::Font\ TITLE\_FONT(\textcolor{stringliteral}{"{}../src/assets/fonts/pixelplay.png"{}});}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{const}\ rl::Text\ TITLE(TITLE\_FONT,\ \textcolor{stringliteral}{"{}Labyrinth\ game"{}},\ TITLE\_SIZE);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{const}\ rl::Vector2\ WINDOW\_CENTER\ =\ \{window.GetSize()\ /\ 2\ -\/}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TITLE.MeasureEx()\ /\ 2\};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{const}\ rl::Vector2\ TITLE\_POS\ =\ WINDOW\_CENTER\ -\/\ rl::Vector2(0,\ 40);}
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{const}\ rl::Vector2\ BUTTON\_POS\ =\ WINDOW\_CENTER\ +\ rl::Vector2(0,\ 40);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordflow}{while}\ (!window.ShouldClose())\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ BeginDrawing();}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ window.ClearBackground();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ BUTTON1.Draw(BUTTON\_POS);}
+\DoxyCodeLine{00031\ \ \ \ \ TITLE.Draw(TITLE\_POS);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (BUTTON1.isClicked(BUTTON\_POS))\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Clicked"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ EndDrawing();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ window.Close();}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ EndDrawing();}
+\DoxyCodeLine{00040\ \ \ \}}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}

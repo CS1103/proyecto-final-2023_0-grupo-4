@@ -1,0 +1,93 @@
+\doxysection{Bot Class Reference}
+\label{classBot}\index{Bot@{Bot}}
+
+
+{\ttfamily \#include $<$Bot.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Compare$<$ ALGORITHM\+::\+A\+\_\+\+STAR $>$}
+\item 
+class \textbf{ Compare$<$ ALGORITHM\+::\+GBGS $>$}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Bot} ()=default
+\item 
+{\footnotesize template$<$\textbf{ ALGORITHM} T$>$ \newline
+requires \textbf{ Is\+DFSOr\+BFS}$<$T$>$}\\bool \textbf{ solve} (const \textbf{ Maze} \&maze)
+\item 
+{\footnotesize template$<$\textbf{ ALGORITHM} T$>$ \newline
+requires \textbf{ Is\+DFSOr\+BFS}$<$T$>$}\\bool \textbf{ solve} (const \textbf{ Maze} \&maze)
+\item 
+std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Maze\+::\+Hash\+Pair} $>$ \textbf{ get\+Solution} () const
+\item 
+std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Maze\+::\+Hash\+Pair} $>$ \textbf{ get\+Searched\+Path} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 20} of file \textbf{ Bot.\+hpp}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classBot_acb9b548aa6e08f45ed1d99a7093fac41}} 
+\index{Bot@{Bot}!Bot@{Bot}}
+\index{Bot@{Bot}!Bot@{Bot}}
+\doxysubsubsection{Bot()}
+{\footnotesize\ttfamily Bot\+::\+Bot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classBot_a7c231f82ece501c1b2b36140b08aea6c}} 
+\index{Bot@{Bot}!getSearchedPath@{getSearchedPath}}
+\index{getSearchedPath@{getSearchedPath}!Bot@{Bot}}
+\doxysubsubsection{getSearchedPath()}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Maze\+::\+Hash\+Pair} $>$ Bot\+::get\+Searched\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 254} of file \textbf{ Bot.\+cpp}.
+
+\mbox{\label{classBot_aa687a314eb8b70c5cc3f7de5ffd6aa60}} 
+\index{Bot@{Bot}!getSolution@{getSolution}}
+\index{getSolution@{getSolution}!Bot@{Bot}}
+\doxysubsubsection{getSolution()}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Maze\+::\+Hash\+Pair} $>$ Bot\+::get\+Solution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 251} of file \textbf{ Bot.\+cpp}.
+
+\mbox{\label{classBot_a50c54f329c493e1947f72ab2b14165ef}} 
+\index{Bot@{Bot}!solve@{solve}}
+\index{solve@{solve}!Bot@{Bot}}
+\doxysubsubsection{solve()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\textbf{ ALGORITHM} T$>$ \newline
+requires \textbf{ Is\+DFSOr\+BFS}$<$T$>$\\
+bool Bot\+::solve (\begin{DoxyParamCaption}\item[{const \textbf{ Maze} \&}]{maze }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 9} of file \textbf{ Bot.\+cpp}.
+
+\mbox{\label{classBot_a50c54f329c493e1947f72ab2b14165ef}} 
+\index{Bot@{Bot}!solve@{solve}}
+\index{solve@{solve}!Bot@{Bot}}
+\doxysubsubsection{solve()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\textbf{ ALGORITHM} T$>$ \newline
+requires \textbf{ Is\+DFSOr\+BFS}$<$T$>$\\
+bool Bot\+::solve (\begin{DoxyParamCaption}\item[{const \textbf{ Maze} \&}]{maze }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Bot/\textbf{ Bot.\+hpp}\item 
+src/\+Bot/\textbf{ Bot.\+cpp}\end{DoxyCompactItemize}

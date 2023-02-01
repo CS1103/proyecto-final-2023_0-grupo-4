@@ -1,0 +1,153 @@
+\doxysection{Maze Class Reference}
+\label{classMaze}\index{Maze@{Maze}}
+
+
+{\ttfamily \#include $<$Maze.\+hpp$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Hash\+Pair}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Maze} (\textbf{ maze\+\_\+t} \&maze)
+\item 
+\textbf{ Maze} (\textbf{ HUNT\+\_\+\+METHOD} hunt\+Method=\textbf{ DEFAULT\+\_\+\+HUNT\+\_\+\+METHOD})
+\item 
+\textbf{ Maze} (uint8\+\_\+t height, uint8\+\_\+t width, \textbf{ HUNT\+\_\+\+METHOD} hunt\+Method=\textbf{ DEFAULT\+\_\+\+HUNT\+\_\+\+METHOD})
+\item 
+void \textbf{ print\+Maze} ()
+\item 
+\textbf{ maze\+\_\+t} \textbf{ get\+Maze} () const
+\item 
+constexpr \textbf{ square} \textbf{ get\+Start} () const
+\item 
+constexpr \textbf{ square} \textbf{ get\+Goal} () const
+\item 
+std\+::vector$<$ \textbf{ square} $>$ \textbf{ get\+Neighbors} (const \textbf{ square} \&current) const
+\item 
+void \textbf{ paint\+Path} (const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&path)
+\item 
+void \textbf{ paint\+Path} (const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&solution, const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&searched\+Path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \textbf{ 31} of file \textbf{ Maze.\+hpp}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{classMaze_a59e8b5febf718de2ab2fc6fdaf1de351}} 
+\index{Maze@{Maze}!Maze@{Maze}}
+\index{Maze@{Maze}!Maze@{Maze}}
+\doxysubsubsection{Maze()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Maze\+::\+Maze (\begin{DoxyParamCaption}\item[{\textbf{ maze\+\_\+t} \&}]{maze }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_a609aaa6de196b374fab66592464c5568}} 
+\index{Maze@{Maze}!Maze@{Maze}}
+\index{Maze@{Maze}!Maze@{Maze}}
+\doxysubsubsection{Maze()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Maze\+::\+Maze (\begin{DoxyParamCaption}\item[{\textbf{ HUNT\+\_\+\+METHOD}}]{hunt\+Method = {\ttfamily \textbf{ DEFAULT\+\_\+\+HUNT\+\_\+\+METHOD}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \textbf{ 40} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_afec67c7e7357b604ee4b6a6a69bef6ef}} 
+\index{Maze@{Maze}!Maze@{Maze}}
+\index{Maze@{Maze}!Maze@{Maze}}
+\doxysubsubsection{Maze()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Maze\+::\+Maze (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{height,  }\item[{uint8\+\_\+t}]{width,  }\item[{\textbf{ HUNT\+\_\+\+METHOD}}]{hunt\+Method = {\ttfamily \textbf{ DEFAULT\+\_\+\+HUNT\+\_\+\+METHOD}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 33} of file \textbf{ Maze.\+cpp}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classMaze_ae2d2a2563035716f3e801a7de8daa070}} 
+\index{Maze@{Maze}!getGoal@{getGoal}}
+\index{getGoal@{getGoal}!Maze@{Maze}}
+\doxysubsubsection{getGoal()}
+{\footnotesize\ttfamily constexpr \textbf{ square} Maze\+::get\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \textbf{ 45} of file \textbf{ Maze.\+hpp}.
+
+\mbox{\label{classMaze_a84dc56eb84ca1214bea0d54bb06466ad}} 
+\index{Maze@{Maze}!getMaze@{getMaze}}
+\index{getMaze@{getMaze}!Maze@{Maze}}
+\doxysubsubsection{getMaze()}
+{\footnotesize\ttfamily \textbf{ maze\+\_\+t} Maze\+::get\+Maze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 273} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_aa07e3cce6e183c8eeb5fd12b00c3884d}} 
+\index{Maze@{Maze}!getNeighbors@{getNeighbors}}
+\index{getNeighbors@{getNeighbors}!Maze@{Maze}}
+\doxysubsubsection{getNeighbors()}
+{\footnotesize\ttfamily std\+::vector$<$ \textbf{ square} $>$ Maze\+::get\+Neighbors (\begin{DoxyParamCaption}\item[{const \textbf{ square} \&}]{current }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \textbf{ 279} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_aff50edc88fe7f98440f59c6624ebcbaf}} 
+\index{Maze@{Maze}!getStart@{getStart}}
+\index{getStart@{getStart}!Maze@{Maze}}
+\doxysubsubsection{getStart()}
+{\footnotesize\ttfamily constexpr \textbf{ square} Maze\+::get\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \textbf{ 44} of file \textbf{ Maze.\+hpp}.
+
+\mbox{\label{classMaze_ae28e95ab2eab3dadaf84ff0a6b4da7fe}} 
+\index{Maze@{Maze}!paintPath@{paintPath}}
+\index{paintPath@{paintPath}!Maze@{Maze}}
+\doxysubsubsection{paintPath()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Maze\+::paint\+Path (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 301} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_a58fc29f11320144e2037b41d94a33065}} 
+\index{Maze@{Maze}!paintPath@{paintPath}}
+\index{paintPath@{paintPath}!Maze@{Maze}}
+\doxysubsubsection{paintPath()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Maze\+::paint\+Path (\begin{DoxyParamCaption}\item[{const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&}]{solution,  }\item[{const std\+::unordered\+\_\+set$<$ \textbf{ square}, \textbf{ Hash\+Pair} $>$ \&}]{searched\+Path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 309} of file \textbf{ Maze.\+cpp}.
+
+\mbox{\label{classMaze_a03e0a826d218517bf909cf33987dc605}} 
+\index{Maze@{Maze}!printMaze@{printMaze}}
+\index{printMaze@{printMaze}!Maze@{Maze}}
+\doxysubsubsection{printMaze()}
+{\footnotesize\ttfamily void Maze\+::print\+Maze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \textbf{ 122} of file \textbf{ Maze.\+cpp}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Maze/\textbf{ Maze.\+hpp}\item 
+src/\+Maze/\textbf{ Maze.\+cpp}\end{DoxyCompactItemize}
