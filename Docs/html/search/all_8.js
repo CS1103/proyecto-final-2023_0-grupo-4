@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['system_0',['System',['../classSystem.html',1,'']]]
+  ['isclicked_0',['isClicked',['../classButton.html#a641ee65aa2352fdddfb994bfbc0b4760',1,'Button::isClicked(const int &amp;posX, const int &amp;posY) const'],['../classButton.html#aadfe2739e68980dae9ab910fdb0a5773',1,'Button::isClicked(const rl::Vector2 &amp;pos) const']]],
+  ['isdfsorbfs_1',['IsDFSOrBFS',['../conceptIsDFSOrBFS.html',1,'']]],
+  ['isgbfsora_5fstar_2',['IsGBFSOrA_STAR',['../conceptIsGBFSOrA__STAR.html',1,'']]]
 ];

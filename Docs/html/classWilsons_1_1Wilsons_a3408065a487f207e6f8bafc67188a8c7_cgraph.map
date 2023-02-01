@@ -1,10 +1,4 @@
 <map id="Wilsons.Wilsons._solve_random_walk" name="Wilsons.Wilsons._solve_random_walk">
-<area shape="rect" id="node1" title=" " alt="" coords="5,51,180,91"/>
-<area shape="rect" id="node2" href="$classWilsons_1_1Wilsons.html#a4f6e17882a112a49bdfd084b519ef1cc" title=" " alt="" coords="731,5,907,31"/>
-<area shape="rect" id="node3" href="$classWilsons_1_1Wilsons.html#a577456249666445e9eece633abd086cd" title=" " alt="" coords="228,59,419,84"/>
-<area shape="rect" id="node4" href="$classWilsons_1_1Wilsons.html#aa01535ca37218f265032effc31b1931d" title=" " alt="" coords="467,51,664,91"/>
-<area shape="rect" id="node6" href="$classWilsons_1_1Wilsons.html#ae0902fcd19b35b9e8d0f7c448dd1b7b2" title=" " alt="" coords="481,116,649,141"/>
-<area shape="rect" id="node5" href="$classWilsons_1_1Wilsons.html#a608a49954512ff616f2715783d43c974" title=" " alt="" coords="712,59,925,84"/>
-<area shape="rect" id="node7" href="$classWilsons_1_1Wilsons.html#aac14743c3f63bb2c7fcf46f9678cce86" title=" " alt="" coords="735,109,903,149"/>
-<area shape="rect" id="node8" href="$classWilsons_1_1Wilsons.html#ab11c0c610bf7adab00213af5685825ed" title=" " alt="" coords="735,173,903,213"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,45"/>
+<area shape="rect" id="node2" href="$classWilsons_1_1Wilsons.html#a4f6e17882a112a49bdfd084b519ef1cc" title=" " alt="" coords="228,13,404,38"/>
 </map>

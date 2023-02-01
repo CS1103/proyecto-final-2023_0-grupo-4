@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['generate_0',['generate',['../classkruskalGeneration_1_1Kruskal.html#a6b38965708207664e485dbb505093dba',1,'kruskalGeneration.Kruskal.generate()'],['../classWilsons_1_1Wilsons.html#a577456249666445e9eece633abd086cd',1,'Wilsons.Wilsons.generate()']]]
+  ['compare_3c_20algorithm_3a_3aa_5fstar_20_3e_0',['Compare&lt; ALGORITHM::A_STAR &gt;',['../classBot_1_1Compare_3_01ALGORITHM_1_1A__STAR_01_4.html',1,'Bot']]],
+  ['compare_3c_20algorithm_3a_3agbgs_20_3e_1',['Compare&lt; ALGORITHM::GBGS &gt;',['../classBot_1_1Compare_3_01ALGORITHM_1_1GBGS_01_4.html',1,'Bot']]]
 ];
