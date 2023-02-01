@@ -6,25 +6,26 @@ void System::run() {
 
   m_vista.startScreen();
 
-  SQUARE_TYPE W = SQUARE_TYPE::WALL;
-  SQUARE_TYPE E = SQUARE_TYPE::EMPTY;
-  SQUARE_TYPE G = SQUARE_TYPE::GOAL;
-  SQUARE_TYPE S = SQUARE_TYPE::START;
+  SQUARE_TYPE W = SQUARE_TYPE::WALL;  // NOLINT
+  SQUARE_TYPE E = SQUARE_TYPE::EMPTY; // NOLINT
+  SQUARE_TYPE G = SQUARE_TYPE::GOAL;  // NOLINT
+  SQUARE_TYPE S = SQUARE_TYPE::START; // NOLINT
 
-  std::vector<std::vector<SQUARE_TYPE>> board = {{W, W, W, W, W, W, W, W},
-                                                 {W, E, E, E, E, E, E, W},
-                                                 {W, E, W, W, W, W, W, W},
-                                                 {W, E, W, W, E, W, W, W},
-                                                 {W, E, W, W, E, W, W, W},
-                                                 {W, E, W, W, E, E, E, W},
-                                                 {W, E, W, W, E, W, E, W},
-                                                 {W, E, E, W, S, W, E, W},
-                                                 {W, W, E, W, E, W, E, W},
-                                                 {W, E, E, E, E, W, E, W},
-                                                 {W, W, E, W, W, W, W, W},
-                                                 {W, E, E, E, E, E, E, W},
-                                                 {W, W, E, W, W, W, G, W},
-                                                 {W, W, W, W, W, W, W, W}
+  [[maybe_unused]] std::vector<std::vector<SQUARE_TYPE>> board = {
+      {W, W, W, W, W, W, W, W},
+      {W, E, E, E, E, E, E, W},
+      {W, E, W, W, W, W, W, W},
+      {W, E, W, W, E, W, W, W},
+      {W, E, W, W, E, W, W, W},
+      {W, E, W, W, E, E, E, W},
+      {W, E, W, W, E, W, E, W},
+      {W, E, E, W, S, W, E, W},
+      {W, W, E, W, E, W, E, W},
+      {W, E, E, E, E, W, E, W},
+      {W, W, E, W, W, W, W, W},
+      {W, E, E, E, E, E, E, W},
+      {W, W, E, W, W, W, G, W},
+      {W, W, W, W, W, W, W, W}
 
   };
 

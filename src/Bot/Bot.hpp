@@ -36,7 +36,7 @@ private:
 
   struct Node: public square{
     Node() = default;
-    Node(const square &pos, const int &score = 0); //NOLINT
+    explicit Node(const square &pos, const int &score = 0);
     bool operator==(const square &sqr);
 
     int w_score{};

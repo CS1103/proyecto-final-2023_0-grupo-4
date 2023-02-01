@@ -55,7 +55,6 @@ Bot::solve(const Maze &maze) {
   if (!found) {
     std::cout << "No solution found" << std::endl;
     return false;
-    m_solution.clear();
   }
 
   square current = maze.getGoal();
@@ -122,7 +121,7 @@ template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
   parent[start] = start;
 
-  frontier.push(start);
+  frontier.push(Node(start));
 
   m_searchedPath.emplace(start);
 
@@ -156,7 +155,6 @@ template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
   }
   if (!found) {
     std::cout << "No solution found" << std::endl;
-    m_searchedPath.clear();
     return false;
   }
 
@@ -218,7 +216,6 @@ template <> bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze) {
   }
   if (!found) {
     std::cout << "No solution found" << std::endl;
-    m_searchedPath.clear();
     return false;
   }
 
@@ -231,7 +228,8 @@ template <> bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze) {
   return true;
 }
 
-template <bool hasNode> void PrintPriorityQueue(const auto &queue) {
+template <bool hasNode>
+[[maybe_unused]] void PrintPriorityQueue(const auto &queue) {
   auto copy = queue;
   std::cout << "Priority Queue: \n";
   if constexpr (hasNode) {

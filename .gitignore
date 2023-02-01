@@ -1,5 +1,7 @@
 # Editors
 .vscode
+cpp_check.cppcheck
+/cpp_check-cppcheck-build-dir
 
 # Building
 /build
