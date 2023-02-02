@@ -1,8 +1,12 @@
-# Editors
-.vscode
+# misc
+run_maze
+
+# cppcheck
 cpp_check.cppcheck
 /cpp_check-cppcheck-build-dir
 
+# Editors
+.vscode
 # Building
 /build
 /.cache

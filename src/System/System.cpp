@@ -49,9 +49,9 @@ void System::run() {
   std::unordered_set<square, Maze::HashPair> path;
   path.emplace(current);
 
-  int choice = 0;
+  ulong choice = 0;
 
-  while (true) {
+  while (current != tab.getGoal()) {
 
     for (const auto &row : empty_maze) {
       for (const auto &sq : row) {
@@ -83,7 +83,8 @@ void System::run() {
               << std::endl;
     std::cout << "Options: " << std::endl;
     for (const auto &option : options) {
-      std::cout << (int)option.first << " " << (int)option.second << std::endl;
+      std::cout << static_cast<int>(option.first) << " "
+                << static_cast<int>(option.second) << std::endl;
     }
     std::cout << "Choose [";
     auto opt_count = 0;
