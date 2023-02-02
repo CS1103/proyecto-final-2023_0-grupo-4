@@ -3,37 +3,44 @@
 // Temporal
 #include <iostream>
 
-const float TEXT_BUTTON_RATIO = 0.8F;
+static bool ValidateSize(const rl::Texture &texture, const rl::Text &text) {
 
-Button::Button(std::string_view text, rl::Texture &customTexture,
-               float fontSize, const rl::Color &color)
-    : m_text(rl::Text(text.data(), fontSize, color)), m_texture(customTexture) {
+  const float TEXT_BUTTON_RATIO = 0.8F;
 
-  raylib::Vector2 text_size = m_text.MeasureEx();
-  raylib::Vector2 texture_size = m_texture.GetSize();
+  raylib::Vector2 text_size = text.MeasureEx();
+  raylib::Vector2 texture_size = texture.GetSize();
 
   if (text_size.x > texture_size.x * TEXT_BUTTON_RATIO) {
-    throw std::runtime_error("Text is too big for the button");
+    std::cout << "Text is too long for the button" << std::endl;
+    // throw std::runtime_error("Text is too long for the button");
+    return false;
   }
+  if (text_size.y > texture_size.y * TEXT_BUTTON_RATIO) {
+    std::cout << "Text is too tall for the button" << std::endl;
+    // throw std::runtime_error("Text is too tall for the button");
+    return false;
+  }
+  return true;
+}
+
+Button::Button(const std::string_view &text, rl::Texture &texture,
+               const float &fontSize, const rl::Color &color)
+    : m_text(rl::Text(text.data(), fontSize, color)), m_texture(texture) {
+
+  ValidateSize(m_texture, m_text);
+}
+
+Button::Button(const std::string_view &text, float fontSize,
+               const rl::Color &color)
+    : m_text(rl::Text(text.data(), fontSize, color)),
+      m_texture(Button::defaultTexture()) {
+
+  ValidateSize(m_texture, m_text);
 }
 
 // Button::Button(std::string_view text, rl::Font &customFont) {}
 
-rl::Font &Button::defaultFont() {
-  [[clang::always_destroy]] static rl::Font default_font(
-      DEFAULT_FONT_PATH.data(), DEFAULT_FONT_SIZE, nullptr, DEFAULT_MAX_TEXT);
-  return default_font;
-}
-rl::Texture &Button::defaultTexture() {
-  // THIS MIGHT CAUSE A SIgSEV
-  // the static texture is destroyed on exit time (when the program ends)
-  // but, the window and graphics related stuff is destroyed earlier
-  // could the be what is causing the sigv?
-  static rl::Texture default_texture(DEFAULT_TEXTURE_PATH.data());
-  return default_texture;
-}
-
-void Button::draw(const int &posX, const int &posY) const {
+void Button::Draw(const int &posX, const int &posY) const {
 
   auto text_size = m_text.MeasureEx();
   auto button_size = m_texture.GetSize();

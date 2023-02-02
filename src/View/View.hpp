@@ -1,7 +1,6 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include <initializer_list>
 #include <raylib-cpp.hpp>
 
 namespace rl = raylib;
@@ -12,14 +11,17 @@ constexpr int VIEW_HEIGHT = 600;
 
 class View {
 public:
+  void startScreen();
+
 private:
-  static rl::Window &s_window;
-  static rl::Window &getWindow(const std::string &title = WINDOW_TITLE.data(),
-                               const int &width = VIEW_HEIGHT,
-                               const int &height = VIEW_HEIGHT) {
-    static rl::Window s_window(width, height, title);
+  static rl::Window &getWindow(const int &width = VIEW_WIDTH,
+                               const int &height = VIEW_HEIGHT,
+                               const std::string &name = WINDOW_TITLE.data()) {
+    static rl::Window s_window = rl::Window(width, height, name); // NOLINT
     return s_window;
   }
-  void startScreen();
+
+  rl::Window &window = getWindow();
 };
+
 #endif // !VIEW_H

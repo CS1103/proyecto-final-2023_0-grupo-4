@@ -8,7 +8,7 @@ constexpr float TITLE_SIZE = 50;
 
 void View::startScreen() {
 
-  const Button BUTTON1("Beggin game");
+  Button button1("Beggin game");
 
   const rl::Font TITLE_FONT("../src/assets/fonts/pixelplay.png");
   const rl::Text TITLE(TITLE_FONT, "Labyrinth game", TITLE_SIZE);
@@ -24,13 +24,11 @@ void View::startScreen() {
 
     window.ClearBackground();
 
-    BUTTON1.Draw(BUTTON_POS);
+    button1.Draw(BUTTON_POS);
     TITLE.Draw(TITLE_POS);
 
-    if (BUTTON1.isClicked(BUTTON_POS)) {
-      std::cout << "Clicked" << std::endl;
-      EndDrawing();
-      window.Close();
+    if (button1.isClicked(BUTTON_POS)) {
+      break;
     }
 
     EndDrawing();
