@@ -6,9 +6,6 @@
 
 constexpr float TITLE_SIZE = 50;
 
-View::View(const std::string &title, const int &width, const int &height)
-    : window(width, height, title) {}
-
 void View::startScreen() {
 
   const Button BUTTON1("Beggin game");
