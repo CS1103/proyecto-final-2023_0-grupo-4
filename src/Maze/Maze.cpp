@@ -128,10 +128,14 @@ void Maze::printMaze() {
     }
     std::cout << std::endl;
   }
-    std::cout<<" "<<" :Optimal path"<<std::endl;
-    std::cout<<" "<<" :Search attempt"<<std::endl;
-    std::cout<<""<<" :Start"<<std::endl;
-    std::cout<<" "<<" :Finish"<<std::endl;
+  std::cout << " "
+            << " :Optimal path" << std::endl;
+  std::cout << " "
+            << " :Search attempt" << std::endl;
+  std::cout << ""
+            << " :Start" << std::endl;
+  std::cout << " "
+            << " :Finish" << std::endl;
 }
 
 template <>

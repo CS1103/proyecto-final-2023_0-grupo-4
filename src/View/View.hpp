@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 
+#include <iostream>
 #include <raylib-cpp.hpp>
 
 namespace rl = raylib;

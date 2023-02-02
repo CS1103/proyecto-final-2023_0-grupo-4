@@ -1,17 +1,17 @@
 #include "View.hpp"
-#include "Button/Button.hpp"
 
-// Temporal
-#include <iostream>
-
-constexpr float TITLE_SIZE = 50;
+#include "Button.hpp"
 
 void View::startScreen() {
 
+  constexpr float TITLE_SIZE = 50;
+  constexpr std::string_view GAME_NAME = "Labyrinth game";
+  constexpr std::string_view FONT_PATH = "../src/assets/fonts/pixelplay.png";
+
   Button button1("Beggin game");
 
-  const rl::Font TITLE_FONT("../src/assets/fonts/pixelplay.png");
-  const rl::Text TITLE(TITLE_FONT, "Labyrinth game", TITLE_SIZE);
+  const rl::Font TITLE_FONT(FONT_PATH.data());
+  const rl::Text TITLE(TITLE_FONT, GAME_NAME.data(), TITLE_SIZE);
 
   const rl::Vector2 WINDOW_CENTER = {window.GetSize() / 2 -
                                      TITLE.MeasureEx() / 2};
@@ -28,9 +28,10 @@ void View::startScreen() {
     TITLE.Draw(TITLE_POS);
 
     if (button1.isClicked(BUTTON_POS)) {
-      break;
+      return;
     }
 
     EndDrawing();
   }
+  throw std::runtime_error("Window closed");
 }
