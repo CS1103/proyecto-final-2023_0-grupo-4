@@ -1,7 +1,6 @@
 #ifndef MAZE_HPP
 #define MAZE_HPP
 
-// #include "../Utils/Utils.h"
 #include <cstdint>
 #include <optional>
 #include <ostream>

@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <random>
 
-#include "../Utils/Utils.h"
+#include "../Utils/Utils.hpp"
 
 // Testing
 #include <cstdint>

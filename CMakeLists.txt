@@ -16,7 +16,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.25.2")
     message(
         STATUS
         "CMake version is less than 3.25.2,
-                                                                                                                                                                          upgrade to silence unnecesary warnings"
+                                                                                                                                                                                                                          upgrade to silence unnecesary warnings"
     )
 endif()
 
@@ -80,26 +80,29 @@ set(MODULES "All")
 set(INCLUDE_DIRS "")
 set(SOURCES "")
 
-# Recursive source and include
-# Only if Sources is empty
 if(MODULES STREQUAL "All")
     message(STATUS "Recursively searching for all source files")
-    # file(GLOB_RECURSE INCLUDE_DIRS "src/*")
-    # Test pending
+    file(GLOB_RECURSE headers_list *.hpp)
+    foreach(file_path ${headers_list})
+        get_filename_component(dir_path ${file_path} PATH)
+        list(APPEND INCLUDE_DIRS ${dir_path})
+    endforeach()
     file(GLOB_RECURSE SOURCES "src/*.cpp")
+    # If Sources is empty, search in $MODULES
 elseif(SOURCES STREQUAL "")
     message(STATUS "Recursively searching for modules: ${MODULES}")
     foreach(MODULE ${MODULES})
-        # file(GLOB_RECURSE INCLUDE_DIRS "${INCLUDE_DIRS}" "src/${MODULE}/*.h*")
+        list(APPEND INCLUDE_DIRS "src/${MODULE}")
         file(GLOB_RECURSE SOURCES "${SOURCES}" "src/${MODULE}/*.cpp")
     endforeach()
 endif()
+list(REMOVE_DUPLICATES INCLUDE_DIRS)
 
 # append src/main to SOURCES
 list(APPEND SOURCES src/main.cpp)
 
-# target_include_directories(${PROJECT_NAME}  ${INCLUDE_DIRS})
 add_executable(${PROJECT_NAME} ${SOURCES})
+target_include_directories(${PROJECT_NAME} PUBLIC ${INCLUDE_DIRS})
 
 ####################################
 
