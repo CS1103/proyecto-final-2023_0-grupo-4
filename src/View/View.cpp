@@ -25,6 +25,7 @@ void View::startScreen() {
     window.ClearBackground();
 
     button1.Draw(BUTTON_POS);
+
     TITLE.Draw(TITLE_POS);
 
     if (button1.isClicked(BUTTON_POS)) {

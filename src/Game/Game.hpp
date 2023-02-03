@@ -1,13 +1,11 @@
 #include "Maze.hpp"
 
+class Config;
+
 class Game {
 public:
-  Game() = default;
-  Game(Game &&) = default;
-  Game(const Game &) = default;
-  Game &operator=(Game &&) = default;
-  Game &operator=(const Game &) = default;
-  ~Game() = default;
+  Game(Config config, Maze maze);
 
 private:
+  Maze m_maze;
 };

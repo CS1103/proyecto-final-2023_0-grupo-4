@@ -100,4 +100,20 @@ void System::run() {
     empty_maze[current.first][current.second] = SQUARE_TYPE::PATH;
     path.emplace(current);
   }
+
+  // Ideal working scenario
+  // Pseudocode!!
+  /*
+  Config settings = view.getConfig() Maze maze(settings.boardSettings);
+
+  if (settings.humanGame) {
+
+    Game game<GAME_TYPE::HUMAN>(settings, maze);
+  } else {
+
+    Game game<GAME_TYPE::BOT>(settings, maze);
+  }
+
+  game.run();
+    */
 }

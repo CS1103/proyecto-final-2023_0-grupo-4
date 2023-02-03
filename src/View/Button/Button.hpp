@@ -29,6 +29,8 @@ public:
   explicit Button(const std::string_view &text,
                   float fontSize = DEFAULT_FONT_SIZE,
                   const rl::Color &color = WHITE);
+  // effects: std::string_view
+  // customFont rl::Font&
 
   void Draw(const int &posX = 0, const int &posY = 0) const;
 
