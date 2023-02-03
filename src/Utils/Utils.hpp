@@ -6,6 +6,8 @@
 #include <utility>
 #include <vector>
 
+using ulong = uint64_t;
+
 namespace Utils {
 
 // USING ALIASES
