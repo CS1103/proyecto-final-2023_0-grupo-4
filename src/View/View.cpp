@@ -8,7 +8,7 @@ void View::startScreen() {
   constexpr std::string_view GAME_NAME = "Labyrinth game";
   constexpr std::string_view FONT_PATH = "../src/assets/fonts/pixelplay.png";
 
-  Button button1("Beggin game");
+  Button button1("Begin game");
 
   const rl::Font TITLE_FONT(FONT_PATH.data());
   const rl::Text TITLE(TITLE_FONT, GAME_NAME.data(), TITLE_SIZE);
