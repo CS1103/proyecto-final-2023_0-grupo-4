@@ -103,17 +103,21 @@ void System::run() {
 
   // Ideal working scenario
   // Pseudocode!!
+
   /*
+
+  view.startGame();
   Config settings = view.getConfig() Maze maze(settings.boardSettings);
 
   if (settings.humanGame) {
 
-    Game game<GAME_TYPE::HUMAN>(settings, maze);
+    Game game<GAME_TYPE::HUMAN>(settings, maze, view ref);
   } else {
 
-    Game game<GAME_TYPE::BOT>(settings, maze);
+    Game game<GAME_TYPE::BOT>(settings, maze, view ref);
   }
 
   game.run();
+
     */
 }
