@@ -7,7 +7,6 @@
 // Testing
 #include <cstdint>
 #include <iostream>
-#include <sys/types.h>
 
 constexpr uint8_t MAX_WIDTH = 21;
 constexpr uint8_t MIN_WIDTH = 10;
@@ -17,7 +16,6 @@ constexpr uint8_t MIN_HEIGHT = 7;
 Maze::Maze(maze_t &maze)
     : m_maze(std::move(maze)), base_height(0), base_width(0) {
   // find SQUARE_TYPE::GOAL position in maze using std::find_if
-
   for (size_t i = 0; i < m_maze.size(); i++) {
     for (size_t j = 0; j < m_maze[i].size(); j++) {
       if (m_maze[i][j] == SQUARE_TYPE::GOAL) {
@@ -350,6 +348,10 @@ std::ostream &operator<<(std::ostream &ost, const SQUARE_TYPE &type) {
   case SQUARE_TYPE::SEARCHED:
     ost << " ";
     break;
+  case SQUARE_TYPE::CURRENT:
+    ost << "vv";
+    break;
   }
+
   return ost;
 }

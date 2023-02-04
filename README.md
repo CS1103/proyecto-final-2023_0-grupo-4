@@ -1,11 +1,41 @@
 ![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
 
-sprites:
+# TODO
 
-buttons
-background
-pared
-casilla vacia
+### media:
+
+#### square types
+- WALL
+- EMPTY
+- START
+- GOAL
+
+#### Sprites
+- button background
+- game background
+- Different end screens
+- Bot image
+
+#### Music
+
+### Para investigar:
+
+#### Search algorithms
+
+- DFG (Depth First Search)
+- BFG (Breadth First Search)
+- GBFG (Greedy Best First Search)
+- A*
+
+#### Maze generation algorithms
+
+- Kruskal
+- Wilsons (chosen one)
+
+#### Librerias
+ 
+- raylib 
+- raylib-cpp (header only, fork)
 
 # Name of the project
 > Additional information
