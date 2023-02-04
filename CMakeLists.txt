@@ -16,7 +16,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.25.2")
     message(
         STATUS
         "CMake version is less than 3.25.2,
-                                                                                                                                                                                                                              upgrade to silence unnecesary warnings"
+                                                                                                                                                                                                                                  upgrade to silence unnecesary warnings"
     )
 endif()
 
@@ -110,10 +110,9 @@ if(WIN32)
         ${APP_ICON_RESOURCE_WINDOWS}
     )
 else()
-    # set stuff for other systems
+    add_executable(${PROJECT_NAME} ${SOURCES})
 endif()
 
-add_executable(${PROJECT_NAME} ${SOURCES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${INCLUDE_DIRS})
 
 ####################################
