@@ -16,7 +16,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.25.2")
     message(
         STATUS
         "CMake version is less than 3.25.2,
-                                                                                                                                                                                                                          upgrade to silence unnecesary warnings"
+                                                                                                                                                                                                                                  upgrade to silence unnecesary warnings"
     )
 endif()
 
@@ -101,7 +101,18 @@ list(REMOVE_DUPLICATES INCLUDE_DIRS)
 # append src/main to SOURCES
 list(APPEND SOURCES src/main.cpp)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+if(WIN32)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc")
+    add_executable(
+        ${PROJECT_NAME}
+        WIN32
+        ${SOURCES}
+        ${APP_ICON_RESOURCE_WINDOWS}
+    )
+else()
+    add_executable(${PROJECT_NAME} ${SOURCES})
+endif()
+
 target_include_directories(${PROJECT_NAME} PUBLIC ${INCLUDE_DIRS})
 
 ####################################
