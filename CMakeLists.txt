@@ -102,7 +102,7 @@ list(REMOVE_DUPLICATES INCLUDE_DIRS)
 list(APPEND SOURCES src/main.cpp)
 
 if(WIN32)
-    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc")
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc" tests/test_text_builder.cpp tests/test_text_builder.h)
     add_executable(
         ${PROJECT_NAME}
         WIN32
