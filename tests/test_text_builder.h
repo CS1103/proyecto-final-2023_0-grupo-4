@@ -2,35 +2,98 @@
 #define MAZE_TEST_TEXT_BUILDER_H
 #include <raylib-cpp.hpp>
 
-typedef struct text_build {
-    std::string_view text;
-    float fontSize;
-    Color textColor;
-    float spacing;
-    std::string_view font_path;
+class TextBuilder;
 
-} Text_build;
-typedef struct TextBuilder {
+class Text {
+private:
     std::string_view text;
-    float fontSize;
-    Color textColor;
-    float spacing;
+    float fontSize = 16;
+    Color textColor = { 0, 0, 0, 0 };
+    float spacing = 5;
     std::string_view font_path;
-    TextBuilder() : text("Iorem Ipsum"), fontSize(24), textColor({ 0, 0, 0, 0 }), spacing(5), font_path("") {}
-    TextBuilder& setText(std::string_view t) { text = t; return *this; }
-    TextBuilder& setFontSize(float sz) { fontSize = sz; return *this; }
-    TextBuilder& setTextColor(Color c) { textColor = c; return *this; }
-    TextBuilder& setSpacing(float sp) { spacing = sp; return *this; }
-    Text_build build() {
-        Text_build t;
-        t.text = text;
-        t.fontSize = fontSize;
-        t.textColor = textColor;
-        t.spacing = spacing;
-        t.font_path = font_path;
-        return t;
+public:
+    friend class  TextBuilder;
+    static TextBuilder create();
+
+    [[nodiscard]] const std::string_view &getText() const {
+        return text;
     }
-} TextBuilder;
 
+    [[nodiscard]] const float &getFontSize() const{
+        return fontSize;
+    }
+
+    [[nodiscard]] const Color &getTextColor() const{
+        return textColor;
+    }
+
+    [[nodiscard]] float getSpacing() const {
+        return spacing;
+    }
+
+    [[nodiscard]] const std::string_view &getFontPath() const {
+        return font_path;
+    }
+
+};
+
+class TextBuilder {
+private:
+    Text text;
+public:
+    operator Text() const{
+        return text;
+    }
+
+    TextBuilder& setText() {
+        return *this;
+    }
+    TextBuilder& setText(std::string_view t) {
+        text.text = t;
+        return *this;
+    }
+
+    TextBuilder& setFontSize() {
+        return *this;
+    }
+    TextBuilder& setFontSize(float sz) {
+        text.fontSize = sz;
+        return *this;
+    }
+
+    TextBuilder& setTextColor() {
+        return *this;
+    }
+    TextBuilder& setTextColor(Color c) {
+        text.textColor = c;
+        return *this;
+    }
+
+    TextBuilder& setSpacing() {
+        return *this;
+    }
+    TextBuilder& setSpacing(float sp) {
+        text.spacing = sp; return *this;
+    }
+
+    TextBuilder& setFontPath() {
+        return *this;
+    }
+    TextBuilder& setFontPath(std::string_view fp) {
+        text.font_path = fp;
+        return *this;
+    }
+};
+
+
+int test(){
+    Text text = TextBuilder()
+            .setText("ae")
+            .setFontSize(36)
+            .setTextColor({ 0, 0, 0, 255 })
+            .setSpacing(3)
+            .setFontPath("");
+    return 0;
+}
 
 #endif //MAZE_TEST_TEXT_BUILDER_H
