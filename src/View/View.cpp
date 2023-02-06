@@ -42,6 +42,5 @@ Config View::GetConfig() {
    * GAME_TYPE = BOT | HUMAN
    * TIMED = true | false
    * SIZE = {INT, INT}
-   * 1
    */
 }

@@ -28,13 +28,22 @@ Maze::Maze(maze_t &maze)
   }
 }
 
-Maze::Maze(uint8_t customHeight, uint8_t customWidth, HUNT_METHOD huntMethod)
+Maze::Maze(const uint8_t &customHeight, const uint8_t &customWidth,
+           HUNT_METHOD huntMethod)
     : base_height(customHeight), base_width(customWidth) {
   uint8_t height = base_height * 2 + 1;
   uint8_t width = base_width * 2 + 1;
 
   generateMaze(height, width, huntMethod);
 }
+Maze::Maze(const BoardSize &size, HUNT_METHOD huntMethod)
+    : base_height(size.height), base_width(size.width) {
+  uint8_t height = base_height * 2 + 1;
+  uint8_t width = base_width * 2 + 1;
+
+  generateMaze(height, width, huntMethod);
+}
+
 Maze::Maze(HUNT_METHOD huntMethod)
     : base_height(Utils::RandomNum<uint8_t>(MIN_HEIGHT, MAX_HEIGHT)),
       base_width(Utils::RandomNum<uint8_t>(MIN_WIDTH, MAX_WIDTH)) {

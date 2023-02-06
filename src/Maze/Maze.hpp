@@ -1,6 +1,7 @@
 #ifndef MAZE_HPP
 #define MAZE_HPP
 
+#include "Config.hpp"
 #include <cstdint>
 #include <optional>
 #include <ostream>
@@ -34,8 +35,10 @@ public:
 
   explicit Maze(maze_t &maze);
   explicit Maze(HUNT_METHOD huntMethod = DEFAULT_HUNT_METHOD);
-  Maze(uint8_t height, uint8_t width,
+  Maze(const uint8_t &height, const uint8_t &width,
        HUNT_METHOD huntMethod = DEFAULT_HUNT_METHOD);
+  explicit Maze(const BoardSize &size,
+                HUNT_METHOD huntMethod = DEFAULT_HUNT_METHOD);
 
   void printMaze();
   [[nodiscard]] maze_t getMaze() const;
