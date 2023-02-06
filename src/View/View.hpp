@@ -16,24 +16,23 @@ constexpr std::string_view BACKGROUND_TEXTURE =
 
 class View {
 public:
-  void startScreen();
-  Config getConfig();
+  void StartScreen();
+  Config GetConfig();
 
 private:
-  static rl::Window &getWindow(const int &width = VIEW_WIDTH,
+  static rl::Window &GetWindow(const int &width = VIEW_WIDTH,
                                const int &height = VIEW_HEIGHT,
                                const std::string &name = WINDOW_TITLE.data()) {
     static rl::Window s_window = rl::Window(width, height, name); // NOLINT
     return s_window;
   }
-  static rl::Texture &getBackground() {
-    static rl::Texture s_background =
-        rl::Texture(BACKGROUND_TEXTURE.data()); // NOLINT
+  static rl::Texture &GetBackground() {
+    static rl::Texture s_background = rl::Texture(BACKGROUND_TEXTURE.data());
     return s_background;
   }
 
-  rl::Window &window = getWindow();
-  rl::Texture &background = getBackground();
+  rl::Window &window = GetWindow();
+  rl::Texture &background = GetBackground();
 };
 
 #endif // !VIEW_H

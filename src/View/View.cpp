@@ -3,7 +3,7 @@
 
 using Utils::Vector2I;
 
-void View::startScreen() {
+void View::StartScreen() {
 
   // constexpr float TITLE_SIZE = 50;
   // constexpr std::string_view GAME_NAME = "Labyrinth game";
@@ -14,7 +14,7 @@ void View::startScreen() {
   const Vector2I TITLE_POS = WINDOW_CENTER - Vector2I(0, 40);
   const Vector2I BUTTON_POS = WINDOW_CENTER + rl::Vector2(0, 40);
 
-  const rl::Text TITLE = Utils::DEFAULT_TITLE_TEXT;
+  const rl::Text TITLE = Utils::DefaultTitleText();
   Button button1 = ButtonBuilder(); //.name("beggin_game").pos(BUTTON_POS);
 
   while (!window.ShouldClose()) {
@@ -36,7 +36,7 @@ void View::startScreen() {
   }
 }
 
-Config View::getConfig() {
+Config View::GetConfig() {
 
   /* Settings
    * GAME_TYPE = BOT | HUMAN

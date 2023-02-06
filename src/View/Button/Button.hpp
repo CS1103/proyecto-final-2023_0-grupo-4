@@ -22,7 +22,7 @@ namespace rl = raylib;
 
 class Button {
 public:
-  explicit Button(const ButtonBuilder &builder = Utils::DEFAULT_BUTTON);
+  explicit Button(const ButtonBuilder &builder = Utils::DefaultButton());
 
   void Draw() const;
 
