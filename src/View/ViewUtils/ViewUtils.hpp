@@ -15,16 +15,16 @@ bool NumLarge(const std::string &input);
 
 } // namespace Validators
 
-const FontBuilder DEFAULT_TITLE_FONT;
-const TextBuilder DEFAULT_TITLE_TEXT;
+const FontBuilder DefaultTitleFont();
+const TextBuilder DefaultTitleText();
 
-const FontBuilder DEFAULT_BUTTON_FONT;
-const TextBuilder DEFAULT_BUTTON_TEXT;
-const ButtonBuilder DEFAULT_BUTTON;
+const FontBuilder DefaultButtonFont();
+const TextBuilder DefaultButtonText();
+const ButtonBuilder DefaultButton();
 
-const FontBuilder DEFAULT_TEXT_BOX_FONT;
-const TextBuilder DEFAULT_TEXT_BOX_TEXT;
-const TextBoxBuilder DEFAULT_TEXT_BOX;
+const FontBuilder DefaultTextBoxFont();
+const TextBuilder DefaultTextBoxText();
+const TextBoxBuilder DefaultTextBox();
 
 } // namespace Utils
 
