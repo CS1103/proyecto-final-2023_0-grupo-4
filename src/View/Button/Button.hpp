@@ -2,6 +2,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "ViewUtils/ViewUtils.hpp"
 #include <optional>
 #include <raylib-cpp.hpp>
 #include <string_view>
@@ -21,54 +22,49 @@ namespace rl = raylib;
 // ignore invalid case style
 class Button {
 public:
-  Button() = delete;
-
   explicit Button(const std::string_view &text, rl::Texture &texture,
                   const float &fontSize = DEFAULT_FONT_SIZE,
                   const rl::Color &color = WHITE);
   explicit Button(const std::string_view &text,
                   float fontSize = DEFAULT_FONT_SIZE,
                   const rl::Color &color = WHITE);
-  // effects: std::string_view
-  // customFont rl::Font&
 
-  void Draw(const int &posX = 0, const int &posY = 0) const;
+  // PRESET_TEXT_CONFIGS
+
+  // Text: std::string_view
+  // fontSize: float
+  // Color: raylib::Color
+  // spacing: float
+  // CUSTOM FONTS
+  // FontPath: std::string_view
+  // FontPath: PRESET_FONTS
+
+  void Draw(const int &posX, const int &posY) const;
 
   [[nodiscard]] bool isClicked(const int &posX, const int &posY) const;
 
-  [[nodiscard]] inline bool isClicked(const rl::Vector2 &pos) const {
-    return isClicked(static_cast<int>(pos.x), static_cast<int>(pos.y));
+  [[nodiscard]] inline bool isClicked(const Utils::Vector2I &pos) const {
+    return isClicked(pos.x, pos.y);
   }
 
-  inline void Draw(const rl::Vector2 &pos) const {
-    this->Draw(static_cast<int>(pos.x), static_cast<int>(pos.y));
+  inline void Draw(const Utils::Vector2I &pos) const {
+    this->Draw(pos.x, pos.y);
   }
 
   [[nodiscard]] inline rl::Vector2 GetSize() const {
-    // if (m_texture.has_value()) {
-    //   return m_texture.value()();
-    // }
-    // return defaultTexture().GetSize();
-
-    // Funcionara? xd
     return m_texture.GetSize();
   }
 
 private:
   rl::Text m_text;
   rl::Texture &m_texture;
+  int xPos;
+  int yPos;
 
-  inline static rl::Texture &defaultTexture() {
+  inline static rl::Texture &defaultButtonTexture() {
     static rl::Texture s_texture(
         "../src/assets/Textures/test_old_button.png"); // NOLINT
     return s_texture;
-  }
-
-  inline static rl::Font &defaultFont() {
-    static rl::Font default_font(DEFAULT_FONT_PATH.data(),
-                                 DEFAULT_FONT_SIZE, // NOLINT
-                                 nullptr, DEFAULT_MAX_TEXT);
-    return default_font;
   }
 };
 

@@ -1,6 +1,8 @@
 #include "View.hpp"
-
 #include "Button.hpp"
+
+using rl::Text;
+using Utils::Vector2I;
 
 void View::startScreen() {
 
@@ -8,31 +10,43 @@ void View::startScreen() {
   constexpr std::string_view GAME_NAME = "Labyrinth game";
   constexpr std::string_view FONT_PATH = "../src/assets/fonts/pixelplay.png";
 
-  Button button1("Beggin game");
+  const Text TITLE(rl::Font(FONT_PATH.data()), GAME_NAME.data(), TITLE_SIZE);
 
-  const rl::Font TITLE_FONT(FONT_PATH.data());
-  const rl::Text TITLE(TITLE_FONT, GAME_NAME.data(), TITLE_SIZE);
+  const Text TITLE = Utils::DEFAULT_TITLE_TEXT;
 
-  const rl::Vector2 WINDOW_CENTER = {window.GetSize() / 2 -
-                                     TITLE.MeasureEx() / 2};
+  // Button button1("Beggin game");
+  Button button1 = ButtonBuilder().name("beggin_game");
 
-  const rl::Vector2 TITLE_POS = WINDOW_CENTER - rl::Vector2(0, 40);
-  const rl::Vector2 BUTTON_POS = WINDOW_CENTER + rl::Vector2(0, 40);
+  const Vector2I WINDOW_CENTER =
+      Vector2I({window.GetSize() / 2 - TITLE.MeasureEx() / 2});
+  const Vector2I TITLE_POS = WINDOW_CENTER - Vector2I(0, 40);
+  const Vector2I BUTTON_POS = WINDOW_CENTER + rl::Vector2(0, 40);
 
   while (!window.ShouldClose()) {
-    BeginDrawing();
-
-    window.ClearBackground();
-
-    button1.Draw(BUTTON_POS);
-
-    TITLE.Draw(TITLE_POS);
 
     if (button1.isClicked(BUTTON_POS)) {
       return;
     }
 
+    BeginDrawing();
+
+    window.ClearBackground();
+
+    background.Draw(0, 0);
+    button1.Draw(BUTTON_POS);
+
+    TITLE.Draw(TITLE_POS);
+
     EndDrawing();
   }
-  throw std::runtime_error("Window closed");
+}
+
+Config View::getConfig() {
+
+  /* Settings
+   * GAME_TYPE = BOT | HUMAN
+   * TIMED = true | false
+   * SIZE = {INT, INT}
+   * 1
+   */
 }
