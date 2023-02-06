@@ -16,7 +16,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.25.2")
     message(
         STATUS
         "CMake version is less than 3.25.2,
-                                                                                                                                                                                                                                      upgrade to silence unnecesary warnings"
+                                                                                                                                                                                                                                                      upgrade to silence unnecesary warnings"
     )
 endif()
 
@@ -70,6 +70,19 @@ if(NOT LSB_RELEASE_ID_SHORT STREQUAL "Arch")
     endif()
 endif()
 
+# Set option to control setting the resource path variable
+option(USE_INSTALL_RESOURCE_PATH "Set resource path to install location" OFF)
+
+if(NOT USE_INSTALL_RESOURCE_PATH)
+    set(RESOURCE_PATH "${PROJECT_SOURCE_DIR}/assets/")
+else()
+    set(RESOURCE_PATH
+        "${CMAKE_INSTALL_PREFIX}/share/${CMAKE_PROJECT_NAME}/assets/"
+    )
+endif()
+
+configure_file(include/config.h.in config.h)
+
 ############### MAIN ###############
 
 # This is the main part:
@@ -100,6 +113,7 @@ list(REMOVE_DUPLICATES INCLUDE_DIRS)
 
 # append src/main to SOURCES
 list(APPEND SOURCES src/main.cpp)
+list(APPEND INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 if(WIN32)
     set(APP_ICON_RESOURCE "${CMAKE_CURRENT_SOURCE_DIR}/appicon.rc")
@@ -108,7 +122,7 @@ else()
     add_executable(${PROJECT_NAME} ${SOURCES})
 endif()
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIRS})
 
 ####################################
 
@@ -132,9 +146,20 @@ endif()
 
 target_compile_options(${PROJECT_NAME} PRIVATE ${WARNINGS} -g)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
+set_target_properties(
+    ${PROJECT_NAME}
+    PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib" CXX_STANDARD 20
+)
+
 if(LSB_RELEASE_ID_SHORT STREQUAL "Arch")
     target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
 else()
     target_link_libraries(${PROJECT_NAME} PRIVATE raylib raylib_cpp)
 endif()
+
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+install(
+    DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/assets
+    DESTINATION "${CMAKE_INSTALL_PREFIX}/share/${CMAKE_PROJECT_NAME}"
+)
