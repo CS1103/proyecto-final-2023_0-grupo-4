@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['kruskalgeneration_2epy_0',['kruskalGeneration.py',['../kruskalGeneration_8py.html',1,'']]]
+  ['game_2ecpp_0',['Game.cpp',['../Game_8cpp.html',1,'']]],
+  ['game_2ehpp_1',['Game.hpp',['../Game_8hpp.html',1,'']]]
 ];

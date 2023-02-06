@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../namespacewil__test.html#a813fcda320bebbdb3ecf67e4c0469151',1,'wil_test.x()'],['../namespaceWilsons.html#a86cbe5be2b2f5f1583b47c6253fbce53',1,'Wilsons.x()']]]
+  ['text_0',['text',['../structButtonBuilder.html#a69c523202125e8c3a5d3d839996769ec',1,'ButtonBuilder::text()'],['../structTextBoxBuilder.html#a4a048d8c5832aa74528fe741033a50b1',1,'TextBoxBuilder::text()']]],
+  ['texture_1',['texture',['../structButtonBuilder.html#a63431c219ea58d80314f5f6ed0cbe55d',1,'ButtonBuilder']]]
 ];

@@ -1,0 +1,6 @@
+<map id="View::StartScreen" name="View::StartScreen">
+<area shape="rect" id="node1" title=" " alt="" coords="5,55,141,80"/>
+<area shape="rect" id="node2" href="$namespaceUtils.html#a76d8666937d3946f945924d0e1c09048" title=" " alt="" coords="189,5,353,31"/>
+<area shape="rect" id="node3" href="$classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5" title=" " alt="" coords="218,55,325,80"/>
+<area shape="rect" id="node4" href="$classButton.html#aab1ad2d49a14280058ef02b8940ef857" title=" " alt="" coords="206,104,337,129"/>
+</map>

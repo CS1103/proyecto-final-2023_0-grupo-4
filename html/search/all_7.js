@@ -1,8 +1,19 @@
 var searchData=
 [
-  ['h_0',['h',['../classkruskalGeneration_1_1Kruskal.html#a23f24d9308ec255ea1be3e4cbae26704',1,'kruskalGeneration.Kruskal.h()'],['../classWilsons_1_1Wilsons.html#a8775ed3d84280ef18d7e9f61874969d3',1,'Wilsons.Wilsons.h()']]],
-  ['h_1',['H',['../classkruskalGeneration_1_1Kruskal.html#a6bca4d51422a68557188152e9b47abaa',1,'kruskalGeneration.Kruskal.H()'],['../classWilsons_1_1Wilsons.html#aafc217bf39ca74903087a3b984625517',1,'Wilsons.Wilsons.H()']]],
-  ['h_2',['h',['../namespacewil__test.html#a9fd96072f42e45472e017d3a9035422e',1,'wil_test']]],
-  ['hashpair_3',['HashPair',['../structMaze_1_1HashPair.html',1,'Maze']]],
-  ['hunt_5fmethod_4',['HUNT_METHOD',['../Maze_8hpp.html#a9e185ea43686245c2d72b255ce5aa92c',1,'Maze.hpp']]]
+  ['game_0',['Game',['../classGame.html#af1ce284f5951b9875200ad00208ecd53',1,'Game::Game()'],['../classGame.html',1,'Game']]],
+  ['game_2ecpp_1',['Game.cpp',['../Game_8cpp.html',1,'']]],
+  ['game_2ehpp_2',['Game.hpp',['../Game_8hpp.html',1,'']]],
+  ['gbgs_3',['GBGS',['../Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3ad140102c50921e600d47d1f04d52a02c',1,'Bot.hpp']]],
+  ['generate_4',['generate',['../classkruskalGeneration_1_1Kruskal.html#a6b38965708207664e485dbb505093dba',1,'kruskalGeneration.Kruskal.generate()'],['../classWilsons_1_1Wilsons.html#a577456249666445e9eece633abd086cd',1,'Wilsons.Wilsons.generate()'],['../namespacewil__test.html#a14db617f4912b950f4cfd614f174a038',1,'wil_test.generate()']]],
+  ['getconfig_5',['GetConfig',['../classView.html#a42e22c654604d54f556595924b59d919',1,'View']]],
+  ['getgoal_6',['getGoal',['../classMaze.html#ae2d2a2563035716f3e801a7de8daa070',1,'Maze']]],
+  ['getmaze_7',['getMaze',['../classMaze.html#a84dc56eb84ca1214bea0d54bb06466ad',1,'Maze']]],
+  ['getneighbors_8',['getNeighbors',['../classMaze.html#aa07e3cce6e183c8eeb5fd12b00c3884d',1,'Maze']]],
+  ['getsearchedpath_9',['getSearchedPath',['../classBot.html#a7c231f82ece501c1b2b36140b08aea6c',1,'Bot']]],
+  ['getsize_10',['GetSize',['../classTextBox.html#a31e095df0dd877c9ba5339aa7a925324',1,'TextBox::GetSize()'],['../classButton.html#ae77100bedafd0b7da598358aaa1e67d4',1,'Button::GetSize()']]],
+  ['getsolution_11',['getSolution',['../classBot.html#aa687a314eb8b70c5cc3f7de5ffd6aa60',1,'Bot']]],
+  ['getstart_12',['getStart',['../classMaze.html#aff50edc88fe7f98440f59c6624ebcbaf',1,'Maze']]],
+  ['gettext_13',['GetText',['../classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26',1,'TextBox']]],
+  ['goal_14',['GOAL',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a007a3c4175ca4f86d9dc49e4f2e9cf8a',1,'Maze.hpp']]],
+  ['goal_5ftexture_5fpath_15',['GOAL_TEXTURE_PATH',['../ViewMaze_8hpp.html#ac37f1e2e67ae6cd13b1175043b59a267',1,'ViewMaze.hpp']]]
 ];

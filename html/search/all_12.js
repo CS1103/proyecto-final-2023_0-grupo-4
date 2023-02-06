@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['view_0',['View',['../classView.html',1,'View'],['../classView.html#a24ffab90fe09c4e932ab80d851713c8f',1,'View::View()']]],
-  ['view_2ecpp_1',['View.cpp',['../View_8cpp.html',1,'']]],
-  ['view_2ehpp_2',['View.hpp',['../View_8hpp.html',1,'']]],
-  ['view_5fheight_3',['VIEW_HEIGHT',['../View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736',1,'View.hpp']]],
-  ['view_5fwidth_4',['VIEW_WIDTH',['../View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b',1,'View.hpp']]]
+  ['ulong_0',['ulong',['../Utils_8hpp.html#aa101a597b9d65782a057d7524794efc4',1,'Utils.hpp']]],
+  ['unsignedtosigned_1',['UnsignedToSigned',['../namespaceUtils.html#a2cdd8130044b3e6f4c96fc6ccec8326c',1,'Utils']]],
+  ['utils_2',['Utils',['../namespaceUtils.html',1,'']]],
+  ['utils_2ecpp_3',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
+  ['utils_2ehpp_4',['Utils.hpp',['../Utils_8hpp.html',1,'']]],
+  ['validators_5',['Validators',['../namespaceUtils_1_1Validators.html',1,'Utils']]]
 ];

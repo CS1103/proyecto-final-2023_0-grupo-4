@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['wall_0',['WALL',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a48d536b2de1195d0c9f6ea8ab884085e',1,'Maze.hpp']]]
+  ['searched_0',['SEARCHED',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a77ff0693e1bffd8c0e7c2c95a138cc2b',1,'Maze.hpp']]],
+  ['serpentine_1',['SERPENTINE',['../Maze_8hpp.html#a9e185ea43686245c2d72b255ce5aa92ca135acdcbb70a072902dd7473c1d3003a',1,'Maze.hpp']]],
+  ['start_2',['START',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39ab078ffd28db767c502ac367053f6e0ac',1,'Maze.hpp']]]
 ];

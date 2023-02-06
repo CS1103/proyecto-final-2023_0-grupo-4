@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['game_2ecpp_0',['Game.cpp',['../Game_8cpp.html',1,'']]],
-  ['game_2ehpp_1',['Game.hpp',['../Game_8hpp.html',1,'']]]
+  ['config_2ehpp_0',['Config.hpp',['../Config_8hpp.html',1,'']]]
 ];

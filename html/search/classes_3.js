@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kruskal_0',['Kruskal',['../classkruskalGeneration_1_1Kruskal.html',1,'kruskalGeneration']]]
+  ['game_0',['Game',['../classGame.html',1,'']]]
 ];

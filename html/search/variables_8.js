@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['text_5fbutton_5fratio_0',['TEXT_BUTTON_RATIO',['../Button_8cpp.html#aec894bf1a5a52c2cf25fe6e95dce4adc',1,'Button.cpp']]],
-  ['title_5fsize_1',['TITLE_SIZE',['../View_8cpp.html#a2e2713d9faa15b9d12ccd5681d455f66',1,'View.cpp']]]
+  ['pos_0',['pos',['../structButtonBuilder.html#a1e9ffeb0bc1eecdc3e516b90e3f5af36',1,'ButtonBuilder::pos()'],['../structTextBoxBuilder.html#abe157a5758d659892135f5c9d7c935b1',1,'TextBoxBuilder::pos()']]]
 ];

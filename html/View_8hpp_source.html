@@ -80,30 +80,49 @@ $(function() {
 <a href="View_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VIEW_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define VIEW_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;raylib-cpp.hpp&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">    7</a></span><span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a> = <span class="stringliteral">&quot;GAME_NAME&quot;</span>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">    8</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">VIEW_WIDTH</a> = 800;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">    9</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a> = 600;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classView.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="classView.html">View</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="classView.html">View</a>(<span class="keyword">const</span> std::string &amp;title = <a class="code hl_variable" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a>.data(),</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;width = <a class="code hl_variable" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a>,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;height = <a class="code hl_variable" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a>);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classView.html#a051ec2c59848c41055eedaa909bece18">startScreen</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  raylib::Window window;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;../Config/Config.hpp&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;raylib-cpp.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>rl = raylib;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">   10</a></span><span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a> = <span class="stringliteral">&quot;GAME_NAME&quot;</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">   11</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">VIEW_WIDTH</a> = 800;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">   12</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a> = 600;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="View_8hpp.html#a5cf2009adbcb89c15b63e8aa92c87330">   14</a></span><span class="keyword">constexpr</span> std::string_view <a class="code hl_variable" href="View_8hpp.html#a5cf2009adbcb89c15b63e8aa92c87330">BACKGROUND_TEXTURE</a> =</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="stringliteral">&quot;../src/assets/Textures/floor_tile_v2.jpg&quot;</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classView.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="classView.html">View</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3">StartScreen</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_class" href="classConfig.html">Config</a> <a class="code hl_function" href="classView.html#a42e22c654604d54f556595924b59d919">GetConfig</a>();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">// !VIEW_H</span></div>
-<div class="ttc" id="aView_8hpp_html_a9b647721c51ddbfcc309049b460aab4b"><div class="ttname"><a href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">VIEW_WIDTH</a></div><div class="ttdeci">constexpr int VIEW_WIDTH</div><div class="ttdef"><b>Definition:</b> View.hpp:8</div></div>
-<div class="ttc" id="aView_8hpp_html_aa0f59b6aa7e9a2ee7ef806e14567c736"><div class="ttname"><a href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a></div><div class="ttdeci">constexpr int VIEW_HEIGHT</div><div class="ttdef"><b>Definition:</b> View.hpp:9</div></div>
-<div class="ttc" id="aView_8hpp_html_ac6e5c63f4fed46805580a83a38ecd26a"><div class="ttname"><a href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a></div><div class="ttdeci">constexpr std::string_view WINDOW_TITLE</div><div class="ttdef"><b>Definition:</b> View.hpp:7</div></div>
-<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> View.hpp:11</div></div>
-<div class="ttc" id="aclassView_html_a051ec2c59848c41055eedaa909bece18"><div class="ttname"><a href="classView.html#a051ec2c59848c41055eedaa909bece18">View::startScreen</a></div><div class="ttdeci">void startScreen()</div><div class="ttdef"><b>Definition:</b> View.cpp:12</div></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">static</span> rl::Window &amp;GetWindow(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;width = <a class="code hl_variable" href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">VIEW_WIDTH</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                               <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;height = <a class="code hl_variable" href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                               <span class="keyword">const</span> std::string &amp;name = <a class="code hl_variable" href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a>.data()) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> rl::Window s_window = rl::Window(width, height, name); <span class="comment">// NOLINT</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> s_window;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">static</span> rl::Texture &amp;GetBackground() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">static</span> rl::Texture s_background = rl::Texture(<a class="code hl_variable" href="View_8hpp.html#a5cf2009adbcb89c15b63e8aa92c87330">BACKGROUND_TEXTURE</a>.data());</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> s_background;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  rl::Window &amp;window = GetWindow();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  rl::Texture &amp;background = GetBackground();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif </span><span class="comment">// !VIEW_H</span></div>
+<div class="ttc" id="aView_8hpp_html_a5cf2009adbcb89c15b63e8aa92c87330"><div class="ttname"><a href="View_8hpp.html#a5cf2009adbcb89c15b63e8aa92c87330">BACKGROUND_TEXTURE</a></div><div class="ttdeci">constexpr std::string_view BACKGROUND_TEXTURE</div><div class="ttdef"><b>Definition:</b> View.hpp:14</div></div>
+<div class="ttc" id="aView_8hpp_html_a9b647721c51ddbfcc309049b460aab4b"><div class="ttname"><a href="View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b">VIEW_WIDTH</a></div><div class="ttdeci">constexpr int VIEW_WIDTH</div><div class="ttdef"><b>Definition:</b> View.hpp:11</div></div>
+<div class="ttc" id="aView_8hpp_html_aa0f59b6aa7e9a2ee7ef806e14567c736"><div class="ttname"><a href="View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736">VIEW_HEIGHT</a></div><div class="ttdeci">constexpr int VIEW_HEIGHT</div><div class="ttdef"><b>Definition:</b> View.hpp:12</div></div>
+<div class="ttc" id="aView_8hpp_html_ac6e5c63f4fed46805580a83a38ecd26a"><div class="ttname"><a href="View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a">WINDOW_TITLE</a></div><div class="ttdeci">constexpr std::string_view WINDOW_TITLE</div><div class="ttdef"><b>Definition:</b> View.hpp:10</div></div>
+<div class="ttc" id="aclassConfig_html"><div class="ttname"><a href="classConfig.html">Config</a></div><div class="ttdef"><b>Definition:</b> Config.hpp:4</div></div>
+<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> View.hpp:17</div></div>
+<div class="ttc" id="aclassView_html_a42e22c654604d54f556595924b59d919"><div class="ttname"><a href="classView.html#a42e22c654604d54f556595924b59d919">View::GetConfig</a></div><div class="ttdeci">Config GetConfig()</div><div class="ttdef"><b>Definition:</b> View.cpp:39</div></div>
+<div class="ttc" id="aclassView_html_a79001f5b9d8ffd795ffcca2fbaaffcc3"><div class="ttname"><a href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3">View::StartScreen</a></div><div class="ttdeci">void StartScreen()</div><div class="ttdef"><b>Definition:</b> View.cpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

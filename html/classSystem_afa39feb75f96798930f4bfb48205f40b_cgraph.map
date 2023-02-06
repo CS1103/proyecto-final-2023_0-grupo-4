@@ -1,8 +1,7 @@
 <map id="System::run" name="System::run">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,105,129"/>
-<area shape="rect" id="node2" href="$classBot.html#a7c231f82ece501c1b2b36140b08aea6c" title=" " alt="" coords="153,5,315,31"/>
-<area shape="rect" id="node3" href="$classBot.html#aa687a314eb8b70c5cc3f7de5ffd6aa60" title=" " alt="" coords="171,55,297,80"/>
-<area shape="rect" id="node4" href="$classMaze.html#ae28e95ab2eab3dadaf84ff0a6b4da7fe" title=" " alt="" coords="171,104,297,129"/>
-<area shape="rect" id="node5" href="$classMaze.html#a03e0a826d218517bf909cf33987dc605" title=" " alt="" coords="169,153,299,179"/>
-<area shape="rect" id="node6" href="$classBot.html#a50c54f329c493e1947f72ab2b14165ef" title=" " alt="" coords="191,203,277,228"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,105,105"/>
+<area shape="rect" id="node2" href="$classMaze.html#ae2d2a2563035716f3e801a7de8daa070" title=" " alt="" coords="171,5,287,31"/>
+<area shape="rect" id="node3" href="$classMaze.html#a84dc56eb84ca1214bea0d54bb06466ad" title=" " alt="" coords="169,55,290,80"/>
+<area shape="rect" id="node4" href="$classMaze.html#aa07e3cce6e183c8eeb5fd12b00c3884d" title=" " alt="" coords="153,104,305,129"/>
+<area shape="rect" id="node5" href="$classMaze.html#aff50edc88fe7f98440f59c6624ebcbaf" title=" " alt="" coords="171,153,288,179"/>
 </map>

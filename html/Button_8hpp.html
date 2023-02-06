@@ -75,12 +75,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">Button.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;raylib-cpp.hpp&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="ButtonBuilder_8hpp_source.html">Builders/ButtonBuilder.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ViewUtils_8hpp_source.html">ViewUtils/ViewUtils.hpp</a>&quot;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;raylib-cpp.hpp&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -88,10 +90,24 @@ Include dependency graph for Button.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Button_8hpp__incl.png" border="0" usemap="#asrc_2View_2Button_2Button_8hpp" alt=""/></div>
 <map name="asrc_2View_2Button_2Button_8hpp" id="asrc_2View_2Button_2Button_8hpp">
-<area shape="rect" title=" " alt="" coords="94,5,293,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,120,104"/>
-<area shape="rect" title=" " alt="" coords="145,79,242,104"/>
-<area shape="rect" title=" " alt="" coords="266,79,329,104"/>
+<area shape="rect" title=" " alt="" coords="139,5,338,31"/>
+<area shape="rect" href="ButtonBuilder_8hpp.html" title=" " alt="" coords="100,225,295,251"/>
+<area shape="rect" title=" " alt="" coords="5,299,120,324"/>
+<area shape="rect" href="ViewUtils_8hpp.html" title=" " alt="" coords="75,79,253,104"/>
+<area shape="rect" title=" " alt="" coords="277,79,352,104"/>
+<area shape="rect" title=" " alt="" coords="377,79,474,104"/>
+<area shape="rect" title=" " alt="" coords="498,79,561,104"/>
+<area shape="rect" href="Vector2I_8hpp.html" title=" " alt="" coords="185,299,287,324"/>
+<area shape="rect" title=" " alt="" coords="245,372,344,397"/>
+<area shape="rect" title=" " alt="" coords="506,372,617,397"/>
+<area shape="rect" title=" " alt="" coords="134,372,221,397"/>
+<area shape="rect" href="Builders_8hpp.html" title=" " alt="" coords="279,152,382,177"/>
+<area shape="rect" title=" " alt="" coords="135,152,193,177"/>
+<area shape="rect" href="TextBoxBuilder_8hpp.html" title=" " alt="" coords="319,225,465,251"/>
+<area shape="rect" href="TextBuiler_8hpp.html" title=" " alt="" coords="489,225,604,251"/>
+<area shape="rect" title=" " alt="" coords="423,299,500,324"/>
+<area shape="rect" title=" " alt="" coords="311,299,398,324"/>
+<area shape="rect" title=" " alt="" coords="525,299,603,324"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -111,111 +127,7 @@ This graph shows which files directly or indirectly include this file:</div>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classButton.html">Button</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ae8d3c2d6ddd47b58daec691a5a3791fa"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Button_8hpp.html#ae8d3c2d6ddd47b58daec691a5a3791fa">DEFAULT_FONT_PATH</a></td></tr>
-<tr class="separator:ae8d3c2d6ddd47b58daec691a5a3791fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5212415ec49ce953d35dda2dab1d7b8a"><td class="memItemLeft" align="right" valign="top">constexpr std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Button_8hpp.html#a5212415ec49ce953d35dda2dab1d7b8a">DEFAULT_TEXTURE_PATH</a></td></tr>
-<tr class="separator:a5212415ec49ce953d35dda2dab1d7b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2ac60e92404fdb9d949e7f4a31444cd"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Button_8hpp.html#af2ac60e92404fdb9d949e7f4a31444cd">DEFAULT_FONT_SIZE</a> = 20</td></tr>
-<tr class="separator:af2ac60e92404fdb9d949e7f4a31444cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ae5e6e62067f2fe01175911bc052ddc"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Button_8hpp.html#a4ae5e6e62067f2fe01175911bc052ddc">DEFAULT_MAX_TEXT</a> = 50</td></tr>
-<tr class="separator:a4ae5e6e62067f2fe01175911bc052ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ae8d3c2d6ddd47b58daec691a5a3791fa" name="ae8d3c2d6ddd47b58daec691a5a3791fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8d3c2d6ddd47b58daec691a5a3791fa">&#9670;&#160;</a></span>DEFAULT_FONT_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr std::string_view DEFAULT_FONT_PATH</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    <span class="stringliteral">&quot;../src/assets/fonts/alpha_beta.png&quot;</span></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="af2ac60e92404fdb9d949e7f4a31444cd" name="af2ac60e92404fdb9d949e7f4a31444cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2ac60e92404fdb9d949e7f4a31444cd">&#9670;&#160;</a></span>DEFAULT_FONT_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr int DEFAULT_FONT_SIZE = 20</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4ae5e6e62067f2fe01175911bc052ddc" name="a4ae5e6e62067f2fe01175911bc052ddc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ae5e6e62067f2fe01175911bc052ddc">&#9670;&#160;</a></span>DEFAULT_MAX_TEXT</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr int DEFAULT_MAX_TEXT = 50</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5212415ec49ce953d35dda2dab1d7b8a" name="a5212415ec49ce953d35dda2dab1d7b8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5212415ec49ce953d35dda2dab1d7b8a">&#9670;&#160;</a></span>DEFAULT_TEXTURE_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr std::string_view DEFAULT_TEXTURE_PATH</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    <span class="stringliteral">&quot;../src/assets/Textures/test_old_button.png&quot;</span></div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,9 +1,13 @@
 # Editors
 .vscode
+run_maze
 
 # Building
 /build
 /.cache
+/src
+
+/tests
 
 # Prerequisites
 *.d

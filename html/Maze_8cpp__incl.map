@@ -1,12 +1,11 @@
 <map id="src/Maze/Maze.cpp" name="src/Maze/Maze.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="449,5,595,31"/>
-<area shape="rect" id="node2" href="$Maze_8hpp.html" title=" " alt="" coords="370,79,455,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="395,5,542,31"/>
+<area shape="rect" id="node2" href="$Maze_8hpp.html" title=" " alt="" coords="371,79,457,104"/>
 <area shape="rect" id="node3" title=" " alt="" coords="287,152,354,177"/>
-<area shape="rect" id="node9" title=" " alt="" coords="479,79,565,104"/>
-<area shape="rect" id="node10" title=" " alt="" coords="589,79,661,104"/>
-<area shape="rect" id="node11" href="$Utils_8h.html" title=" " alt="" coords="176,79,287,104"/>
-<area shape="rect" id="node14" title=" " alt="" coords="685,79,765,104"/>
-<area shape="rect" id="node15" title=" " alt="" coords="789,79,885,104"/>
+<area shape="rect" id="node9" title=" " alt="" coords="481,79,566,104"/>
+<area shape="rect" id="node10" title=" " alt="" coords="590,79,662,104"/>
+<area shape="rect" id="node11" href="$Utils_8hpp.html" title=" " alt="" coords="168,79,295,104"/>
+<area shape="rect" id="node14" title=" " alt="" coords="686,79,766,104"/>
 <area shape="rect" id="node4" title=" " alt="" coords="378,152,453,177"/>
 <area shape="rect" id="node5" title=" " alt="" coords="477,152,553,177"/>
 <area shape="rect" id="node6" title=" " alt="" coords="577,152,701,177"/>

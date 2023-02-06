@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['kruskal_0',['Kruskal',['../classkruskalGeneration_1_1Kruskal.html',1,'kruskalGeneration']]],
-  ['kruskalgeneration_1',['kruskalGeneration',['../namespacekruskalGeneration.html',1,'']]],
-  ['kruskalgeneration_2epy_2',['kruskalGeneration.py',['../kruskalGeneration_8py.html',1,'']]]
+  ['isclicked_0',['isClicked',['../classButton.html#aab1ad2d49a14280058ef02b8940ef857',1,'Button']]],
+  ['isdfsorbfs_1',['IsDFSOrBFS',['../conceptIsDFSOrBFS.html',1,'']]],
+  ['isfocused_2',['IsFocused',['../classTextBox.html#af99a3379f34f6d115f06368386a1899a',1,'TextBox']]],
+  ['isgbfsora_5fstar_3',['IsGBFSOrA_STAR',['../conceptIsGBFSOrA__STAR.html',1,'']]]
 ];
