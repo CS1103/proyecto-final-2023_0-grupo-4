@@ -1,6 +1,7 @@
 #include "System.hpp"
 #include "../Bot/Bot.hpp"
 #include "../Maze/Maze.hpp"
+#include "Utils.hpp"
 #include <algorithm>
 
 void System::run() {
@@ -78,8 +79,9 @@ void System::run() {
                                                     sq) != path.end();
                                  }),
                   options.end());
-
-    std::cout << "Current position: " << current.first << " " << current.second
+    int const c_first = current.first;
+    int const c_sec = current.second;
+    std::cout << "Current position: " << c_first << " " << c_sec
               << std::endl;
     std::cout << "Options: " << std::endl;
     for (const auto &option : options) {
