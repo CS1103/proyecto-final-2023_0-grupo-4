@@ -1,5 +1,5 @@
 ![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
-
+![Lines of code](https://img.shields.io/tokei/lines/github/CS1103/proyecto-final-2023_0-grupo-4?style=plastic)
 # TODO
 
 ### media:
