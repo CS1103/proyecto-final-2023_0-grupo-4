@@ -1,42 +1,48 @@
 #ifndef TEXT_BOX_HPP
 #define TEXT_BOX_HPP
 
-#include "TextBoxBuilder.hpp"
 #include "Vector2I.hpp"
-#include <ViewUtils.hpp>
-#include <cstdint>
+#include "ViewUtils.hpp"
+
 #include <functional>
-#include <raylib-cpp.hpp>
+#include <optional>
+
+// raylib-pp
+#include <Rectangle.hpp>
+#include <Text.hpp>
+
 namespace rl = raylib;
 
-constexpr std::string_view DEFAULT_FONT_PATH = "../src/assets/fonts/mecha.png";
-constexpr int DEFAULT_FONT_SIZE = 20;
-constexpr int DEFAULT_MAX_TEXT = 20;
+// constexpr std::string_view DEFAULT_FONT_PATH =
+// "../src/assets/fonts/mecha.png"; constexpr int DEFAULT_FONT_SIZE = 20;
+// constexpr int DEFAULT_MAX_TEXT = 20;
 
 class TextBox {
 public:
-  explicit TextBox(const TextBoxBuilder &builder = Utils::DEFAULT_TEXT_BOX);
+  explicit TextBox(const TextBoxBuilder &builder = Utils::DefaultTextBox());
 
   void Draw() const;
 
-  [[nodiscard]] bool isClicked() const;
+  void CheckFocus();
 
-  void setFocus(bool focus);
+  [[nodiscard]] bool IsFocused() const;
+
+  void SetFocus(bool focus);
 
   [[nodiscard]] inline rl::Vector2 GetSize() const;
 
-  void setPosition(Utils::Vector2I pos);
+  void SetPosition(Utils::Vector2I pos);
 
-  [[nodiscard]] std::string getText() const;
+  [[nodiscard]] std::string GetText() const;
 
-  [[nodiscard]] bool textIsValid();
+  [[nodiscard]] bool TextIsValid();
 
-  void handleInput();
+  std::optional<bool> HandleInput();
 
 private:
   rl::Text m_text;
   rl::Rectangle m_rect;
-  std::function<bool()> m_validator;
+  std::function<bool(std::string)> m_validator;
   bool m_focus = false;
 };
 
