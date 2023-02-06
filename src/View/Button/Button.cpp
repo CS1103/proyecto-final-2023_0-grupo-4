@@ -25,41 +25,25 @@ static bool ValidateSize(const rl::Texture &texture, const rl::Text &text) {
   return true;
 }
 
-Button::Button(const std::string_view &text, rl::Texture &texture,
-               const float &fontSize, const rl::Color &color)
-    : m_text(rl::Text(text.data(), fontSize, color)), m_texture(texture) {
-
+Button::Button(const ButtonBuilder &builder)
+    : m_text(builder.text), m_texture(builder.texture), m_pos(builder.pos) {
   ValidateSize(m_texture, m_text);
 }
 
-Button::Button(const std::string_view &text, float fontSize,
-               const rl::Color &color)
-    : m_text(rl::Text(text.data(), fontSize, color)),
-      m_texture(Button::defaultTexture()) {
-
-  ValidateSize(m_texture, m_text);
-}
-
-// Button::Button(std::string_view text, rl::Font &customFont) {}
-
-void Button::Draw(const int &posX, const int &posY) const {
+void Button::Draw() const {
 
   Vector2I text_size = Vector2I(m_text.MeasureEx());
   Vector2I button_size = Vector2I(m_texture.GetSize());
 
-  // clang-format off
-  auto [text_x, text_y] = std::pair{
-      posX +
-          (button_size.x - text_size.x) / 2,
-      posY +
-          (button_size.y - text_size.y) / 2};
-  // clang-format on
+  auto [text_x, text_y] =
+      std::pair{m_pos.x + (button_size.x - text_size.x) / 2,
+                m_pos.y + (button_size.y - text_size.y) / 2};
 
-  m_texture.Draw(posX, posY);
+  m_texture.Draw(m_pos.x, m_pos.y);
   m_text.Draw(text_x, text_y);
 }
 
-bool Button::isClicked(const int &drawPosX, const int &drawPosY) const {
+bool Button::isClicked() const {
 
   if (!rl::Mouse::IsButtonPressed(MouseButton::MOUSE_LEFT_BUTTON)) {
     return false;
@@ -68,9 +52,8 @@ bool Button::isClicked(const int &drawPosX, const int &drawPosY) const {
   Vector2I click_pos = rl::Mouse::GetPosition();
 
   Vector2I button_size = m_texture.GetSize();
-  auto button_end =
-      Vector2I{drawPosX + button_size.x, drawPosY + button_size.y};
+  auto button_end = Vector2I{m_pos.x + button_size.x, m_pos.y + button_size.y};
 
-  return (click_pos.x >= drawPosX && click_pos.x <= button_end.x) &&
-         (click_pos.y >= drawPosY && click_pos.y <= button_end.y);
+  return (click_pos.x >= m_pos.x && click_pos.x <= button_end.x) &&
+         (click_pos.y >= m_pos.y && click_pos.y <= button_end.y);
 }

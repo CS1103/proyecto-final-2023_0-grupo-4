@@ -1,7 +1,9 @@
 #ifndef TEXT_BOX_HPP
 #define TEXT_BOX_HPP
 
-#include "ViewUtils.hpp"
+#include "TextBoxBuilder.hpp"
+#include "Vector2I.hpp"
+#include <ViewUtils.hpp>
 #include <cstdint>
 #include <functional>
 #include <raylib-cpp.hpp>
@@ -13,11 +15,7 @@ constexpr int DEFAULT_MAX_TEXT = 20;
 
 class TextBox {
 public:
-  TextBox(const rl::Vector2 &position, std::function<bool()> validator,
-          rl::Font &font = defaultFont());
-  TextBox(const int &xPos, const int &yPos,
-          const std::function<bool()> &validator,
-          rl::Font &font = defaultFont());
+  explicit TextBox(const TextBoxBuilder &builder = Utils::DEFAULT_TEXT_BOX);
 
   void Draw() const;
 
@@ -40,15 +38,6 @@ private:
   rl::Rectangle m_rect;
   std::function<bool()> m_validator;
   bool m_focus = false;
-
-  /*
-
-   bg color: rl::Color
-   position
-   validator: std::function<bool()>
-  */
-
-  static rl::Font &defaultFont();
 };
 
 #endif // !TEXT_BOX_HPP

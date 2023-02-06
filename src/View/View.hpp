@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 
+#include "../Config/Config.hpp"
 #include <iostream>
 #include <raylib-cpp.hpp>
 
@@ -12,8 +13,6 @@ constexpr int VIEW_HEIGHT = 600;
 
 constexpr std::string_view BACKGROUND_TEXTURE =
     "../src/assets/Textures/floor_tile_v2.jpg";
-
-struct Config;
 
 class View {
 public:
