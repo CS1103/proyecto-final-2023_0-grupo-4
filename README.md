@@ -91,7 +91,7 @@ links to humans using your project. You can include links like:
 - autor 2
 - autor 3
 - autor 4
-- autor 5
+- Kevin Jonás Zevallos López
 - Enrique Francisco Flores Teniente
 
 ## Licensing
