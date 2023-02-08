@@ -1,4 +1,3 @@
-// NOLINTBEGIN (readability-identifier-naming)
 #ifndef BUTTON_H
 #define BUTTON_H
 
@@ -9,27 +8,15 @@
 #include <string_view>
 #include <vector>
 
-// constexpr std::string_view DEFAULT_FONT_PATH =
-//     "../src/assets/fonts/alpha_beta.png";
-
-// constexpr std::string_view DEFAULT_TEXTURE_PATH =
-//     "../src/assets/Textures/test_old_button.png";
-
-// constexpr int DEFAULT_FONT_SIZE = 20;
-// constexpr int DEFAULT_MAX_TEXT = 50;
-
 namespace rl = raylib;
 
 class Button {
 public:
-  friend class ButtonBuilder;
-  static ButtonBuilder create();
-
   explicit Button(const ButtonBuilder &builder = Utils::DefaultButton());
 
   void Draw() const;
 
-  [[nodiscard]] bool isClicked() const;
+  [[nodiscard]] bool IsClicked() const;
 
   [[nodiscard]] inline rl::Vector2 GetSize() const {
     return m_texture.GetSize();
@@ -43,7 +30,6 @@ private:
 };
 
 #endif // !BUTTON_H
-       // NOLINTEND (readability-identifier-naming)
        // //Button Builder Pattern
        // typedef struct Button_n {
        //     Rectangle rect; //params (x,y,width,height)

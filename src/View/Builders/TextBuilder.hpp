@@ -8,23 +8,22 @@
 constexpr int DEFAULT_FONT_SIZE = 16;
 constexpr std::string_view DEFAULT_TEXT_FONT_PATH = "PATH";
 
-class TextBuilder {
+struct TextBuilder {
 
-private:
   int fontSize = DEFAULT_FONT_SIZE;
   raylib::Color color = raylib::WHITE;
   raylib::Font font = DefaultTextFont();
 
-protected:
+  // Obligatory
   std::string text;
-  Utils::Vector2I position;
+  Utils::Vector2I pos;
 
-public:
+  // Setters
   TextBuilder(const std::string &text, const Utils::Vector2I &pos);
 
   TextBuilder &Text(std::string);
 
-  TextBuilder &Position(Utils::Vector2I position);
+  TextBuilder &Pos(Utils::Vector2I pos);
 
   TextBuilder &FontSize(int fontSize);
 

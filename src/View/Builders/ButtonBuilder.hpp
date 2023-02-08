@@ -7,8 +7,11 @@
 
 constexpr std::string_view DEFAULT_BUTTON_TEXTURE_PATH = "PATH";
 
-class ButtonBuilder : public TextBuilder {
-public:
+struct ButtonBuilder : public TextBuilder {
+
+  raylib::Texture &texture = DefaultButtonTexture();
+
+  // Setters
   ButtonBuilder(const std::string &text, const Utils::Vector2I &pos);
 
   // ButtonBuilder &Pos();
@@ -24,9 +27,6 @@ ButtonBuilder() : texture(defaultButtonTexture()) {}
 raylib::Texture &texture;
 raylib::Text text;
 Utils::Vector2I pos{};*/
-
-private:
-  raylib::Texture &texture = DefaultButtonTexture();
 
   inline static raylib::Texture &DefaultButtonTexture() {
     static raylib::Texture s_texture(
