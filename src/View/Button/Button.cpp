@@ -43,7 +43,7 @@ void Button::Draw() const {
   m_text.Draw(text_x, text_y);
 }
 
-bool Button::isClicked() const {
+bool Button::IsClicked() const {
 
   if (!rl::Mouse::IsButtonPressed(MouseButton::MOUSE_LEFT_BUTTON)) {
     return false;
@@ -57,5 +57,3 @@ bool Button::isClicked() const {
   return (click_pos.x >= m_pos.x && click_pos.x <= button_end.x) &&
          (click_pos.y >= m_pos.y && click_pos.y <= button_end.y);
 }
-
-ButtonBuilder Button::create() { return ButtonBuilder(); }

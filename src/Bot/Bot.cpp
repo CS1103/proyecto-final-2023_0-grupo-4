@@ -6,12 +6,12 @@
 
 template <ALGORITHM T>
   requires IsDFSOrBFS<T> bool
-Bot::solve(const Maze &maze) {
+Bot::Solve(const Maze &maze) {
 
   m_solution.clear();
   m_searchedPath.clear();
 
-  square start = maze.getStart();
+  square start = maze.GetStart();
 
   std::conditional_t<T == ALGORITHM::BFS, std::queue<square>,
                      std::stack<square>>
@@ -36,13 +36,13 @@ Bot::solve(const Maze &maze) {
 
     frontier.pop();
 
-    if (current == maze.getGoal()) {
+    if (current == maze.GetGoal()) {
       std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
 
-    for (square neighbor : maze.getNeighbors(current)) {
+    for (square neighbor : maze.GetNeighbors(current)) {
 
       if (std::find(m_searchedPath.begin(), m_searchedPath.end(), neighbor) ==
           m_searchedPath.end()) {
@@ -57,9 +57,9 @@ Bot::solve(const Maze &maze) {
     return false;
   }
 
-  square current = maze.getGoal();
+  square current = maze.GetGoal();
 
-  while (current != maze.getStart()) {
+  while (current != maze.GetStart()) {
 
     m_solution.emplace(current);
 
@@ -70,7 +70,7 @@ Bot::solve(const Maze &maze) {
 }
 
 // Manhattan distance heuristic function
-int Bot::heuristic(const square &current, const square &goal) {
+int Bot::Heuristic(const square &current, const square &goal) {
   return std::abs(current.first - goal.first) +
          std::abs(current.second - goal.second);
 }
@@ -81,8 +81,8 @@ public:
     if (!s_goal.has_value()) {
       throw std::runtime_error("Goal not set");
     }
-    return heuristic(sq1, Bot::s_goal.value()) >
-           heuristic(sq2, Bot::s_goal.value());
+    return Heuristic(sq1, Bot::s_goal.value()) >
+           Heuristic(sq2, Bot::s_goal.value());
   }
 };
 
@@ -92,8 +92,8 @@ public:
     if (!s_goal.has_value()) {
       throw std::runtime_error("Goal not set");
     }
-    return heuristic(sq1, Bot::s_goal.value()) + sq1.w_score >
-           heuristic(sq2, Bot::s_goal.value()) + sq2.w_score;
+    return Heuristic(sq1, Bot::s_goal.value()) + sq1.w_score >
+           Heuristic(sq2, Bot::s_goal.value()) + sq2.w_score;
   }
 };
 
@@ -104,15 +104,15 @@ bool Bot::Node::operator==(const square &sqr) {
   return sqr.first == first && sqr.second == second;
 }
 
-template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
+template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
   std::cout << "Solving with A*" << std::endl;
 
   m_solution.clear();
   m_searchedPath.clear();
-  s_goal = maze.getGoal();
+  s_goal = maze.GetGoal();
 
-  auto start = maze.getStart();
+  auto start = maze.GetStart();
 
   std::priority_queue<Node, std::vector<Node>, Compare<ALGORITHM::A_STAR>>
       frontier;
@@ -136,14 +136,14 @@ template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
     frontier.pop();
 
-    if (current == maze.getGoal()) {
+    if (current == maze.GetGoal()) {
       std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
 
     m_searchedPath.emplace(current);
-    for (square neighbor : maze.getNeighbors(current)) {
+    for (square neighbor : maze.GetNeighbors(current)) {
 
       if (std::find(m_searchedPath.begin(), m_searchedPath.end(), neighbor) ==
           m_searchedPath.end()) {
@@ -158,8 +158,8 @@ template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
     return false;
   }
 
-  square current_sq = maze.getGoal();
-  while (current_sq != maze.getStart()) {
+  square current_sq = maze.GetGoal();
+  while (current_sq != maze.GetStart()) {
     m_solution.emplace(current_sq);
     current_sq = parent[current_sq];
   }
@@ -167,15 +167,15 @@ template <> bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze) {
   return true;
 }
 
-template <> bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze) {
+template <> bool Bot::Solve<ALGORITHM::GBGS>(const Maze &maze) {
 
   std::cout << "Solving with Greedy Best First Search" << std::endl;
 
   m_solution.clear();
   m_searchedPath.clear();
-  s_goal = maze.getGoal();
+  s_goal = maze.GetGoal();
 
-  auto start = maze.getStart();
+  auto start = maze.GetStart();
 
   std::priority_queue<square, std::vector<square>, Compare<ALGORITHM::GBGS>>
       frontier;
@@ -197,14 +197,14 @@ template <> bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze) {
     current = frontier.top();
     frontier.pop();
 
-    if (current == maze.getGoal()) {
+    if (current == maze.GetGoal()) {
       std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
 
     m_searchedPath.emplace(current);
-    for (square neighbor : maze.getNeighbors(current)) {
+    for (square neighbor : maze.GetNeighbors(current)) {
 
       if (std::find(m_searchedPath.begin(), m_searchedPath.end(), neighbor) ==
           m_searchedPath.end()) {
@@ -219,8 +219,8 @@ template <> bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze) {
     return false;
   }
 
-  square current_sq = maze.getGoal();
-  while (current_sq != maze.getStart()) {
+  square current_sq = maze.GetGoal();
+  while (current_sq != maze.GetStart()) {
     m_solution.emplace(current_sq);
     current_sq = parent[current_sq];
   }
@@ -246,15 +246,9 @@ template <bool hasNode>
   }
 }
 
-std::unordered_set<square, Maze::HashPair> Bot::getSolution() const {
+std::unordered_set<square, Maze::HashPair> Bot::GetSolution() const {
   return m_solution;
 }
-std::unordered_set<square, Maze::HashPair> Bot::getSearchedPath() const {
+std::unordered_set<square, Maze::HashPair> Bot::GetSearchedPath() const {
   return m_searchedPath;
 }
-
-// explicit instantiate solve
-// template bool Bot::solve<ALGORITHM::DFS>(const Maze &maze);
-// template bool Bot::solve<ALGORITHM::BFS>(const Maze &maze);
-// template bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze);
-// template bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze);

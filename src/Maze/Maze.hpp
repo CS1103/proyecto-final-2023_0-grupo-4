@@ -40,16 +40,16 @@ public:
   explicit Maze(const BoardSize &size,
                 HUNT_METHOD huntMethod = DEFAULT_HUNT_METHOD);
 
-  void printMaze();
-  [[nodiscard]] maze_t getMaze() const;
+  void PrintMaze();
+  [[nodiscard]] maze_t GetMaze() const;
 
-  [[nodiscard]] constexpr square getStart() const { return m_start; }
-  [[nodiscard]] constexpr square getGoal() const { return m_goal; }
+  [[nodiscard]] constexpr square GetStart() const { return m_start; }
+  [[nodiscard]] constexpr square GetGoal() const { return m_goal; }
 
-  [[nodiscard]] std::vector<square> getNeighbors(const square &current) const;
+  [[nodiscard]] std::vector<square> GetNeighbors(const square &current) const;
 
-  void paintPath(const std::unordered_set<square, HashPair> &path);
-  void paintPath(const std::unordered_set<square, HashPair> &solution,
+  void PaintPath(const std::unordered_set<square, HashPair> &path);
+  void PaintPath(const std::unordered_set<square, HashPair> &solution,
                  const std::unordered_set<square, HashPair> &searchedPath);
 
   struct HashPair {
@@ -65,22 +65,22 @@ private:
   square m_start;
   square m_goal;
 
-  [[nodiscard]] bool isValidSquare(const SQUARE_TYPE &current) const;
+  [[nodiscard]] bool IsValidSquare(const SQUARE_TYPE &current) const;
 
-  void generateMaze(uint8_t height, uint8_t width, HUNT_METHOD huntMethod);
+  void GenerateMaze(uint8_t height, uint8_t width, HUNT_METHOD huntMethod);
 
   template <HUNT_METHOD>
-  std::optional<square> hunt(const std::optional<uint8_t> &count);
+  std::optional<square> Hunt(const std::optional<uint8_t> &count);
 
   std::unordered_map<square, direction_t, HashPair>
-  randomWalk(const square &start);
+  RandomWalk(const square &start);
 
-  direction_t randomDirection(const square &current);
+  direction_t RandomDirection(const square &current);
 
-  static square move(const square &current, const direction_t &direction);
+  static square Move(const square &current, const direction_t &direction);
 
   uint8_t
-  solveRandomWalk(const std::unordered_map<square, direction_t, HashPair> &walk,
+  SolveRandomWalk(const std::unordered_map<square, direction_t, HashPair> &walk,
                   const square &start);
 };
 

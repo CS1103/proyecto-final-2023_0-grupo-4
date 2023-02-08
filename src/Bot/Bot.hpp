@@ -23,14 +23,14 @@ public:
   Bot() = default;
 
   template <ALGORITHM T>
-  bool solve(const Maze &maze);
+  bool Solve(const Maze &maze);
 
   template <ALGORITHM T>
     requires IsDFSOrBFS<T> bool
-  solve(const Maze &maze);
+  Solve(const Maze &maze);
 
-  [[nodiscard]] std::unordered_set<square, Maze::HashPair> getSolution() const;
-  [[nodiscard]] std::unordered_set<square, Maze::HashPair> getSearchedPath() const;
+  [[nodiscard]] std::unordered_set<square, Maze::HashPair> GetSolution() const;
+  [[nodiscard]] std::unordered_set<square, Maze::HashPair> GetSearchedPath() const;
 
 private:
 
@@ -51,14 +51,8 @@ private:
   template <ALGORITHM T>
   class Compare;
 
-  [[nodiscard]] static int heuristic(const square &current, const square &goal);
+  [[nodiscard]] static int Heuristic(const square &current, const square &goal);
 
 
 };
-
-// explicit instantiate solve
-// extern template bool Bot::solve<ALGORITHM::DFS>(const Maze &maze);
-// extern template bool Bot::solve<ALGORITHM::BFS>(const Maze &maze);
-// extern template bool Bot::solve<ALGORITHM::GBGS>(const Maze &maze);
-// extern template bool Bot::solve<ALGORITHM::A_STAR>(const Maze &maze);
 #endif // !BOT_H

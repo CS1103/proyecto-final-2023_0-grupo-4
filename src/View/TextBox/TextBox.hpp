@@ -13,10 +13,6 @@
 
 namespace rl = raylib;
 
-// constexpr std::string_view DEFAULT_FONT_PATH =
-// "../src/assets/fonts/mecha.png"; constexpr int DEFAULT_FONT_SIZE = 20;
-// constexpr int DEFAULT_MAX_TEXT = 20;
-
 class TextBox {
 public:
   explicit TextBox(const TextBoxBuilder &builder = Utils::DefaultTextBox());
