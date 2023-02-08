@@ -2,8 +2,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include "Builders/ButtonBuilder.hpp"
-#include "ViewUtils/ViewUtils.hpp"
+#include "ButtonBuilder.hpp"
+#include "ViewUtils.hpp"
 #include <optional>
 #include <raylib-cpp.hpp>
 #include <string_view>
@@ -22,8 +22,8 @@ namespace rl = raylib;
 
 class Button {
 public:
-    friend class ButtonBuilder;
-    static ButtonBuilder create();
+  friend class ButtonBuilder;
+  static ButtonBuilder create();
 
   explicit Button(const ButtonBuilder &builder = Utils::DefaultButton());
 

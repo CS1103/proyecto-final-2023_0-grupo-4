@@ -12,8 +12,12 @@ Checks: >
   performance-*,
   portability-*,
   readability-*,
+  -google-objc*
   -modernize-use-trailing-return-type,
+  -misc-non-private-member-variables-in-classes,
+  -cppcoreguidelines-non-private-member-variables-in-classes,
 FormatStyle:     google
+
 CheckOptions:
   - key: readability-identifier-naming.VariableCase
     value:           lower_case

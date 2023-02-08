@@ -1,41 +1,38 @@
 #ifndef BUTTON_BUILDER_HPP
 #define BUTTON_BUILDER_HPP
 
+#include "TextBuilder.hpp"
 #include "Vector2I.hpp"
 #include <raylib-cpp.hpp>
-#include "TextBuilder.hpp"
-#include "Text.hpp"
-#include "Button.hpp"
 
-class ButtonBuilder: public raylib::Text{
+constexpr std::string_view DEFAULT_BUTTON_TEXTURE_PATH = "PATH";
+
+class ButtonBuilder : public TextBuilder {
 public:
-    operator Button() const{
-        return button;
-    }
+  ButtonBuilder(const std::string &text, const Utils::Vector2I &pos);
 
-    ButtonBuilder& m_text();
-    ButtonBuilder& m_text(Text txt);
+  // ButtonBuilder &Pos();
+  ButtonBuilder &Pos(Utils::Vector2I vect2);
 
-    ButtonBuilder& m_texture();
-    ButtonBuilder& m_texture(rl::Texture texture);
+  ButtonBuilder &Text(const std::string &text);
 
-    ButtonBuilder& m_pos();
-    ButtonBuilder& m_pos(Utils::Vector2I vect2);
+  // ButtonBuilder &Texture();
+  ButtonBuilder &Texture(raylib::Texture &texture);
 
-    /*
-  ButtonBuilder() : texture(defaultButtonTexture()) {}
-  raylib::Texture &texture;
-  raylib::Text text;
-  Utils::Vector2I pos{};*/
-
+  /*
+ButtonBuilder() : texture(defaultButtonTexture()) {}
+raylib::Texture &texture;
+raylib::Text text;
+Utils::Vector2I pos{};*/
 
 private:
-    inline static raylib::Texture &defaultButtonTexture() {
+  raylib::Texture &texture = DefaultButtonTexture();
+
+  inline static raylib::Texture &DefaultButtonTexture() {
     static raylib::Texture s_texture(
         "../src/assets/Textures/test_old_button.png");
     return s_texture;
-    }
-    Button button;
+  }
 };
 
 #endif // !BUTTON_BUILDER_HPP
