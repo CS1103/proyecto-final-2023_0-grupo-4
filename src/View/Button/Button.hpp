@@ -22,6 +22,9 @@ namespace rl = raylib;
 
 class Button {
 public:
+    friend class ButtonBuilder;
+    static ButtonBuilder create();
+
   explicit Button(const ButtonBuilder &builder = Utils::DefaultButton());
 
   void Draw() const;
@@ -36,6 +39,7 @@ private:
   rl::Text m_text;
   rl::Texture &m_texture;
   Utils::Vector2I m_pos;
+  bool is_pressed;
 };
 
 #endif // !BUTTON_H

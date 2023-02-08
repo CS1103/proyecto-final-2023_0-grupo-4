@@ -1,7 +1,8 @@
-#include "TextBuiler.hpp"
+#include "TextBuilder.hpp"
 #include <string>
 #include <Font.hpp>
 #include <Text.hpp>
+
 TextBuilder::TextBuilder() {
     position = { 0, 0 };
     fontSize = 10;

@@ -57,3 +57,7 @@ bool Button::isClicked() const {
   return (click_pos.x >= m_pos.x && click_pos.x <= button_end.x) &&
          (click_pos.y >= m_pos.y && click_pos.y <= button_end.y);
 }
+
+ButtonBuilder Button::create() {
+    return ButtonBuilder();
+}
