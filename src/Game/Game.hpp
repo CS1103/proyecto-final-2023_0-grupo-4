@@ -5,6 +5,11 @@
 template <PLAYER_TYPE playerType> class GameBase {
 
 public:
+  virtual ~GameBase() = 0;
+  GameBase(const GameBase &) = delete;
+  GameBase(GameBase &&) = delete;
+  GameBase &operator=(const GameBase &) = delete;
+  GameBase &operator=(GameBase &&) = delete;
   GameBase(const Config &config, View &view);
   virtual void Run() = 0;
 
@@ -21,18 +26,17 @@ template <>
 class Game<PLAYER_TYPE::HUMAN> : public GameBase<PLAYER_TYPE::HUMAN> {
 public:
   void Run() override;
-  Game(const Config &config, View &view)
-      : GameBase<PLAYER_TYPE::HUMAN>(config, view) {
-    player_name = "Human";
-  }
+  Game(const Config &config, View &view);
 };
 
 template <>
 class Game<PLAYER_TYPE::COMPUTER> : public GameBase<PLAYER_TYPE::COMPUTER> {
 public:
   void Run() override;
-  Game(const Config &config, View &view)
-      : GameBase<PLAYER_TYPE::COMPUTER>(config, view) {
-    player_name = "Human";
-  }
+  Game(const Config &config, View &view);
 };
+
+// extern explicit instantiation
+
+extern template class GameBase<PLAYER_TYPE::HUMAN>;
+extern template class GameBase<PLAYER_TYPE::COMPUTER>;
