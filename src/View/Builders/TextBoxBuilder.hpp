@@ -9,7 +9,7 @@ struct TextBoxBuilder {
 
   raylib::Text text;
   Utils::Vector2I pos;
-  std::function<bool(std::string)> validator;
+  std::function<bool(const std::string &)> validator;
 
 private:
 };

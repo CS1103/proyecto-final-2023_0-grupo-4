@@ -29,6 +29,10 @@ void TextBox::SetPosition(Utils::Vector2I pos) { m_rect.SetPosition(pos); }
 
 std::string TextBox::GetText() const { return m_text.GetText(); }
 
+/************************************************
+Detailed descripción: TextBox::TextIsValid
+option 1
+ ***********************************************/
 [[nodiscard]] bool TextBox::TextIsValid() {
   return m_validator(m_text.GetText());
 }
@@ -37,6 +41,7 @@ constexpr int BACKSPACE = 8;
 constexpr int ENTER = 13;
 constexpr int ESC = 27;
 
+/// Breve descripción, solo una línea, triple /
 std::optional<bool> TextBox::HandleInput() {
   if (!m_focus) {
     return std::nullopt;
@@ -50,15 +55,15 @@ std::optional<bool> TextBox::HandleInput() {
       m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));
 
     } else if (key == ENTER) {
-      return TextIsValid();
+      break;
     } else if (key == ESC) {
       m_focus = false;
-      return std::nullopt;
+      break;
     } else {
       m_text.SetText(m_text.GetText() + static_cast<char>(key));
     }
     key = GetKeyPressed();
   }
 
-  return std::nullopt;
+  return TextIsValid();
 }

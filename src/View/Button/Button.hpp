@@ -12,7 +12,7 @@ namespace rl = raylib;
 
 class Button {
 public:
-  explicit Button(const ButtonBuilder &builder = Utils::DefaultButton());
+  Button(const ButtonBuilder &builder);
 
   void Draw() const;
 
@@ -22,11 +22,14 @@ public:
     return m_texture.GetSize();
   }
 
+  void Highlight();
+  void UnHighlight();
+
 private:
   rl::Text m_text;
   rl::Texture &m_texture;
   Utils::Vector2I m_pos;
-  bool is_pressed;
+  bool is_selected;
 };
 
 #endif // !BUTTON_H

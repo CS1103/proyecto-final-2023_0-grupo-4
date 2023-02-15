@@ -2,6 +2,7 @@
 #define VIEW_H
 
 #include "../Config/Config.hpp"
+#include "Maze.hpp"
 #include <iostream>
 #include <raylib-cpp.hpp>
 
@@ -14,10 +15,17 @@ constexpr int VIEW_HEIGHT = 600;
 constexpr std::string_view BACKGROUND_TEXTURE =
     "../src/assets/Textures/floor_tile_v2.jpg";
 
+template <typename T>
+concept Drawable = requires(T obj) {
+                     { obj.Draw() } -> std::same_as<void>;
+                   };
+
 class View {
 public:
   void StartScreen();
   Config GetConfig();
+  void PrintPath(const Maze &maze,
+                 const std::unordered_set<square, Maze::HashPair> &path);
 
 private:
   static rl::Window &GetWindow(const int &width = VIEW_WIDTH,
@@ -33,6 +41,12 @@ private:
 
   rl::Window &window = GetWindow();
   rl::Texture &background = GetBackground();
+
+  template <typename... Args>
+    requires(Drawable<Args> && ...)
+  inline void DrawAll(Args &&...args) {
+    (args.Draw(), ...);
+  }
 };
 
 #endif // !VIEW_H

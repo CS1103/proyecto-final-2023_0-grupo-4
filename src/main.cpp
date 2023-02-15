@@ -1,5 +1,4 @@
 #include "Game.hpp"
-#include "Maze.hpp"
 #include "View.hpp"
 #include <functional>
 

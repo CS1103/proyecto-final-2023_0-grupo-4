@@ -15,7 +15,7 @@ namespace rl = raylib;
 
 class TextBox {
 public:
-  explicit TextBox(const TextBoxBuilder &builder = Utils::DefaultTextBox());
+  TextBox(const TextBoxBuilder &builder);
 
   void Draw() const;
 
@@ -38,7 +38,7 @@ public:
 private:
   rl::Text m_text;
   rl::Rectangle m_rect;
-  std::function<bool(std::string)> m_validator;
+  std::function<bool(const std::string &)> m_validator;
   bool m_focus = false;
 };
 

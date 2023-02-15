@@ -33,6 +33,9 @@ struct TextBuilder {
   TextBuilder &Font(const std::string &fontPath);
   TextBuilder &Font(const ::Image &image);
 
+  // casting to raylib::Text
+  operator raylib::Text() const;
+
 private:
   inline static raylib::Font DefaultTextFont() {
     // TODO(Kevin):

@@ -39,7 +39,12 @@ void Button::Draw() const {
       std::pair{m_pos.x + (button_size.x - text_size.x) / 2,
                 m_pos.y + (button_size.y - text_size.y) / 2};
 
-  m_texture.Draw(m_pos.x, m_pos.y);
+  if (is_selected) {
+    m_texture.Draw(m_pos, 0, 1, WHITE);
+  } else {
+    m_texture.Draw(m_pos, 0, 1, GRAY);
+  }
+
   m_text.Draw(text_x, text_y);
 }
 
@@ -57,3 +62,6 @@ bool Button::IsClicked() const {
   return (click_pos.x >= m_pos.x && click_pos.x <= button_end.x) &&
          (click_pos.y >= m_pos.y && click_pos.y <= button_end.y);
 }
+
+void Button::Highlight() { is_selected = true; }
+void Button::UnHighlight() { is_selected = false; }

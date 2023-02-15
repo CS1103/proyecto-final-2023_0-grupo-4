@@ -52,7 +52,7 @@ running.
 git clone ESTE_REPO && cd ESTE_REPO
 mkdir build && cd build
 cmake ..
-make
+sudo make install
 ```
 ### running
 ```shell
