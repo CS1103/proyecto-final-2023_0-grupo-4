@@ -1,32 +1,20 @@
 #include "ButtonBuilder.hpp"
 
-ButtonBuilder &ButtonBuilder::m_text() {
-    return *this;
+ButtonBuilder &ButtonBuilder::Pos(const Utils::Vector2I &_pos) {
+  pos = _pos;
+  return *this;
 }
 
-ButtonBuilder &ButtonBuilder::m_text(raylib::Text txt) {
-    button.m_text = txt;
-    return *this;
+ButtonBuilder &ButtonBuilder::Text(const std::string &_text) {
+  text = _text;
+  return *this;
+}
+ButtonBuilder &ButtonBuilder::Text(const rl::Text &_text) {
+  text = _text.text;
+  return *this;
 }
 
-ButtonBuilder &ButtonBuilder::m_texture() {
-    return *this;
+ButtonBuilder &ButtonBuilder::Texture(rl::Texture &_texture) {
+  texture = _texture;
+  return *this;
 }
-
-ButtonBuilder &ButtonBuilder::m_texture(rl::Texture texture) {
-    button.m_texture = texture;
-    return *this;
-}
-
-ButtonBuilder &ButtonBuilder::m_pos() {
-    return *this;
-}
-
-ButtonBuilder &ButtonBuilder::m_pos(Utils::Vector2I vect2) {
-    button.m_pos = vect2;
-    return *this;
-}
-
-
-
-

@@ -1,11 +1,18 @@
 #include "TextBox.hpp"
 
 TextBox::TextBox(const TextBoxBuilder &builder)
-    : m_text(builder.text), m_rect(builder.pos),
-      m_validator(builder.validator) {}
+    : m_text(builder.text), m_rect(builder.pos, builder.size),
+      m_color(builder.color), m_validator(builder.validator) {}
 
 void TextBox::Draw() const {
-  m_rect.Draw(WHITE);
+  m_rect.Draw(m_color);
+
+  std::cout << "position: " << m_rect.GetPosition().x << " ";
+  std::cout << m_rect.GetPosition().y << std::endl;
+
+  std::cout << "size: " << m_rect.GetSize().x << " ";
+  std::cout << m_rect.GetSize().y << std::endl;
+
   Utils::Vector2I text_position =
       m_rect.GetPosition() + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;
   m_text.Draw(text_position);

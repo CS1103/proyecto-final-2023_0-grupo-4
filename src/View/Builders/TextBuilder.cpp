@@ -2,38 +2,37 @@
 #include <Font.hpp>
 #include <Text.hpp>
 #include <string>
+#include <utility>
 
-TextBuilder &TextBuilder::Text(std::string text_) {
-  this->text = text_;
+TextBuilder::TextBuilder(std::string _text) : text(std::move(_text)) {}
+
+TextBuilder &TextBuilder::Text(std::string _text) {
+  text = std::move(_text);
   return *this;
 }
-TextBuilder &TextBuilder::Position(Vector2 position_) {
-  this->position = position_;
+TextBuilder &TextBuilder::FontSize(float _fontSize) {
+  fontSize = _fontSize;
   return *this;
 }
-TextBuilder &TextBuilder::FontSize(int fontSize_) {
-  this->fontSize = fontSize_;
+TextBuilder &TextBuilder::Color(const rl::Color &_color) {
+  color = _color;
   return *this;
 }
-TextBuilder &TextBuilder::Color_(Color color_) {
-  this->color = color_;
+TextBuilder &TextBuilder::Font(rl::Font &_font) {
+  font = _font;
   return *this;
 }
-TextBuilder &TextBuilder::Font_(Font font_) {
-  this->font = font_;
-  return *this;
+TextBuilder::operator rl::Text() const {
+  rl::Text text_object(text, fontSize, color, font);
+  return text_object;
 }
 
-void TextBuilder::draw() {
-  { DrawTextEx(font, text.c_str(), position, fontSize, 0.0f, color); }
-}
 // EXAMPLE
 //  Inicializar la ventana de la aplicación
 // Font customFont = LoadFont("path/to/font.ttf");
 
 // TextBuilder builder;
 // builder.setText("Hello World!")
-//.Position({ 100, 100 })
 //.FontSize(20)
 //.Color(RED)
 //.Font(customFont);

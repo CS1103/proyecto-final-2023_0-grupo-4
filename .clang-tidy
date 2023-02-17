@@ -31,6 +31,8 @@ CheckOptions:
     value:           CamelCase
   - key: readability-identifier-naming.ParameterCase
     value:           camelBack
+  - key: readability-identifier-naming.ParameterIgnoredRegexp
+    value:           ^_.*$
   - key:             llvm-else-after-return.WarnOnConditionVariables
     value:           'false'
   - key:             modernize-loop-convert.MinConfidence

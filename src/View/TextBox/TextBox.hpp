@@ -38,6 +38,7 @@ public:
 private:
   rl::Text m_text;
   rl::Rectangle m_rect;
+  Color m_color;
   std::function<bool(const std::string &)> m_validator;
   bool m_focus = false;
 };

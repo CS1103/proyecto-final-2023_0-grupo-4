@@ -1,44 +1,46 @@
 #ifndef TEXT_BUILDER_HPP
 #define TEXT_BUILDER_HPP
 
-#include "Vector2I.hpp"
 #include <Font.hpp>
 #include <Text.hpp>
 
+#include "resources.hpp"
+
+namespace rl = raylib;
+
 constexpr int DEFAULT_FONT_SIZE = 16;
-constexpr std::string_view DEFAULT_TEXT_FONT_PATH = "PATH";
+constexpr std::string_view DEFAULT_TEXT_FONT_PATH = RESOURCE_PATH "PATH";
 
 struct TextBuilder {
 
-  int fontSize = DEFAULT_FONT_SIZE;
-  raylib::Color color = raylib::WHITE;
-  raylib::Font font = DefaultTextFont();
+  float fontSize = DEFAULT_FONT_SIZE;
+  rl::Color color = rl::WHITE;
+  std::reference_wrapper<rl::Font> font = DefaultTextFont();
 
   // Obligatory
   std::string text;
-  Utils::Vector2I pos;
 
   // Setters
-  TextBuilder(const std::string &text, const Utils::Vector2I &pos);
+  TextBuilder(std::string _text);
+  TextBuilder() = default;
 
-  TextBuilder &Text(std::string);
+  TextBuilder &Text(std::string _text);
 
-  TextBuilder &Pos(Utils::Vector2I pos);
+  TextBuilder &FontSize(float fontSize);
 
-  TextBuilder &FontSize(int fontSize);
+  TextBuilder &Color(const rl::Color &color);
 
-  TextBuilder &Color(raylib::Color color);
-
-  TextBuilder &Font(raylib::Font &font);
+  TextBuilder &Font(rl::Font &font);
   TextBuilder &Font(const std::string &fontPath);
   TextBuilder &Font(const ::Image &image);
 
-  // casting to raylib::Text
-  operator raylib::Text() const;
+  // casting to rl::Text
+  operator rl::Text() const;
 
 private:
-  inline static raylib::Font DefaultTextFont() {
-    // TODO(Kevin):
+  inline static rl::Font &DefaultTextFont() {
+    static rl::Font font{DEFAULT_TEXT_FONT_PATH.data(), DEFAULT_FONT_SIZE};
+    return font;
   }
 };
 #endif // !TEXT_BUILDER_HPP

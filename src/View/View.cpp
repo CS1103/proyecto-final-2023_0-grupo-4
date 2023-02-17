@@ -12,8 +12,8 @@ void View::StartScreen() {
   const Vector2I TITLE_POS = WINDOW_CENTER - Vector2I(0, 40);
   const Vector2I BUTTON_POS = WINDOW_CENTER + rl::Vector2(0, 40);
 
-  const rl::Text TITLE = Utils::DefaultTitleText(TITLE_POS);
-  Button button1 = Utils::DefaultButton(BUTTON_POS); // default constructor
+  const rl::Text TITLE = Utils::DefaultTitleText("MAZE GAME");
+  Button button1 = Utils::DefaultButton("Start!", BUTTON_POS);
 
   while (!window.ShouldClose()) {
 
@@ -25,7 +25,7 @@ void View::StartScreen() {
 
     window.ClearBackground();
 
-    background.Draw(0, 0);
+    background.Draw();
     button1.Draw();
     TITLE.Draw(TITLE_POS);
 
@@ -57,11 +57,11 @@ Config View::GetConfig() {
   // Calculating positions
   Utils::PositionCalc calc(window.GetSize());
 
-  constexpr int HORIZONTAL_OPTIONS_START = 65;
+  constexpr int HORIZONTAL_OPTIONS_START = 45;
 
   const Vector2I IS_BOT_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
-  const Vector2I WIDTH_POSITION = calc(HORIZONTAL_OPTIONS_START - 5, 40);
-  const Vector2I HEIGHT_POSITION = calc(HORIZONTAL_OPTIONS_START + 5, 40);
+  const Vector2I WIDTH_POSITION = calc(HORIZONTAL_OPTIONS_START - 10, 40);
+  const Vector2I HEIGHT_POSITION = calc(HORIZONTAL_OPTIONS_START + 10, 40);
   const Vector2I IS_TIMED_POSITION = calc(HORIZONTAL_OPTIONS_START, 65);
   const Vector2I START_POSITION = calc(35, 65);
 
@@ -71,21 +71,26 @@ Config View::GetConfig() {
     }
     return std::all_of(str.begin(), str.end(), ::isdigit);
   };
+  std::cout << "width\n";
+  std::cout << WIDTH_POSITION.x << WIDTH_POSITION.y << '\n';
+  std::cout << "height\n";
+  std::cout << HEIGHT_POSITION.x << HEIGHT_POSITION.y << '\n';
 
-  TextBox width_box =
-      Utils::DefaultTextBox(WIDTH_POSITION) /*.validator(size_validator)*/;
-  TextBox height_box =
-      Utils::DefaultTextBox(HEIGHT_POSITION) /*.validator(size_validator)*/;
+  TextBox width_box = Utils::DefaultTextBox(
+      WIDTH_POSITION, {100, 50}) /*.validator(size_validator)*/;
+  TextBox height_box = Utils::DefaultTextBox(
+      HEIGHT_POSITION, {100, 50}) /*.validator(size_validator)*/;
 
-  Button is_bot_button = Utils::DefaultButton(IS_BOT_POSITION);
+  Button is_bot_button = Utils::DefaultButton("BOT", IS_BOT_POSITION);
   Button is_human_button = Utils::DefaultButton(
-      IS_BOT_POSITION + Vector2I(is_bot_button.GetSize().x, 0));
+      "HUMAN", IS_BOT_POSITION + Vector2I(is_bot_button.GetSize().x, 0));
 
-  Button is_timed_button = Utils::DefaultButton(IS_TIMED_POSITION);
+  Button is_timed_button = Utils::DefaultButton("timed", IS_TIMED_POSITION);
   Button is_not_timed_button = Utils::DefaultButton(
+      "not_timed",
       IS_TIMED_POSITION + Vector2I(is_timed_button.GetSize().x, 0));
 
-  Button start_button = Utils::DefaultButton(START_POSITION);
+  Button start_button = Utils::DefaultButton("start game", START_POSITION);
 
   optional<bool> is_bot;
   optional<bool> is_timed;
@@ -141,6 +146,8 @@ Config View::GetConfig() {
     background.Draw(0, 0);
     DrawAll(width_box, height_box, is_bot_button, is_human_button,
             is_timed_button, is_not_timed_button);
+    width_box.Draw();
+    height_box.Draw();
 
     EndDrawing();
   }

@@ -5,18 +5,20 @@
 #include "Utils.hpp"
 #include <raylib-cpp.hpp>
 
+#include "resources.hpp"
+
 template <typename T> using matrix_t = std::vector<std::vector<T>>;
 
 namespace rl = raylib;
 
 constexpr std::string_view EMPTY_TEXTURE_PATH =
-    "../src/assets/Textures/test_old_button.png";
+    RESOURCE_PATH "Textures/test_old_button.png";
 constexpr std::string_view WALL_TEXTURE_PATH =
-    "../src/assets/Textures/test_old_button.png";
+    RESOURCE_PATH "Textures/test_old_button.png";
 constexpr std::string_view START_TEXTURE_PATH =
-    "../src/assets/Textures/test_old_button.png";
+    RESOURCE_PATH "Textures/test_old_button.png";
 constexpr std::string_view GOAL_TEXTURE_PATH =
-    "../src/assets/Textures/test_old_button.png";
+    RESOURCE_PATH "Textures/test_old_button.png";
 
 class ViewMaze {
 public:

@@ -6,6 +6,8 @@
 #include <iostream>
 #include <raylib-cpp.hpp>
 
+#include "resources.hpp"
+
 namespace rl = raylib;
 
 constexpr std::string_view WINDOW_TITLE = "GAME_NAME";
@@ -13,7 +15,7 @@ constexpr int VIEW_WIDTH = 800;
 constexpr int VIEW_HEIGHT = 600;
 
 constexpr std::string_view BACKGROUND_TEXTURE =
-    "../src/assets/Textures/floor_tile_v2.jpg";
+    RESOURCE_PATH "Textures/test_old_button.png";
 
 template <typename T>
 concept Drawable = requires(T obj) {

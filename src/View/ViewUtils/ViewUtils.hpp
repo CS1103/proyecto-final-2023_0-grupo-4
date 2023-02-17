@@ -13,16 +13,20 @@ namespace Validators {
 bool Name(const std::string &input);
 bool NumSmall(const std::string &input);
 bool NumLarge(const std::string &input);
+bool None(const std::string &input);
 
 } // namespace Validators
 
-const TextBuilder &DefaultTitleText(const Vector2I &pos);
+TextBuilder DefaultTitleText(std::string _text);
 
-const TextBuilder &DefaultButtonText(const Vector2I &pos);
-const ButtonBuilder &DefaultButton(const Vector2I &pos);
+TextBuilder DefaultButtonText();
+TextBuilder DefaultButtonText(std::string _text);
+ButtonBuilder DefaultButton(std::string _text, const Vector2I &pos);
 
-const TextBuilder &DefaultTextBoxText(const Vector2I &pos);
-const TextBoxBuilder &DefaultTextBox(const Vector2I &pos);
+TextBuilder DefaultTextBoxText();
+TextBoxBuilder DefaultTextBox(const rl::Vector2 &_pos, const rl::Vector2 &_size,
+                              const std::function<bool(const std::string &)>
+                                  &validator = Utils::Validators::None);
 
 struct PositionCalc {
 
