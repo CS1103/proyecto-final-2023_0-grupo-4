@@ -8,6 +8,8 @@
 
 #include "resources.hpp"
 
+constexpr int WINDOW_FPS = 30;
+
 namespace rl = raylib;
 
 constexpr std::string_view WINDOW_TITLE = "GAME_NAME";
@@ -34,6 +36,7 @@ private:
                                const int &height = VIEW_HEIGHT,
                                const std::string &name = WINDOW_TITLE.data()) {
     static rl::Window s_window = rl::Window(width, height, name); // NOLINT
+    s_window.SetTargetFPS(WINDOW_FPS);
     return s_window;
   }
   static rl::Texture &GetBackground() {

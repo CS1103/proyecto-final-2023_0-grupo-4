@@ -35,35 +35,16 @@ void View::StartScreen() {
 
 Config View::GetConfig() {
 
-  /*
-   * W = width_box
-   * H = height_box
-   * B = isBot
-   * T = isTimed
-   */
-
-  // ###########################################
-  // ###########################################
-  // ######CHOSE THE SETTINGS######### B #######
-  // #################################   #######
-  // ###########################################
-  // #################################W ##H ####
-  // #################################  ##  ####
-  // ###########################################
-  // ################################# T #######
-  // #################################   #######
-  // ###########################################
-
   // Calculating positions
   Utils::PositionCalc calc(window.GetSize());
 
   constexpr int HORIZONTAL_OPTIONS_START = 45;
 
-  const Vector2I IS_BOT_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
   const Vector2I WIDTH_POSITION = calc(HORIZONTAL_OPTIONS_START - 10, 40);
   const Vector2I HEIGHT_POSITION = calc(HORIZONTAL_OPTIONS_START + 10, 40);
+  const Vector2I IS_BOT_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
   const Vector2I IS_TIMED_POSITION = calc(HORIZONTAL_OPTIONS_START, 65);
-  const Vector2I START_POSITION = calc(35, 65);
+  const Vector2I START_POSITION = calc(35, 80);
 
   auto size_validator = [](const std::string &str) {
     if (str.empty() || str.size() > 3) {
@@ -71,10 +52,6 @@ Config View::GetConfig() {
     }
     return std::all_of(str.begin(), str.end(), ::isdigit);
   };
-  std::cout << "width\n";
-  std::cout << WIDTH_POSITION.x << WIDTH_POSITION.y << '\n';
-  std::cout << "height\n";
-  std::cout << HEIGHT_POSITION.x << HEIGHT_POSITION.y << '\n';
 
   TextBox width_box = Utils::DefaultTextBox(
       WIDTH_POSITION, {100, 50}) /*.validator(size_validator)*/;
@@ -106,7 +83,7 @@ Config View::GetConfig() {
 
       if (!is_bot.has_value() || !is_timed.has_value() || !width.has_value() ||
           !height.has_value() || !width_valid || !height_valid) {
-        // no imput error
+        std::cout << "Not all options are set" << std::endl;
         throw;
       }
 
@@ -137,8 +114,21 @@ Config View::GetConfig() {
       is_not_timed_button.Highlight();
     }
 
+    width_box.CheckFocus();
     width_valid = width_box.HandleInput().value_or(false);
+    height_box.CheckFocus();
     height_valid = height_box.HandleInput().value_or(false);
+
+    if (width_box.CheckCollision(GetMousePosition()) ||
+        height_box.CheckCollision(GetMousePosition())) {
+
+      SetMouseCursor(MOUSE_CURSOR_IBEAM);
+      // CRASHES
+
+    } else {
+
+      SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+    }
 
     BeginDrawing();
     window.ClearBackground();
@@ -146,9 +136,6 @@ Config View::GetConfig() {
     background.Draw(0, 0);
     DrawAll(width_box, height_box, is_bot_button, is_human_button,
             is_timed_button, is_not_timed_button);
-    width_box.Draw();
-    height_box.Draw();
-
     EndDrawing();
   }
   throw std::runtime_error("Window closed");

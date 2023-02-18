@@ -1,4 +1,5 @@
 #include "TextBox.hpp"
+#include <iostream>
 
 TextBox::TextBox(const TextBoxBuilder &builder)
     : m_text(builder.text), m_rect(builder.pos, builder.size),
@@ -7,7 +8,7 @@ TextBox::TextBox(const TextBoxBuilder &builder)
 void TextBox::Draw() const {
   m_rect.Draw(m_color);
 
-  Utils::Vector2I text_position =
+  rl::Vector2 text_position =
       m_rect.GetPosition(); // + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;
   m_text.Draw(text_position);
 }
@@ -22,7 +23,7 @@ bool TextBox::IsFocused() const { return m_focus; }
 
 inline rl::Vector2 TextBox::GetSize() const { return m_rect.GetSize(); }
 
-void TextBox::SetPosition(Utils::Vector2I pos) { m_rect.SetPosition(pos); }
+void TextBox::SetPosition(rl::Vector2 pos) { m_rect.SetPosition(pos); }
 
 std::string TextBox::GetText() const { return m_text.GetText(); }
 
@@ -45,7 +46,6 @@ std::optional<bool> TextBox::HandleInput() {
   }
 
   int key = GetKeyPressed();
-  std::cout << "key pressed: " << char(key) << std::endl;
 
   while (key != 0) {
 
@@ -66,6 +66,6 @@ std::optional<bool> TextBox::HandleInput() {
   return TextIsValid();
 }
 
-bool TextBox::CheckCollision(Utils::Vector2I point) const {
+bool TextBox::CheckCollision(rl::Vector2 point) const {
   return m_rect.CheckCollision(point);
 }

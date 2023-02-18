@@ -1,9 +1,6 @@
 #ifndef TEXT_BOX_HPP
 #define TEXT_BOX_HPP
 
-#include "Vector2I.hpp"
-#include "ViewUtils.hpp"
-
 #include <functional>
 #include <optional>
 
@@ -12,6 +9,18 @@
 #include <Text.hpp>
 
 namespace rl = raylib;
+
+struct TextBoxBuilder {
+  rl::Vector2 pos;
+  rl::Text text = rl::Text();
+  rl::Vector2 size = {100, 30};
+  Color color = WHITE;
+  std::function<bool(const std::string &)> validator =
+      [](const std::string & /*str*/) { return true; };
+  TextBoxBuilder(rl::Vector2 _pos) : pos(_pos) {}
+};
+
+struct TextBoxBuilder;
 
 class TextBox {
 public:
@@ -27,7 +36,7 @@ public:
 
   [[nodiscard]] inline rl::Vector2 GetSize() const;
 
-  void SetPosition(Utils::Vector2I pos);
+  void SetPosition(rl::Vector2 pos);
 
   [[nodiscard]] std::string GetText() const;
 
@@ -35,7 +44,7 @@ public:
 
   std::optional<bool> HandleInput();
 
-  [[nodiscard]] bool CheckCollision(Utils::Vector2I point) const;
+  [[nodiscard]] bool CheckCollision(rl::Vector2 point) const;
 
 private:
   rl::Text m_text;
