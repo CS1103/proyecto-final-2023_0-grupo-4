@@ -1,4 +1,5 @@
 #include "Button.hpp"
+#include <Mouse.hpp>
 
 // Temporal
 #include <iostream>

@@ -2,8 +2,9 @@
 #define VIEW_MAZE_HPP
 
 #include "Maze.hpp"
-#include "Utils.hpp"
-#include <raylib-cpp.hpp>
+
+#include <Rectangle.hpp>
+#include <Texture.hpp>
 
 #include "resources.hpp"
 

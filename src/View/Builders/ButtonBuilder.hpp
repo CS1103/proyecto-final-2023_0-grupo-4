@@ -3,7 +3,8 @@
 
 #include "TextBuilder.hpp"
 #include "Vector2I.hpp"
-#include <raylib-cpp.hpp>
+
+#include <Texture.hpp>
 
 #include "resources.hpp"
 

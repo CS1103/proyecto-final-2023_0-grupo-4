@@ -1,7 +1,9 @@
 #include "TextBox.hpp"
+#include <chrono>
 #include <functional>
 #include <iostream>
 #include <raylib-cpp.hpp>
+#include <thread>
 
 namespace rl = raylib;
 
@@ -20,6 +22,8 @@ static rl::Vector2 calc(int x, int y) {
 }
 
 int main() {
+
+  window.SetTargetFPS(10);
 
   const rl::Vector2 WIDTH_POSITION = calc(65 - 10, 40);
   const rl::Vector2 HEIGHT_POSITION = calc(65 + 10, 40);
@@ -50,16 +54,20 @@ int main() {
     if (width_box.CheckCollision(GetMousePosition()) ||
         height_box.CheckCollision(GetMousePosition())) {
 
-      SetMouseCursor(MOUSE_CURSOR_IBEAM);
+      // sleep
+      // std::this_thread::sleep_for(std::chrono::seconds(2));
+      std::cout << "ibeam";
+      // SetMouseCursor(MOUSE_CURSOR_IBEAM);
+      // std::this_thread::sleep_for(std::chrono::seconds(2));
       // CRASHES
 
     } else {
 
-      SetMouseCursor(MOUSE_CURSOR_DEFAULT);
+      // SetMouseCursor(MOUSE_CURSOR_DEFAULT);
     }
 
     BeginDrawing();
-    window.ClearBackground();
+    // window.ClearBackground();
 
     width_box.Draw();
     height_box.Draw();

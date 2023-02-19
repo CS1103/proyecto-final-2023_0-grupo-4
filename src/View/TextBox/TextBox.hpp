@@ -1,8 +1,8 @@
 #ifndef TEXT_BOX_HPP
 #define TEXT_BOX_HPP
 
+#include "TextBoxBuilder.hpp"
 #include "Vector2I.hpp"
-#include "ViewUtils.hpp"
 
 #include <functional>
 #include <optional>
@@ -43,6 +43,7 @@ private:
   Color m_color;
   std::function<bool(const std::string &)> m_validator;
   bool m_focus = false;
+  uint8_t m_maxLength;
 };
 
 #endif // !TEXT_BOX_HPP

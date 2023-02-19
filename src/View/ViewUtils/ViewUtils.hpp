@@ -4,7 +4,6 @@
 #include "Builders.hpp"
 #include "Vector2I.hpp"
 #include <initializer_list>
-#include <raylib-cpp.hpp>
 #include <string>
 
 namespace Utils {

@@ -1,14 +1,29 @@
 #include "TextBox.hpp"
 
+// testing
+#include <iostream>
+
 TextBox::TextBox(const TextBoxBuilder &builder)
     : m_text(builder.text), m_rect(builder.pos, builder.size),
-      m_color(builder.color), m_validator(builder.validator) {}
+      m_color(builder.color), m_validator(builder.validator) {
+
+  m_text.SetText("a");
+  auto max_width = m_rect.width;
+  auto char_width = m_text.Measure();
+
+  m_maxLength =
+      static_cast<uint8_t>(static_cast<int>(max_width) / char_width - 1);
+  m_text.SetText("");
+}
 
 void TextBox::Draw() const {
+
   m_rect.Draw(m_color);
 
+  auto size = m_text.MeasureEx();
+
   Utils::Vector2I text_position =
-      m_rect.GetPosition(); // + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;
+      m_rect.GetPosition() + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;
   m_text.Draw(text_position);
 }
 
@@ -44,23 +59,23 @@ std::optional<bool> TextBox::HandleInput() {
     return std::nullopt;
   }
 
-  int key = GetKeyPressed();
-  std::cout << "key pressed: " << char(key) << std::endl;
+  int key = GetCharPressed();
 
-  while (key != 0) {
+  while (key > 0) {
 
-    if (key == BACKSPACE) {
-      m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));
+    auto text = m_text.GetText();
 
-    } else if (key == ENTER) {
-      break;
-    } else if (key == ESC) {
-      m_focus = false;
-      break;
-    } else {
+    // NOTE: Only allow keys in range [32..125]
+    if ((key >= 32) && (key <= 125) && (text.size() < m_maxLength)) {
+
       m_text.SetText(m_text.GetText() + static_cast<char>(key));
     }
-    key = GetKeyPressed();
+
+    key = GetCharPressed();
+  }
+  if (IsKeyPressed(KEY_BACKSPACE)) {
+    std::cout << "backspace" << std::endl;
+    m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));
   }
 
   return TextIsValid();

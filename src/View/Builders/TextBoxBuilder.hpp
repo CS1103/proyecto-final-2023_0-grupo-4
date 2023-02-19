@@ -24,6 +24,7 @@ struct TextBoxBuilder {
 
   TextBoxBuilder &Pos(const rl::Vector2 &_pos);
   TextBoxBuilder &Size(const rl::Vector2 &_size);
+  TextBoxBuilder &Text(const rl::Text &_text);
 
 private:
 };

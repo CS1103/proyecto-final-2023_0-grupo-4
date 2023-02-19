@@ -3,6 +3,8 @@
 #include "Config.hpp"
 #include "TextBox.hpp"
 
+#include "ViewUtils.hpp"
+
 using std::optional;
 using Utils::Vector2I;
 

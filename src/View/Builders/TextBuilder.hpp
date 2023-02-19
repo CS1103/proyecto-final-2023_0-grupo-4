@@ -9,7 +9,8 @@
 namespace rl = raylib;
 
 constexpr int DEFAULT_FONT_SIZE = 16;
-constexpr std::string_view DEFAULT_TEXT_FONT_PATH = RESOURCE_PATH "PATH";
+constexpr std::string_view DEFAULT_TEXT_FONT_PATH =
+    RESOURCE_PATH "fonts/fira_code_mono.ttf";
 
 struct TextBuilder {
 

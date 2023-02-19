@@ -4,7 +4,9 @@
 #include "../Config/Config.hpp"
 #include "Maze.hpp"
 #include <iostream>
-#include <raylib-cpp.hpp>
+
+#include <Texture.hpp>
+#include <Window.hpp>
 
 #include "resources.hpp"
 
