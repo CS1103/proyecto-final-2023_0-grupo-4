@@ -102,7 +102,7 @@ links to humans using your project. You can include links like:
 ## Autores
 
 - autor 1 :)
-- autor 2
+- Camila Villasana Boggiano
 - Diana Carolina Ñañez Andres
 - Jaime Alfonso Ramos Talla
 - Kevin Jonás Zevallos López
