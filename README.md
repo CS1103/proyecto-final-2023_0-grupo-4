@@ -66,6 +66,20 @@ What's all the bells and whistles this project can perform?
 * You can also do another thing
 * If you get really randy, you can even do this
 
+### Search algorithms
+#### DFG (Depth First Search)
+Este algoritmo emplea en su implementación el concepto de stack. Lo que hace es recorrer en su totalidad una estructura. 
+Cada vez que se encuentra con dos o más caminos posibles, este recorrerá cada uno lo más profundamente posible, a la 
+vez que almacena los nodos recorridos en un stack. Si alcanza un camino sin salida antes que el objetivo, este retrocede a 
+la bifurcación anterior y repite el proceso. Este algoritmo, aunque puede cumplir con el objetivo, no es eficiente en lo 
+absoluto, considerando que existen alternativas más eficientes. 
+
+#### GBFS (Greedy Best First Search)
+Este es un algoritmo de búsqueda heurística, es decir, necesita información adicional específica relacionada con el 
+problema a resolver. En el caso de un laberinto, lo que requiere es el número de casillas de distancia a la que se 
+encuentra cada casilla del objetivo. Lo que el algoritmo GBFS busca es reducir este número conforme se mueve de casilla 
+en casilla. Si alcanza un punto sin salida, retrocede de nuevo al último cruce. A pesar de siempre buscar la casilla 
+más cercana al objetivo, no puede garantizar que el camino elegido será el más eficiente. 
 
 ## Links
 
