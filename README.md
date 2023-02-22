@@ -5,13 +5,13 @@
 ### media:
 
 #### square types
-- WALL
-- EMPTY
+- ~~WALL~~
+- ~~EMPTY~~
 - START
 - GOAL
 
 #### Sprites
-- button background
+- ~~button background~~
 - game background
 - Different end screens
 - Bot image
