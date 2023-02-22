@@ -6,7 +6,7 @@
 
 template <ALGORITHM T>
   requires IsDFSOrBFS<T> bool
-Bot::Solve(const Maze &maze) {
+Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
   m_solution.clear();
   m_searchedPath.clear();

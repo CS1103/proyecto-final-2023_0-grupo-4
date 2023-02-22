@@ -19,12 +19,14 @@ struct TextBoxBuilder {
   std::function<bool(const std::string &)> validator;
 
   TextBoxBuilder() = default;
-  explicit TextBoxBuilder(
-      const std::function<bool(const std::string &)> &validator);
+  // explicit TextBoxBuilder(std::function<bool(const std::string &)>
+  // _validator);
 
   TextBoxBuilder &Pos(const rl::Vector2 &_pos);
   TextBoxBuilder &Size(const rl::Vector2 &_size);
   TextBoxBuilder &Text(const rl::Text &_text);
+  TextBoxBuilder &
+  Validator(std::function<bool(const std::string &)> _validator);
 
 private:
 };

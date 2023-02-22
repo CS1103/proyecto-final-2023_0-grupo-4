@@ -22,7 +22,7 @@ struct TextBuilder {
   std::string text;
 
   // Setters
-  TextBuilder(std::string _text);
+  TextBuilder(std::string _text); // NOLINT
   TextBuilder() = default;
 
   TextBuilder &Text(std::string _text);
@@ -36,11 +36,12 @@ struct TextBuilder {
   TextBuilder &Font(const ::Image &image);
 
   // casting to rl::Text
-  operator rl::Text() const;
+  operator rl::Text() const; // NOLINT
 
 private:
   inline static rl::Font &DefaultTextFont() {
-    static rl::Font font{DEFAULT_TEXT_FONT_PATH.data(), DEFAULT_FONT_SIZE};
+    static rl::Font font{DEFAULT_TEXT_FONT_PATH.data(), // NOLINT
+                         DEFAULT_FONT_SIZE};
     return font;
   }
 };

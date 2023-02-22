@@ -24,8 +24,8 @@ ButtonBuilder DefaultButton(std::string _text, const Vector2I &pos);
 
 TextBuilder DefaultTextBoxText();
 TextBoxBuilder DefaultTextBox(const rl::Vector2 &_pos, const rl::Vector2 &_size,
-                              const std::function<bool(const std::string &)>
-                                  &validator = Utils::Validators::None);
+                              std::function<bool(const std::string &)>
+                                  _validator = Utils::Validators::None);
 
 struct PositionCalc {
 

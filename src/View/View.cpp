@@ -57,8 +57,8 @@ Config View::GetConfig() {
 
   TextBox width_box = Utils::DefaultTextBox(
       WIDTH_POSITION, {100, 50}) /*.validator(size_validator)*/;
-  TextBox height_box = Utils::DefaultTextBox(
-      HEIGHT_POSITION, {100, 50}) /*.validator(size_validator)*/;
+  TextBox height_box = Utils::DefaultTextBox(HEIGHT_POSITION, {100, 50})
+                           .Validator(size_validator);
 
   Button is_bot_button = Utils::DefaultButton("BOT", IS_BOT_POSITION);
   Button is_human_button = Utils::DefaultButton(
@@ -85,6 +85,20 @@ Config View::GetConfig() {
 
       if (!is_bot.has_value() || !is_timed.has_value() || !width.has_value() ||
           !height.has_value() || !width_valid || !height_valid) {
+
+        std::cout << std::boolalpha << is_bot.value();
+        std::cout << '\n';
+        std::cout << std::boolalpha << is_timed.value();
+        std::cout << '\n';
+        std::cout << width.value();
+        std::cout << '\n';
+        std::cout << height.value();
+        std::cout << '\n';
+        std::cout << width_valid;
+        std::cout << '\n';
+        std::cout << height_valid;
+        std::cout << '\n';
+
         std::cout << "Not all options are set" << std::endl;
         throw;
       }
@@ -118,8 +132,24 @@ Config View::GetConfig() {
 
     width_box.CheckFocus();
     width_valid = width_box.HandleInput().value_or(false);
+
+    if (width_valid) {
+      std::cout << "width valid" << std::endl;
+      try {
+        width = std::stoi("");
+      } catch (const std::invalid_argument &) {
+        std::cout << "stoi unsuccesfull" << std::endl;
+      }
+      std::cout << "stoi succes" << std::endl;
+
+      // width = std::stoi(width_box.GetText());
+    }
+
     height_box.CheckFocus();
     height_valid = height_box.HandleInput().value_or(false);
+    if (height_valid) {
+      // height = std::stoi(height_box.GetText());
+    }
 
     if (width_box.CheckCollision(GetMousePosition()) ||
         height_box.CheckCollision(GetMousePosition())) {

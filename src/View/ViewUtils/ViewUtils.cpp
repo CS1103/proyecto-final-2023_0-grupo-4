@@ -54,9 +54,12 @@ TextBuilder DefaultTextBoxText() {
 }
 TextBoxBuilder
 DefaultTextBox(const rl::Vector2 &_pos, const rl::Vector2 &_size,
-               const std::function<bool(const std::string &)> &validator) {
-  static TextBoxBuilder default_text_box = TextBoxBuilder(validator);
-  return default_text_box.Pos(_pos).Size(_size).Text(DefaultTextBoxText());
+               std::function<bool(const std::string &)> _validator) {
+  static TextBoxBuilder default_text_box = TextBoxBuilder();
+  return default_text_box.Pos(_pos)
+      .Size(_size)
+      .Text(DefaultTextBoxText())
+      .Validator(std::move(_validator));
 }
 
 } // namespace Utils
