@@ -1,0 +1,12 @@
+Builder:
+  Carpeta Builders xd
+Singleton:
+  Texturas por defecto estan alamacenadas como miembros de clase singletons 
+Flyweight:
+  Muchas de las texturas son compartidas por todos los objetos que las usan
+Facade:
+  La clase vista controla todo aquello relacionado a la parte grafica con una simple interfaz.
+Mediator:
+  The entirety of main.cpp is a Mediator between the logic(Maze) and the graphics(View).
+Command:
+  The Bot class is a Command pattern, it is a command that can be executed to solve the maze.
