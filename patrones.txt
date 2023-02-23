@@ -25,6 +25,27 @@ Flyweight:
 Facade:
   La clase vista controla todo aquello relacionado a la parte grafica con una simple interfaz.
 Mediator:
-  The entirety of main.cpp is a Mediator between the logic(Maze) and the graphics(View).
+  En el proyecto no se está utilizando el patrón de diseño Mediator.
+  Este patron de diseño se utiliza para reducir las dependencias entre objetos, de manera que cada objeto 
+  no necesite conocer directamente todos los demás objetos con los que se comunica. En su lugar, se 
+  utiliza un objeto mediador que se encarga de coordinar la comunicación entre los distintos objetos.
+  La clase View no tiene un objeto mediador ni se encarga de coordinar la comunicación entre distintos objetos, 
+  por lo que no se está utilizando el patrón Mediator.
+  
 Command:
-  The Bot class is a Command pattern, it is a command that can be executed to solve the maze.
+  Sí, el proyecto implementa el patrón de diseño Command. El método "Solve" es el comando y tiene diferentes 
+  implementaciones dependiendo del tipo de algoritmo que se desea utilizar. La clase Bot es el invocador que 
+  ejecuta el comando y, en este caso, se encarga de buscar la solución a un laberinto utilizando diferentes 
+  algoritmos de búsqueda.
+  En el codigo Bot se utiliza una plantilla (template) que recibe como parámetro el tipo de algoritmo que se 
+  quiere utilizar. La plantilla está restringida a tipos que sean de la clase de algoritmos 
+  DFS (Depth-First Search) o BFS (Breadth-First Search), mediante la restricción de conceptos "IsDFSOrBFS<T>". 
+  El tipo de algoritmo se utiliza para seleccionar la estructura de datos adecuada para la frontera de búsqueda 
+  (queue o stack) y para seleccionar la implementación correcta de la función de comparación utilizada en la 
+  búsqueda A* o Greedy Best First Search (GBFS).
+
+  También, se utiliza la clase Compare, que es un functor que compara nodos o cuadros (squares) dependiendo 
+  del tipo de algoritmo utilizado. La clase Compare es una especialización parcial de la plantilla 
+  Bot::Compare para los tipos de algoritmos A* y GBFS, y se utiliza en la implementación correspondiente 
+  del método Solve.
+
