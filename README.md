@@ -7,14 +7,14 @@
 #### square types
 - ~~WALL~~
 - ~~EMPTY~~
-- START
-- GOAL
+- ~~START~~
+- ~~GOAL~~
 
 #### Sprites
 - ~~button background~~
 - game background
 - Different end screens
-- Bot image
+- ~~Bot image~~
 
 #### Music
 
@@ -22,9 +22,9 @@
 
 #### Search algorithms
 
-- DFG (Depth First Search)
+- ~~DFG (Depth First Search)~~
 - BFG (Breadth First Search)
-- GBFG (Greedy Best First Search)
+- ~~GBFG (Greedy Best First Search)~~
 - A*
 
 #### Maze generation algorithms
