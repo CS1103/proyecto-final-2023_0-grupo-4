@@ -1,0 +1,20 @@
+-----  Maze Generation ----
+- Contexto en General : 
+
+El algoritmo Maze Generation se refiere a un conjunto de técnicas y algoritmos 
+utilizados para generar laberintos o mazes, que son estructuras compuestas por caminos y paredes que 
+forman un patrón complejo y laberíntico. Estos algoritmos se utilizan comúnmente en la programación de juegos, 
+simulaciones y otras aplicaciones en las que se requiere la generación de estructuras aleatorias.
+
+- ¿Para qué fue usado en nuestro código?
+En nuestro código, la clase Maze se usa para proporcionar un laberinto al bot para que lo resuelva. 
+La clase Maze tiene métodos como GetStart(), GetGoal(), GetNeighbors(), etc. que se utilizan para obtener 
+la posición de inicio, la posición objetivo, los vecinos de una posición, etc. Los métodos de Maze se usan en 
+las funciones Solve() para buscar la solución del laberinto.
+La clase Maze también proporciona una función de hash para las coordenadas del laberinto, que se utiliza en el 
+mapa no ordenado de la clase Bot para almacenar los padres de cada posición. Esto es importante ya que se utiliza 
+en la construcción del camino de solución del laberinto.
+
+En resumen, la clase Maze es fundamental para proporcionar los detalles del laberinto al bot para que pueda 
+buscar una solución y, posteriormente, construir un camino de solución basado en los padres de cada posición 
+del laberinto.

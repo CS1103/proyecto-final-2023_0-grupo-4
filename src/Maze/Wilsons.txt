@@ -1,0 +1,20 @@
+-----  Wilsons ----
+- Contexto en General : 
+
+Es un algoritmo de generación de laberintos que, a diferencia de los algoritmos 
+más conocidos como el algoritmo de Prim o el algoritmo de Kruskal, no construye el laberinto mediante la adición 
+de bordes. En su lugar, construye el laberinto a través de una serie de caminatas aleatorias. 
+El algoritmo comienza con un laberinto vacío y selecciona una celda al azar para ser la primera celda de la 
+caminata aleatoria. A continuación, se realiza una caminata aleatoria desde la celda seleccionada hasta que se 
+alcanza una celda que ya ha sido visitada. El camino de la caminata aleatoria y las celdas visitadas se añaden 
+al laberinto. Luego, se selecciona una nueva celda no visitada para comenzar otra caminata aleatoria. 
+Este proceso continúa hasta que todas las celdas han sido visitadas y se ha construido el laberinto completo. 
+El resultado final es un laberinto sin ciclos y conexo.
+
+- ¿Para qué fue usado en nuestro código?
+El algoritmo Wilson se utiliza para generar un laberinto de forma aleatoria. 
+este algoritmo se basa en elegir una celda aleatoria como punto de partida y luego realizar una caminata 
+aleatoria a través del laberinto hasta encontrar una celda ya visitada. Luego se agrega la ruta recorrida en 
+la caminata aleatoria al árbol de expansión mínimo que se está construyendo, que representa el laberinto en sí. 
+El proceso se repite hasta que todas las celdas se agregan al árbol de expansión mínimo. 
+En este código, se implementa el algoritmo Wilson para generar un laberinto en una matriz numpy.

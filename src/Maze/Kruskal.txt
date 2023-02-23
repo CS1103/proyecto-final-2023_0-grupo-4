@@ -1,0 +1,22 @@
+-----  Kruskal Generation ----
+- Contexto en General : 
+
+El algoritmo de Kruskal es un algoritmo de grafos que se utiliza para encontrar el árbol de expansión 
+mínima de un grafo no dirigido y ponderado. En otras palabras, el algoritmo de Kruskal encuentra un 
+subconjunto de aristas que forma un árbol que incluye a todos los vértices del grafo, donde el peso total de 
+todas las aristas en el árbol es el mínimo posible.
+
+- ¿Para qué fue usado en nuestro código?
+Fue implementado para la generación de laberintos en una matriz. El objetivo del algoritmo Kruskal es encontrar 
+un árbol de expansión mínimo en un grafo no dirigido ponderado, lo que significa que busca un subconjunto de 
+aristas que conectan todos los vértices de un grafo, y cuya suma de pesos es mínima.
+
+En este caso, el laberinto se representa como una matriz de caracteres, donde "X" representa las paredes y " " 
+(un espacio en blanco) representa los pasillos. El algoritmo comienza inicializando la matriz con todas las 
+paredes y luego seleccionando un conjunto de celdas para formar la raíz del árbol de expansión. Luego, 
+se construye una lista de aristas que conectan estas celdas. El algoritmo baraja esta lista para elegir 
+aleatoriamente una arista y, si esta arista no forma un ciclo en el árbol de expansión, se elimina la pared 
+correspondiente en la matriz.
+
+En resumen, el algoritmo Kruskal se utiliza en este código para generar un laberinto a partir de una matriz de 
+caracteres.
