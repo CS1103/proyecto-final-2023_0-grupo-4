@@ -1,5 +1,23 @@
 Builder:
-  Carpeta Builders xd
+  Si se esta implementando este patrón de diseño y lo podemos ver en "ButtonBuilder.cpp", se puede ver la 
+  definición de la clase ButtonBuilder, que define varios métodos de configuración que devuelven una referencia 
+  a la propia instancia en (*this). Esos métodos permiten establecer valores para los miembros de datos privados 
+  de la clase ButtonBuilder, como la posición (pos), el texto (text) y la textura (texture). La clase también 
+  define un método estático llamado DefaultButtonTexture() que devuelve una textura predeterminada para los 
+  botones.
+
+  En TextBoxBuilder, se define la clase TextBoxBuilder que también tiene varios métodos de configuración 
+  (Pos(), Size(), Text(), Validator()) que establecen valores para los miembros de datos privados de la clase. 
+  También contiene una función de validación (validator) que se utiliza para validar la entrada de texto.
+
+  En ambos casos, los métodos de configuración se encargan de configurar un objeto complejo 
+  (Button y TextBox, respectivamente) proporcionando valores para sus miembros de datos. 
+  Los métodos de configuración se pueden llamar en cualquier orden y se pueden omitir para utilizar valores 
+  predeterminados.
+  Además, la clase ButtonBuilder y TextBoxBuilder se derivan de otras clases 
+  (TextBuilder) y utilizan miembros de datos definidos en esas clases. Esto demuestra la flexibilidad del patrón 
+  Builder para permitir la configuración de objetos complejos que son subtipos de otros objetos complejos.
+  
 Singleton:
   Texturas por defecto estan alamacenadas como miembros de clase singletons 
 Flyweight:
