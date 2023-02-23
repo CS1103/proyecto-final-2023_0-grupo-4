@@ -1,4 +1,4 @@
-![Logo of the project](assets/logo/MAZE GAME.png)
+![Logo of the project](https://previews.123rf.com/images/dimajarm/dimajarm1711/dimajarm171100398/90707509-logo-laberinto-vector-moderno-s%C3%ADmbolo-laberinto-icono-de-cubo-isom%C3%A9trico-para-juego-de-logotipo.jpg)
 ![Lines of code](https://img.shields.io/tokei/lines/github/CS1103/proyecto-final-2023_0-grupo-4?style=plastic)
 # TODO
 
