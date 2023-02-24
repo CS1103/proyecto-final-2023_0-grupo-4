@@ -33,7 +33,7 @@ public:
 
   [[nodiscard]] bool TextIsValid();
 
-  std::optional<bool> HandleInput();
+  void HandleInput();
 
   [[nodiscard]] bool CheckCollision(Utils::Vector2I point) const;
 

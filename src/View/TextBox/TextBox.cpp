@@ -49,14 +49,11 @@ option 1
   return m_validator(m_text.GetText());
 }
 
-constexpr int BACKSPACE = 8;
-constexpr int ENTER = 13;
-constexpr int ESC = 27;
-
 /// Breve descripción, solo una línea, triple /
-std::optional<bool> TextBox::HandleInput() {
+void TextBox::HandleInput() {
+
   if (!m_focus) {
-    return std::nullopt;
+    return;
   }
 
   int key = GetCharPressed();
@@ -77,8 +74,6 @@ std::optional<bool> TextBox::HandleInput() {
     std::cout << "backspace" << std::endl;
     m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));
   }
-
-  return TextIsValid();
 }
 
 bool TextBox::CheckCollision(Utils::Vector2I point) const {
