@@ -19,7 +19,7 @@ constexpr int VIEW_WIDTH = 800;
 constexpr int VIEW_HEIGHT = 600;
 
 constexpr std::string_view BACKGROUND_TEXTURE =
-    RESOURCE_PATH "Textures/test_old_button.png";
+    RESOURCE_PATH "Textures/background.png";
 
 template <typename T>
 concept Drawable = requires(T obj) {
@@ -43,6 +43,12 @@ private:
   }
   static rl::Texture &GetBackground() {
     static rl::Texture s_background = rl::Texture(BACKGROUND_TEXTURE.data());
+
+    auto [width, height] = GetWindow().GetSize();
+
+    s_background.SetWidth(static_cast<int>(width));
+    s_background.SetHeight(static_cast<int>(height));
+
     return s_background;
   }
 
