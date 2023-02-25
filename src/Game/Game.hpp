@@ -11,7 +11,7 @@ public:
   GameBase &operator=(const GameBase &) = delete;
   GameBase &operator=(GameBase &&) = delete;
   virtual void Run() = 0;
-  GameBase(const Config &config, View &view) : m_config(config), r_view(view) {}
+  GameBase(const Config &config, View &view);
 
 protected:
   Config m_config;

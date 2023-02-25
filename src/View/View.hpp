@@ -1,7 +1,10 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "../Config/Config.hpp"
+#include "Bot.hpp"
+#include "Config.hpp"
+#include "ViewMaze.hpp"
+
 #include "Maze.hpp"
 #include <iostream>
 
@@ -10,9 +13,11 @@
 
 #include "resources.hpp"
 
-constexpr int WINDOW_FPS = 30;
+using MazeSteps = std::queue<square>;
 
 namespace rl = raylib;
+
+constexpr int WINDOW_FPS = 30;
 
 constexpr std::string_view WINDOW_TITLE = "GAME_NAME";
 constexpr int VIEW_WIDTH = 800;
@@ -21,17 +26,15 @@ constexpr int VIEW_HEIGHT = 600;
 constexpr std::string_view BACKGROUND_TEXTURE =
     RESOURCE_PATH "Textures/background.png";
 
-template <typename T>
-concept Drawable = requires(T obj) {
-                     { obj.Draw() } -> std::same_as<void>;
-                   };
-
 class View {
 public:
   void StartScreen();
   Config GetConfig();
-  void PrintPath(const Maze &maze,
-                 const std::unordered_set<square, Maze::HashPair> &path);
+
+  void LoadMaze(const maze_t &maze);
+
+  std::pair<ALGORITHM, bool> BotMode(std::optional<MazeSteps> solution,
+                                     std::optional<MazeSteps> searched);
 
 private:
   static rl::Window &GetWindow(const int &width = VIEW_WIDTH,
@@ -54,12 +57,7 @@ private:
 
   rl::Window &window = GetWindow();
   rl::Texture &background = GetBackground();
-
-  template <typename... Args>
-    requires(Drawable<Args> && ...)
-  inline void DrawAll(Args &&...args) {
-    (args.Draw(), ...);
-  }
+  std::optional<ViewMaze> view_maze = std::nullopt; // For lazy initialization
 };
 
 #endif // !VIEW_H

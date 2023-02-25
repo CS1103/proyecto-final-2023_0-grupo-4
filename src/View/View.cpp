@@ -8,6 +8,17 @@
 using std::optional;
 using Utils::Vector2I;
 
+template <typename T>
+concept Drawable = requires(T obj) {
+                     { obj.Draw() } -> std::same_as<void>;
+                   };
+
+template <typename... Args>
+  requires(Drawable<Args> && ...)
+static void DrawAll(Args &&...args) {
+  (args.Draw(), ...);
+}
+
 void View::StartScreen() {
 
   const Vector2I WINDOW_CENTER = window.GetSize() / 2;
@@ -35,30 +46,53 @@ void View::StartScreen() {
   }
 }
 
+/*
+ *     if (is_bot_button.IsClicked()) {
+      is_bot = true;
+      is_bot_button.Highlight();
+      is_human_button.UnHighlight();
+
+    } else if (is_human_button.IsClicked()) {
+      is_bot = false;
+      is_bot_button.UnHighlight();
+      is_human_button.Highlight();
+    }
+*/
+static optional<bool> HandleDualButton(Button &button1, Button &button2) {
+
+  if (button1.IsClicked()) {
+    button1.Highlight();
+    button2.UnHighlight();
+    return true;
+  }
+  if (button2.IsClicked()) {
+    button2.Highlight();
+    button1.UnHighlight();
+    return false;
+  }
+  return std::nullopt;
+}
+
 Config View::GetConfig() {
 
-  // Calculating positions
   Utils::PositionCalc calc(window.GetSize());
 
   constexpr int HORIZONTAL_OPTIONS_START = 45;
 
+  // Calculating positions
   const Vector2I WIDTH_POSITION = calc(HORIZONTAL_OPTIONS_START - 10, 40);
   const Vector2I HEIGHT_POSITION = calc(HORIZONTAL_OPTIONS_START + 10, 40);
   const Vector2I IS_BOT_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
   const Vector2I IS_TIMED_POSITION = calc(HORIZONTAL_OPTIONS_START, 65);
   const Vector2I START_POSITION = calc(35, 80);
 
-  auto size_validator = [](const std::string &str) {
-    if (str.empty() || str.size() > 3) {
-      return false;
-    }
-    return std::all_of(str.begin(), str.end(), ::isdigit);
-  };
+  const Vector2I TEXT_BOX_SIZE = {100, 50};
 
-  TextBox width_box = Utils::DefaultTextBox(
-      WIDTH_POSITION, {100, 50}) /*.validator(size_validator)*/;
-  TextBox height_box = Utils::DefaultTextBox(HEIGHT_POSITION, {100, 50})
-                           .Validator(size_validator);
+  TextBox width_box = Utils::DefaultTextBox(WIDTH_POSITION, TEXT_BOX_SIZE)
+                          .Validator(Utils::Validators::NumSmall);
+
+  TextBox height_box = Utils::DefaultTextBox(HEIGHT_POSITION, TEXT_BOX_SIZE)
+                           .Validator(Utils::Validators::NumSmall);
 
   Button is_bot_button = Utils::DefaultButton("BOT", IS_BOT_POSITION);
   Button is_human_button = Utils::DefaultButton(
@@ -93,33 +127,14 @@ Config View::GetConfig() {
       }
     }
 
-    if (is_bot_button.IsClicked()) {
-      is_bot = true;
-      is_bot_button.Highlight();
-      is_human_button.UnHighlight();
+    is_bot = HandleDualButton(is_bot_button, is_human_button);
 
-    } else if (is_human_button.IsClicked()) {
-      is_bot = false;
-      is_bot_button.UnHighlight();
-      is_human_button.Highlight();
-    }
-
-    if (is_timed_button.IsClicked()) {
-      is_timed = true;
-      is_timed_button.Highlight();
-      is_not_timed_button.UnHighlight();
-
-    } else if (is_not_timed_button.IsClicked()) {
-      is_timed = false;
-      is_timed_button.UnHighlight();
-      is_not_timed_button.Highlight();
-    }
+    is_timed = HandleDualButton(is_timed_button, is_not_timed_button);
 
     width_box.CheckFocus();
     width_box.HandleInput();
-    width_valid = width_box.TextIsValid();
 
-    if (width_valid) {
+    if (width_box.TextIsValid()) {
       try {
         width = std::stoi(width_box.GetText());
       } catch (const std::invalid_argument &) {
@@ -130,9 +145,8 @@ Config View::GetConfig() {
 
     height_box.CheckFocus();
     height_box.HandleInput();
-    height_valid = height_box.TextIsValid();
 
-    if (height_valid) {
+    if (height_box.TextIsValid()) {
       try {
         height = std::stoi(height_box.GetText());
       } catch (const std::invalid_argument &) {
@@ -159,5 +173,90 @@ Config View::GetConfig() {
   throw std::runtime_error("Window closed");
 }
 
-void View::PrintPath(const Maze &maze,
-                     const std::unordered_set<square, Maze::HashPair> &path) {}
+void View::LoadMaze(const maze_t &maze) {
+  ViewMaze new_maze(maze);
+
+  this->view_maze = ViewMaze(maze);
+}
+
+std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
+                                         optional<MazeSteps> searched) {
+
+  if (!view_maze.has_value()) {
+    throw std::runtime_error("View::BotMode: maze not loaded");
+  }
+
+  Utils::PositionCalc calc(window.GetSize());
+  constexpr int HORIZONTAL_OPTIONS_START = 65;
+
+  const Vector2I DFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
+  const Vector2I BFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 40);
+  const Vector2I GBFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 60);
+  const Vector2I A_STAR_POSITION = calc(HORIZONTAL_OPTIONS_START, 85);
+
+  const Vector2I END_POSITION = calc(35, 80);
+
+  Button dfs_button = Utils::DefaultButton("DFS", DFS_POSITION);
+  Button bfs_button = Utils::DefaultButton("BFS", BFS_POSITION);
+  Button gbfs_button = Utils::DefaultButton("GBFS", GBFS_POSITION);
+  Button a_star_button = Utils::DefaultButton("A*", A_STAR_POSITION);
+
+  Button end_button = Utils::DefaultButton("end", END_POSITION);
+
+  uint frame_count = 0;
+
+  while (!window.ShouldClose()) {
+
+    if (dfs_button.IsClicked()) {
+      return {ALGORITHM::DFS, false};
+    }
+    if (bfs_button.IsClicked()) {
+      return {ALGORITHM::BFS, false};
+    }
+    if (gbfs_button.IsClicked()) {
+      return {ALGORITHM::GBFS, false};
+    }
+    if (a_star_button.IsClicked()) {
+      return {ALGORITHM::A_STAR, false};
+    }
+    if (end_button.IsClicked()) {
+      return {ALGORITHM::BFS, true};
+    }
+
+    // Drawing
+    DrawAll(dfs_button, bfs_button, gbfs_button, a_star_button);
+
+    view_maze.value().Draw();
+
+    if (!solution.has_value() || !searched.has_value()) {
+      continue;
+    }
+
+    frame_count++;
+
+    if (!searched->empty()) {
+
+      if (frame_count % 10 == 0) {
+        auto current = searched->front();
+        searched->pop();
+        auto next = searched->front();
+
+        view_maze.value().MovePlayer(current, next);
+      }
+      continue;
+    }
+    if (!solution->empty()) {
+
+      if (frame_count % 10 == 0) {
+        auto current = solution->front();
+        solution->pop();
+        auto next = solution->front();
+
+        view_maze.value().MovePlayer(current, next);
+      }
+      continue;
+    }
+  }
+
+  return {ALGORITHM::BFS, true};
+}

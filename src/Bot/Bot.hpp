@@ -2,9 +2,9 @@
 #define BOT_H
 
 #include "../Maze/Maze.hpp"
-#include <unordered_set>
+#include <queue>
 
-enum class ALGORITHM { DFS, BFS, GBGS, A_STAR };
+enum class ALGORITHM { DFS, BFS, GBFS, A_STAR };
 
 // clang-format off
 template <ALGORITHM T>
@@ -14,7 +14,7 @@ T == ALGORITHM::BFS;
 
 template <ALGORITHM T>
 concept IsGBFSOrA_STAR = 
-T == ALGORITHM::GBGS ||
+T == ALGORITHM::GBFS ||
 T == ALGORITHM::A_STAR;
 
 class Bot {
@@ -29,8 +29,8 @@ public:
     requires IsDFSOrBFS<T> bool
   Solve(const Maze &maze);
 
-  [[nodiscard]] std::unordered_set<square, Maze::HashPair> GetSolution() const;
-  [[nodiscard]] std::unordered_set<square, Maze::HashPair> GetSearchedPath() const;
+  [[nodiscard]] std::queue<square> GetSolution() const;
+  [[nodiscard]] std::queue<square> GetSearchedPath() const;
 
 private:
 
@@ -43,8 +43,8 @@ private:
 
   };
 
-  std::unordered_set<square, Maze::HashPair> m_solution;
-  std::unordered_set<square, Maze::HashPair> m_searchedPath;
+  std::queue<square> m_solution;
+  std::queue<square> m_searchedPath;
 
   inline static std::optional<square> s_goal = std::nullopt;
 

@@ -15,8 +15,9 @@ struct BoardSize {
 
 struct Config {
 
-  Config(const PLAYER_TYPE &playerT, const BoardSize &size, const bool &timed)
-      : board_size(size) {}
+  Config(const PLAYER_TYPE &_playerT, const BoardSize &_size,
+         const bool &_timed)
+      : playerT(_playerT), timed(_timed), board_size(_size) {}
 
   PLAYER_TYPE playerT;
   bool timed;

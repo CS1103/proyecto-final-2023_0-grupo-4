@@ -24,30 +24,34 @@ constexpr std::string_view GOAL_TEXTURE_PATH =
 class ViewMaze {
 public:
   explicit ViewMaze(const Maze &maze);
-  void Draw() const {
+  explicit ViewMaze(const maze_t &maze); // construct directly from matrix
+  ViewMaze(ViewMaze &&other) = default;
+  ViewMaze &operator=(ViewMaze &&other) = default;
+  ViewMaze(const ViewMaze &other) = default;
+  ViewMaze &operator=(const ViewMaze &other) = default;
+  void Draw() const; // {
 
-    // board.Draw();
+  // board.Draw();
 
-    // for (auto &row : cells) {
-    //   for (auto &cell : row) {
-    //     cell.texture.Draw(cell.rect);
-    //   }
-    // }
-  }
+  // for (auto &row : cells) {
+  //   for (auto &cell : row) {
+  //     cell.texture.Draw(cell.rect);
+  //   }
+  // }
+  // }
 
-  void MovePlayer(const square &current, const square &next) {
+  void DrawSearched(const square &current, const square &next);
+  void DrawSolution(const square &current, const square &next);
 
-    // edit cells
+  // edit cells
 
-    // cells[current].type = visited
-    // cells[current].texture = SearchedTexture
-    // cells[next].type = current
-    // cells[next].texture = CurrentTexture // invalida
-  }
+  // cells[current].type = visited
+  // cells[current].texture = SearchedTexture
+  // cells[next].type = current
+  // cells[next].texture = CurrentTexture // invalida
+  // }
 
 private:
-  const Maze &maze;
-
   struct ViewCell {
 
     SQUARE_TYPE type;
