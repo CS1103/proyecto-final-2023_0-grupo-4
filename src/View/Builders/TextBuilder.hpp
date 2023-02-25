@@ -3,7 +3,6 @@
 
 #include <Font.hpp>
 #include <Text.hpp>
-#include <functional>
 
 #include "resources.hpp"
 

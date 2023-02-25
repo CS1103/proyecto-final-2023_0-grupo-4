@@ -7,14 +7,14 @@
 #### square types
 - ~~WALL~~
 - ~~EMPTY~~
-- START
-- GOAL
+- ~~START~~
+- ~~GOAL~~
 
 #### Sprites
 - ~~button background~~
 - game background
 - Different end screens
-- Bot image
+- ~~Bot image~~
 
 #### Music
 
@@ -22,9 +22,9 @@
 
 #### Search algorithms
 
-- DFG (Depth First Search)
+- ~~DFG (Depth First Search)~~
 - BFG (Breadth First Search)
-- GBFG (Greedy Best First Search)
+- ~~GBFG (Greedy Best First Search)~~
 - A*
 
 #### Maze generation algorithms
@@ -87,8 +87,8 @@ Even though this information can be found inside the project on machine-readable
 format like in a .json file, it's good to include a summary of most useful
 links to humans using your project. You can include links like:
 
-- Project homepage: https://your.github.com/awesome-project/
-- Repository: https://github.com/your/awesome-project/
+- Project homepage: https://cs1103.github.io/proyecto-final-2023_0-grupo-4/
+- Repository: https://github.com/CS1103/proyecto-final-2023_0-grupo-4
 - Issue tracker: https://github.com/your/awesome-project/issues
   - In case of sensitive bugs like security vulnerabilities, please contact
     my@email.com directly instead of using issue tracker. We value your effort
@@ -101,7 +101,6 @@ links to humans using your project. You can include links like:
 
 ## Autores
 
-- autor 1 :)
 - Camila Villasana Boggiano
 - Diana Carolina Ñañez Andres
 - Jaime Alfonso Ramos Talla

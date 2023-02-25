@@ -24,19 +24,40 @@ constexpr std::string_view GOAL_TEXTURE_PATH =
 class ViewMaze {
 public:
   explicit ViewMaze(const Maze &maze);
-  void Draw() const;
+  void Draw() const {
+
+    // board.Draw();
+
+    // for (auto &row : cells) {
+    //   for (auto &cell : row) {
+    //     cell.texture.Draw(cell.rect);
+    //   }
+    // }
+  }
+
+  void MovePlayer(const square &current, const square &next) {
+
+    // edit cells
+
+    // cells[current].type = visited
+    // cells[current].texture = SearchedTexture
+    // cells[next].type = current
+    // cells[next].texture = CurrentTexture // invalida
+  }
 
 private:
   const Maze &maze;
 
   struct ViewCell {
+
+    SQUARE_TYPE type;
     rl::Rectangle rect;
-    rl::Texture &texture;
+    std::reference_wrapper<rl::Texture> texture;
+    ViewCell(/*TODO*/);
   };
 
   rl::Rectangle board;
   matrix_t<ViewCell> cells;
-  std::optional<square> position;
 
   inline static raylib::Texture &EmptyTexture() {
     // TODO(luis enrique): Implement this
