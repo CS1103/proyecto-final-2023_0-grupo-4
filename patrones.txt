@@ -19,8 +19,26 @@ Builder:
   Builder para permitir la configuración de objetos complejos que son subtipos de otros objetos complejos.
   
 Singleton:
-  Texturas por defecto estan alamacenadas como miembros de clase singletons 
-Flyweight:
+  El patron de diseño singleton consiste en una clase que permite unicamente una instancia de objeto existente a la vez.  
+  En el presente proyecto tenemos multiples texturas que debemos cargar en la memoria del GPU; 
+  sin embargo, esta memoria es limitada, especialmente en maquinas de bajas caracteristicas.
+  Por ello, implementamos una función estatica para cada una de las texturas, la cual actua como un 
+  Singleton de [Meyer's](https://laristra.github.io/flecsi/src/developer-guide/patterns/meyers_singleton.html 
+  "Meyer's singleton example").
+
+  ##### Builders/TextBuilder.hpp:
+  cpp
+  inline static rl::Font &DefaultTextFont() {
+      static rl::Font font{DEFAULT_TEXT_FONT_PATH.data(), // NOLINT
+                           DEFAULT_FONT_SIZE};
+      return font;
+    }
+
+  #### Motivación:
+
+  Decidimos implementarlo como una función para que el singleton se inicialize de manera tardía 
+  (Lazy initialization), y de esa manera evitar el fiasco de inicialización estatica.
+  Flyweight:
   Muchas de las texturas son compartidas por todos los objetos que las usan
 Facade:
   La clase vista controla todo aquello relacionado a la parte grafica con una simple interfaz.
