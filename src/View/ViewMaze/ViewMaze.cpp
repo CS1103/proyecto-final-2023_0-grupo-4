@@ -6,12 +6,10 @@ ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
                              const rl::Vector2 &_size, rl::Texture &_texture)
     : type(_type), rect(_pos, _size), texture(_texture) {}
 
-ViewMaze::ViewMaze(const maze_t &maze) {
+ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 
   auto rows = maze.size();
   auto cols = maze[0].size();
-
-  cells.reserve(rows);
 
   auto width = GetScreenWidth();
   auto height = GetScreenHeight();
@@ -66,12 +64,14 @@ ViewMaze::ViewMaze(const maze_t &maze) {
           case SQUARE_TYPE::CURRENT:
             throw std::runtime_error("Current cell can't be in empty maze");
           }
+          throw std::runtime_error("Unknown cell type");
         });
     return cells_v;
   });
 }
 
 void ViewMaze::Draw() const {
+  std::cout << "Drawing maze" << std::endl;
   for (const auto &row : cells) {
 
     for (const auto &cell : row) {
@@ -80,8 +80,6 @@ void ViewMaze::Draw() const {
       } else {
         cell.rect.Draw(WHITE);
       }
-
-      // cell.texture.get().Draw();
     }
   }
 }
