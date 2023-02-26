@@ -13,6 +13,8 @@ GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
 void Game<PLAYER_TYPE::HUMAN>::Run() {}
 void Game<PLAYER_TYPE::COMPUTER>::Run() {
 
+  std::cout << "Computer mode" << std::endl;
+
   Bot bot;
 
   optional<MazeSteps> solution;

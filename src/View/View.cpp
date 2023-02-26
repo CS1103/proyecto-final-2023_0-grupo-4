@@ -121,38 +121,44 @@ Config View::GetConfig() {
           height.has_value() && width_valid && height_valid &&
           is_bot.has_value()) {
 
+        std::cout << "Starting game" << std::endl;
+
         PLAYER_TYPE player_type =
-            is_bot.value() ? PLAYER_TYPE::HUMAN : PLAYER_TYPE::COMPUTER;
+            is_bot.value() ? PLAYER_TYPE::COMPUTER : PLAYER_TYPE::HUMAN;
         return {player_type, {width.value(), height.value()}, is_timed.value()};
       }
+      std::cout << "Invalid config" << std::endl;
     }
 
-    is_bot = HandleDualButton(is_bot_button, is_human_button);
+    is_bot = HandleDualButton(is_bot_button, is_human_button)
+                 .value_or(is_bot.value_or(false));
 
-    is_timed = HandleDualButton(is_timed_button, is_not_timed_button);
+    is_timed = HandleDualButton(is_timed_button, is_not_timed_button)
+                   .value_or(is_timed.value_or(false));
 
-    width_box.CheckFocus();
-    width_box.HandleInput();
-
-    if (width_box.TextIsValid()) {
-      try {
-        width = std::stoi(width_box.GetText());
-      } catch (const std::invalid_argument &) {
-      }
-    } else {
-      width = std::nullopt;
+    for (const auto &box : {&width_box, &height_box}) {
+      box->CheckFocus();
+      box->HandleInput();
     }
 
-    height_box.CheckFocus();
-    height_box.HandleInput();
-
-    if (height_box.TextIsValid()) {
+    height_valid = height_box.TextIsValid();
+    if (height_valid) {
       try {
         height = std::stoi(height_box.GetText());
       } catch (const std::invalid_argument &) {
       }
     } else {
       height = std::nullopt;
+    }
+
+    width_valid = width_box.TextIsValid();
+    if (width_valid) {
+      try {
+        width = std::stoi(width_box.GetText());
+      } catch (const std::invalid_argument &) {
+      }
+    } else {
+      width = std::nullopt;
     }
 
     if (width_box.CheckCollision(GetMousePosition()) ||
