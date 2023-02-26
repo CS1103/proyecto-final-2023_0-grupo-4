@@ -317,7 +317,7 @@ void Maze::PaintPath(const std::unordered_set<square, HashPair> &path) {
   for (const auto &sqr : path) {
     if (m_maze[sqr.first][sqr.second] != SQUARE_TYPE::START &&
         m_maze[sqr.first][sqr.second] != SQUARE_TYPE::GOAL) {
-      m_maze[sqr.first][sqr.second] = SQUARE_TYPE::PATH;
+      m_maze[sqr.first][sqr.second] = SQUARE_TYPE::SOLUTION;
     }
   }
 }
@@ -332,7 +332,7 @@ void Maze::PaintPath(const std::unordered_set<square, HashPair> &solution,
   for (const auto &sqr : solution) {
     if (m_maze[sqr.first][sqr.second] != SQUARE_TYPE::START &&
         m_maze[sqr.first][sqr.second] != SQUARE_TYPE::GOAL) {
-      m_maze[sqr.first][sqr.second] = SQUARE_TYPE::PATH;
+      m_maze[sqr.first][sqr.second] = SQUARE_TYPE::SOLUTION;
     }
   }
 }
@@ -351,7 +351,7 @@ std::ostream &operator<<(std::ostream &ost, const SQUARE_TYPE &type) {
   case SQUARE_TYPE::GOAL:
     ost << " ";
     break;
-  case SQUARE_TYPE::PATH:
+  case SQUARE_TYPE::SOLUTION:
     ost << " ";
     break;
   case SQUARE_TYPE::SEARCHED:

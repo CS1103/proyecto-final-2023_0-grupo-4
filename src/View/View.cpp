@@ -176,7 +176,7 @@ Config View::GetConfig() {
 void View::LoadMaze(const maze_t &maze) {
   ViewMaze new_maze(maze);
 
-  this->view_maze = ViewMaze(maze);
+  this->view_maze = std::move(new_maze);
 }
 
 std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,

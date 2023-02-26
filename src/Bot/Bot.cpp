@@ -253,3 +253,8 @@ template <bool hasNode>
 
 std::queue<square> Bot::GetSolution() const { return m_solution; }
 std::queue<square> Bot::GetSearchedPath() const { return m_searchedPath; }
+
+// Explicit template instantiations
+
+template bool Bot::Solve<ALGORITHM::DFS>(const Maze &maze);
+template bool Bot::Solve<ALGORITHM::BFS>(const Maze &maze);

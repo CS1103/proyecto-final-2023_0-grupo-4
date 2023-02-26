@@ -54,5 +54,8 @@ private:
   [[nodiscard]] static int Heuristic(const square &current, const square &goal);
 
 
+
 };
+extern template bool Bot::Solve<ALGORITHM::DFS>(const Maze &maze);
+extern template bool Bot::Solve<ALGORITHM::BFS>(const Maze &maze);
 #endif // !BOT_H
