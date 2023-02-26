@@ -5,18 +5,30 @@
 using std::optional;
 using MazeSteps = std::queue<square>;
 
-template <PLAYER_TYPE PLAYER_TYPE>
+static void printQueue(MazeSteps x) {
+  while (!x.empty()) {
+    auto front = x.front();
 
+    std::cout << static_cast<int>(front.first) << "  "
+              << static_cast<int>(front.second) << std::endl;
+    x.pop();
+  }
+}
+
+template <PLAYER_TYPE PLAYER_TYPE>
 GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
     : m_config(config), m_maze(config.board_size), r_view(view) {
   std::cout << "GameBase constructor" << std::endl;
 }
 
-void Game<PLAYER_TYPE::HUMAN>::Run() { std::cout << "Human game run"; }
+void Game<PLAYER_TYPE::HUMAN>::Run() {
+
+  r_view.LoadMaze(m_maze.GetMaze());
+
+  r_view.HumanMode();
+}
 
 void Game<PLAYER_TYPE::COMPUTER>::Run() {
-
-  std::cout << "Computer game run" << std::endl;
 
   Bot bot;
 
@@ -57,6 +69,10 @@ void Game<PLAYER_TYPE::COMPUTER>::Run() {
       break;
     }
     solution = bot.GetSolution();
+
+    // std::cout << "solution:\n";
+    // printQueue(*solution);
+
     searched = bot.GetSearchedPath();
 
   } while (!finish);

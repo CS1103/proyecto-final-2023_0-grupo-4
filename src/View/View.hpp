@@ -36,6 +36,8 @@ public:
   std::pair<ALGORITHM, bool> BotMode(std::optional<MazeSteps> solution,
                                      std::optional<MazeSteps> searched);
 
+  void HumanMode();
+
 private:
   static rl::Window &GetWindow(const int &width = VIEW_WIDTH,
                                const int &height = VIEW_HEIGHT,

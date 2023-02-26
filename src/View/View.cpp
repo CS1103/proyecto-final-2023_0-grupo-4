@@ -219,25 +219,32 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
 
   while (!window.ShouldClose()) {
 
+    // std::cout << "drawing";
+
     // Drawing
     BeginDrawing();
 
     window.ClearBackground();
     background.Draw(0, 0);
-
+    view_maze->Draw();
     DrawAll(dfs_button, bfs_button, gbfs_button, a_star_button, end_button);
+    EndDrawing();
 
-    if (frame_count % 10 == 0 && solution.has_value() && searched.has_value()) {
-      frame_count++;
+    frame_count++;
+    if (frame_count % 2 == 0 && solution.has_value() && searched.has_value()) {
 
-      if (!searched->empty()) {
-
+      if (searched->size() > 1) {
         auto current = searched->front();
+
         searched->pop();
+        // std::cout << "current: " << (int)current.first << "  "
+        //           << (int)current.second << std::endl;
         auto next = searched->front();
+        // std::cout << "next: " << (int)next.first << "  " << (int)next.second
+        //           << std::endl;
 
         view_maze->DrawSearched(current, next);
-      } else if (!solution->empty()) {
+      } else if (solution->size() > 1) {
 
         auto current = solution->front();
         solution->pop();
@@ -245,29 +252,26 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
 
         view_maze->DrawSolution(current, next);
       } else {
-        std::cout << "END\n";
       }
+      continue;
     }
-    view_maze->Draw();
-
-    EndDrawing();
 
     if (dfs_button.IsClicked()) {
-      std::cout << "DFS\n";
+      std::cout << "DFSclicked\n";
       return {ALGORITHM::DFS, false};
     }
     if (bfs_button.IsClicked()) {
-      std::cout << "BFS\n";
+      std::cout << "BFSclicked\n";
 
       return {ALGORITHM::BFS, false};
     }
     if (gbfs_button.IsClicked()) {
-      std::cout << "GBFS\n";
+      std::cout << "GBFSclicked\n";
 
       return {ALGORITHM::GBFS, false};
     }
     if (a_star_button.IsClicked()) {
-      std::cout << "A*\n";
+      std::cout << "A*clicked\n";
 
       return {ALGORITHM::A_STAR, false};
     }
@@ -278,4 +282,30 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
   }
 
   return {ALGORITHM::BFS, true};
+}
+
+void View::HumanMode() {
+
+  if (!view_maze.has_value()) {
+    throw std::runtime_error("View::HumanMode: maze not loaded");
+  }
+
+  while (!window.ShouldClose()) {
+
+    if (IsKeyPressed(KEY_RIGHT)) {
+      auto valid = view_maze->MoveRight();
+    } else if (IsKeyPressed(KEY_LEFT)) {
+      auto valid = view_maze->MoveLeft();
+    } else if (IsKeyPressed(KEY_UP)) {
+      auto valid = view_maze->MoveUp();
+    } else if (IsKeyPressed(KEY_DOWN)) {
+      auto valid = view_maze->MoveDown();
+    }
+
+    BeginDrawing();
+    window.ClearBackground();
+    background.Draw(0, 0);
+    view_maze->Draw();
+    EndDrawing();
+  }
 }

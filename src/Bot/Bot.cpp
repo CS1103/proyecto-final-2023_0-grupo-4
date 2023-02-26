@@ -24,7 +24,6 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
   frontier.push(start);
 
-  m_searchedPath.emplace(start);
   searched_path.emplace(start);
 
   bool found = false;
@@ -127,7 +126,6 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
   frontier.push(Node(start));
 
-  m_searchedPath.emplace(start);
   searched_path.emplace(start);
 
   bool found = false;
@@ -192,7 +190,6 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
 
   frontier.push(start);
 
-  m_searchedPath.emplace(start);
   searched_path.emplace(start);
 
   bool found = false;

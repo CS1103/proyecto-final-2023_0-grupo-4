@@ -8,6 +8,13 @@ ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
 
 ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 
+  for (const auto &row : maze) {
+    for (const auto &cell : row) {
+      std::cout << cell;
+    }
+    std::cout << std::endl;
+  }
+
   auto rows = maze.size();
   auto cols = maze[0].size();
 
@@ -31,7 +38,6 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
   SolutionTexture().SetHeight(size.y);
   CurrentTexture().SetWidth(size.x);
   CurrentTexture().SetHeight(size.y);
-
   // ugly af, to improve with macros
 
   int cell_count = 0;
@@ -45,7 +51,8 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
     std::vector<ViewCell> cells_v;
     cells_v.reserve(row.size());
     std::transform(
-        row.begin(), row.end(), cells_v.begin(), [&](const SQUARE_TYPE &type) {
+        row.begin(), row.end(), std::back_inserter(cells_v),
+        [&](const SQUARE_TYPE &type) {
           switch (type) {
           case SQUARE_TYPE::WALL:
             return ViewCell(type, position(cell_count), size, WallTexture());
@@ -71,36 +78,41 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 }
 
 void ViewMaze::Draw() const {
-  std::cout << "Drawing maze" << std::endl;
+  // std::cout << "Drawing maze" << std::endl;
+
   for (const auto &row : cells) {
 
     for (const auto &cell : row) {
+      std::cout << cell.type;
       if (cell.type == SQUARE_TYPE::WALL) {
         cell.rect.Draw(BLACK);
       } else {
         cell.rect.Draw(WHITE);
       }
     }
+    std::cout << std::endl;
   }
 }
 
 void ViewMaze::DrawSearched(const square &current, const square &next) {
+
   auto [currX, currY] = current;
   auto [nextX, nextY] = next;
 
-  cells[currY][currX].type = SQUARE_TYPE::SEARCHED;
-  cells[currY][currX].texture = SearchedTexture();
+  cells[currX][currY].type = SQUARE_TYPE::SEARCHED;
+  cells[currX][currY].texture = SearchedTexture();
 
-  cells[nextY][nextX].type = SQUARE_TYPE::CURRENT;
-  cells[nextY][nextX].texture = CurrentTexture();
+  cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
+  cells[nextX][nextY].texture = CurrentTexture();
 }
 void ViewMaze::DrawSolution(const square &current, const square &next) {
+
   auto [currX, currY] = current;
   auto [nextX, nextY] = next;
 
-  cells[currY][currX].type = SQUARE_TYPE::SOLUTION;
-  cells[currY][currX].texture = SolutionTexture();
+  cells[currX][currY].type = SQUARE_TYPE::SOLUTION;
+  cells[currX][currY].texture = SolutionTexture();
 
-  cells[nextY][nextX].type = SQUARE_TYPE::CURRENT;
-  cells[nextY][nextX].texture = CurrentTexture();
+  cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
+  cells[nextX][nextY].texture = CurrentTexture();
 }
