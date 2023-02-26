@@ -125,6 +125,7 @@ Config View::GetConfig() {
 
         PLAYER_TYPE player_type =
             is_bot.value() ? PLAYER_TYPE::COMPUTER : PLAYER_TYPE::HUMAN;
+
         return {player_type, {width.value(), height.value()}, is_timed.value()};
       }
       std::cout << "Invalid config" << std::endl;
@@ -180,6 +181,9 @@ Config View::GetConfig() {
 }
 
 void View::LoadMaze(const maze_t &maze) {
+
+  std::cout << "LoadMaze" << std::endl;
+
   ViewMaze new_maze(maze);
 
   this->view_maze = std::move(new_maze);
@@ -187,6 +191,8 @@ void View::LoadMaze(const maze_t &maze) {
 
 std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
                                          optional<MazeSteps> searched) {
+
+  std::cout << "BotMode view started" << std::endl;
 
   if (!view_maze.has_value()) {
     throw std::runtime_error("View::BotMode: maze not loaded");
@@ -198,7 +204,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
   const Vector2I DFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 20);
   const Vector2I BFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 40);
   const Vector2I GBFS_POSITION = calc(HORIZONTAL_OPTIONS_START, 60);
-  const Vector2I A_STAR_POSITION = calc(HORIZONTAL_OPTIONS_START, 85);
+  const Vector2I A_STAR_POSITION = calc(HORIZONTAL_OPTIONS_START, 80);
 
   const Vector2I END_POSITION = calc(35, 80);
 
@@ -213,54 +219,61 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
 
   while (!window.ShouldClose()) {
 
-    if (dfs_button.IsClicked()) {
-      return {ALGORITHM::DFS, false};
-    }
-    if (bfs_button.IsClicked()) {
-      return {ALGORITHM::BFS, false};
-    }
-    if (gbfs_button.IsClicked()) {
-      return {ALGORITHM::GBFS, false};
-    }
-    if (a_star_button.IsClicked()) {
-      return {ALGORITHM::A_STAR, false};
-    }
-    if (end_button.IsClicked()) {
-      return {ALGORITHM::BFS, true};
-    }
-
     // Drawing
-    DrawAll(dfs_button, bfs_button, gbfs_button, a_star_button);
+    BeginDrawing();
 
-    view_maze->Draw();
+    window.ClearBackground();
+    background.Draw(0, 0);
 
-    if (!solution.has_value() || !searched.has_value()) {
-      continue;
-    }
+    DrawAll(dfs_button, bfs_button, gbfs_button, a_star_button, end_button);
 
-    frame_count++;
+    if (frame_count % 10 == 0 && solution.has_value() && searched.has_value()) {
+      frame_count++;
 
-    if (!searched->empty()) {
+      if (!searched->empty()) {
 
-      if (frame_count % 10 == 0) {
         auto current = searched->front();
         searched->pop();
         auto next = searched->front();
 
         view_maze->DrawSearched(current, next);
-      }
-      continue;
-    }
-    if (!solution->empty()) {
+      } else if (!solution->empty()) {
 
-      if (frame_count % 10 == 0) {
         auto current = solution->front();
         solution->pop();
         auto next = solution->front();
 
         view_maze->DrawSolution(current, next);
+      } else {
+        std::cout << "END\n";
       }
-      continue;
+    }
+    view_maze->Draw();
+
+    EndDrawing();
+
+    if (dfs_button.IsClicked()) {
+      std::cout << "DFS\n";
+      return {ALGORITHM::DFS, false};
+    }
+    if (bfs_button.IsClicked()) {
+      std::cout << "BFS\n";
+
+      return {ALGORITHM::BFS, false};
+    }
+    if (gbfs_button.IsClicked()) {
+      std::cout << "GBFS\n";
+
+      return {ALGORITHM::GBFS, false};
+    }
+    if (a_star_button.IsClicked()) {
+      std::cout << "A*\n";
+
+      return {ALGORITHM::A_STAR, false};
+    }
+    if (end_button.IsClicked()) {
+      std::cout << "END_clicked\n";
+      return {ALGORITHM::BFS, true};
     }
   }
 

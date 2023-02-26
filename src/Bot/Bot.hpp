@@ -23,11 +23,13 @@ public:
   Bot() = default;
 
   template <ALGORITHM T>
-  bool Solve(const Maze &maze);
-
-  template <ALGORITHM T>
     requires IsDFSOrBFS<T> bool
   Solve(const Maze &maze);
+
+  template <ALGORITHM T>
+    requires IsGBFSOrA_STAR<T> 
+  bool Solve(const Maze &maze);
+
 
   [[nodiscard]] std::queue<square> GetSolution() const;
   [[nodiscard]] std::queue<square> GetSearchedPath() const;
@@ -56,6 +58,4 @@ private:
 
 
 };
-extern template bool Bot::Solve<ALGORITHM::DFS>(const Maze &maze);
-extern template bool Bot::Solve<ALGORITHM::BFS>(const Maze &maze);
 #endif // !BOT_H

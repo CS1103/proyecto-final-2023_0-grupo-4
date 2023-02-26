@@ -40,7 +40,7 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
     frontier.pop();
 
     if (current == maze.GetGoal()) {
-      std::cout << "Found the end!" << std::endl;
+      // std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
@@ -56,7 +56,7 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
     }
   }
   if (!found) {
-    std::cout << "No solution found" << std::endl;
+    // std::cout << "No solution found" << std::endl;
     return false;
   }
 
@@ -109,7 +109,7 @@ bool Bot::Node::operator==(const square &sqr) {
 
 template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
-  std::cout << "Solving with A*" << std::endl;
+  // std::cout << "Solving with A*" << std::endl;
 
   m_solution = {};
   m_searchedPath = {};
@@ -142,7 +142,7 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
     frontier.pop();
 
     if (current == maze.GetGoal()) {
-      std::cout << "Found the end!" << std::endl;
+      // std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
@@ -151,14 +151,15 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
     for (square neighbor : maze.GetNeighbors(current)) {
 
       if (searched_path.find(neighbor) == searched_path.end()) {
-        m_searchedPath.emplace(current);
+        m_searchedPath.emplace(neighbor);
+        searched_path.emplace(neighbor);
         frontier.emplace(neighbor, current_score + 1);
         parent[neighbor] = current;
       }
     }
   }
   if (!found) {
-    std::cout << "No solution found" << std::endl;
+    // std::cout << "No solution found" << std::endl;
     return false;
   }
 
@@ -173,7 +174,7 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
 template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
 
-  std::cout << "Solving with Greedy Best First Search" << std::endl;
+  // std::cout << "Solving with Greedy Best First Search" << std::endl;
 
   m_solution = {};
   m_searchedPath = {};
@@ -204,7 +205,7 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
     frontier.pop();
 
     if (current == maze.GetGoal()) {
-      std::cout << "Found the end!" << std::endl;
+      // std::cout << "Found the end!" << std::endl;
       found = true;
       break;
     }
@@ -213,14 +214,15 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
     for (square neighbor : maze.GetNeighbors(current)) {
 
       if (searched_path.find(neighbor) == searched_path.end()) {
-        m_searchedPath.emplace(current);
+        m_searchedPath.emplace(neighbor);
+        searched_path.emplace(neighbor);
         frontier.push(neighbor);
         parent[neighbor] = current;
       }
     }
   }
   if (!found) {
-    std::cout << "No solution found" << std::endl;
+    // std::cout << "No solution found" << std::endl;
     return false;
   }
 
@@ -236,7 +238,7 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
 template <bool hasNode>
 [[maybe_unused]] void PrintPriorityQueue(const auto &queue) {
   auto copy = queue;
-  std::cout << "Priority Queue: \n";
+  // std::cout << "Priority Queue: \n";
   if constexpr (hasNode) {
     while (!copy.empty()) {
       std::cout << copy.top().first << " " << copy.top().second << std::endl;

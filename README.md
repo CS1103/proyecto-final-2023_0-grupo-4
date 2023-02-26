@@ -106,6 +106,7 @@ links to humans using your project. You can include links like:
 - Jaime Alfonso Ramos Talla
 - Kevin Jonás Zevallos López
 - Enrique Francisco Flores Teniente
+- Luis Enrique Cortijo
 
 ## Bibliografía
 - CS50 (2020). Search - Lecture 0 - CS50's Introduction to Artificial Intelligence with Python 2020 [Video]. Edx. https://youtu.be/WbzNRTTrX0g 

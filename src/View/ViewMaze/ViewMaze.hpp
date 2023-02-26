@@ -20,12 +20,15 @@ constexpr std::string_view START_TEXTURE_PATH =
     RESOURCE_PATH "Textures/start_tile.png";
 constexpr std::string_view GOAL_TEXTURE_PATH =
     RESOURCE_PATH "Textures/goal_tile_v1.png";
+
+// Temporal
+
 constexpr std::string_view SEARCHED_TEXTURE_PATH =
-    RESOURCE_PATH "Textures/searched_tile.png";
+    RESOURCE_PATH "Textures/empty_tile_v2.png";
 constexpr std::string_view SOLUTION_TEXTURE_PATH =
-    RESOURCE_PATH "Textures/solution_tile_v1.png";
+    RESOURCE_PATH "Textures/empty_tile_v3.png";
 constexpr std::string_view CURRENT_TEXTURE_PATH =
-    RESOURCE_PATH "Textures/current_tile_v1.png";
+    RESOURCE_PATH "Textures/empty_tile_v3.png";
 
 class ViewMaze {
 public:
