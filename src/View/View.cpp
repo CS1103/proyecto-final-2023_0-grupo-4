@@ -226,7 +226,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     // Drawing
     DrawAll(dfs_button, bfs_button, gbfs_button, a_star_button);
 
-    view_maze.value().Draw();
+    view_maze->Draw();
 
     if (!solution.has_value() || !searched.has_value()) {
       continue;
@@ -241,7 +241,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
         searched->pop();
         auto next = searched->front();
 
-        view_maze.value().MovePlayer(current, next);
+        view_maze->DrawSearched(current, next);
       }
       continue;
     }
@@ -252,7 +252,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
         solution->pop();
         auto next = solution->front();
 
-        view_maze.value().MovePlayer(current, next);
+        view_maze->DrawSolution(current, next);
       }
       continue;
     }
