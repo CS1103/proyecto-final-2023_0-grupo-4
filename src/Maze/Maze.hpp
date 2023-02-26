@@ -13,7 +13,15 @@ enum class HUNT_METHOD { RANDOM, SERPENTINE };
 
 constexpr HUNT_METHOD DEFAULT_HUNT_METHOD = HUNT_METHOD::SERPENTINE;
 
-enum class SQUARE_TYPE { EMPTY, WALL, START, GOAL, PATH, SEARCHED, CURRENT };
+enum class SQUARE_TYPE {
+  EMPTY,
+  WALL,
+  START,
+  GOAL,
+  SOLUTION,
+  SEARCHED,
+  CURRENT
+};
 std::ostream &operator<<(std::ostream &ost, const SQUARE_TYPE &type);
 
 using maze_t = std::vector<std::vector<SQUARE_TYPE>>;

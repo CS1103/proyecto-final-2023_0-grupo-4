@@ -24,11 +24,14 @@ constexpr std::string_view SEARCHED_TEXTURE_PATH =
     RESOURCE_PATH "Textures/searched_tile.png";
 constexpr std::string_view SOLUTION_TEXTURE_PATH =
     RESOURCE_PATH "Textures/solution_tile_v1.png";
+constexpr std::string_view CURRENT_TEXTURE_PATH =
+    RESOURCE_PATH "Textures/current_tile_v1.png";
 
 class ViewMaze {
 public:
-  explicit ViewMaze(const maze_t &maze); // construct directly from matrix
-  void Draw() const;                     // {
+  explicit ViewMaze(const maze_t &maze);
+
+  void Draw() const;
 
   void DrawSearched(const square &current, const square &next);
   void DrawSolution(const square &current, const square &next);
@@ -49,30 +52,33 @@ private:
   rl::Rectangle board;
   matrix_t<ViewCell> cells;
 
-  const rl::Texture &EMPTY_TEXTURE = EmptyTexture();
-  const rl::Texture &WALL_TEXTURE = WallTexture();
-  const rl::Texture &START_TEXTURE = StartTexture();
-  const rl::Texture &GOAL_TEXTURE = GoalTexture();
-  const rl::Texture &SEARCHED_TEXTURE = SearchedTexture();
-  const rl::Texture &SOLUTION_TEXTURE = SolutionTexture();
-
   inline static rl::Texture &EmptyTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_empty_texture(EMPTY_TEXTURE_PATH.data());
+    return s_empty_texture;
   }
   inline static raylib::Texture &WallTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_wall_texture(WALL_TEXTURE_PATH.data());
+    return s_wall_texture;
   }
   inline static raylib::Texture &StartTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_start_texture(START_TEXTURE_PATH.data());
+    return s_start_texture;
   }
   inline static raylib::Texture &GoalTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_goal_texture(GOAL_TEXTURE_PATH.data());
+    return s_goal_texture;
   }
   inline static raylib::Texture &SearchedTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_searched_texture(SEARCHED_TEXTURE_PATH.data());
+    return s_searched_texture;
   }
   inline static raylib::Texture &SolutionTexture() {
-    // TODO(luis enrique): Implement this
+    static rl::Texture s_solution_texture(SOLUTION_TEXTURE_PATH.data());
+    return s_solution_texture;
+  }
+  inline static raylib::Texture &CurrentTexture() {
+    static rl::Texture s_current_texture(CURRENT_TEXTURE_PATH.data());
+    return s_current_texture;
   }
 };
 
