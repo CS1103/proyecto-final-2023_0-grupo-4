@@ -180,13 +180,13 @@ Config View::GetConfig() {
   throw std::runtime_error("Window closed");
 }
 
-void View::LoadMaze(const maze_t &maze) {
+void View::LoadMaze(const maze_t &maze) { view_maze = ViewMaze(maze); }
+void View::LoadMaze(const maze_t &maze, const square &_start,
+                    const square &_goal) {
 
-  std::cout << "LoadMaze" << std::endl;
-
-  ViewMaze new_maze(maze);
-
-  this->view_maze = std::move(new_maze);
+  view_maze = ViewMaze(maze);
+  this->start = _start;
+  this->goal = _goal;
 }
 
 std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
@@ -218,8 +218,6 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
   uint frame_count = 0;
 
   while (!window.ShouldClose()) {
-
-    // std::cout << "drawing";
 
     // Drawing
     BeginDrawing();
@@ -286,20 +284,27 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
 
 void View::HumanMode() {
 
-  if (!view_maze.has_value()) {
-    throw std::runtime_error("View::HumanMode: maze not loaded");
+  if (!view_maze.has_value() || !start.has_value() || !goal.has_value()) {
+    throw std::runtime_error("View::HumanMode: maze not loaded properly");
   }
+
+  square current = start.value();
 
   while (!window.ShouldClose()) {
 
+    if (current == goal.value()) {
+      std::cout << "Goal reached" << std::endl;
+      return;
+    }
+
     if (IsKeyPressed(KEY_RIGHT)) {
-      auto valid = view_maze->MoveRight();
+      current = view_maze->MoveRight();
     } else if (IsKeyPressed(KEY_LEFT)) {
-      auto valid = view_maze->MoveLeft();
+      current = view_maze->MoveLeft();
     } else if (IsKeyPressed(KEY_UP)) {
-      auto valid = view_maze->MoveUp();
+      current = view_maze->MoveUp();
     } else if (IsKeyPressed(KEY_DOWN)) {
-      auto valid = view_maze->MoveDown();
+      current = view_maze->MoveDown();
     }
 
     BeginDrawing();

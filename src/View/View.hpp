@@ -32,6 +32,7 @@ public:
   Config GetConfig();
 
   void LoadMaze(const maze_t &maze);
+  void LoadMaze(const maze_t &maze, const square &start, const square &goal);
 
   std::pair<ALGORITHM, bool> BotMode(std::optional<MazeSteps> solution,
                                      std::optional<MazeSteps> searched);
@@ -60,6 +61,9 @@ private:
   rl::Window &window = GetWindow();
   rl::Texture &background = GetBackground();
   std::optional<ViewMaze> view_maze = std::nullopt; // For lazy initialization
+
+  std::optional<square> start = std::nullopt;
+  std::optional<square> goal = std::nullopt;
 };
 
 #endif // !VIEW_H

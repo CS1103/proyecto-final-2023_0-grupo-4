@@ -23,7 +23,7 @@ GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
 
 void Game<PLAYER_TYPE::HUMAN>::Run() {
 
-  r_view.LoadMaze(m_maze.GetMaze());
+  r_view.LoadMaze(m_maze.GetMaze(), m_maze.GetStart(), m_maze.GetGoal());
 
   r_view.HumanMode();
 }

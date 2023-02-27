@@ -39,6 +39,11 @@ public:
   void DrawSearched(const square &current, const square &next);
   void DrawSolution(const square &current, const square &next);
 
+  square MoveRight();
+  square MoveLeft();
+  square MoveDown();
+  square MoveUp();
+
 private:
   struct ViewCell {
 
