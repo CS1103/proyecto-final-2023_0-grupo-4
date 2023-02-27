@@ -4,8 +4,8 @@
 #include <iostream>
 #include <thread>
 ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
-                             const rl::Vector2 &_size, rl::Texture &_texture)
-    : type(_type), rect(_pos, _size), texture(_texture) {}
+                             rl::Texture &_texture)
+    : type(_type), position(_pos), texture(_texture) {}
 
 ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 
@@ -54,21 +54,20 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
     std::transform(
         row.begin(), row.end(), std::back_inserter(cells_v),
         [&](const SQUARE_TYPE &type) {
+          cell_count++;
           switch (type) {
           case SQUARE_TYPE::WALL:
-            return ViewCell(type, position(cell_count), size, WallTexture());
+            return ViewCell(type, position(cell_count), WallTexture());
           case SQUARE_TYPE::EMPTY:
-            return ViewCell(type, position(cell_count), size, EmptyTexture());
+            return ViewCell(type, position(cell_count), EmptyTexture());
           case SQUARE_TYPE::START:
-            return ViewCell(type, position(cell_count), size, StartTexture());
+            return ViewCell(type, position(cell_count), StartTexture());
           case SQUARE_TYPE::GOAL:
-            return ViewCell(type, position(cell_count), size, GoalTexture());
+            return ViewCell(type, position(cell_count), GoalTexture());
           case SQUARE_TYPE::SEARCHED:
-            return ViewCell(type, position(cell_count), size,
-                            SearchedTexture());
+            return ViewCell(type, position(cell_count), SearchedTexture());
           case SQUARE_TYPE::SOLUTION:
-            return ViewCell(type, position(cell_count), size,
-                            SolutionTexture());
+            return ViewCell(type, position(cell_count), SolutionTexture());
           case SQUARE_TYPE::CURRENT:
             throw std::runtime_error("Current cell can't be in empty maze");
           }
@@ -79,18 +78,13 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 }
 
 void ViewMaze::Draw() const {
+  std::cout << std::endl;
 
   for (const auto &row : cells) {
 
     for (const auto &cell : row) {
-      std::cout << cell.type;
-      if (cell.type == SQUARE_TYPE::WALL) {
-        cell.rect.Draw(BLACK);
-      } else {
-        cell.rect.Draw(WHITE);
-      }
+      cell.texture.get().Draw(cell.position);
     }
-    std::cout << '\n';
   }
 }
 

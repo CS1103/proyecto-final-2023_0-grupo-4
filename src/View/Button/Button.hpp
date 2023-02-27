@@ -27,7 +27,7 @@ private:
   rl::Text m_text;
   rl::Texture &m_texture;
   Utils::Vector2I m_pos;
-  bool is_selected;
+  bool is_selected = false;
 };
 
 #endif // !BUTTON_H

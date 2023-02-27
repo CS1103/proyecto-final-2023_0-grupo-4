@@ -8,7 +8,8 @@
 
 #include "resources.hpp"
 
-constexpr std::string_view DEFAULT_BUTTON_TEXTURE_PATH = "PATH";
+constexpr std::string_view DEFAULT_BUTTON_TEXTURE_PATH =
+    RESOURCE_PATH "Textures/empty_button.png";
 
 namespace rl = raylib;
 
@@ -39,8 +40,9 @@ raylib::Text text;
 Utils::Vector2I pos{};*/
 
   inline static raylib::Texture &DefaultButtonTexture() {
-    static raylib::Texture s_texture(RESOURCE_PATH
-                                     "Textures/test_old_button.png");
+    static raylib::Texture s_texture(DEFAULT_BUTTON_TEXTURE_PATH.data());
+    s_texture.SetHeight(120);
+    s_texture.SetWidth(200);
     return s_texture;
   }
 };
