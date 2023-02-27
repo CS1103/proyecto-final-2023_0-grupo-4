@@ -135,13 +135,9 @@ void ViewMaze::MoveRight(square &current) {
 
   auto [currX, currY] = current;
 
-  if (currY + 1 >= cells.size()) {
-    return;
-  }
-
   ViewCell &next = cells[currX][currY + 1];
 
-  if (next.type == SQUARE_TYPE::WALL) {
+  if (currY + 1 >= cells.size() || next.type == SQUARE_TYPE::WALL) {
     return;
   }
 
