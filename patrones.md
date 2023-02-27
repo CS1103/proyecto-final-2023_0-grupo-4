@@ -140,7 +140,15 @@ void Game<PLAYER_TYPE::HUMAN>::Run() {
 
 ## Flyweight:
 
-  Muchas de las texturas son compartidas por todos los objetos que las usan
+
+  Leer:
+  https://stackoverflow.com/questions/16750758/what-are-the-practical-use-differences-between-flyweight-vs-singleton-patterns
+
+  Explicar: ¿Porque no estamos usando el patron singleton en el código?
+  (tenemos muchos singletons)
+
+
+
 
 ## Facade:
 
