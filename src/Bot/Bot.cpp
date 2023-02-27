@@ -26,7 +26,9 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
   searched_path.emplace(start);
 
-  bool found = false;
+  m_searchedPath.emplace(start);
+
+    bool found = false;
   while (!frontier.empty()) {
 
     square current;
@@ -42,7 +44,6 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
       found = true;
       break;
     }
-
     for (square neighbor : maze.GetNeighbors(current)) {
       if (searched_path.find(neighbor) == searched_path.end()) {
         frontier.push(neighbor);
