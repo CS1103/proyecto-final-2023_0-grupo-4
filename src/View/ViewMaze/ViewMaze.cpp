@@ -115,10 +115,42 @@ void ViewMaze::DrawSolution(const square &current, const square &next) {
   cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
   cells[nextX][nextY].texture = CurrentTexture();
 }
-square ViewMaze::MoveRight() { return {0, 0}; }
-square ViewMaze::MoveLeft() { return {0, 0}; }
-square ViewMaze::MoveDown() { return {0, 0}; }
-square ViewMaze::MoveUp() { return {0, 0}; }
+void ViewMaze::MoveRight(square &current) {
+    auto [currX, currY] = current;
+    auto next = cells[currX+1][ currY];
+    if (next.type!=SQUARE_TYPE::WALL) {
+        cells[currX][currY].texture = EmptyTexture();
+        next.texture = CurrentTexture();
+    }
+}
+void ViewMaze::MoveLeft(square &current) {
+    auto [currX, currY] = current;
+    auto next = cells[currX-1][ currY];
+    if (next.type!=SQUARE_TYPE::WALL) {
+        cells[currX][currY].texture = EmptyTexture();
+        next.texture = CurrentTexture();
+    }
+}
+void ViewMaze::MoveDown(square &current) {
+    auto [currX, currY] = current;
+    auto next = cells[currX][ currY+1];
+    if (next.type!=SQUARE_TYPE::WALL) {
+        cells[currX][currY].texture = EmptyTexture();
+        next.texture = CurrentTexture();
+    }
+}
+void ViewMaze::MoveUp(square &current) {
+    auto [currX, currY] = current;
+    auto next = cells[currX][ currY-1];
+    if (next.type!=SQUARE_TYPE::WALL) {
+        cells[currX][currY].texture = EmptyTexture();
+        next.texture = CurrentTexture();
+    }
+}
+//square ViewMaze::MoveRight() { return {0, 0}; }
+//square ViewMaze::MoveLeft() { return {0, 0}; }
+//square ViewMaze::MoveDown() { return {0, 0}; }
+//square ViewMaze::MoveUp() { return {0, 0}; }
 
 void ViewMaze::Clear() {
 
