@@ -66,8 +66,9 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
     current = parent[current];
   }
+  m_solution.emplace(current);
 
-  return true;
+    return true;
 }
 
 // Manhattan distance heuristic function
