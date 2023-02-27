@@ -7,6 +7,7 @@
 
 using std::optional;
 using Utils::Vector2I;
+using uint = unsigned int;
 
 template <typename T>
 concept Drawable = requires(T obj) {
