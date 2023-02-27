@@ -38,7 +38,7 @@
     <li><a href="#licencia">
       Licencia
     </a></li>
-    <li><a href="#diagramas">
+    <li><a href="#diagrama">
       Diagramas
       <ul>
         <li><a href="#matriz-del-tablero">Matriz del Tablero</a></li>
@@ -62,6 +62,7 @@
 
 ### Descripción
 
+
 ### Características
 
 #### Características Principales
@@ -73,6 +74,10 @@
 - Lenguaje de programación C++17 o posterior
 - Librería raylib 
 - Raylib-cpp (header only, fork)
+
+### Temas de interés
+
+-El uso de raylib como interfaz gráfica.
 
 ### Algoritmos y contenedores utilizados
 
@@ -93,8 +98,8 @@ en casilla. Si alcanza un punto sin salida, retrocede de nuevo al último cruce.
 más cercana al objetivo, no puede garantizar que el camino elegido será el más eficiente. 
 
 - A*
-- Kruskal
-- Wilsons (chosen one)
+
+- Wilsons
 
 ## Instalación
 
@@ -102,17 +107,23 @@ más cercana al objetivo, no puede garantizar que el camino elegido será el má
 
 ### Pasos de instalación
 
+1. Clonación de repositorio con
+
+```bash
+git clone https://github.com/CS1103/proyecto-final-2023_0-grupo-4.git
+```
+
 ## Instrucciones de uso
 
-### Instrucciones
-
 ### Reglas de juego
+
+
 
 ## Licencia
 
 Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más información.
 
-## Diagramas
+## Diagrama
 
 ### Matriz del Tablero
 
@@ -135,22 +146,6 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 [Back To The Top](#readme-top)
 
 
-
-# TODO
-
-### media:
-
-#### square types
-- ~~WALL~~
-- ~~EMPTY~~
-- ~~START~~
-- ~~GOAL~~
-
-#### Sprites
-- ~~button background~~
-- game background
-- Different end screens
-- ~~Bot image~~
 
 
 

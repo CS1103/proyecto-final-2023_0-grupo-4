@@ -7,6 +7,9 @@ cpp_check.cppcheck
 
 # Editors
 .vscode
+.DS_Store
+/src/**/.DS_Store
+
 # Building
 /build
 /.cache

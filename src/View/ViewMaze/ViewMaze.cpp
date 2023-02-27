@@ -98,22 +98,38 @@ void ViewMaze::DrawSearched(const square &current, const square &next) {
   auto [currX, currY] = current;
   auto [nextX, nextY] = next;
 
-  cells[currX][currY].type = SQUARE_TYPE::SEARCHED;
-  cells[currX][currY].texture = SearchedTexture();
+  ViewCell &searched_cell = cells[currX][currY];
+  if (searched_cell.type == SQUARE_TYPE::CURRENT) {
+    searched_cell.type = SQUARE_TYPE::SEARCHED;
+    searched_cell.texture = SearchedTexture();
+  }
 
-  cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
-  cells[nextX][nextY].texture = CurrentTexture();
+  ViewCell &current_cell = cells[nextX][nextY];
+
+  if (current_cell.type == SQUARE_TYPE::EMPTY) {
+    current_cell.type = SQUARE_TYPE::CURRENT;
+    current_cell.texture = CurrentTexture();
+  }
 }
 void ViewMaze::DrawSolution(const square &current, const square &next) {
 
   auto [currX, currY] = current;
   auto [nextX, nextY] = next;
 
-  cells[currX][currY].type = SQUARE_TYPE::SOLUTION;
-  cells[currX][currY].texture = SolutionTexture();
+  ViewCell &searched_cell = cells[currX][currY];
 
-  cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
-  cells[nextX][nextY].texture = CurrentTexture();
+  if (searched_cell.type == SQUARE_TYPE::CURRENT) {
+
+    cells[currX][currY].type = SQUARE_TYPE::SOLUTION;
+    cells[currX][currY].texture = SolutionTexture();
+  }
+
+  ViewCell &current_cell = cells[nextX][nextY];
+
+  if (current_cell.type == SQUARE_TYPE::SEARCHED) {
+    cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
+    cells[nextX][nextY].texture = CurrentTexture();
+  }
 }
 void ViewMaze::MoveRight(square &current) {
     auto [currX, currY] = current;
@@ -167,7 +183,8 @@ void ViewMaze::Clear() {
   std::for_each(cells.begin(), cells.end(), [&](auto &row) {
     std::for_each(row.begin(), row.end(), [&](auto &cell) {
       if (cell.type == SQUARE_TYPE::SEARCHED ||
-          cell.type == SQUARE_TYPE::SOLUTION) {
+          cell.type == SQUARE_TYPE::SOLUTION ||
+          cell.type == SQUARE_TYPE::CURRENT) {
         cell.type = SQUARE_TYPE::EMPTY;
         cell.texture = EmptyTexture();
       }
