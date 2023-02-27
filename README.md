@@ -2,9 +2,9 @@
 <img src=https://previews.123rf.com/images/dimajarm/dimajarm1710/dimajarm171000024/88771180-logotipo-laberinto-laberinto-moderno-vector-s%C3%ADmbolo-icono-de-cubo-isom%C3%A9trica-para-juego-de.jpg height="450px">
 </div>
 
-<img src =https://img.shields.io/tokei/lines/github/CS1103/proyecto-final-2023_0-grupo-4?style=plastic>
 
 <div align="center">
+<h1>MAZE GAME🐍</h1>
 <p>
   Hola! 👨‍💻. Somos estudiantes del curso de Programación III de UTEC.  
   Hemos aplicado conocimientos aprendidos durante el curso de Programación para desarrollar el juego Maze en C++.
@@ -41,8 +41,7 @@
     <li><a href="#diagramas">
       Diagramas
       <ul>
-        <li><a href="#grafo-del-tablero">Grafo del tablero-11x11</a></li>
-        <li><a href="#diagrama-de-clases">Diagrama de clases</a></li>
+        <li><a href="#matriz-del-tablero">Matriz del Tablero</a></li>
       </ul>
     </a></li>
     <li><a href="#link-del-video">
