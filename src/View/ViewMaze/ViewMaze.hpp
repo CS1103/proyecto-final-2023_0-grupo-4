@@ -5,6 +5,7 @@
 
 #include <Rectangle.hpp>
 #include <Texture.hpp>
+#include <functional>
 
 #include "resources.hpp"
 
