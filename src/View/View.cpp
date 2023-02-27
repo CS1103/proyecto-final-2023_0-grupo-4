@@ -299,13 +299,14 @@ void View::HumanMode() {
     }
 
     if (IsKeyPressed(KEY_RIGHT)) {
-      current = view_maze->MoveRight();
+      view_maze->MoveRight(current);
     } else if (IsKeyPressed(KEY_LEFT)) {
-      current = view_maze->MoveLeft();
+      view_maze->MoveLeft(current);
     } else if (IsKeyPressed(KEY_UP)) {
-      current = view_maze->MoveUp();
+      view_maze->MoveUp(current);
+
     } else if (IsKeyPressed(KEY_DOWN)) {
-      current = view_maze->MoveDown();
+      view_maze->MoveDown(current);
     }
 
     BeginDrawing();
