@@ -122,14 +122,11 @@ Config View::GetConfig() {
           height.has_value() && width_valid && height_valid &&
           is_bot.has_value()) {
 
-        std::cout << "Starting game" << std::endl;
-
         PLAYER_TYPE player_type =
             is_bot.value() ? PLAYER_TYPE::COMPUTER : PLAYER_TYPE::HUMAN;
 
         return {player_type, {width.value(), height.value()}, is_timed.value()};
       }
-      std::cout << "Invalid config" << std::endl;
     }
 
     is_bot = HandleDualButton(is_bot_button, is_human_button)
@@ -196,8 +193,6 @@ void View::LoadMaze(const maze_t &maze, const square &_start,
 std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
                                          optional<MazeSteps> searched) {
 
-  std::cout << "BotMode view started" << std::endl;
-
   if (!view_maze.has_value()) {
     throw std::runtime_error("View::BotMode: maze not loaded");
   }
@@ -240,11 +235,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
         auto current = searched->front();
 
         searched->pop();
-        // std::cout << "current: " << (int)current.first << "  "
-        //           << (int)current.second << std::endl;
         auto next = searched->front();
-        // std::cout << "next: " << (int)next.first << "  " << (int)next.second
-        //           << std::endl;
 
         view_maze->DrawSearched(current, next);
       } else if (solution->size() > 1) {
@@ -260,26 +251,21 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     }
 
     if (dfs_button.IsClicked()) {
-      std::cout << "DFSclicked\n";
       return {ALGORITHM::DFS, false};
     }
     if (bfs_button.IsClicked()) {
-      std::cout << "BFSclicked\n";
 
       return {ALGORITHM::BFS, false};
     }
     if (gbfs_button.IsClicked()) {
-      std::cout << "GBFSclicked\n";
 
       return {ALGORITHM::GBFS, false};
     }
     if (a_star_button.IsClicked()) {
-      std::cout << "A*clicked\n";
 
       return {ALGORITHM::A_STAR, false};
     }
     if (end_button.IsClicked()) {
-      std::cout << "END_clicked\n";
       return {ALGORITHM::BFS, true};
     }
   }
@@ -298,7 +284,6 @@ void View::HumanMode() {
   while (!window.ShouldClose()) {
 
     if (current == goal.value()) {
-      std::cout << "Goal reached" << std::endl;
       return;
     }
 

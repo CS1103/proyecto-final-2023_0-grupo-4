@@ -127,7 +127,6 @@ void Maze::GenerateMaze(uint8_t height, uint8_t width, HUNT_METHOD huntMethod) {
 }
 
 void Maze::PrintMaze() {
-  std::cout << "Maze:" << std::endl;
 
   for (auto &row : m_maze) {
     for (auto &elem : row) {

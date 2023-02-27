@@ -10,13 +10,6 @@ ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
 ViewMaze::ViewMaze(const maze_t &maze, const bool &fullScreen)
     : cells(maze.size()) {
 
-  // for (const auto &row : maze) {
-  //   for (const auto &cell : row) {
-  //     std::cout << cell;
-  //   }
-  //   std::cout << std::endl;
-  // }
-
   auto rows = maze.size();
   auto cols = maze[0].size();
 
@@ -49,7 +42,7 @@ ViewMaze::ViewMaze(const maze_t &maze, const bool &fullScreen)
   CurrentPlayerTexture().SetHeight(size.y);
   // ugly af, to improve with macros
 
-  int cell_count = 0;
+  int cell_count = -1;
 
   auto position = [&](const int &_cell_count) {
     return Utils::Vector2I{static_cast<int>((_cell_count % cols) * size.x),
@@ -86,8 +79,8 @@ ViewMaze::ViewMaze(const maze_t &maze, const bool &fullScreen)
 }
 
 void ViewMaze::Draw() const {
-  for (const auto &row : cells) {
 
+  for (const auto &row : cells) {
     for (const auto &cell : row) {
       cell.texture.get().Draw(cell.position);
     }

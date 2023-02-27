@@ -48,7 +48,7 @@ public:
   explicit Maze(const BoardSize &size,
                 HUNT_METHOD huntMethod = DEFAULT_HUNT_METHOD);
 
-  void PrintMaze();
+  [[maybe_unused]] void PrintMaze();
   [[nodiscard]] maze_t GetMaze() const;
 
   [[nodiscard]] constexpr square GetStart() const { return m_start; }
