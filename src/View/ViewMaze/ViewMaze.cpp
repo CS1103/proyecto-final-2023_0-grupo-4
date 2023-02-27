@@ -155,33 +155,51 @@ void ViewMaze::MoveRight(square &current) {
 
 void ViewMaze::MoveLeft(square &current) {
   auto [currX, currY] = current;
-  if (currX - 1 >= 0) {
-    auto next = cells[currX - 1][currY];
-    if (next.type != SQUARE_TYPE::WALL) {
-      cells[currX][currY].texture = EmptyTexture();
-      next.texture = CurrentTexture();
+    ViewCell &next = cells[currX][currY - 1];
+    if (currY - 1 < 0 || next.type == SQUARE_TYPE::WALL) {
+        return;
     }
-  }
+    ViewCell &current_cell = cells[currX][currY];
+    if (current_cell.type == SQUARE_TYPE::CURRENT) {
+        current_cell.texture = SearchedTexture();
+        current_cell.type = SQUARE_TYPE::SEARCHED;
+    }
+    if (next.type == SQUARE_TYPE::EMPTY) {
+        next.type = SQUARE_TYPE::CURRENT;
+        next.texture = CurrentTexture();
+    }
 }
 void ViewMaze::MoveDown(square &current) {
   auto [currX, currY] = current;
-  if (currY + 1 < cells[0].size()) {
-    auto next = cells[currX][currY + 1];
-    if (next.type != SQUARE_TYPE::WALL) {
-      cells[currX][currY].texture = EmptyTexture();
-      next.texture = CurrentTexture();
+    ViewCell &next = cells[currX+1][currY];
+    if (currX + 1 >= cells[0].size() || next.type == SQUARE_TYPE::WALL) {
+        return;
     }
-  }
+    ViewCell &current_cell = cells[currX][currY];
+    if (current_cell.type == SQUARE_TYPE::CURRENT) {
+        current_cell.texture = SearchedTexture();
+        current_cell.type = SQUARE_TYPE::SEARCHED;
+    }
+    if (next.type == SQUARE_TYPE::EMPTY) {
+        next.type = SQUARE_TYPE::CURRENT;
+        next.texture = CurrentTexture();
+    }
 }
 void ViewMaze::MoveUp(square &current) {
   auto [currX, currY] = current;
-  if (currY - 1 > 0) {
-    auto next = cells[currX][currY - 1];
-    if (next.type != SQUARE_TYPE::WALL) {
-      cells[currX][currY].texture = EmptyTexture();
-      next.texture = CurrentTexture();
+    ViewCell &next = cells[currX+1][currY];
+    if (currX + 1 < 0 || next.type == SQUARE_TYPE::WALL) {
+        return;
     }
-  }
+    ViewCell &current_cell = cells[currX][currY];
+    if (current_cell.type == SQUARE_TYPE::CURRENT) {
+        current_cell.texture = SearchedTexture();
+        current_cell.type = SQUARE_TYPE::SEARCHED;
+    }
+    if (next.type == SQUARE_TYPE::EMPTY) {
+        next.type = SQUARE_TYPE::CURRENT;
+        next.texture = CurrentTexture();
+    }
 }
 
 void ViewMaze::Clear() {
