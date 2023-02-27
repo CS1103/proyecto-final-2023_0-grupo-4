@@ -98,7 +98,6 @@ public:
 };
 
 #endif // !VIEW_MAZE_HPP
-completar las funciones ubicadas en el ViewMaze.hpp usando c++ y raylib:
 inline static raylib::Texture &EmptyTexture() {
     // TODO(luis enrique): Implement this
 }
@@ -111,4 +110,5 @@ inline static raylib::Texture &StartTexture() {
 inline static raylib::Texture &GoalTexture() {
     // TODO(luis enrique): Implement this
 }
+
 #endif // !VIEW_MAZE_HPP

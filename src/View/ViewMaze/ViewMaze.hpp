@@ -40,10 +40,10 @@ public:
   void DrawSearched(const square &current, const square &next);
   void DrawSolution(const square &current, const square &next);
 
-  square MoveRight();
-  square MoveLeft();
-  square MoveDown();
-  square MoveUp();
+    void MoveRight(square &current);
+    void MoveLeft(square &current);
+    void MoveDown(square &current);
+    void MoveUp(square &current);
 
   void Clear();
 
@@ -91,6 +91,7 @@ private:
     static rl::Texture s_current_texture(CURRENT_TEXTURE_PATH.data());
     return s_current_texture;
   }
+
 };
 
 #endif // !VIEW_MAZE_HPP
