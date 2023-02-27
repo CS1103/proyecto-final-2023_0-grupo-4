@@ -15,8 +15,7 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
   square start = maze.GetStart();
 
-  std::conditional_t<T == ALGORITHM::BFS, std::queue<square>,
-                     std::stack<square>>
+  std::conditional_t<T == ALGORITHM::BFS, std::queue<square>, std::stack<square>>
       frontier;
 
   std::unordered_map<square, square, Maze::HashPair> parent;
