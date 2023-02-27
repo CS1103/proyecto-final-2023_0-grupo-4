@@ -1,5 +1,65 @@
-![Logo of the project](https://previews.123rf.com/images/dimajarm/dimajarm1711/dimajarm171100398/90707509-logo-laberinto-vector-moderno-s%C3%ADmbolo-laberinto-icono-de-cubo-isom%C3%A9trico-para-juego-de-logotipo.jpg)
-![Lines of code](https://img.shields.io/tokei/lines/github/CS1103/proyecto-final-2023_0-grupo-4?style=plastic)
+<div style = "margin-left: 220px;">
+<img src=https://previews.123rf.com/images/dimajarm/dimajarm1710/dimajarm171000024/88771180-logotipo-laberinto-laberinto-moderno-vector-s%C3%ADmbolo-icono-de-cubo-isom%C3%A9trica-para-juego-de.jpg height="450px">
+</div>
+
+<img src =https://img.shields.io/tokei/lines/github/CS1103/proyecto-final-2023_0-grupo-4?style=plastic>
+
+<div align="center">
+<p>
+  Hola! 👨‍💻. Somos estudiantes del curso de Programación III de UTEC.  
+  Hemos aplicado conocimientos aprendidos durante el curso de Programación para desarrollar el juego Maze en C++.
+  </p>
+</div>
+
+
+<details open>
+  <summary>Tabla de contenidos:</summary>
+  <ol>
+    <li><a href="#acerca-del-proyecto">
+      Acerca del proyecto
+      <ul>
+        <li><a href="#descripción">Descripción</a></li>
+        <li><a href="#características">Características</a></li>
+        <li><a href="#tecnologías">Tecnologías</a></li>
+        <li><a href="#temas-de-interés">Temas de interés</a></li>
+        <li><a href="#algoritmos-y-contenedores-utilizados">Algoritmos y contenedores utilizados</a></li>
+      </ul>
+    </a></li>
+    <li><a href="#instalación">
+      Instalación
+      <ul>
+        <li><a href="#requisitos">Requisitos</a></li>
+        <li><a href="#pasos-de-instalación">Pasos de instalación</a></li>
+      </ul>
+    </a></li>
+    <li><a href="#instrucciones-de-uso">
+      Instrucciones de uso
+    </a></li>
+    <li><a href="#licencia">
+      Licencia
+    </a></li>
+    <li><a href="#diagramas">
+      Diagramas
+      <ul>
+        <li><a href="#grafo-del-tablero">Grafo del tablero-11x11</a></li>
+        <li><a href="#diagrama-de-clases">Diagrama de clases</a></li>
+      </ul>
+    </a></li>
+    <li><a href="#link-del-video">
+      Link del video
+    </a></li>
+    <li><a href="#autores">
+      Autores
+    </a></li>
+    <li><a href="#referencias-y-links">
+      Referencias y links
+    </a></li>
+  </ol>
+</details>
+
+
+
+
 # TODO
 
 ### media:
