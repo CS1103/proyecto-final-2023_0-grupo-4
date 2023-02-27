@@ -15,9 +15,9 @@ namespace rl = raylib;
 constexpr std::string_view EMPTY_TEXTURE_PATH =
     RESOURCE_PATH "Textures/floor_tile_v1.png";
 constexpr std::string_view WALL_TEXTURE_PATH =
-    RESOURCE_PATH "Textures/wall.png";
+    RESOURCE_PATH "Textures/wall_tile_v1.png";
 constexpr std::string_view START_TEXTURE_PATH =
-    RESOURCE_PATH "Textures/start_tile.png";
+    RESOURCE_PATH "Textures/start_tile_v1.png";
 constexpr std::string_view GOAL_TEXTURE_PATH =
     RESOURCE_PATH "Textures/goal_tile_v1.png";
 

@@ -44,7 +44,6 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
     }
 
     for (square neighbor : maze.GetNeighbors(current)) {
-
       if (searched_path.find(neighbor) == searched_path.end()) {
         frontier.push(neighbor);
         m_searchedPath.emplace(neighbor);
@@ -66,7 +65,9 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
     current = parent[current];
   }
-  m_solution.emplace(current);
+    if(T == ALGORITHM::DFS){
+        m_solution.emplace(current);
+    }
 
     return true;
 }
@@ -147,7 +148,6 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
 
     m_searchedPath.emplace(current);
     for (square neighbor : maze.GetNeighbors(current)) {
-
       if (searched_path.find(neighbor) == searched_path.end()) {
         m_searchedPath.emplace(neighbor);
         searched_path.emplace(neighbor);
