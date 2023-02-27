@@ -7,7 +7,8 @@ ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
                              rl::Texture &_texture)
     : type(_type), position(_pos), texture(_texture) {}
 
-ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
+ViewMaze::ViewMaze(const maze_t &maze, const bool &fullScreen)
+    : cells(maze.size()) {
 
   // for (const auto &row : maze) {
   //   for (const auto &cell : row) {
@@ -21,6 +22,11 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 
   auto width = GetScreenWidth();
   auto height = GetScreenHeight();
+
+  if (!fullScreen) {
+    width = width * 0.7;
+    height = height * 0.7;
+  }
 
   Utils::Vector2I size = {static_cast<int>(width / cols),
                           static_cast<int>(height / rows)};
@@ -37,8 +43,10 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
   SearchedTexture().SetHeight(size.y);
   SolutionTexture().SetWidth(size.x);
   SolutionTexture().SetHeight(size.y);
-  CurrentTexture().SetWidth(size.x);
-  CurrentTexture().SetHeight(size.y);
+  CurrentBotTexture().SetWidth(size.x);
+  CurrentBotTexture().SetHeight(size.y);
+  CurrentPlayerTexture().SetWidth(size.x);
+  CurrentPlayerTexture().SetHeight(size.y);
   // ugly af, to improve with macros
 
   int cell_count = 0;
@@ -78,8 +86,6 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 }
 
 void ViewMaze::Draw() const {
-  std::cout << std::endl;
-
   for (const auto &row : cells) {
 
     for (const auto &cell : row) {
@@ -103,7 +109,7 @@ void ViewMaze::DrawSearched(const square &current, const square &next) {
 
   if (current_cell.type == SQUARE_TYPE::EMPTY) {
     current_cell.type = SQUARE_TYPE::CURRENT;
-    current_cell.texture = CurrentTexture();
+    current_cell.texture = CurrentBotTexture();
   }
 }
 void ViewMaze::DrawSolution(const square &current, const square &next) {
@@ -123,7 +129,7 @@ void ViewMaze::DrawSolution(const square &current, const square &next) {
 
   if (current_cell.type == SQUARE_TYPE::SEARCHED) {
     cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
-    cells[nextX][nextY].texture = CurrentTexture();
+    cells[nextX][nextY].texture = CurrentBotTexture();
   }
 }
 void ViewMaze::MoveRight(square &current) {
@@ -144,7 +150,7 @@ void ViewMaze::MoveRight(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX, currY + 1};
 }
@@ -165,7 +171,7 @@ void ViewMaze::MoveLeft(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX, currY - 1};
 }
@@ -185,7 +191,7 @@ void ViewMaze::MoveDown(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX + 1, currY};
 }
@@ -202,7 +208,7 @@ void ViewMaze::MoveUp(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX - 1, currY};
 }

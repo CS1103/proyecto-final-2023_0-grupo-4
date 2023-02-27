@@ -33,7 +33,7 @@ void Game<PLAYER_TYPE::COMPUTER>::Run() {
   optional<MazeSteps> solution = std::nullopt;
   optional<MazeSteps> searched = std::nullopt;
 
-  r_view.LoadMaze(m_maze.GetMaze());
+  r_view.LoadMaze(m_maze.GetMaze(), /*fullscreen*/ false);
 
   bool finish = false;
   ALGORITHM algorithm{};

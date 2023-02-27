@@ -181,11 +181,14 @@ Config View::GetConfig() {
   throw std::runtime_error("Window closed");
 }
 
-void View::LoadMaze(const maze_t &maze) { view_maze = ViewMaze(maze); }
-void View::LoadMaze(const maze_t &maze, const square &_start,
-                    const square &_goal) {
+void View::LoadMaze(const maze_t &maze, const bool &fullScreen) {
+  view_maze = ViewMaze(maze, fullScreen);
+}
 
-  view_maze = ViewMaze(maze);
+void View::LoadMaze(const maze_t &maze, const square &_start,
+                    const square &_goal, const bool &fullScreen) {
+
+  view_maze = ViewMaze(maze, fullScreen);
   this->start = _start;
   this->goal = _goal;
 }

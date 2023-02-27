@@ -36,7 +36,7 @@ constexpr std::string_view CURRENT_BOT_TEXTURE_PATH =
 
 class ViewMaze {
 public:
-  explicit ViewMaze(const maze_t &maze);
+  explicit ViewMaze(const maze_t &maze, const bool &fullScreen);
 
   void Draw() const;
 
@@ -90,9 +90,14 @@ private:
     static rl::Texture s_solution_texture(SOLUTION_TEXTURE_PATH.data());
     return s_solution_texture;
   }
-  inline static raylib::Texture &CurrentTexture() {
-    static rl::Texture s_current_texture(CURRENT_TEXTURE_PATH.data());
-    return s_current_texture;
+  inline static raylib::Texture &CurrentBotTexture() {
+    static rl::Texture s_current_bot_texture(CURRENT_BOT_TEXTURE_PATH.data());
+    return s_current_bot_texture;
+  }
+  inline static raylib::Texture &CurrentPlayerTexture() {
+    static rl::Texture s_current_player_texture(
+        CURRENT_PLAYER_TEXTURE_PATH.data());
+    return s_current_player_texture;
   }
 };
 
