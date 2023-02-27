@@ -45,6 +45,8 @@ public:
   square MoveDown();
   square MoveUp();
 
+  void Clear();
+
 private:
   struct ViewCell {
 

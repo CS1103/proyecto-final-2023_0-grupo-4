@@ -5,13 +5,13 @@
 using std::optional;
 using MazeSteps = std::queue<square>;
 
-static void printQueue(MazeSteps x) {
-  while (!x.empty()) {
-    auto front = x.front();
+[[maybe_unused]] static void PrintQueue(MazeSteps steps) {
+  while (!steps.empty()) {
+    auto front = steps.front();
 
     std::cout << static_cast<int>(front.first) << "  "
               << static_cast<int>(front.second) << std::endl;
-    x.pop();
+    steps.pop();
   }
 }
 
@@ -22,9 +22,7 @@ GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
 }
 
 void Game<PLAYER_TYPE::HUMAN>::Run() {
-
   r_view.LoadMaze(m_maze.GetMaze(), m_maze.GetStart(), m_maze.GetGoal());
-
   r_view.HumanMode();
 }
 
@@ -50,28 +48,19 @@ void Game<PLAYER_TYPE::COMPUTER>::Run() {
 
     switch (algorithm) {
     case ALGORITHM::DFS:
-      std::cout << "bot solve DFS" << std::endl;
       bot.Solve<ALGORITHM::DFS>(m_maze);
-      std::cout << "bot solve DFS finished" << std::endl;
-
       break;
     case ALGORITHM::BFS:
       bot.Solve<ALGORITHM::BFS>(m_maze);
       break;
     case ALGORITHM::GBFS:
-      std::cout << "bot solve GBFS started" << std::endl;
       bot.Solve<ALGORITHM::GBFS>(m_maze);
-      std::cout << "bot solve GBFS finished" << std::endl;
-
       break;
     case ALGORITHM::A_STAR:
       bot.Solve<ALGORITHM::A_STAR>(m_maze);
       break;
     }
     solution = bot.GetSolution();
-
-    // std::cout << "solution:\n";
-    // printQueue(*solution);
 
     searched = bot.GetSearchedPath();
 

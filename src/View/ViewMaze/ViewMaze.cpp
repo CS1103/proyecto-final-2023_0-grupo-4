@@ -8,12 +8,12 @@ ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
 
 ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 
-  for (const auto &row : maze) {
-    for (const auto &cell : row) {
-      std::cout << cell;
-    }
-    std::cout << std::endl;
-  }
+  // for (const auto &row : maze) {
+  //   for (const auto &cell : row) {
+  //     std::cout << cell;
+  //   }
+  //   std::cout << std::endl;
+  // }
 
   auto rows = maze.size();
   auto cols = maze[0].size();
@@ -78,7 +78,6 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 }
 
 void ViewMaze::Draw() const {
-  // std::cout << "Drawing maze" << std::endl;
 
   for (const auto &row : cells) {
 
@@ -90,7 +89,7 @@ void ViewMaze::Draw() const {
         cell.rect.Draw(WHITE);
       }
     }
-    std::cout << std::endl;
+    std::cout << '\n';
   }
 }
 
@@ -115,4 +114,22 @@ void ViewMaze::DrawSolution(const square &current, const square &next) {
 
   cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
   cells[nextX][nextY].texture = CurrentTexture();
+}
+square ViewMaze::MoveRight() { return {0, 0}; }
+square ViewMaze::MoveLeft() { return {0, 0}; }
+square ViewMaze::MoveDown() { return {0, 0}; }
+square ViewMaze::MoveUp() { return {0, 0}; }
+
+void ViewMaze::Clear() {
+
+  // change all searched an solution cells to empty
+  std::for_each(cells.begin(), cells.end(), [&](auto &row) {
+    std::for_each(row.begin(), row.end(), [&](auto &cell) {
+      if (cell.type == SQUARE_TYPE::SEARCHED ||
+          cell.type == SQUARE_TYPE::SOLUTION) {
+        cell.type = SQUARE_TYPE::EMPTY;
+        cell.texture = EmptyTexture();
+      }
+    });
+  });
 }

@@ -197,6 +197,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
   if (!view_maze.has_value()) {
     throw std::runtime_error("View::BotMode: maze not loaded");
   }
+  view_maze->Clear();
 
   Utils::PositionCalc calc(window.GetSize());
   constexpr int HORIZONTAL_OPTIONS_START = 65;
@@ -229,7 +230,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     EndDrawing();
 
     frame_count++;
-    if (frame_count % 2 == 0 && solution.has_value() && searched.has_value()) {
+    if (frame_count % 5 == 0 && solution.has_value() && searched.has_value()) {
 
       if (searched->size() > 1) {
         auto current = searched->front();
