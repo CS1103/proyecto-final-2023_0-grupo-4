@@ -50,8 +50,8 @@
     <li><a href="#autores">
       Autores
     </a></li>
-    <li><a href="#referencias-y-links">
-      Referencias y links
+    <li><a href="#bibliografia">
+      Bibliografía
     </a></li>
   </ol>
 </details>
@@ -61,6 +61,7 @@
 ## Acerca del proyecto
 
 ### Descripción
+
 
 
 ### Características
@@ -81,14 +82,27 @@
 
 ### Algoritmos y contenedores utilizados
 
-#### DFG (Depth First Search)
+#### DFS (Depth First Search)
 Este algoritmo emplea en su implementación el concepto de stack. Lo que hace es recorrer en su totalidad una estructura. 
 Cada vez que se encuentra con dos o más caminos posibles, este recorrerá cada uno lo más profundamente posible, a la 
 vez que almacena los nodos recorridos en un stack. Si alcanza un camino sin salida antes que el objetivo, este retrocede a 
 la bifurcación anterior y repite el proceso. Este algoritmo, aunque puede cumplir con el objetivo, no es eficiente en lo 
 absoluto, considerando que existen alternativas más eficientes.
 
-- BFG (Breadth First Search)
+<div align="center">
+<img src= dfs.png format=jpg&name=small" width="300px">
+</div>
+
+
+#### BFS(Breadth First Search)
+
+Una búsqueda en anchura (BFS) es un algoritmo de búsqueda, recorre los nodos de un grafo, comenzando en la raíz para luego explorar todos los vecinos de este nodo. Además, para cada uno de los vecinos se exploran sus respectivos vecinos adyacentes, y así hasta que se recorra todo el grafo.
+
+  BFS va formando un árbol a medida que va recorriendo un grafo y se usa para algoritmos en donde resulta crítico elegir el mejor camino posible en cada momento del recorrido.
+  
+  <div align="center">
+<img src= bfs.png format=jpg&name=small" width="500px">
+</div>
 
 #### GBFS (Greedy Best First Search)
 Este es un algoritmo de búsqueda heurística, es decir, necesita información adicional específica relacionada con el 
@@ -97,13 +111,33 @@ encuentra cada casilla del objetivo. Lo que el algoritmo GBFS busca es reducir e
 en casilla. Si alcanza un punto sin salida, retrocede de nuevo al último cruce. A pesar de siempre buscar la casilla 
 más cercana al objetivo, no puede garantizar que el camino elegido será el más eficiente. 
 
-- A*
+<div align="center">
+<img src= gbfs.png format=jpg&name=small" width="500px">
+</div>
 
-- Wilsons
+#### A* Search Algorithm
+
+Tenemos una celda inicial y una celda objetivo. Queremos llegar a la celda objetivo (si es posible) desde la celda inicial lo más rápido posible. Aquí A* Search Algorithm lo que hace es que, en cada paso, selecciona el nodo que le acorte o le permita llegar de manera más rapida u optimizada al punto de objetivo. Esto a menudo se denomina heurística, que no es más que una especie de suposición inteligente. Realmente no sabemos la distancia real hasta que encontramos el camino, porque todo tipo de cosas pueden estar en el camino.
+
+<div align="center">
+<img src= a.png format=jpg&name=small" width="300px">
+</div>
+
+#### Wilsons
+
+El algoritmo de Wilson utiliza caminatas aleatorias borradas en bucle para generar un árbol de expansión uniforme, una muestra imparcial de todos los árboles de expansión posibles. Este inicializa el laberinto con una celda de inicio arbitraria. Luego, se agrega una nueva celda al laberinto, iniciando una caminata aleatoria. La caminata aleatoria continúa hasta que se vuelve a conectar con el laberinto existente. Sin embargo, si la caminata aleatoria se cruza a sí misma, el bucle resultante se borra antes de que continúe la caminata aleatoria.
+
+<div align="center">
+<img src= wilsons.png format=jpg&name=small" width="300px">
+</div>
 
 ## Instalación
 
 ### Requisitos
+
+- Compilador g++ v20 o posterior
+- Administrador de paquetes Cmake v3 o posterior
+- Libreria raylib (previamente no incluida)
 
 ### Pasos de instalación
 
