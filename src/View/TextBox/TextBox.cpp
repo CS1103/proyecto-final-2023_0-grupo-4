@@ -71,7 +71,6 @@ void TextBox::HandleInput() {
     key = GetCharPressed();
   }
   if (IsKeyPressed(KEY_BACKSPACE)) {
-    std::cout << "backspace" << std::endl;
     m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));
   }
 }

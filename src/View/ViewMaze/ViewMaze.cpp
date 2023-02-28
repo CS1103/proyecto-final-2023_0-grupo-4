@@ -4,23 +4,22 @@
 #include <iostream>
 #include <thread>
 ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
-                             const rl::Vector2 &_size, rl::Texture &_texture)
-    : type(_type), rect(_pos, _size), texture(_texture) {}
+                             rl::Texture &_texture)
+    : type(_type), position(_pos), texture(_texture) {}
 
-ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
-
-  // for (const auto &row : maze) {
-  //   for (const auto &cell : row) {
-  //     std::cout << cell;
-  //   }
-  //   std::cout << std::endl;
-  // }
+ViewMaze::ViewMaze(const maze_t &maze, const bool &fullScreen)
+    : cells(maze.size()) {
 
   auto rows = maze.size();
   auto cols = maze[0].size();
 
   auto width = GetScreenWidth();
   auto height = GetScreenHeight();
+
+  if (!fullScreen) {
+    width = width * 0.7;
+    height = height * 0.7;
+  }
 
   Utils::Vector2I size = {static_cast<int>(width / cols),
                           static_cast<int>(height / rows)};
@@ -37,11 +36,13 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
   SearchedTexture().SetHeight(size.y);
   SolutionTexture().SetWidth(size.x);
   SolutionTexture().SetHeight(size.y);
-  CurrentTexture().SetWidth(size.x);
-  CurrentTexture().SetHeight(size.y);
+  CurrentBotTexture().SetWidth(size.x);
+  CurrentBotTexture().SetHeight(size.y);
+  CurrentPlayerTexture().SetWidth(size.x);
+  CurrentPlayerTexture().SetHeight(size.y);
   // ugly af, to improve with macros
 
-  int cell_count = 0;
+  int cell_count = -1;
 
   auto position = [&](const int &_cell_count) {
     return Utils::Vector2I{static_cast<int>((_cell_count % cols) * size.x),
@@ -54,21 +55,20 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
     std::transform(
         row.begin(), row.end(), std::back_inserter(cells_v),
         [&](const SQUARE_TYPE &type) {
+          cell_count++;
           switch (type) {
           case SQUARE_TYPE::WALL:
-            return ViewCell(type, position(cell_count), size, WallTexture());
+            return ViewCell(type, position(cell_count), WallTexture());
           case SQUARE_TYPE::EMPTY:
-            return ViewCell(type, position(cell_count), size, EmptyTexture());
+            return ViewCell(type, position(cell_count), EmptyTexture());
           case SQUARE_TYPE::START:
-            return ViewCell(type, position(cell_count), size, StartTexture());
+            return ViewCell(type, position(cell_count), StartTexture());
           case SQUARE_TYPE::GOAL:
-            return ViewCell(type, position(cell_count), size, GoalTexture());
+            return ViewCell(type, position(cell_count), GoalTexture());
           case SQUARE_TYPE::SEARCHED:
-            return ViewCell(type, position(cell_count), size,
-                            SearchedTexture());
+            return ViewCell(type, position(cell_count), SearchedTexture());
           case SQUARE_TYPE::SOLUTION:
-            return ViewCell(type, position(cell_count), size,
-                            SolutionTexture());
+            return ViewCell(type, position(cell_count), SolutionTexture());
           case SQUARE_TYPE::CURRENT:
             throw std::runtime_error("Current cell can't be in empty maze");
           }
@@ -81,16 +81,9 @@ ViewMaze::ViewMaze(const maze_t &maze) : cells(maze.size()) {
 void ViewMaze::Draw() const {
 
   for (const auto &row : cells) {
-
     for (const auto &cell : row) {
-      std::cout << cell.type;
-      if (cell.type == SQUARE_TYPE::WALL) {
-        cell.rect.Draw(BLACK);
-      } else {
-        cell.rect.Draw(WHITE);
-      }
+      cell.texture.get().Draw(cell.position);
     }
-    std::cout << '\n';
   }
 }
 
@@ -109,7 +102,7 @@ void ViewMaze::DrawSearched(const square &current, const square &next) {
 
   if (current_cell.type == SQUARE_TYPE::EMPTY) {
     current_cell.type = SQUARE_TYPE::CURRENT;
-    current_cell.texture = CurrentTexture();
+    current_cell.texture = CurrentBotTexture();
   }
 }
 void ViewMaze::DrawSolution(const square &current, const square &next) {
@@ -129,7 +122,7 @@ void ViewMaze::DrawSolution(const square &current, const square &next) {
 
   if (current_cell.type == SQUARE_TYPE::SEARCHED) {
     cells[nextX][nextY].type = SQUARE_TYPE::CURRENT;
-    cells[nextX][nextY].texture = CurrentTexture();
+    cells[nextX][nextY].texture = CurrentBotTexture();
   }
 }
 void ViewMaze::MoveRight(square &current) {
@@ -150,7 +143,7 @@ void ViewMaze::MoveRight(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX, currY + 1};
 }
@@ -171,7 +164,7 @@ void ViewMaze::MoveLeft(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX, currY - 1};
 }
@@ -191,7 +184,7 @@ void ViewMaze::MoveDown(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX + 1, currY};
 }
@@ -208,7 +201,7 @@ void ViewMaze::MoveUp(square &current) {
   }
   if (next.type == SQUARE_TYPE::EMPTY || next.type == SQUARE_TYPE::SEARCHED) {
     next.type = SQUARE_TYPE::CURRENT;
-    next.texture = CurrentTexture();
+    next.texture = CurrentPlayerTexture();
   }
   current = {currX - 1, currY};
 }

@@ -34,7 +34,7 @@ TextBuilder DefaultTitleText(std::string _text) {
 
 TextBuilder DefaultButtonText() {
   static TextBuilder default_button_text =
-      TextBuilder().FontSize(20).Color(WHITE);
+      TextBuilder().FontSize(50).Color(BLACK);
   return default_button_text;
 }
 TextBuilder DefaultButtonText(std::string _text) {

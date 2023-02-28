@@ -26,18 +26,14 @@ template <>
 class Game<PLAYER_TYPE::HUMAN> : public GameBase<PLAYER_TYPE::HUMAN> {
 public:
   void Run() override;
-  Game(const Config &config, View &view) : GameBase(config, view) {
-    std::cout << "human game created";
-  }
+  Game(const Config &config, View &view) : GameBase(config, view) {}
 };
 
 template <>
 class Game<PLAYER_TYPE::COMPUTER> : public GameBase<PLAYER_TYPE::COMPUTER> {
 public:
   void Run() override;
-  Game(const Config &config, View &view) : GameBase(config, view) {
-    std::cout << "computer game created";
-  }
+  Game(const Config &config, View &view) : GameBase(config, view) {}
 };
 
 // extern explicit instantiation

@@ -31,8 +31,9 @@ public:
   void StartScreen();
   Config GetConfig();
 
-  void LoadMaze(const maze_t &maze);
-  void LoadMaze(const maze_t &maze, const square &start, const square &goal);
+  void LoadMaze(const maze_t &maze, const bool &fullScreen = true);
+  void LoadMaze(const maze_t &maze, const square &start, const square &goal,
+                const bool &fullScreen = true);
 
   std::pair<ALGORITHM, bool> BotMode(std::optional<MazeSteps> solution,
                                      std::optional<MazeSteps> searched);

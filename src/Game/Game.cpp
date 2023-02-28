@@ -17,9 +17,7 @@ using MazeSteps = std::queue<square>;
 
 template <PLAYER_TYPE PLAYER_TYPE>
 GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
-    : m_config(config), m_maze(config.board_size), r_view(view) {
-  std::cout << "GameBase constructor" << std::endl;
-}
+    : m_config(config), m_maze(config.board_size), r_view(view) {}
 
 void Game<PLAYER_TYPE::HUMAN>::Run() {
   r_view.LoadMaze(m_maze.GetMaze(), m_maze.GetStart(), m_maze.GetGoal());
@@ -33,7 +31,7 @@ void Game<PLAYER_TYPE::COMPUTER>::Run() {
   optional<MazeSteps> solution = std::nullopt;
   optional<MazeSteps> searched = std::nullopt;
 
-  r_view.LoadMaze(m_maze.GetMaze());
+  r_view.LoadMaze(m_maze.GetMaze(), /*fullscreen*/ false);
 
   bool finish = false;
   ALGORITHM algorithm{};
@@ -41,7 +39,6 @@ void Game<PLAYER_TYPE::COMPUTER>::Run() {
   do {
 
     auto view_return = r_view.BotMode(solution, searched);
-    std::cout << "view finished" << std::endl;
 
     algorithm = view_return.first;
     finish = view_return.second;
