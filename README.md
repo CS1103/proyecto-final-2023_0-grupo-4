@@ -121,7 +121,7 @@ más cercana al objetivo, no puede garantizar que el camino elegido será el má
 Tenemos una celda inicial y una celda objetivo. Queremos llegar a la celda objetivo (si es posible) desde la celda inicial lo más rápido posible. Aquí A* Search Algorithm lo que hace es que, en cada paso, selecciona el nodo que le acorte o le permita llegar de manera más rapida u optimizada al punto de objetivo. Esto a menudo se denomina heurística, que no es más que una especie de suposición inteligente. Realmente no sabemos la distancia real hasta que encontramos el camino, porque todo tipo de cosas pueden estar en el camino.
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/a_start.png" format=jpg&name=small" width="300px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/a_star.png" format=jpg&name=small" width="300px">
 </div>
 
 #### Wilsons
