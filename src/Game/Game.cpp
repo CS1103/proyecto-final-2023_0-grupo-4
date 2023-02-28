@@ -21,7 +21,7 @@ GameBase<PLAYER_TYPE>::GameBase(const Config &config, View &view)
 
 void Game<PLAYER_TYPE::HUMAN>::Run() {
   r_view.LoadMaze(m_maze.GetMaze(), m_maze.GetStart(), m_maze.GetGoal());
-  r_view.HumanMode();
+  r_view.HumanMode(m_config.timed);
 }
 
 void Game<PLAYER_TYPE::COMPUTER>::Run() {

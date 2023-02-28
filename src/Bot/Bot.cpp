@@ -25,10 +25,9 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
   frontier.push(start);
 
   searched_path.emplace(start);
-
   m_searchedPath.emplace(start);
 
-    bool found = false;
+  bool found = false;
   while (!frontier.empty()) {
 
     square current;

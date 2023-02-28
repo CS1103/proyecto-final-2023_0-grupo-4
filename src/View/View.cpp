@@ -4,6 +4,7 @@
 #include "TextBox.hpp"
 
 #include "ViewUtils.hpp"
+#include <chrono>
 
 using std::optional;
 using Utils::Vector2I;
@@ -47,18 +48,6 @@ void View::StartScreen() {
   }
 }
 
-/*
- *     if (is_bot_button.IsClicked()) {
-      is_bot = true;
-      is_bot_button.Highlight();
-      is_human_button.UnHighlight();
-
-    } else if (is_human_button.IsClicked()) {
-      is_bot = false;
-      is_bot_button.UnHighlight();
-      is_human_button.Highlight();
-    }
-*/
 static optional<bool> HandleDualButton(Button &button1, Button &button2) {
 
   if (button1.IsClicked()) {
@@ -273,7 +262,14 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
   return {ALGORITHM::BFS, true};
 }
 
-void View::HumanMode() {
+optional<bool> View::HumanMode(const bool &timed) {
+  if (timed) {
+    return TimedHumanMode();
+  }
+  UntimedHumanMode();
+  return std::nullopt;
+}
+void View::UntimedHumanMode() {
 
   if (!view_maze.has_value() || !start.has_value() || !goal.has_value()) {
     throw std::runtime_error("View::HumanMode: maze not loaded properly");
@@ -304,4 +300,55 @@ void View::HumanMode() {
     view_maze->Draw();
     EndDrawing();
   }
+}
+bool View::TimedHumanMode() {
+
+  if (!view_maze.has_value() || !start.has_value() || !goal.has_value()) {
+    throw std::runtime_error("View::HumanMode: maze not loaded properly");
+  }
+
+  Utils::PositionCalc calc(window.GetSize());
+
+  std::chrono::minutes max_time(5);
+  std::chrono::duration<double> remaining{};
+
+  square current = start.value();
+
+  rl::Text time_text = TextBuilder("Time remaining").FontSize(60).Color(WHITE);
+  const Utils::Vector2I TIME_POSITION = calc(80, 20);
+
+  while (!window.ShouldClose()) {
+
+    remaining = max_time - std::chrono::duration<double>(GetTime());
+
+    if (current == goal.value()) {
+      return true;
+    }
+    if (remaining.count() <= 0) {
+      return false;
+    }
+
+    if (IsKeyPressed(KEY_RIGHT)) {
+      view_maze->MoveRight(current);
+    } else if (IsKeyPressed(KEY_LEFT)) {
+      view_maze->MoveLeft(current);
+    } else if (IsKeyPressed(KEY_UP)) {
+      view_maze->MoveUp(current);
+    } else if (IsKeyPressed(KEY_DOWN)) {
+      view_maze->MoveDown(current);
+    }
+
+    BeginDrawing();
+    window.ClearBackground();
+    background.Draw(0, 0);
+    view_maze->Draw();
+
+    time_text.Draw(TIME_POSITION);
+
+    DrawText(std::to_string(static_cast<uint>(remaining.count())).c_str(),
+             TIME_POSITION.x, TIME_POSITION.y + 100, 60, WHITE);
+
+    EndDrawing();
+  }
+  return false;
 }
