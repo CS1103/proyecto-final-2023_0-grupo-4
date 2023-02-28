@@ -1,5 +1,5 @@
-<div style = "margin-left: 220px;">
-<img src="./src/Static/mazeLogo.webp" height="450px">
+<div align=center>
+<img src="https://github.com/CS1103/proyecto-final-2023_0-grupo-4/blob/main/readme/logo2.png" alt="Maze logo">
 </div>
 
 
