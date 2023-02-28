@@ -1,6 +1,5 @@
 # Guion proyecto progra 3
 
-
 ## Introducción (máximo 20 segundos):
 
 -Muy buenos días a todos, en esta oportunidad el grupo 4 del curso de programación 3 presentará el proyecto final MAZE, en este video tocaremos los siguientes puntos (eso se muestra con edición para ahorrar tiempo), ahora le doy la palabra a (integrante que sigue) que nos describirá las características de funcionamiento del proyecto.
