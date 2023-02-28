@@ -1,5 +1,5 @@
 <div align=center>
-<img src="https://github.com/CS1103/proyecto-final-2023_0-grupo-4/blob/main/readme/logo2.png" alt="Maze logo">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/logo2.png" alt="Maze logo" height="600">
 </div>
 
 
@@ -90,7 +90,7 @@ la bifurcación anterior y repite el proceso. Este algoritmo, aunque puede cumpl
 absoluto, considerando que existen alternativas más eficientes.
 
 <div align="center">
-<img src= dfs.png format=jpg&name=small" width="300px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/dfs.png" format=jpg&name=small" width="300px">
 </div>
 
 
@@ -101,7 +101,8 @@ Una búsqueda en anchura (BFS) es un algoritmo de búsqueda, recorre los nodos d
   BFS va formando un árbol a medida que va recorriendo un grafo y se usa para algoritmos en donde resulta crítico elegir el mejor camino posible en cada momento del recorrido.
   
   <div align="center">
-<img src= bfs.png format=jpg&name=small" width="500px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/bfs.png" format=jpg&name=small" width="500px">
+
 </div>
 
 #### GBFS (Greedy Best First Search)
@@ -112,7 +113,7 @@ en casilla. Si alcanza un punto sin salida, retrocede de nuevo al último cruce.
 más cercana al objetivo, no puede garantizar que el camino elegido será el más eficiente. 
 
 <div align="center">
-<img src= gbfs.png format=jpg&name=small" width="500px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/gbfs.png" format=jpg&name=small" width="500px">
 </div>
 
 #### A* Search Algorithm
@@ -120,7 +121,7 @@ más cercana al objetivo, no puede garantizar que el camino elegido será el má
 Tenemos una celda inicial y una celda objetivo. Queremos llegar a la celda objetivo (si es posible) desde la celda inicial lo más rápido posible. Aquí A* Search Algorithm lo que hace es que, en cada paso, selecciona el nodo que le acorte o le permita llegar de manera más rapida u optimizada al punto de objetivo. Esto a menudo se denomina heurística, que no es más que una especie de suposición inteligente. Realmente no sabemos la distancia real hasta que encontramos el camino, porque todo tipo de cosas pueden estar en el camino.
 
 <div align="center">
-<img src= a.png format=jpg&name=small" width="300px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/a_start.png" format=jpg&name=small" width="300px">
 </div>
 
 #### Wilsons
@@ -128,7 +129,7 @@ Tenemos una celda inicial y una celda objetivo. Queremos llegar a la celda objet
 El algoritmo de Wilson utiliza caminatas aleatorias borradas en bucle para generar un árbol de expansión uniforme, una muestra imparcial de todos los árboles de expansión posibles. Este inicializa el laberinto con una celda de inicio arbitraria. Luego, se agrega una nueva celda al laberinto, iniciando una caminata aleatoria. La caminata aleatoria continúa hasta que se vuelve a conectar con el laberinto existente. Sin embargo, si la caminata aleatoria se cruza a sí misma, el bucle resultante se borra antes de que continúe la caminata aleatoria.
 
 <div align="center">
-<img src= wilsons.png format=jpg&name=small" width="300px">
+<img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/wilsons.png" format=jpg&name=small" width="300px">
 </div>
 
 ## Instalación
