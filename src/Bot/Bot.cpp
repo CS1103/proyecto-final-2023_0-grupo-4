@@ -4,6 +4,16 @@
 #include <queue>
 #include <stack>
 
+[[maybe_unused]] static void PrintQueue(std::queue<square> path) {
+  std::cout << "Path: " << std::endl;
+  while (!path.empty()) {
+    std::cout << static_cast<int>(path.front().first) << " "
+              << static_cast<int>(path.front().second) << std::endl;
+    path.pop();
+  }
+  std::cout << std::endl;
+}
+
 template <ALGORITHM T>
   requires IsDFSOrBFS<T> bool
 Bot::Solve(const Maze &maze /*matriz de chars*/) {
@@ -36,6 +46,7 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
     } else {
       current = frontier.front();
     }
+    m_searchedPath.emplace(current);
 
     frontier.pop();
 
@@ -46,7 +57,6 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
     for (square neighbor : maze.GetNeighbors(current)) {
       if (searched_path.find(neighbor) == searched_path.end()) {
         frontier.push(neighbor);
-        m_searchedPath.emplace(neighbor);
         searched_path.emplace(neighbor);
         parent[neighbor] = current;
       }
@@ -64,9 +74,8 @@ Bot::Solve(const Maze &maze /*matriz de chars*/) {
 
     current = parent[current];
   }
-  if (T == ALGORITHM::DFS) {
-    m_solution.emplace(current);
-  }
+  m_solution.emplace(current);
+  PrintQueue(m_solution);
 
   return true;
 }
@@ -133,6 +142,7 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
   while (!frontier.empty()) {
 
     current = frontier.top();
+    m_searchedPath.emplace(current);
     int current_score = frontier.top().w_score;
 
     frontier.pop();
@@ -142,10 +152,8 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
       break;
     }
 
-    m_searchedPath.emplace(current);
     for (square neighbor : maze.GetNeighbors(current)) {
       if (searched_path.find(neighbor) == searched_path.end()) {
-        m_searchedPath.emplace(neighbor);
         searched_path.emplace(neighbor);
         frontier.emplace(neighbor, current_score + 1);
         parent[neighbor] = current;
@@ -161,7 +169,9 @@ template <> bool Bot::Solve<ALGORITHM::A_STAR>(const Maze &maze) {
     m_solution.emplace(current_sq);
     current_sq = parent[current_sq];
   }
+  m_solution.emplace(current_sq);
 
+  PrintQueue(m_solution);
   return true;
 }
 
@@ -192,6 +202,7 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
   while (!frontier.empty()) {
 
     current = frontier.top();
+    m_searchedPath.emplace(current);
     frontier.pop();
 
     if (current == maze.GetGoal()) {
@@ -199,11 +210,9 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
       break;
     }
 
-    m_searchedPath.emplace(current);
     for (square neighbor : maze.GetNeighbors(current)) {
 
       if (searched_path.find(neighbor) == searched_path.end()) {
-        m_searchedPath.emplace(neighbor);
         searched_path.emplace(neighbor);
         frontier.push(neighbor);
         parent[neighbor] = current;
@@ -219,26 +228,11 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
     m_solution.emplace(current_sq);
     current_sq = parent[current_sq];
   }
+  m_solution.emplace(current_sq);
+
+  PrintQueue(m_solution);
 
   return true;
-}
-
-template <bool hasNode>
-[[maybe_unused]] void PrintPriorityQueue(const auto &queue) {
-  auto copy = queue;
-  std::cout << "Priority Queue: \n";
-  if constexpr (hasNode) {
-    while (!copy.empty()) {
-      std::cout << copy.top().first << " " << copy.top().second << std::endl;
-      std::cout << "Score: " << copy.top().w_score << std::endl;
-      copy.pop();
-    }
-  } else {
-    while (!copy.empty()) {
-      std::cout << copy.top().first << " " << copy.top().second << std::endl;
-      copy.pop();
-    }
-  }
 }
 
 std::queue<square> Bot::GetSolution() const { return m_solution; }

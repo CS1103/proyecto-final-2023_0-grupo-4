@@ -6,6 +6,8 @@
 #include "ViewUtils.hpp"
 #include <chrono>
 
+constexpr int MAX_TIME = 1;
+
 using std::optional;
 using Utils::Vector2I;
 using uint = unsigned int;
@@ -309,7 +311,7 @@ bool View::TimedHumanMode() {
 
   Utils::PositionCalc calc(window.GetSize());
 
-  std::chrono::minutes max_time(5);
+  std::chrono::minutes max_time(MAX_TIME);
   std::chrono::duration<double> remaining{};
 
   square current = start.value();
