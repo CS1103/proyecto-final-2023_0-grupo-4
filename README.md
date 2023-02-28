@@ -62,13 +62,14 @@
 
 ### Descripción
 
-
+Maze es un juego adictivo que tiene una fórmula clásica, debes deslizar y guiar al personaje a través del laberinto pero, ¡Cuidado! El tiempo puede estar corriendo. Tendrás que ser ágil al resolverlo para encontrar el camino adecuado para que llegue a su punto objetivo.
 
 ### Características
 
-#### Características Principales
-
-#### Caracteristicas Adicionales
+-Nuestro tablero es modificable.
+-Tenemos dos opciones de juego: Bot y Human.
+-Tiene timer.
+- 4 Algoritmos distintos para el bot (DFS, BFS, GBFS, A*)
 
 ### Tecnologías
 
@@ -151,6 +152,18 @@ git clone https://github.com/CS1103/proyecto-final-2023_0-grupo-4.git
 ## Instrucciones de uso
 
 ### Reglas de juego
+
+**Cómo jugar Maze**
+
+1.El laberinto tiene un punto inicial.
+
+2.Luego, debes elegir un cuadrado adyacente, ya sea hacia adelante o hacia un lado. 
+
+3.Continuas creando el camino que creas adecuado.
+
+4.En caso llegues a un callejon sin salida, no podras avanzar, pero si retroceder.
+
+5.Finalmente, al crear el camino correcto, llegarás al punto objetivo.
 
 
 ## Licencia
