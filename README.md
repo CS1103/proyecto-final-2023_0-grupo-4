@@ -136,7 +136,7 @@ El algoritmo de Wilson utiliza caminatas aleatorias borradas en bucle para gener
 
 ### Requisitos
 
-- Compilador g++ v20 o posterior
+- Compilador compatible con c++20 o posterior
 - Administrador de paquetes Cmake v3 o posterior
 - Libreria raylib (previamente no incluida)
 
@@ -151,7 +151,6 @@ git clone https://github.com/CS1103/proyecto-final-2023_0-grupo-4.git
 ## Instrucciones de uso
 
 ### Reglas de juego
-
 
 
 ## Licencia
