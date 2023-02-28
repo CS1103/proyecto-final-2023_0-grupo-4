@@ -92,4 +92,8 @@ private:
                   const square &start);
 };
 
+// explicit instantiation
+extern template size_t
+Maze::HashPair::operator()(const std::pair<uint8_t, uint8_t> &pair) const;
+
 #endif // !MAZE_HPP

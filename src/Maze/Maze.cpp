@@ -363,3 +363,7 @@ std::ostream &operator<<(std::ostream &ost, const SQUARE_TYPE &type) {
 
   return ost;
 }
+
+// explicit instantiation
+template size_t
+Maze::HashPair::operator()(const std::pair<uint8_t, uint8_t> &pair) const;

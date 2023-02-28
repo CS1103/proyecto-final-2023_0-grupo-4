@@ -5,6 +5,7 @@ execute_process(
   OUTPUT_STRIP_TRAILING_WHITESPACE)# Get linux distro
 
 message(STATUS "Current distro: ${LSB_RELEASE_ID_SHORT}")
+message(STATUS "Debug mode:" ${CMAKE_BUILD_TYPE})
 
 cmake_minimum_required(VERSION 3.22)
 project(Maze
@@ -17,7 +18,7 @@ if(${CMAKE_VERSION} VERSION_LESS "3.25.2")
   message(
     STATUS
     "CMake version is less than 3.25.2,
-                                                                                                                                                                                                                                                                      upgrade to silence unnecesary warnings")
+                                                                                                                                                                                                                                                                                              upgrade to silence unnecesary warnings")
 endif()
 
 # raylib
@@ -122,29 +123,30 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${INCLUDE_DIRS})
 
 ####################################
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-  set(WARNINGS
-    -Weverything
-    -Wno-string-compare
-    -Wno-c++98-compat
-    -Wno-c++98-compat-pedantic
-    -fsanitize=address
-    -fsanitize=undefined
-    -fno-sanitize-recover=all
-  )
-  target_link_options(
-    ${PROJECT_NAME}
-    PRIVATE -fsanitize=address -fsanitize=undefined)
-else()
-  set(WARNINGS
-    -Wall
-    -Wextra
-    -Wshadow
-    -pedantic
-  )
-endif()
+# if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+#   set(FLAGS
+#     -Weverything
+#     -Wno-string-compare
+#     -Wno-c++98-compat
+#     -Wno-c++98-compat-pedantic
+#     -fsanitize=address
+#     -fsanitize=undefined
+#     -fno-sanitize-recover=all
+#   )
+#   target_link_options(
+#     ${PROJECT_NAME}
+#     PRIVATE -fsanitize=address -fsanitize=undefined)
+# else()
+#   set(FLAGS
+#     -Wall
+#     -Wextra
+#     -Wshadow
+#     -pedantic
+#   )
+# endif()
+set(FLAGS -O3)
 
-target_compile_options(${PROJECT_NAME} PRIVATE ${WARNINGS} -g)
+target_compile_options(${PROJECT_NAME} PRIVATE ${FLAGS})
 
 set_target_properties(
   ${PROJECT_NAME}
