@@ -66,9 +66,9 @@ Maze es un juego adictivo que tiene una fórmula clásica, debes deslizar y guia
 
 ### Características
 
--Nuestro tablero es modificable.
--Tenemos dos opciones de juego: Bot y Human.
--Tiene timer.
+- Nuestro tablero es modificable.
+- Tenemos dos opciones de juego: Bot y Human.
+- Tiene timer.
 - 4 Algoritmos distintos para el bot (DFS, BFS, GBFS, A*)
 
 ### Tecnologías
@@ -76,10 +76,14 @@ Maze es un juego adictivo que tiene una fórmula clásica, debes deslizar y guia
 - Lenguaje de programación C++17 o posterior
 - Librería raylib 
 - Raylib-cpp (header only, fork)
+- Doxyegn (documentación)
 
 ### Temas de interés
 
--El uso de raylib como interfaz gráfica.
+- El uso de raylib como interfaz gráfica.
+- Algoritmos de busqueda
+- Algoritmos de generación de laberintos perfectos (arboles de expansión minima)
+
 
 ### Algoritmos y contenedores utilizados
 
@@ -147,23 +151,45 @@ El algoritmo de Wilson utiliza caminatas aleatorias borradas en bucle para gener
 
 ```bash
 git clone https://github.com/CS1103/proyecto-final-2023_0-grupo-4.git
+cd proyecto-final-2023_0-grupo-4
+mkdir build
+cmake -B build
+cd build
+sudo make install
 ```
 
 ## Instrucciones de uso
 
+- ejecutable Maze
+  ```bash
+  Maze
+  ```
+- Crear entrada de escritorio
+  ```bash
+  cd .. # Carpeta principal del repositorio
+  cp Maze.desktop /usr/share/applications/
+  ```
+
+
 ### Reglas de juego
 
-**Cómo jugar Maze**
+#### Configuración
 
-1.El laberinto tiene un punto inicial.
+1. Elegir tamaño del tablero
+2. Elegir modo de juego (Humano o computador)
+3. Elegir limite de tiempo prendido o apagado
 
-2.Luego, debes elegir un cuadrado adyacente, ya sea hacia adelante o hacia un lado. 
+#### Jugabilidad
 
-3.Continuas creando el camino que creas adecuado.
+1. El laberinto tiene un punto inicial.
 
-4.En caso llegues a un callejon sin salida, no podras avanzar, pero si retroceder.
+2. Luego, debes elegir un cuadrado adyacente, ya sea hacia adelante o hacia un lado. 
 
-5.Finalmente, al crear el camino correcto, llegarás al punto objetivo.
+3. Continuas creando el camino que creas adecuado.
+
+4. En caso llegues a un callejon sin salida, no podras avanzar, pero si retroceder.
+
+5. Finalmente, al crear el camino correcto, llegarás al punto objetivo.
 
 
 ## Licencia

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Maze
+Comment=Maze game made in c++
+Exec=Maze
+Terminal=false
+# Icon=ncspot
+# Categories=AudioVideo;Audio;Player;ConsoleOnly
+# Keywords=spotify;music;player
+# X-Desktop-File-Install-Version=0.26
