@@ -2,7 +2,6 @@
 #include "Vector2I.hpp"
 #include <algorithm>
 #include <iostream>
-#include <thread>
 ViewMaze::ViewCell::ViewCell(const SQUARE_TYPE &_type, const rl::Vector2 &_pos,
                              rl::Texture &_texture)
     : type(_type), position(_pos), texture(_texture) {}
