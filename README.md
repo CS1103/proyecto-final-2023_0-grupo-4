@@ -153,17 +153,19 @@ git clone https://github.com/CS1103/proyecto-final-2023_0-grupo-4.git
 
 ### Reglas de juego
 
-####Cómo jugar Maze
+**Cómo jugar Maze**
 
-<<<<<<< HEAD
 1.El laberinto tiene un punto inicial.
+
 2.Luego, debes elegir un cuadrado adyacente, ya sea hacia adelante o hacia un lado. 
+
 3.Continuas creando el camino que creas adecuado.
+
 4.En caso llegues a un callejon sin salida, no podras avanzar, pero si retroceder.
+
 5.Finalmente, al crear el camino correcto, llegarás al punto objetivo.
 
-=======
->>>>>>> b987331e0c7deb16a56ff412f4ce39d8825173f8
+
 ## Licencia
 
 Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más información.
