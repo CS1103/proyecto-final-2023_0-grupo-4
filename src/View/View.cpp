@@ -220,7 +220,7 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     EndDrawing();
 
     frame_count++;
-    if (frame_count % 5 == 0 && solution.has_value() && searched.has_value()) {
+    if (frame_count % 2 == 0 && solution.has_value() && searched.has_value()) {
 
       if (searched->size() > 1) {
         auto current = searched->front();
@@ -242,21 +242,25 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     }
 
     if (dfs_button.IsClicked()) {
+      std::cout << "dfs clicked\n";
       return {ALGORITHM::DFS, false};
     }
     if (bfs_button.IsClicked()) {
-
+      std::cout << "bfs clicked\n";
       return {ALGORITHM::BFS, false};
     }
     if (gbfs_button.IsClicked()) {
+      std::cout << "gbfs clicked\n";
 
       return {ALGORITHM::GBFS, false};
     }
     if (a_star_button.IsClicked()) {
+      std::cout << "a* clicked\n";
 
       return {ALGORITHM::A_STAR, false};
     }
     if (end_button.IsClicked()) {
+      std::cout << "end clicked\n";
       return {ALGORITHM::BFS, true};
     }
   }
