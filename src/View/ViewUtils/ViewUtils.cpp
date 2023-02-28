@@ -1,15 +1,135 @@
 #include "ViewUtils.hpp"
 
 #include <utility>
-namespace Utils {
+namespace Utils{
+  namespace Validators{
+   bool Name(const std::string &input)
+  {
+    if (input.length() > 2 || input.length() <= 0)
+      return false;
+    if (input[0] < 48 || input[0] > 57)
+      return false;
 
-namespace Validators {
-bool Name(const std::string & /*input*/) { return true; }
-bool NumSmall(const std::string & /*input*/) { return true; }
-bool NumLarge(const std::string & /*input*/) { return true; }
-bool None(const std::string & /*input*/) { return true; }
+    if (input.length() == 2)
+    {
+      if (input[1] < 48 || input[1] > 57)
+        return false;
+    }
 
-} // namespace Validators
+    int input_fin;
+    if (input.length() == 2)
+    {
+      int d = input[0] - 48;
+      int u = input[1] - 48;
+      input_fin = d * 10 + u;
+    }
+    else
+    {
+      int u = input[0] - 48;
+      input_fin = u;
+    }
+
+    if (input_fin < 3 || input_fin > 25)
+      return false;
+
+    return true;
+  }
+
+  bool NumSmall(const std::string &input)
+  {
+    if (input.length() > 2 || input.length() <= 0)
+      return false;
+    if (input[0] < 48 || input[0] > 57)
+      return false;
+
+    if (input.length() == 2)
+    {
+      if (input[1] < 48 || input[1] > 57)
+        return false;
+    }
+
+    int input_fin;
+    if (input.length() == 2)
+    {
+      int d = input[0] - 48;
+      int u = input[1] - 48;
+      input_fin = d * 10 + u;
+    }
+    else
+    {
+      int u = input[0] - 48;
+      input_fin = u;
+    }
+
+    if (input_fin < 3 || input_fin > 25)
+      return false;
+
+    return true;
+  }
+
+  bool NumLarge(const std::string &input)
+  {
+    if (input.length() > 2 || input.length() <= 0)
+      return false;
+    if (input[0] < 48 || input[0] > 57)
+      return false;
+
+    if (input.length() == 2)
+    {
+      if (input[1] < 48 || input[1] > 57)
+        return false;
+    }
+
+    int input_fin;
+    if (input.length() == 2)
+    {
+      int d = input[0] - 48;
+      int u = input[1] - 48;
+      input_fin = d * 10 + u;
+    }
+    else
+    {
+      int u = input[0] - 48;
+      input_fin = u;
+    }
+
+    if (input_fin < 3 || input_fin > 25)
+      return false;
+
+    return true;
+  }
+
+  bool None(const std::string &input)
+  {
+    if (input.length() > 2 || input.length() <= 0)
+      return false;
+    if (input[0] < 48 || input[0] > 57)
+      return false;
+
+    if (input.length() == 2)
+    {
+      if (input[1] < 48 || input[1] > 57)
+        return false;
+    }
+
+    int input_fin;
+    if (input.length() == 2)
+    {
+      int d = input[0] - 48;
+      int u = input[1] - 48;
+      input_fin = d * 10 + u;
+    }
+    else
+    {
+      int u = input[0] - 48;
+      input_fin = u;
+    }
+
+    if (input_fin < 3 || input_fin > 25)
+      return false;
+
+    return true;
+  }}
 
 PositionCalc::PositionCalc(const Vector2I &windowSize)
     : m_windowSize(windowSize) {}
