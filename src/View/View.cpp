@@ -6,7 +6,7 @@
 #include "ViewUtils.hpp"
 #include <chrono>
 
-constexpr int MAX_TIME = 1;
+constexpr int MAX_TIME = 5;
 
 using std::optional;
 using Utils::Vector2I;
