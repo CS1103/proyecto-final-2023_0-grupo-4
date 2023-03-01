@@ -140,17 +140,14 @@ void Game<PLAYER_TYPE::HUMAN>::Run() {
 
 ## Flyweight:
 
-
-  Leer:
   https://stackoverflow.com/questions/16750758/what-are-the-practical-use-differences-between-flyweight-vs-singleton-patterns
 
-  Explicar: ¿Porque no estamos usando el patron singleton en el código?
-  (tenemos muchos singletons)
+  El patron Flyweight, de manera similar al singleton, se utiliza para tener muchos objetos del mismo tipo construidos por una clase en comun, en nuestro proyecto, si bien tenemos muchos objetos tipo raylib::Texture, estos no son construidos de manera conjunto, sino cada uno por separado en su propia función de Meyer. Por ello, no tenemos el patron Flyweight, sino multiples singletons.
 
 
 
 
 ## Facade:
 
-  La clase vista controla todo aquello relacionado a la parte grafica con una simple interfaz.
+  En nuestro proyecto, la clase vista se encarga de encapsular todo aquello relacionado a la parte grafica, es decir, es la unica que interactua con la libreria raylib y raylib-cpp, por ello, podemos decir que es una fachada encargada de mostrar el juego en pantalla. Esta clase, se utiliza directamente desde la clase game, en donde se une con los algoritmos del bot y del laberinto.
 
