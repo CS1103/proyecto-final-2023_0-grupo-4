@@ -212,7 +212,7 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 
 ![Matriz tablero](https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/graph.png)
 
-Decidimos usar una matriz como estructura de datos debido a que el laberinto es cuadrado 
+Decidimos usar una matriz como estructura de datos debido a que el laberinto es cuadrado y cada una de las casillas contiene información relevante.
 
 ## Link del video
 [https://youtu.be/P9PDjKmyTfA](Video)
