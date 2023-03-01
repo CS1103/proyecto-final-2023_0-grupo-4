@@ -184,6 +184,8 @@ template <> bool Bot::Solve<ALGORITHM::GBFS>(const Maze &maze) {
   auto start = maze.GetStart();
 
   std::unordered_set<square, Maze::HashPair> searched_path;
+
+  // priority_queue
   std::priority_queue<square, std::vector<square>, Compare<ALGORITHM::GBFS>>
       frontier;
 

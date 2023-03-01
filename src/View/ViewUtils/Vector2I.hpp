@@ -7,6 +7,8 @@
 
 namespace Utils {
 
+// template <IsArithmeticConcept>
+// Conflictos con raylib
 struct Vector2I {
   int x; // NOLINT
   int y; // NOLINT

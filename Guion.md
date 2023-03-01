@@ -17,8 +17,6 @@ Para el modo bot, el jugador puede elegir multiples veces que algoritmos desea q
 
 ## Describir los algoritmos más importantes utilizados en el desarrollo (máximo 1 minuto):
 
-- 4 algoritmos distintos para el bot
-
 El proyecto contiene 4 algoritmos de búsqueda y 2 algoritmos de generación del laberinto. El Depth First Search es un algoritmo el cual sigue un camino hasta llegar a su final y cuando no le quedan más caminos retrocede al ultimo nodo que posea caminos sin recorrer, así recursivamente o iterativamente hasta llegar a su destino.   El algoritmo Breadth First Search se diferencia del anterior porque este primero revisa todos los nodos adyacentes al punto inicial antes de pasar al siguiente y repetir el proceso hasta llegar al destino.
 
 Los siguientes 2 algoritmos, Greedy Best First Search y A star, hace uso de una función euristica para determinar cual es el mejor camino a elegir, en nuestro proyecto usamos la distancia manhattan, la cual es un estimado de distancia de la posición actual a la meta. La diferencia entre estos 2 algoritmos es que el segundo tambien considera la cantidad de pasos que le tomo llegar a la posición actual, para asi evitar tomar caminos muy largos.
