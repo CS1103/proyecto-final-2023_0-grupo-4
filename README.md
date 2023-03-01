@@ -73,7 +73,7 @@ Maze es un juego adictivo que tiene una fórmula clásica, debes deslizar y guia
 
 ### Tecnologías
 
-- Lenguaje de programación C++17 o posterior
+- Lenguaje de programación C++20 o posterior
 - Librería raylib 
 - Raylib-cpp (header only, fork)
 - Doxyegn (documentación)
