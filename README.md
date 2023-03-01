@@ -226,7 +226,19 @@ Decidimos usar una matriz como estructura de datos debido a que el laberinto es 
 - Luis Enrique Cortijo
 
 ## Bibliografía
-- CS50 (2020). Search - Lecture 0 - CS50's Introduction to Artificial Intelligence with Python 2020 [Video]. Edx. https://youtu.be/WbzNRTTrX0g 
+
+- CS50 (2020). Search - Lecture 0 - CS50's Introduction to Artificial Intelligence with Python 2020 [https://cs50.harvard.edu/ai/2020/notes/0/](Search_algorithms)  
+Utilizamos recursos provistos por un curso libre de harvard para aprender a fondo el funcionamiento de los distintos algoritmos de busqueda.
+
+- Thee Buckblock (2011) - Jamis Buck
+[https://weblog.jamisbuck.org/2011/1/20/maze-generation-wilson-s-algorithm](maze_generation)  
+Utilizamos el block del desarrollador Jamis Buck para comparar y entender los diversos algorittmos de generación de laberintos existentes, en su block tiene multiples articulos para cada uno de los algoritmos junto con una comparación de ellos.
+
+- Meyer's Singleto
+[https://laristra.github.io/flecsi/src/developer-guide/patterns/meyers_singleton.html](meyers_singleton)  
+En esta pagina encontramos un snipet para un singleto que nos llevo a entender más sobre el fiasco de inicializa
+
+
 
 ---
 
