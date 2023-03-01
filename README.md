@@ -243,6 +243,11 @@ Refactoring.Guru. (s. f.-b). Refactoring and Design Patterns. https://refactori
 En esta pagina encontramos amplia información sobre refactoring, mejores practicas y, sobre todo, patrones de diseño.
 La utilizamos principalemente para el análisis de patrones en [`patrones.md`](Patrones).
 
+- Documentación de Raylib y Raylib-cpp  
+[https://www.raylib.com/cheatsheet/cheatsheet.html](Raylib)  
+[https://robloach.github.io/raylib-cpp/](Raylib-cpp)  
+Documentación utilizada para la parte grafica del proyecto.
+
 
 
 ---
