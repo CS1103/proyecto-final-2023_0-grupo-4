@@ -184,7 +184,7 @@ void View::LoadMaze(const maze_t &maze, const square &_start,
 std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
                                          optional<MazeSteps> searched) {
 
-  if (!view_maze.has_value()) {
+  if (!view_maze.has_value() || !start.has_value() || !goal.has_value()) {
     throw std::runtime_error("View::BotMode: maze not loaded");
   }
   view_maze->Clear();
@@ -208,7 +208,32 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
 
   uint frame_count = 0;
 
+  square current = start.value();
+
+  bool move_bot = true;
+
   while (!window.ShouldClose()) {
+
+    if (current == goal.value()) {
+      return {ALGORITHM::BFS, true};
+    }
+
+    move_bot = false;
+
+    if (IsKeyPressed(KEY_RIGHT)) {
+      view_maze->MoveRight(current);
+      move_bot = true;
+
+    } else if (IsKeyPressed(KEY_LEFT)) {
+      view_maze->MoveLeft(current);
+      move_bot = true;
+    } else if (IsKeyPressed(KEY_UP)) {
+      view_maze->MoveUp(current);
+      move_bot = true;
+    } else if (IsKeyPressed(KEY_DOWN)) {
+      view_maze->MoveDown(current);
+      move_bot = true;
+    }
 
     // Drawing
     BeginDrawing();
@@ -220,22 +245,22 @@ std::pair<ALGORITHM, bool> View::BotMode(optional<MazeSteps> solution,
     EndDrawing();
 
     frame_count++;
-    if (frame_count % 2 == 0 && solution.has_value() && searched.has_value()) {
+    if (move_bot && solution.has_value() && searched.has_value()) {
 
       if (searched->size() > 1) {
-        auto current = searched->front();
+        auto current_bot = searched->front();
 
         searched->pop();
         auto next = searched->front();
 
-        view_maze->DrawSearched(current, next);
+        view_maze->DrawSearched(current_bot, next);
       } else if (solution->size() > 1) {
 
-        auto current = solution->front();
+        auto current_bot = solution->front();
         solution->pop();
         auto next = solution->front();
 
-        view_maze->DrawSolution(current, next);
+        view_maze->DrawSolution(current_bot, next);
       } else {
       }
       continue;
