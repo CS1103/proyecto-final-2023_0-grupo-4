@@ -137,6 +137,16 @@ El algoritmo de Wilson utiliza caminatas aleatorias borradas en bucle para gener
 <img src="https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/wilsons.png" format=jpg&name=small" width="300px">
 </div>
 
+### Clases/funciones Templates
+
+![Templates](https://raw.githubusercontent.com/CS1103/proyecto-final-2023_0-grupo-4/main/readme/templates.jpeg)
+
+- Compare: función heuristica para GBFS/A*
+- Solve: función para resolver el laberinto
+- Class Game/GameBase: template en función del modo de juego 
+- Utils::RandomNum: función robusta para generar aleatorios
+- DrawAll: Función para dibujar caulquier tipo T con {T.Draw()}
+
 ## Instalación
 
 ### Requisitos
