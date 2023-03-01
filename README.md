@@ -238,6 +238,9 @@ Utilizamos el block del desarrollador Jamis Buck para comparar y entender los di
 [https://laristra.github.io/flecsi/src/developer-guide/patterns/meyers_singleton.html](meyers_singleton)  
 En esta pagina encontramos un snipet para un singleto que nos llevo a entender más sobre el fiasco de inicializa
 
+- Mejores prácticas para seguir con el proyecto y patrones de diseño para analizar.
+Refactoring.Guru. (s. f.-b). Refactoring and Design Patterns. https://refactoring.guru/
+
 
 
 ---
