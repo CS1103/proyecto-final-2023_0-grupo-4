@@ -215,7 +215,7 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 Decidimos usar una matriz como estructura de datos debido a que el laberinto es cuadrado 
 
 ## Link del video
-https://youtu.be/P9PDjKmyTfA
+[https://youtu.be/P9PDjKmyTfA](Video)
 
 ## Autores
 
