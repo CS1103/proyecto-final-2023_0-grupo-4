@@ -34,16 +34,20 @@ Principalmente el proyecto cuenta con 2 grandes grupos de estructuras de datos, 
 
 ## Organización del código fuente:
 
-El código esta organizado de la siguiente forma: 
+Nuestro proyecto se divide principalmente en los siguientes módulos:
+- Game: Encargado de la jugabilidad. Es decir, recibe la información de quien está jugando (un humano o el bot). Acto
+seguido, si juega el bot, le otorgará a su funcionamiento el algoritmo de búsqueda seleccionado. Por el contrario, si 
+juega un humano, habilitará los controles direccionales. 
+- Bot: En resumen, se encarga de obtener y almacenar la solución de un laberinto. Tras recibir como entrada cualquiera 
+de los 4 algoritmos, inicializará su funcionamiento. Almacenará por separado el camino recorrido y su solución, mientras 
+que la vista es actualizada, aunque hablaré sobre eso más adelante. 
+- Maze: Es el encargado de generar el laberinto en función de las entradas del usuario, como fue explicado en el punto 
+anterior. Para ello, utilizamos un vector de vectores. Estos últimos almacenan objetos llamados square_type, divididos 
+según su utilidad y comportamiento. 
+- View: Encargado de la parte gráfica. Hace uso del patrón builder para generar los botones, entradas de texto y bloques
+de texto. Además, muestra los menús y el laberinto. Su vista es actualizada tras cada movimiento, tanto del bot como del 
+jugador humano. 
 
-Nuestro código esta dividido en módulos
-- Game: clase encargada de la jugabilidad
-- Bot: clase encargada de obtener y almacenar la solución de un laberinto
-- Maze: clase encargada de generar el laberinto
-- View: clase encargada de la parte gráfica
-
-
-En la carpeta “src” está todo el código realizado en c++, dentro de esta carpeta tenemos subcarpetas que contienen el código fuente de cada parte según el nombre, para no ser redundante explicaremos brevemente una: La carpeta Bot contiene el Bot.cpp y el Bot.hpp que es el código del bot como lo indica el nombre, estos se incluyen en game que es el archivo donde se encuentran las funciones que permiten el funcionamiento del juego, luego se encuentra el main que corre el game que tiene incluidas todos los archivos de las subcarpetas de “src”. Las carpetas examples y assets contienen muestras de pngs empleados para la parte grafica del juego y el ultimo archivo relevante es el README.md que se encarga de informar a los usuarios acerca del programa.
 Mostrar funcionamiento (simplemente grabamos el juego funcionando)
 
 ## Conclusiones
