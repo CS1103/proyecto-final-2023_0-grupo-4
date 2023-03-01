@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hashpair_0',['HashPair',['../structMaze_1_1HashPair.html',1,'Maze']]]
+  ['kruskal_0',['Kruskal',['../classkruskalGeneration_1_1Kruskal.html',1,'kruskalGeneration']]]
 ];

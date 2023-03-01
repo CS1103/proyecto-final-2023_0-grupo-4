@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['defaultbutton_0',['DefaultButton',['../namespaceUtils.html#a09385cce1599585034fb556a0127eff6',1,'Utils']]],
-  ['defaultbuttonfont_1',['DefaultButtonFont',['../namespaceUtils.html#abc2cd234ddfa3d746bcb64acb0929249',1,'Utils']]],
-  ['defaultbuttontext_2',['DefaultButtonText',['../namespaceUtils.html#a103d21334dd9df65b88bab0eb9579ec1',1,'Utils']]],
-  ['defaulttextbox_3',['DefaultTextBox',['../namespaceUtils.html#a7cf44240ff00218d99af040b366bb8c9',1,'Utils']]],
-  ['defaulttextboxfont_4',['DefaultTextBoxFont',['../namespaceUtils.html#a45ea7de2add206171a31fc1111c4c0f0',1,'Utils']]],
-  ['defaulttextboxtext_5',['DefaultTextBoxText',['../namespaceUtils.html#af9bd01034ce09928a38711fe7b4fe944',1,'Utils']]],
-  ['defaulttitlefont_6',['DefaultTitleFont',['../namespaceUtils.html#a46ed5a527be0801161446a46b72e50ae',1,'Utils']]],
-  ['defaulttitletext_7',['DefaultTitleText',['../namespaceUtils.html#a76d8666937d3946f945924d0e1c09048',1,'Utils']]],
-  ['draw_8',['Draw',['../classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5',1,'Button::Draw()'],['../classTextBox.html#abc3025cb5fa529079baada662aa55f31',1,'TextBox::Draw()']]]
+  ['defaultbutton_0',['DefaultButton',['../namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e',1,'Utils']]],
+  ['defaultbuttontext_1',['DefaultButtonText',['../namespaceUtils.html#ab3590351fbcc5301a77152173af2af51',1,'Utils::DefaultButtonText()'],['../namespaceUtils.html#a5e2dbdb763b16cea45832c51fc0bca9a',1,'Utils::DefaultButtonText(std::string _text)']]],
+  ['defaultbuttontexture_2',['DefaultButtonTexture',['../structButtonBuilder.html#a47e82df4cb10b93df1e47d13930530cb',1,'ButtonBuilder']]],
+  ['defaulttextbox_3',['DefaultTextBox',['../namespaceUtils.html#aa505617255ee355cddb80ccb2144a8bc',1,'Utils']]],
+  ['defaulttextboxtext_4',['DefaultTextBoxText',['../namespaceUtils.html#adec494ba666b6bd29d9686b996426d43',1,'Utils']]],
+  ['defaulttitletext_5',['DefaultTitleText',['../namespaceUtils.html#a9d117199853a7dcc80ca186628d06866',1,'Utils']]],
+  ['draw_6',['Draw',['../classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5',1,'Button::Draw()'],['../classTextBox.html#abc3025cb5fa529079baada662aa55f31',1,'TextBox::Draw()'],['../classViewMaze.html#a10a3194e18b45bcb6872963c1b98f089',1,'ViewMaze::Draw() const']]],
+  ['drawsearched_7',['DrawSearched',['../classViewMaze.html#a79674f1edb2ca54ab24cc8215b322720',1,'ViewMaze']]],
+  ['drawsolution_8',['DrawSolution',['../classViewMaze.html#a5b89cf4778c2b85a5ba42c71a9c22622',1,'ViewMaze']]]
 ];

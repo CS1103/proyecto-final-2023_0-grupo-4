@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['w_0',['W',['../classkruskalGeneration_1_1Kruskal.html#af2dcca4cb582383115412a6dc54d10d7',1,'kruskalGeneration.Kruskal.W()'],['../classWilsons_1_1Wilsons.html#af5768b62345efde73ad03afca3b75bec',1,'Wilsons.Wilsons.W()']]],
-  ['w_1',['w',['../classkruskalGeneration_1_1Kruskal.html#a31470b4bec8c6d664e05d165f010f831',1,'kruskalGeneration.Kruskal.w()'],['../classWilsons_1_1Wilsons.html#a3db085952775d890b52d4b80d2947d65',1,'Wilsons.Wilsons.w()'],['../namespacewil__test.html#a99db92b04b698f236a3afdf85ee5c605',1,'wil_test.w()']]],
-  ['wall_5ftexture_5fpath_2',['WALL_TEXTURE_PATH',['../ViewMaze_8hpp.html#a1f25eb7c3eca5544d52f877f29c6a344',1,'ViewMaze.hpp']]],
-  ['west_3',['WEST',['../namespaceDIRECTION.html#a1c4d1f715334cf9a4c975779afa59bb7',1,'DIRECTION']]],
-  ['window_5ftitle_4',['WINDOW_TITLE',['../View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a',1,'View.hpp']]]
+  ['text_0',['text',['../structTextBoxBuilder.html#a4a048d8c5832aa74528fe741033a50b1',1,'TextBoxBuilder::text()'],['../structTextBuilder.html#abfac3cf41cd1c2996268d2195e79a134',1,'TextBuilder::text()']]],
+  ['texture_1',['texture',['../structButtonBuilder.html#a2e928165f90e5d0a695bd07d7014c0d2',1,'ButtonBuilder']]],
+  ['timed_2',['timed',['../structConfig.html#a0836e5ef4fc21d27aa5c3a011cecd26b',1,'Config']]]
 ];

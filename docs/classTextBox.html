@@ -81,8 +81,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0e8d72d65a17156a3d34c41048a6d81c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a0e8d72d65a17156a3d34c41048a6d81c">TextBox</a> (const <a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;builder=<a class="el" href="namespaceUtils.html#a7cf44240ff00218d99af040b366bb8c9">Utils::DefaultTextBox</a>())</td></tr>
-<tr class="separator:a0e8d72d65a17156a3d34c41048a6d81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f8fc34100f5706e33a1e6bd8759da8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a19f8fc34100f5706e33a1e6bd8759da8">TextBox</a> (const <a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;builder)</td></tr>
+<tr class="separator:a19f8fc34100f5706e33a1e6bd8759da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc3025cb5fa529079baada662aa55f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">Draw</a> () const</td></tr>
 <tr class="separator:abc3025cb5fa529079baada662aa55f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b972b5f1cd20edf4b8e02b30359ff71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">CheckFocus</a> ()</td></tr>
@@ -99,42 +99,67 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad5450672b5c4336cc27e4a331f4c5d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7376ff6f734082e62fe9fbb48c8952d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextIsValid</a> ()</td></tr>
 <tr class="separator:a7376ff6f734082e62fe9fbb48c8952d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa35e15a4487dd90eef7f5185a930c55d"><td class="memItemLeft" align="right" valign="top">std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#aa35e15a4487dd90eef7f5185a930c55d">HandleInput</a> ()</td></tr>
-<tr class="separator:aa35e15a4487dd90eef7f5185a930c55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc3bd52e85e3ce251e66db5d96de20b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a0bc3bd52e85e3ce251e66db5d96de20b">HandleInput</a> ()</td></tr>
+<tr class="memdesc:a0bc3bd52e85e3ce251e66db5d96de20b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Breve descripción, solo una línea, triple /.  <br /></td></tr>
+<tr class="separator:a0bc3bd52e85e3ce251e66db5d96de20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b23ed6e9d8e5e45cbe14e3b2720463"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTextBox.html#a21b23ed6e9d8e5e45cbe14e3b2720463">CheckCollision</a> (<a class="el" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> point) const</td></tr>
+<tr class="separator:a21b23ed6e9d8e5e45cbe14e3b2720463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TextBox_8hpp_source.html#l00020">20</a> of file <a class="el" href="TextBox_8hpp_source.html">TextBox.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8hpp_source.html#l00016">16</a> of file <a class="el" href="TextBox_8hpp_source.html">TextBox.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0e8d72d65a17156a3d34c41048a6d81c" name="a0e8d72d65a17156a3d34c41048a6d81c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e8d72d65a17156a3d34c41048a6d81c">&#9670;&#160;</a></span>TextBox()</h2>
+<a id="a19f8fc34100f5706e33a1e6bd8759da8" name="a19f8fc34100f5706e33a1e6bd8759da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f8fc34100f5706e33a1e6bd8759da8">&#9670;&#160;</a></span>TextBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">TextBox::TextBox </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;&#160;</td>
-          <td class="paramname"><em>builder</em> = <code><a class="el" href="namespaceUtils.html#a7cf44240ff00218d99af040b366bb8c9">Utils::DefaultTextBox</a>()</code></td><td>)</td>
+          <td class="paramname"><em>builder</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00003">3</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00006">6</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a21b23ed6e9d8e5e45cbe14e3b2720463" name="a21b23ed6e9d8e5e45cbe14e3b2720463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b23ed6e9d8e5e45cbe14e3b2720463">&#9670;&#160;</a></span>CheckCollision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TextBox::CheckCollision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a>&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00078">78</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTextBox_a21b23ed6e9d8e5e45cbe14e3b2720463_icgraph.png" border="0" usemap="#aclassTextBox_a21b23ed6e9d8e5e45cbe14e3b2720463_icgraph" alt=""/></div>
+<map name="aclassTextBox_a21b23ed6e9d8e5e45cbe14e3b2720463_icgraph" id="aclassTextBox_a21b23ed6e9d8e5e45cbe14e3b2720463_icgraph">
+<area shape="rect" title=" " alt="" coords="281,5,460,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a9b972b5f1cd20edf4b8e02b30359ff71" name="a9b972b5f1cd20edf4b8e02b30359ff71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b972b5f1cd20edf4b8e02b30359ff71">&#9670;&#160;</a></span>CheckFocus()</h2>
 
@@ -150,7 +175,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00014">14</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00030">30</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +194,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00007">7</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00019">19</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -196,7 +221,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00026">26</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00038">38</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -215,18 +240,28 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00030">30</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00042">42</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTextBox_ad5450672b5c4336cc27e4a331f4c5d26_icgraph.png" border="0" usemap="#aclassTextBox_ad5450672b5c4336cc27e4a331f4c5d26_icgraph" alt=""/></div>
+<map name="aclassTextBox_ad5450672b5c4336cc27e4a331f4c5d26_icgraph" id="aclassTextBox_ad5450672b5c4336cc27e4a331f4c5d26_icgraph">
+<area shape="rect" title=" " alt="" coords="281,5,413,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="aa35e15a4487dd90eef7f5185a930c55d" name="aa35e15a4487dd90eef7f5185a930c55d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa35e15a4487dd90eef7f5185a930c55d">&#9670;&#160;</a></span>HandleInput()</h2>
+<a id="a0bc3bd52e85e3ce251e66db5d96de20b" name="a0bc3bd52e85e3ce251e66db5d96de20b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc3bd52e85e3ce251e66db5d96de20b">&#9670;&#160;</a></span>HandleInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; bool &gt; TextBox::HandleInput </td>
+          <td class="memname">void TextBox::HandleInput </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -234,16 +269,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00040">40</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classTextBox_aa35e15a4487dd90eef7f5185a930c55d_cgraph.png" border="0" usemap="#aclassTextBox_aa35e15a4487dd90eef7f5185a930c55d_cgraph" alt=""/></div>
-<map name="aclassTextBox_aa35e15a4487dd90eef7f5185a930c55d_cgraph" id="aclassTextBox_aa35e15a4487dd90eef7f5185a930c55d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,167,31"/>
-<area shape="rect" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3" title=" " alt="" coords="215,5,367,31"/>
-</map>
-</div>
+<p>Breve descripción, solo una línea, triple /. </p>
+
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00053">53</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +290,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00024">24</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00036">36</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +328,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00028">28</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00040">40</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 
 </div>
 </div>
@@ -319,14 +347,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00032">32</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TextBox_8cpp_source.html#l00048">48</a> of file <a class="el" href="TextBox_8cpp_source.html">TextBox.cpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classTextBox_a7376ff6f734082e62fe9fbb48c8952d3_icgraph.png" border="0" usemap="#aclassTextBox_a7376ff6f734082e62fe9fbb48c8952d3_icgraph" alt=""/></div>
 <map name="aclassTextBox_a7376ff6f734082e62fe9fbb48c8952d3_icgraph" id="aclassTextBox_a7376ff6f734082e62fe9fbb48c8952d3_icgraph">
-<area shape="rect" title=" " alt="" coords="215,5,367,31"/>
-<area shape="rect" href="classTextBox.html#aa35e15a4487dd90eef7f5185a930c55d" title=" " alt="" coords="5,5,167,31"/>
+<area shape="rect" title=" " alt="" coords="281,5,433,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 </map>
 </div>
 

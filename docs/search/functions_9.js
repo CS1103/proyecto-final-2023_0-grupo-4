@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['operator_20button_0',['operator Button',['../structButtonBuilder.html#afbd0e1a414e5e5533a7a43fda9837c70',1,'ButtonBuilder']]],
-  ['operator_20vector2_1',['operator Vector2',['../structUtils_1_1Vector2I.html#ad160bfc73a7a7b6f42f828bafeb2eeaa',1,'Utils::Vector2I']]],
-  ['operator_28_29_2',['operator()',['../classBot_1_1Compare_3_01ALGORITHM_1_1GBGS_01_4.html#a855ecd05f238f67b25e322f957b84eaf',1,'Bot::Compare&lt; ALGORITHM::GBGS &gt;::operator()()'],['../classBot_1_1Compare_3_01ALGORITHM_1_1A__STAR_01_4.html#a173be7fccbcd0f7f6c683f2e9df1f07d',1,'Bot::Compare&lt; ALGORITHM::A_STAR &gt;::operator()()'],['../structMaze_1_1HashPair.html#afb6a06988e574036cd381afeb6e2cc67',1,'Maze::HashPair::operator()()']]],
-  ['operator_2b_3',['operator+',['../structUtils_1_1Vector2I.html#af6af9891e68132e9bfd9df735ae391c4',1,'Utils::Vector2I::operator+(const Vector2I &amp;other) const'],['../structUtils_1_1Vector2I.html#a199a6c8735544e1010d471664752b2a7',1,'Utils::Vector2I::operator+(const Vector2 &amp;other) const']]],
-  ['operator_2d_4',['operator-',['../structUtils_1_1Vector2I.html#af00450775ef1a1d7a2ccbc68fbd28db8',1,'Utils::Vector2I::operator-(const Vector2I &amp;other) const'],['../structUtils_1_1Vector2I.html#ac14ae9202b1f0c0df99ea3a1c40a0068',1,'Utils::Vector2I::operator-(const Vector2 &amp;other) const']]],
-  ['operator_3c_3c_5',['operator&lt;&lt;',['../Maze_8cpp.html#af1aca3f26c5b7f28248ac355ce0b4d05',1,'operator&lt;&lt;(std::ostream &amp;ost, const SQUARE_TYPE &amp;type):&#160;Maze.cpp'],['../Maze_8hpp.html#af1aca3f26c5b7f28248ac355ce0b4d05',1,'operator&lt;&lt;(std::ostream &amp;ost, const SQUARE_TYPE &amp;type):&#160;Maze.cpp']]],
-  ['operator_3d_3d_6',['operator==',['../structUtils_1_1Vector2I.html#a99d3cc42016ef2944887a84d0bdc4160',1,'Utils::Vector2I']]],
-  ['text_7',['Text',['../classTextBuilder.html#a8520a12ca467161bb2164c01410e466c',1,'TextBuilder']]],
-  ['vector2_8',['Vector2',['../structUtils_1_1Vector2I.html#a731276ca6ea50c8d1d8cd3bf54cf92ab',1,'Utils::Vector2I']]]
+  ['hunt_3c_20hunt_5fmethod_3a_3arandom_20_3e_0',['Hunt&lt; HUNT_METHOD::RANDOM &gt;',['../Maze_8cpp.html#a2342ab9b9d24f7c062eb7d30df98223b',1,'Hunt&lt; HUNT_METHOD::RANDOM &gt;(const std::optional&lt; uint8_t &gt; &amp;count):&#160;Maze.cpp'],['../Maze_8cpp.html#a2342ab9b9d24f7c062eb7d30df98223b',1,'Hunt&lt; HUNT_METHOD::RANDOM &gt;(const std::optional&lt; uint8_t &gt; &amp;count):&#160;Maze.cpp']]],
+  ['hunt_3c_20hunt_5fmethod_3a_3aserpentine_20_3e_1',['Hunt&lt; HUNT_METHOD::SERPENTINE &gt;',['../Maze_8cpp.html#a9fde23a18a450fb612113b923d957b4c',1,'Hunt&lt; HUNT_METHOD::SERPENTINE &gt;(const std::optional&lt; uint8_t &gt; &amp;count):&#160;Maze.cpp'],['../Maze_8cpp.html#a9fde23a18a450fb612113b923d957b4c',1,'Hunt&lt; HUNT_METHOD::SERPENTINE &gt;(const std::optional&lt; uint8_t &gt; &amp;count):&#160;Maze.cpp']]],
+  ['main_2',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['maze_3',['Maze',['../classMaze.html#a59e8b5febf718de2ab2fc6fdaf1de351',1,'Maze::Maze(maze_t &amp;maze)'],['../classMaze.html#a609aaa6de196b374fab66592464c5568',1,'Maze::Maze(HUNT_METHOD huntMethod=DEFAULT_HUNT_METHOD)'],['../classMaze.html#a957d219d7d8032bbdcc847b7fc17debf',1,'Maze::Maze(const uint8_t &amp;height, const uint8_t &amp;width, HUNT_METHOD huntMethod=DEFAULT_HUNT_METHOD)'],['../classMaze.html#a1dcb040477ac197e51b296040ecb507c',1,'Maze::Maze(const BoardSize &amp;size, HUNT_METHOD huntMethod=DEFAULT_HUNT_METHOD)']]],
+  ['movedown_4',['MoveDown',['../classViewMaze.html#a7e0627374df0c8675aea698b4e1fa6e3',1,'ViewMaze']]],
+  ['moveleft_5',['MoveLeft',['../classViewMaze.html#ab6c7e2e67eeb137865b3bc783df96ab8',1,'ViewMaze']]],
+  ['moveright_6',['MoveRight',['../classViewMaze.html#afc71003f51e3279a84052078644c52a5',1,'ViewMaze']]],
+  ['moveup_7',['MoveUp',['../classViewMaze.html#ae14c4723d0c362ce444135505a87ca02',1,'ViewMaze']]]
 ];

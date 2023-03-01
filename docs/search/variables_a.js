@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['serpentine_0',['SERPENTINE',['../namespacewil__test.html#a26beb766300c197c0ebd42aec5499521',1,'wil_test.SERPENTINE()'],['../namespaceWilsons.html#aeed8cd306fe44fbecfc2254e0de0fab1',1,'Wilsons.SERPENTINE()']]],
-  ['south_1',['SOUTH',['../namespaceDIRECTION.html#af371439a68e1b16fc79d316d9aef81b7',1,'DIRECTION']]],
-  ['start_5ftexture_5fpath_2',['START_TEXTURE_PATH',['../ViewMaze_8hpp.html#a53773440d9017e1dbac0f8b91bca77a2',1,'ViewMaze.hpp']]]
+  ['player_5fname_0',['player_name',['../classGameBase.html#adfb1bfc13faac1b686f8bbb05fa08e38',1,'GameBase']]],
+  ['playert_1',['playerT',['../structConfig.html#ac6ce2f7f7a239e0fc01d09e259740f4c',1,'Config']]],
+  ['pos_2',['pos',['../structButtonBuilder.html#a1e9ffeb0bc1eecdc3e516b90e3f5af36',1,'ButtonBuilder::pos()'],['../structTextBoxBuilder.html#ab16706473d163298866538cecfdc1650',1,'TextBoxBuilder::pos()']]]
 ];

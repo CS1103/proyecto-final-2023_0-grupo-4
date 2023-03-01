@@ -83,13 +83,72 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a79001f5b9d8ffd795ffcca2fbaaffcc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3">StartScreen</a> ()</td></tr>
 <tr class="separator:a79001f5b9d8ffd795ffcca2fbaaffcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42e22c654604d54f556595924b59d919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classConfig.html">Config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a42e22c654604d54f556595924b59d919">GetConfig</a> ()</td></tr>
+<tr class="memitem:a42e22c654604d54f556595924b59d919"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structConfig.html">Config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a42e22c654604d54f556595924b59d919">GetConfig</a> ()</td></tr>
 <tr class="separator:a42e22c654604d54f556595924b59d919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab1cf23c0b236562ae5d53bd7e8a45c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#aab1cf23c0b236562ae5d53bd7e8a45c6">LoadMaze</a> (const <a class="el" href="Maze_8hpp.html#a99e204fa99a26f4e5e15b959e307d4c8">maze_t</a> &amp;maze, const bool &amp;fullScreen=true)</td></tr>
+<tr class="separator:aab1cf23c0b236562ae5d53bd7e8a45c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa996f09dc897f3f775a358f863a3cfa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#aa996f09dc897f3f775a358f863a3cfa5">LoadMaze</a> (const <a class="el" href="Maze_8hpp.html#a99e204fa99a26f4e5e15b959e307d4c8">maze_t</a> &amp;maze, const <a class="el" href="Maze_8hpp.html#a7b33fc7ff2cdd72966a8589bfe012624">square</a> &amp;start, const <a class="el" href="Maze_8hpp.html#a7b33fc7ff2cdd72966a8589bfe012624">square</a> &amp;goal, const bool &amp;fullScreen=true)</td></tr>
+<tr class="separator:aa996f09dc897f3f775a358f863a3cfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f6d19453553a606ebd61c54a855263"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3">ALGORITHM</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a00f6d19453553a606ebd61c54a855263">BotMode</a> (std::optional&lt; <a class="el" href="View_8hpp.html#a70976fa07bcc3c6722ad8c433841ab63">MazeSteps</a> &gt; solution, std::optional&lt; <a class="el" href="View_8hpp.html#a70976fa07bcc3c6722ad8c433841ab63">MazeSteps</a> &gt; searched)</td></tr>
+<tr class="separator:a00f6d19453553a606ebd61c54a855263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f36e8489999583ec95ac349155ba2e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a27f36e8489999583ec95ac349155ba2e">HumanMode</a> (const bool &amp;timed)</td></tr>
+<tr class="separator:a27f36e8489999583ec95ac349155ba2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc9406e283a8fbd4692278d334cb53b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a5cc9406e283a8fbd4692278d334cb53b">TimedHumanMode</a> ()</td></tr>
+<tr class="separator:a5cc9406e283a8fbd4692278d334cb53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66426f75e4329266197d71a597acecd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classView.html#a66426f75e4329266197d71a597acecd8">UntimedHumanMode</a> ()</td></tr>
+<tr class="separator:a66426f75e4329266197d71a597acecd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="View_8hpp_source.html#l00017">17</a> of file <a class="el" href="View_8hpp_source.html">View.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="View_8hpp_source.html#l00029">29</a> of file <a class="el" href="View_8hpp_source.html">View.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a00f6d19453553a606ebd61c54a855263" name="a00f6d19453553a606ebd61c54a855263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f6d19453553a606ebd61c54a855263">&#9670;&#160;</a></span>BotMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3">ALGORITHM</a>, bool &gt; View::BotMode </td>
+          <td>(</td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="View_8hpp.html#a70976fa07bcc3c6722ad8c433841ab63">MazeSteps</a> &gt;&#160;</td>
+          <td class="paramname"><em>solution</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; <a class="el" href="View_8hpp.html#a70976fa07bcc3c6722ad8c433841ab63">MazeSteps</a> &gt;&#160;</td>
+          <td class="paramname"><em>searched</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00184">184</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a00f6d19453553a606ebd61c54a855263_cgraph.png" border="0" usemap="#aclassView_a00f6d19453553a606ebd61c54a855263_cgraph" alt=""/></div>
+<map name="aclassView_a00f6d19453553a606ebd61c54a855263_cgraph" id="aclassView_a00f6d19453553a606ebd61c54a855263_cgraph">
+<area shape="rect" title=" " alt="" coords="5,169,124,195"/>
+<area shape="rect" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e" title=" " alt="" coords="172,144,323,169"/>
+<area shape="rect" href="classButton.html#af9a4f3e49c1285a266bf97197107601c" title=" " alt="" coords="182,193,313,219"/>
+<area shape="rect" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51" title=" " alt="" coords="387,29,565,55"/>
+<area shape="rect" href="structButtonBuilder.html#a47e82df4cb10b93df1e47d13930530cb" title=" " alt="" coords="371,79,581,119"/>
+<area shape="rect" href="structButtonBuilder.html#aa8d4dcffec9fa37995589b66b62d0131" title=" " alt="" coords="405,144,547,169"/>
+<area shape="rect" href="structButtonBuilder.html#ac1b728d35f10f6c36d8c1f079588de33" title=" " alt="" coords="403,193,549,219"/>
+<area shape="rect" href="structButtonBuilder.html#a39a8db1b3de8606f2b432d8261c5b818" title=" " alt="" coords="393,243,559,268"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="640,5,777,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="629,55,788,80"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a42e22c654604d54f556595924b59d919" name="a42e22c654604d54f556595924b59d919"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a42e22c654604d54f556595924b59d919">&#9670;&#160;</a></span>GetConfig()</h2>
 
@@ -97,7 +156,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classConfig.html">Config</a> View::GetConfig </td>
+          <td class="memname"><a class="el" href="structConfig.html">Config</a> View::GetConfig </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -105,7 +164,148 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00039">39</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00068">68</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a42e22c654604d54f556595924b59d919_cgraph.png" border="0" usemap="#aclassView_a42e22c654604d54f556595924b59d919_cgraph" alt=""/></div>
+<map name="aclassView_a42e22c654604d54f556595924b59d919_cgraph" id="aclassView_a42e22c654604d54f556595924b59d919_cgraph">
+<area shape="rect" title=" " alt="" coords="5,344,131,369"/>
+<area shape="rect" href="classTextBox.html#a21b23ed6e9d8e5e45cbe14e3b2720463" title=" " alt="" coords="179,104,357,129"/>
+<area shape="rect" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e" title=" " alt="" coords="193,295,343,320"/>
+<area shape="rect" href="namespaceUtils.html#aa505617255ee355cddb80ccb2144a8bc" title=" " alt="" coords="188,153,348,179"/>
+<area shape="rect" href="structTextBoxBuilder.html#a248e6d5a75c0abefb770296a9ced131b" title=" " alt="" coords="417,203,604,228"/>
+<area shape="rect" href="classButton.html#ae77100bedafd0b7da598358aaa1e67d4" title=" " alt="" coords="207,344,329,369"/>
+<area shape="rect" href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26" title=" " alt="" coords="202,393,334,419"/>
+<area shape="rect" href="classButton.html#af9a4f3e49c1285a266bf97197107601c" title=" " alt="" coords="203,443,333,468"/>
+<area shape="rect" href="namespaceUtils_1_1Validators.html#aa7019e0e201d73fe44c14827bac38675" title=" " alt="" coords="201,493,335,533"/>
+<area shape="rect" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3" title=" " alt="" coords="192,557,344,583"/>
+<area shape="rect" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51" title=" " alt="" coords="421,252,600,277"/>
+<area shape="rect" href="structButtonBuilder.html#a47e82df4cb10b93df1e47d13930530cb" title=" " alt="" coords="405,302,616,342"/>
+<area shape="rect" href="structButtonBuilder.html#aa8d4dcffec9fa37995589b66b62d0131" title=" " alt="" coords="439,367,582,392"/>
+<area shape="rect" href="structButtonBuilder.html#ac1b728d35f10f6c36d8c1f079588de33" title=" " alt="" coords="437,416,584,441"/>
+<area shape="rect" href="structButtonBuilder.html#a39a8db1b3de8606f2b432d8261c5b818" title=" " alt="" coords="427,465,594,491"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="675,129,812,155"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="664,203,823,228"/>
+<area shape="rect" href="namespaceUtils.html#adec494ba666b6bd29d9686b996426d43" title=" " alt="" coords="417,104,604,129"/>
+<area shape="rect" href="structTextBoxBuilder.html#a9b4a20ae79902e33e0d0010bcb75efd9" title=" " alt="" coords="435,153,586,179"/>
+<area shape="rect" href="structTextBoxBuilder.html#a3b2ee838af2729fa0f56dfaaf8d1da6a" title=" " alt="" coords="433,5,588,31"/>
+<area shape="rect" href="structTextBoxBuilder.html#a40190eab2fbf268850ab70b9c8c660cf" title=" " alt="" coords="433,55,588,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a42e22c654604d54f556595924b59d919_icgraph.png" border="0" usemap="#aclassView_a42e22c654604d54f556595924b59d919_icgraph" alt=""/></div>
+<map name="aclassView_a42e22c654604d54f556595924b59d919_icgraph" id="aclassView_a42e22c654604d54f556595924b59d919_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a27f36e8489999583ec95ac349155ba2e" name="a27f36e8489999583ec95ac349155ba2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f36e8489999583ec95ac349155ba2e">&#9670;&#160;</a></span>HumanMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">optional&lt; bool &gt; View::HumanMode </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>timed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00271">271</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a27f36e8489999583ec95ac349155ba2e_cgraph.png" border="0" usemap="#aclassView_a27f36e8489999583ec95ac349155ba2e_cgraph" alt=""/></div>
+<map name="aclassView_a27f36e8489999583ec95ac349155ba2e_cgraph" id="aclassView_a27f36e8489999583ec95ac349155ba2e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,149,80"/>
+<area shape="rect" href="classView.html#a5cc9406e283a8fbd4692278d334cb53b" title=" " alt="" coords="205,29,390,55"/>
+<area shape="rect" href="classView.html#a66426f75e4329266197d71a597acecd8" title=" " alt="" coords="197,79,397,104"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="456,5,593,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="445,55,604,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab1cf23c0b236562ae5d53bd7e8a45c6" name="aab1cf23c0b236562ae5d53bd7e8a45c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1cf23c0b236562ae5d53bd7e8a45c6">&#9670;&#160;</a></span>LoadMaze() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::LoadMaze </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="Maze_8hpp.html#a99e204fa99a26f4e5e15b959e307d4c8">maze_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>maze</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>fullScreen</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00172">172</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa996f09dc897f3f775a358f863a3cfa5" name="aa996f09dc897f3f775a358f863a3cfa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa996f09dc897f3f775a358f863a3cfa5">&#9670;&#160;</a></span>LoadMaze() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::LoadMaze </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="Maze_8hpp.html#a99e204fa99a26f4e5e15b959e307d4c8">maze_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>maze</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="Maze_8hpp.html#a7b33fc7ff2cdd72966a8589bfe012624">square</a> &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="Maze_8hpp.html#a7b33fc7ff2cdd72966a8589bfe012624">square</a> &amp;&#160;</td>
+          <td class="paramname"><em>goal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>fullScreen</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00176">176</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
 
 </div>
 </div>
@@ -124,16 +324,100 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00006">6</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00026">26</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classView_a79001f5b9d8ffd795ffcca2fbaaffcc3_cgraph.png" border="0" usemap="#aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_cgraph" alt=""/></div>
 <map name="aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_cgraph" id="aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,55,141,80"/>
-<area shape="rect" href="namespaceUtils.html#a76d8666937d3946f945924d0e1c09048" title=" " alt="" coords="189,5,353,31"/>
-<area shape="rect" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5" title=" " alt="" coords="218,55,325,80"/>
-<area shape="rect" href="classButton.html#aab1ad2d49a14280058ef02b8940ef857" title=" " alt="" coords="206,104,337,129"/>
+<area shape="rect" title=" " alt="" coords="5,155,141,180"/>
+<area shape="rect" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e" title=" " alt="" coords="189,129,340,155"/>
+<area shape="rect" href="namespaceUtils.html#a9d117199853a7dcc80ca186628d06866" title=" " alt="" coords="411,5,575,31"/>
+<area shape="rect" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5" title=" " alt="" coords="211,179,318,204"/>
+<area shape="rect" href="classButton.html#af9a4f3e49c1285a266bf97197107601c" title=" " alt="" coords="199,228,330,253"/>
+<area shape="rect" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51" title=" " alt="" coords="404,153,583,179"/>
+<area shape="rect" href="structButtonBuilder.html#a47e82df4cb10b93df1e47d13930530cb" title=" " alt="" coords="388,253,599,293"/>
+<area shape="rect" href="structButtonBuilder.html#aa8d4dcffec9fa37995589b66b62d0131" title=" " alt="" coords="422,55,565,80"/>
+<area shape="rect" href="structButtonBuilder.html#ac1b728d35f10f6c36d8c1f079588de33" title=" " alt="" coords="420,104,567,129"/>
+<area shape="rect" href="structButtonBuilder.html#a39a8db1b3de8606f2b432d8261c5b818" title=" " alt="" coords="410,203,577,228"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="657,67,795,92"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="647,140,805,165"/>
+<area shape="rect" href="structTextBuilder.html#ad8c8c7d087830ad7b0fcb12f5b208144" title=" " alt="" coords="661,5,791,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a79001f5b9d8ffd795ffcca2fbaaffcc3_icgraph.png" border="0" usemap="#aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_icgraph" alt=""/></div>
+<map name="aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_icgraph" id="aclassView_a79001f5b9d8ffd795ffcca2fbaaffcc3_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5cc9406e283a8fbd4692278d334cb53b" name="a5cc9406e283a8fbd4692278d334cb53b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc9406e283a8fbd4692278d334cb53b">&#9670;&#160;</a></span>TimedHumanMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool View::TimedHumanMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00310">310</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a5cc9406e283a8fbd4692278d334cb53b_cgraph.png" border="0" usemap="#aclassView_a5cc9406e283a8fbd4692278d334cb53b_cgraph" alt=""/></div>
+<map name="aclassView_a5cc9406e283a8fbd4692278d334cb53b_cgraph" id="aclassView_a5cc9406e283a8fbd4692278d334cb53b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,191,56"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="249,5,387,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="239,55,397,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a5cc9406e283a8fbd4692278d334cb53b_icgraph.png" border="0" usemap="#aclassView_a5cc9406e283a8fbd4692278d334cb53b_icgraph" alt=""/></div>
+<map name="aclassView_a5cc9406e283a8fbd4692278d334cb53b_icgraph" id="aclassView_a5cc9406e283a8fbd4692278d334cb53b_icgraph">
+<area shape="rect" title=" " alt="" coords="197,5,383,31"/>
+<area shape="rect" href="classView.html#a27f36e8489999583ec95ac349155ba2e" title=" " alt="" coords="5,5,149,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a66426f75e4329266197d71a597acecd8" name="a66426f75e4329266197d71a597acecd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66426f75e4329266197d71a597acecd8">&#9670;&#160;</a></span>UntimedHumanMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void View::UntimedHumanMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="View_8cpp_source.html#l00278">278</a> of file <a class="el" href="View_8cpp_source.html">View.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classView_a66426f75e4329266197d71a597acecd8_icgraph.png" border="0" usemap="#aclassView_a66426f75e4329266197d71a597acecd8_icgraph" alt=""/></div>
+<map name="aclassView_a66426f75e4329266197d71a597acecd8_icgraph" id="aclassView_a66426f75e4329266197d71a597acecd8_icgraph">
+<area shape="rect" title=" " alt="" coords="197,5,397,31"/>
+<area shape="rect" href="classView.html#a27f36e8489999583ec95ac349155ba2e" title=" " alt="" coords="5,5,149,31"/>
 </map>
 </div>
 

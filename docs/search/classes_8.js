@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['textbox_0',['TextBox',['../classTextBox.html',1,'']]],
-  ['textboxbuilder_1',['TextBoxBuilder',['../structTextBoxBuilder.html',1,'']]],
-  ['textbuilder_2',['TextBuilder',['../classTextBuilder.html',1,'']]]
+  ['vector2i_0',['Vector2I',['../structUtils_1_1Vector2I.html',1,'Utils']]],
+  ['view_1',['View',['../classView.html',1,'']]],
+  ['viewmaze_2',['ViewMaze',['../classViewMaze.html',1,'']]]
 ];

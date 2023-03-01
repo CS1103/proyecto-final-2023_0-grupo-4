@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['vector2i_0',['Vector2I',['../structUtils_1_1Vector2I.html#afa7af96ce0814c5597b230a9496aed61',1,'Utils::Vector2I::Vector2I()=default'],['../structUtils_1_1Vector2I.html#a56b83af22341237373e6da32a2411792',1,'Utils::Vector2I::Vector2I(const int &amp;xPos, const int &amp;yPos)'],['../structUtils_1_1Vector2I.html#a7cd6c65e1dfcd23b56cc0bf0c42d9d05',1,'Utils::Vector2I::Vector2I(const std::initializer_list&lt; int &gt; &amp;pos)'],['../structUtils_1_1Vector2I.html#a9a7c3b31915564e070a345d8e5c3527e',1,'Utils::Vector2I::Vector2I(const Vector2 &amp;rlV)'],['../structUtils_1_1Vector2I.html#a44304dcc72e4ff270c2671c8091a0cda',1,'Utils::Vector2I::Vector2I(const raylib::Vector2 &amp;rlV)']]],
-  ['viewmaze_1',['ViewMaze',['../classViewMaze.html#ab07bd733d9cb3a956780152a93a4547c',1,'ViewMaze']]]
+  ['text_0',['Text',['../structButtonBuilder.html#ac1b728d35f10f6c36d8c1f079588de33',1,'ButtonBuilder::Text(const std::string &amp;text)'],['../structButtonBuilder.html#aa6b504b1028d6eea7dee9a5a1b2a0484',1,'ButtonBuilder::Text(const rl::Text &amp;text)'],['../structTextBoxBuilder.html#a40190eab2fbf268850ab70b9c8c660cf',1,'TextBoxBuilder::Text()'],['../structTextBuilder.html#ad8c8c7d087830ad7b0fcb12f5b208144',1,'TextBuilder::Text()']]],
+  ['textbox_1',['TextBox',['../classTextBox.html#a19f8fc34100f5706e33a1e6bd8759da8',1,'TextBox']]],
+  ['textboxbuilder_2',['TextBoxBuilder',['../structTextBoxBuilder.html#a75d8c563b6e06dc14e2f79097023f456',1,'TextBoxBuilder']]],
+  ['textbuilder_3',['TextBuilder',['../structTextBuilder.html#a5a52bc05f4377cec0ce69b6b14f9567e',1,'TextBuilder::TextBuilder(std::string _text)'],['../structTextBuilder.html#aa4920f65a9d5b566780f52367ee99667',1,'TextBuilder::TextBuilder()=default']]],
+  ['textisvalid_4',['TextIsValid',['../classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3',1,'TextBox']]],
+  ['texture_5',['Texture',['../structButtonBuilder.html#a39a8db1b3de8606f2b432d8261c5b818',1,'ButtonBuilder']]],
+  ['timedhumanmode_6',['TimedHumanMode',['../classView.html#a5cc9406e283a8fbd4692278d334cb53b',1,'View']]]
 ];

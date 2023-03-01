@@ -84,7 +84,8 @@ $(function() {
   <div class="headertitle"><div class="title">Maze.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Config_8hpp_source.html">Config.hpp</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;ostream&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
@@ -95,13 +96,15 @@ Include dependency graph for Maze.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Maze_8hpp__incl.png" border="0" usemap="#asrc_2Maze_2Maze_8hpp" alt=""/></div>
 <map name="asrc_2Maze_2Maze_8hpp" id="asrc_2Maze_2Maze_8hpp">
-<area shape="rect" title=" " alt="" coords="221,5,368,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,72,104"/>
-<area shape="rect" title=" " alt="" coords="96,79,171,104"/>
-<area shape="rect" title=" " alt="" coords="195,79,271,104"/>
-<area shape="rect" title=" " alt="" coords="295,79,419,104"/>
-<area shape="rect" title=" " alt="" coords="444,79,559,104"/>
-<area shape="rect" title=" " alt="" coords="583,79,646,104"/>
+<area shape="rect" title=" " alt="" coords="255,5,401,31"/>
+<area shape="rect" href="Config_8hpp.html" title=" " alt="" coords="76,79,167,104"/>
+<area shape="rect" title=" " alt="" coords="5,152,72,177"/>
+<area shape="rect" title=" " alt="" coords="191,79,265,104"/>
+<area shape="rect" title=" " alt="" coords="290,79,366,104"/>
+<area shape="rect" title=" " alt="" coords="390,79,514,104"/>
+<area shape="rect" title=" " alt="" coords="539,79,653,104"/>
+<area shape="rect" title=" " alt="" coords="678,79,741,104"/>
+<area shape="rect" title=" " alt="" coords="97,152,151,177"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,13 +112,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Maze_8hpp__dep__incl.png" border="0" usemap="#asrc_2Maze_2Maze_8hppdep" alt=""/></div>
 <map name="asrc_2Maze_2Maze_8hppdep" id="asrc_2Maze_2Maze_8hppdep">
-<area shape="rect" title=" " alt="" coords="279,5,425,31"/>
-<area shape="rect" href="Bot_8hpp.html" title=" " alt="" coords="78,79,199,104"/>
-<area shape="rect" href="System_8cpp.html" title=" " alt="" coords="150,152,325,177"/>
-<area shape="rect" href="Game_8hpp.html" title=" " alt="" coords="275,79,429,104"/>
-<area shape="rect" href="Maze_8cpp.html" title=" " alt="" coords="453,79,600,104"/>
-<area shape="rect" href="ViewMaze_8hpp.html" title=" " alt="" coords="625,79,871,104"/>
-<area shape="rect" href="Bot_8cpp.html" title=" " alt="" coords="5,152,125,177"/>
+<area shape="rect" title=" " alt="" coords="289,5,436,31"/>
+<area shape="rect" href="Bot_8hpp.html" title=" " alt="" coords="73,86,194,111"/>
+<area shape="rect" href="View_8hpp.html" title=" " alt="" coords="270,167,410,192"/>
+<area shape="rect" href="Game_8hpp.html" title=" " alt="" coords="148,240,303,265"/>
+<area shape="rect" href="Maze_8cpp.html" title=" " alt="" coords="592,86,739,111"/>
+<area shape="rect" href="L__E_8hpp.html" title=" " alt="" coords="763,79,922,119"/>
+<area shape="rect" href="ViewMaze_8hpp.html" title=" " alt="" coords="321,86,567,111"/>
+<area shape="rect" href="Bot_8cpp.html" title=" " alt="" coords="75,167,195,192"/>
+<area shape="rect" href="Game_8cpp.html" title=" " alt="" coords="5,313,160,339"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="230,313,335,339"/>
+<area shape="rect" href="View_8cpp.html" title=" " alt="" coords="377,240,516,265"/>
+<area shape="rect" href="ViewMaze_8cpp.html" title=" " alt="" coords="434,167,681,192"/>
 </map>
 </div>
 </div>
@@ -154,7 +162,7 @@ Enumerations</h2></td></tr>
 , <a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39ab078ffd28db767c502ac367053f6e0ac">START</a>
 , <a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a007a3c4175ca4f86d9dc49e4f2e9cf8a">GOAL</a>
 , <br />
-&#160;&#160;<a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a5ffb5f0d0de78321df46fc7c93ca64a3">PATH</a>
+&#160;&#160;<a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39ae3d87c0113dc985c598feb409a45c552">SOLUTION</a>
 , <a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a77ff0693e1bffd8c0e7c2c95a138cc2b">SEARCHED</a>
 , <a class="el" href="Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39aa2770969c827f0f2910f6179418462df">CURRENT</a>
 <br />
@@ -192,7 +200,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00022">22</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00031">31</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>
@@ -208,7 +216,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00018">18</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00027">27</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +232,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00020">20</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00029">29</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +261,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a9e185ea43686245c2d72b255ce5aa92ca135acdcbb70a072902dd7473c1d3003a" name="a9e185ea43686245c2d72b255ce5aa92ca135acdcbb70a072902dd7473c1d3003a"></a>SERPENTINE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00011">11</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00012">12</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>
@@ -281,12 +289,12 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39a48d536b2de1195d0c9f6ea8ab884085e" name="a1b25339aa7f63b7b2cb7e34875fc6f39a48d536b2de1195d0c9f6ea8ab884085e"></a>WALL&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39ab078ffd28db767c502ac367053f6e0ac" name="a1b25339aa7f63b7b2cb7e34875fc6f39ab078ffd28db767c502ac367053f6e0ac"></a>START&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39a007a3c4175ca4f86d9dc49e4f2e9cf8a" name="a1b25339aa7f63b7b2cb7e34875fc6f39a007a3c4175ca4f86d9dc49e4f2e9cf8a"></a>GOAL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39a5ffb5f0d0de78321df46fc7c93ca64a3" name="a1b25339aa7f63b7b2cb7e34875fc6f39a5ffb5f0d0de78321df46fc7c93ca64a3"></a>PATH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39ae3d87c0113dc985c598feb409a45c552" name="a1b25339aa7f63b7b2cb7e34875fc6f39ae3d87c0113dc985c598feb409a45c552"></a>SOLUTION&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39a77ff0693e1bffd8c0e7c2c95a138cc2b" name="a1b25339aa7f63b7b2cb7e34875fc6f39a77ff0693e1bffd8c0e7c2c95a138cc2b"></a>SEARCHED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1b25339aa7f63b7b2cb7e34875fc6f39aa2770969c827f0f2910f6179418462df" name="a1b25339aa7f63b7b2cb7e34875fc6f39aa2770969c827f0f2910f6179418462df"></a>CURRENT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00015">15</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00016">16</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +325,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Maze_8cpp_source.html#l00331">331</a> of file <a class="el" href="Maze_8cpp_source.html">Maze.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8cpp_source.html#l00339">339</a> of file <a class="el" href="Maze_8cpp_source.html">Maze.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +350,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00013">13</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Maze_8hpp_source.html#l00014">14</a> of file <a class="el" href="Maze_8hpp_source.html">Maze.hpp</a>.</p>
 
 </div>
 </div>

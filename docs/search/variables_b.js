@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['text_0',['text',['../structButtonBuilder.html#a69c523202125e8c3a5d3d839996769ec',1,'ButtonBuilder::text()'],['../structTextBoxBuilder.html#a4a048d8c5832aa74528fe741033a50b1',1,'TextBoxBuilder::text()']]],
-  ['texture_1',['texture',['../structButtonBuilder.html#a63431c219ea58d80314f5f6ed0cbe55d',1,'ButtonBuilder']]]
+  ['r_5fview_0',['r_view',['../classGameBase.html#a9900b0afd8242b9fd91dd2145dacdbed',1,'GameBase']]],
+  ['random_1',['RANDOM',['../namespacewil__test.html#a52cc0d742544fa2cc5398e1c8708a8b2',1,'wil_test.RANDOM()'],['../namespaceWilsons.html#a782bd51543ff5a4180765dc62955ecd4',1,'Wilsons.RANDOM()']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['path_0',['PATH',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a5ffb5f0d0de78321df46fc7c93ca64a3',1,'Maze.hpp']]]
+  ['human_0',['HUMAN',['../Config_8hpp.html#abb63530e25befe79984cb270206e53c9aa36c6719f4d3207d858cf956ef1e93b6',1,'Config.hpp']]]
 ];

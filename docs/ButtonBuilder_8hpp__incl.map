@@ -1,8 +1,13 @@
 <map id="src/View/Builders/ButtonBuilder.hpp" name="src/View/Builders/ButtonBuilder.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="160,5,341,45"/>
-<area shape="rect" id="node2" href="$Vector2I_8hpp.html" title=" " alt="" coords="133,93,235,119"/>
-<area shape="rect" id="node6" title=" " alt="" coords="260,93,375,119"/>
-<area shape="rect" id="node3" title=" " alt="" coords="5,167,104,192"/>
-<area shape="rect" id="node4" title=" " alt="" coords="129,167,239,192"/>
-<area shape="rect" id="node5" title=" " alt="" coords="263,167,350,192"/>
+<area shape="rect" id="node1" title=" " alt="" coords="373,5,554,45"/>
+<area shape="rect" id="node2" href="$TextBuilder_8hpp.html" title=" " alt="" coords="193,93,315,119"/>
+<area shape="rect" id="node6" title=" " alt="" coords="321,167,435,192"/>
+<area shape="rect" id="node7" href="$Vector2I_8hpp.html" title=" " alt="" coords="457,93,560,119"/>
+<area shape="rect" id="node11" title=" " alt="" coords="585,93,683,119"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,167,84,192"/>
+<area shape="rect" id="node4" title=" " alt="" coords="109,167,186,192"/>
+<area shape="rect" id="node5" title=" " alt="" coords="211,167,297,192"/>
+<area shape="rect" id="node8" title=" " alt="" coords="459,167,558,192"/>
+<area shape="rect" id="node9" title=" " alt="" coords="583,167,693,192"/>
+<area shape="rect" id="node10" title=" " alt="" coords="717,167,804,192"/>
 </map>

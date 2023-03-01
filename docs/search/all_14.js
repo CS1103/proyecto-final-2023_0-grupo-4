@@ -1,13 +1,17 @@
 var searchData=
 [
-  ['w_0',['W',['../classkruskalGeneration_1_1Kruskal.html#af2dcca4cb582383115412a6dc54d10d7',1,'kruskalGeneration.Kruskal.W()'],['../classWilsons_1_1Wilsons.html#af5768b62345efde73ad03afca3b75bec',1,'Wilsons.Wilsons.W()']]],
-  ['w_1',['w',['../classkruskalGeneration_1_1Kruskal.html#a31470b4bec8c6d664e05d165f010f831',1,'kruskalGeneration.Kruskal.w()'],['../classWilsons_1_1Wilsons.html#a3db085952775d890b52d4b80d2947d65',1,'Wilsons.Wilsons.w()'],['../namespacewil__test.html#a99db92b04b698f236a3afdf85ee5c605',1,'wil_test.w()']]],
-  ['wall_2',['WALL',['../Maze_8hpp.html#a1b25339aa7f63b7b2cb7e34875fc6f39a48d536b2de1195d0c9f6ea8ab884085e',1,'Maze.hpp']]],
-  ['wall_5ftexture_5fpath_3',['WALL_TEXTURE_PATH',['../ViewMaze_8hpp.html#a1f25eb7c3eca5544d52f877f29c6a344',1,'ViewMaze.hpp']]],
-  ['west_4',['WEST',['../namespaceDIRECTION.html#a1c4d1f715334cf9a4c975779afa59bb7',1,'DIRECTION']]],
-  ['wil_5ftest_5',['wil_test',['../namespacewil__test.html',1,'']]],
-  ['wil_5ftest_2epy_6',['wil_test.py',['../wil__test_8py.html',1,'']]],
-  ['wilsons_7',['Wilsons',['../namespaceWilsons.html',1,'Wilsons'],['../classWilsons_1_1Wilsons.html',1,'Wilsons.Wilsons']]],
-  ['wilsons_2epy_8',['Wilsons.py',['../Wilsons_8py.html',1,'']]],
-  ['window_5ftitle_9',['WINDOW_TITLE',['../View_8hpp.html#ac6e5c63f4fed46805580a83a38ecd26a',1,'View.hpp']]]
+  ['validator_0',['validator',['../structTextBoxBuilder.html#ac7452ccd2019f4185050b23237a5e588',1,'TextBoxBuilder']]],
+  ['validator_1',['Validator',['../structTextBoxBuilder.html#a248e6d5a75c0abefb770296a9ced131b',1,'TextBoxBuilder']]],
+  ['vector2i_2',['Vector2I',['../structUtils_1_1Vector2I.html',1,'Utils::Vector2I'],['../structUtils_1_1Vector2I.html#a44304dcc72e4ff270c2671c8091a0cda',1,'Utils::Vector2I::Vector2I(const raylib::Vector2 &amp;rlV)'],['../structUtils_1_1Vector2I.html#a9a7c3b31915564e070a345d8e5c3527e',1,'Utils::Vector2I::Vector2I(const Vector2 &amp;rlV)'],['../structUtils_1_1Vector2I.html#a7cd6c65e1dfcd23b56cc0bf0c42d9d05',1,'Utils::Vector2I::Vector2I(const std::initializer_list&lt; int &gt; &amp;pos)'],['../structUtils_1_1Vector2I.html#a56b83af22341237373e6da32a2411792',1,'Utils::Vector2I::Vector2I(const int &amp;xPos, const int &amp;yPos)'],['../structUtils_1_1Vector2I.html#afa7af96ce0814c5597b230a9496aed61',1,'Utils::Vector2I::Vector2I()=default']]],
+  ['vector2i_2ehpp_3',['Vector2I.hpp',['../Vector2I_8hpp.html',1,'']]],
+  ['view_4',['View',['../classView.html',1,'']]],
+  ['view_2ecpp_5',['View.cpp',['../View_8cpp.html',1,'']]],
+  ['view_2ehpp_6',['View.hpp',['../View_8hpp.html',1,'']]],
+  ['view_5fheight_7',['VIEW_HEIGHT',['../View_8hpp.html#aa0f59b6aa7e9a2ee7ef806e14567c736',1,'View.hpp']]],
+  ['view_5fwidth_8',['VIEW_WIDTH',['../View_8hpp.html#a9b647721c51ddbfcc309049b460aab4b',1,'View.hpp']]],
+  ['viewmaze_9',['ViewMaze',['../classViewMaze.html',1,'ViewMaze'],['../classViewMaze.html#a7d762581f33b3ee46a2d091e1ab9c833',1,'ViewMaze::ViewMaze()']]],
+  ['viewmaze_2ecpp_10',['ViewMaze.cpp',['../ViewMaze_8cpp.html',1,'']]],
+  ['viewmaze_2ehpp_11',['ViewMaze.hpp',['../ViewMaze_8hpp.html',1,'']]],
+  ['viewutils_2ecpp_12',['ViewUtils.cpp',['../ViewUtils_8cpp.html',1,'']]],
+  ['viewutils_2ehpp_13',['ViewUtils.hpp',['../ViewUtils_8hpp.html',1,'']]]
 ];

@@ -78,72 +78,83 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Button_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Button_8hpp.html">Button.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Temporal</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using </span><a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">static</span> <span class="keywordtype">bool</span> ValidateSize(<span class="keyword">const</span> rl::Texture &amp;texture, <span class="keyword">const</span> rl::Text &amp;text) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> TEXT_BUTTON_RATIO = 0.8F;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  raylib::Vector2 text_size = text.MeasureEx();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  raylib::Vector2 texture_size = texture.GetSize();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keywordflow">if</span> (text_size.x &gt; texture_size.x * TEXT_BUTTON_RATIO) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Text is too long for the button&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// throw std::runtime_error(&quot;Text is too long for the button&quot;);</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (text_size.y &gt; texture_size.y * TEXT_BUTTON_RATIO) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Text is too tall for the button&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// throw std::runtime_error(&quot;Text is too tall for the button&quot;);</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classButton.html#a3571d1babcc72d79f63105a84a747117">   28</a></span><a class="code hl_function" href="classButton.html#a3571d1babcc72d79f63105a84a747117">Button::Button</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structButtonBuilder.html">ButtonBuilder</a> &amp;builder)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    : m_text(builder.text), m_texture(builder.texture), m_pos(builder.pos) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  ValidateSize(m_texture, m_text);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">Button::Draw</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> text_size = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>(m_text.MeasureEx());</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> button_size = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>(m_texture.GetSize());</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">auto</span> [text_x, text_y] =</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      std::pair{m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> + (button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> - text_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a>) / 2,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> + (button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> - text_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a>) / 2};</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  m_texture.Draw(m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a>, m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  m_text.Draw(text_x, text_y);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classButton.html#aab1ad2d49a14280058ef02b8940ef857">   46</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classButton.html#aab1ad2d49a14280058ef02b8940ef857">Button::isClicked</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keywordflow">if</span> (!rl::Mouse::IsButtonPressed(MouseButton::MOUSE_LEFT_BUTTON)) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;Mouse.hpp&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Temporal</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">using </span><a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">static</span> <span class="keywordtype">bool</span> ValidateSize(<span class="keyword">const</span> rl::Texture &amp;texture, <span class="keyword">const</span> rl::Text &amp;text) {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> TEXT_BUTTON_RATIO = 0.8F;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  raylib::Vector2 text_size = text.MeasureEx();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  raylib::Vector2 texture_size = texture.GetSize();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordflow">if</span> (text_size.x &gt; texture_size.x * TEXT_BUTTON_RATIO) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Text is too long for the button&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// throw std::runtime_error(&quot;Text is too long for the button&quot;);</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (text_size.y &gt; texture_size.y * TEXT_BUTTON_RATIO) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Text is too tall for the button&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// throw std::runtime_error(&quot;Text is too tall for the button&quot;);</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classButton.html#a4454c531e12196c2dbaa2f543499be9d">   29</a></span><a class="code hl_function" href="classButton.html#a4454c531e12196c2dbaa2f543499be9d">Button::Button</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structButtonBuilder.html">ButtonBuilder</a> &amp;builder)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    : m_text(builder.text), m_texture(builder.texture), m_pos(builder.pos) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  ValidateSize(m_texture, m_text);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">Button::Draw</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> text_size = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>(m_text.MeasureEx());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> button_size = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>(m_texture.GetSize());</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">auto</span> [text_x, text_y] =</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      std::pair{m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> + (button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> - text_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a>) / 2,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> + (button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> - text_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a>) / 2};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">if</span> (is_selected) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    m_texture.Draw(m_pos, 0, 1, WHITE);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    m_texture.Draw(m_pos, 0, 1, GRAY);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  m_text.Draw(text_x, text_y);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> click_pos = rl::Mouse::GetPosition();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classButton.html#af9a4f3e49c1285a266bf97197107601c">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classButton.html#af9a4f3e49c1285a266bf97197107601c">Button::IsClicked</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> button_size = m_texture.GetSize();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">auto</span> button_end = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>{m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> + button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a>, m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> + button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a>};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">return</span> (click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &gt;= m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &amp;&amp; click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &lt;= button_end.x) &amp;&amp;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>         (click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &gt;= m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &amp;&amp; click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &lt;= button_end.y);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">if</span> (!rl::Mouse::IsButtonPressed(MouseButton::MOUSE_LEFT_BUTTON)) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> click_pos = rl::Mouse::GetPosition();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a> button_size = m_texture.GetSize();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">auto</span> button_end = <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Vector2I</a>{m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> + button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a>, m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> + button_size.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> (click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &gt;= m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &amp;&amp; click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">x</a> &lt;= button_end.x) &amp;&amp;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>         (click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &gt;= m_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &amp;&amp; click_pos.<a class="code hl_variable" href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">y</a> &lt;= button_end.y);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classButton.html#a91f4a9b1b150b7c8c834b65029a2495a">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classButton.html#a91f4a9b1b150b7c8c834b65029a2495a">Button::Highlight</a>() { is_selected = <span class="keyword">true</span>; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classButton.html#ac0f845c3233fd6d95e224675eb82212c">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classButton.html#ac0f845c3233fd6d95e224675eb82212c">Button::UnHighlight</a>() { is_selected = <span class="keyword">false</span>; }</div>
 <div class="ttc" id="aButton_8hpp_html"><div class="ttname"><a href="Button_8hpp.html">Button.hpp</a></div></div>
-<div class="ttc" id="aclassButton_html_a3571d1babcc72d79f63105a84a747117"><div class="ttname"><a href="classButton.html#a3571d1babcc72d79f63105a84a747117">Button::Button</a></div><div class="ttdeci">Button(const ButtonBuilder &amp;builder=Utils::DefaultButton())</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00028">Button.cpp:28</a></div></div>
-<div class="ttc" id="aclassButton_html_aab1ad2d49a14280058ef02b8940ef857"><div class="ttname"><a href="classButton.html#aab1ad2d49a14280058ef02b8940ef857">Button::isClicked</a></div><div class="ttdeci">bool isClicked() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00046">Button.cpp:46</a></div></div>
-<div class="ttc" id="aclassButton_html_ad162cfc98cf7b45fc9d81e58c3f00ee5"><div class="ttname"><a href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">Button::Draw</a></div><div class="ttdeci">void Draw() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00033">Button.cpp:33</a></div></div>
-<div class="ttc" id="astructButtonBuilder_html"><div class="ttname"><a href="structButtonBuilder.html">ButtonBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="ButtonBuilder_8hpp_source.html#l00008">ButtonBuilder.hpp:8</a></div></div>
-<div class="ttc" id="astructUtils_1_1Vector2I_html"><div class="ttname"><a href="structUtils_1_1Vector2I.html">Utils::Vector2I</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00010">Vector2I.hpp:10</a></div></div>
-<div class="ttc" id="astructUtils_1_1Vector2I_html_a62b97a5df9acd7b9fdb4494f60ca0d33"><div class="ttname"><a href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">Utils::Vector2I::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00012">Vector2I.hpp:12</a></div></div>
-<div class="ttc" id="astructUtils_1_1Vector2I_html_aa68be144bf980317e6f43e9e5bf838fe"><div class="ttname"><a href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">Utils::Vector2I::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00011">Vector2I.hpp:11</a></div></div>
+<div class="ttc" id="aclassButton_html_a4454c531e12196c2dbaa2f543499be9d"><div class="ttname"><a href="classButton.html#a4454c531e12196c2dbaa2f543499be9d">Button::Button</a></div><div class="ttdeci">Button(const ButtonBuilder &amp;builder)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00029">Button.cpp:29</a></div></div>
+<div class="ttc" id="aclassButton_html_a91f4a9b1b150b7c8c834b65029a2495a"><div class="ttname"><a href="classButton.html#a91f4a9b1b150b7c8c834b65029a2495a">Button::Highlight</a></div><div class="ttdeci">void Highlight()</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00067">Button.cpp:67</a></div></div>
+<div class="ttc" id="aclassButton_html_ac0f845c3233fd6d95e224675eb82212c"><div class="ttname"><a href="classButton.html#ac0f845c3233fd6d95e224675eb82212c">Button::UnHighlight</a></div><div class="ttdeci">void UnHighlight()</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00068">Button.cpp:68</a></div></div>
+<div class="ttc" id="aclassButton_html_ad162cfc98cf7b45fc9d81e58c3f00ee5"><div class="ttname"><a href="classButton.html#ad162cfc98cf7b45fc9d81e58c3f00ee5">Button::Draw</a></div><div class="ttdeci">void Draw() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00034">Button.cpp:34</a></div></div>
+<div class="ttc" id="aclassButton_html_af9a4f3e49c1285a266bf97197107601c"><div class="ttname"><a href="classButton.html#af9a4f3e49c1285a266bf97197107601c">Button::IsClicked</a></div><div class="ttdeci">bool IsClicked() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00052">Button.cpp:52</a></div></div>
+<div class="ttc" id="astructButtonBuilder_html"><div class="ttname"><a href="structButtonBuilder.html">ButtonBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="ButtonBuilder_8hpp_source.html#l00016">ButtonBuilder.hpp:16</a></div></div>
+<div class="ttc" id="astructUtils_1_1Vector2I_html"><div class="ttname"><a href="structUtils_1_1Vector2I.html">Utils::Vector2I</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00012">Vector2I.hpp:12</a></div></div>
+<div class="ttc" id="astructUtils_1_1Vector2I_html_a62b97a5df9acd7b9fdb4494f60ca0d33"><div class="ttname"><a href="structUtils_1_1Vector2I.html#a62b97a5df9acd7b9fdb4494f60ca0d33">Utils::Vector2I::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00014">Vector2I.hpp:14</a></div></div>
+<div class="ttc" id="astructUtils_1_1Vector2I_html_aa68be144bf980317e6f43e9e5bf838fe"><div class="ttname"><a href="structUtils_1_1Vector2I.html#aa68be144bf980317e6f43e9e5bf838fe">Utils::Vector2I::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00013">Vector2I.hpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

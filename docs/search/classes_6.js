@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maze_0',['Maze',['../classMaze.html',1,'']]]
+  ['positioncalc_0',['PositionCalc',['../structUtils_1_1PositionCalc.html',1,'Utils']]]
 ];

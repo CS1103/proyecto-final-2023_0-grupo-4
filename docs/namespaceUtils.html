@@ -85,6 +85,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUtils_1_1PositionCalc.html">PositionCalc</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUtils_1_1Vector2I.html">Vector2I</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -105,164 +107,289 @@ Functions</h2></td></tr>
 <tr class="memitem:ab462a3263ddd14d1abd3e63130dadf49"><td class="memTemplParams" colspan="2">template&lt;std::signed_integral T&gt; </td></tr>
 <tr class="memitem:ab462a3263ddd14d1abd3e63130dadf49"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab462a3263ddd14d1abd3e63130dadf49">SignedToUnsigned</a> (const T &amp;value)</td></tr>
 <tr class="separator:ab462a3263ddd14d1abd3e63130dadf49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46ed5a527be0801161446a46b72e50ae"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a46ed5a527be0801161446a46b72e50ae">DefaultTitleFont</a> ()</td></tr>
-<tr class="separator:a46ed5a527be0801161446a46b72e50ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d8666937d3946f945924d0e1c09048"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a76d8666937d3946f945924d0e1c09048">DefaultTitleText</a> ()</td></tr>
-<tr class="separator:a76d8666937d3946f945924d0e1c09048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc2cd234ddfa3d746bcb64acb0929249"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#abc2cd234ddfa3d746bcb64acb0929249">DefaultButtonFont</a> ()</td></tr>
-<tr class="separator:abc2cd234ddfa3d746bcb64acb0929249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a103d21334dd9df65b88bab0eb9579ec1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a103d21334dd9df65b88bab0eb9579ec1">DefaultButtonText</a> ()</td></tr>
-<tr class="separator:a103d21334dd9df65b88bab0eb9579ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09385cce1599585034fb556a0127eff6"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structButtonBuilder.html">ButtonBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a09385cce1599585034fb556a0127eff6">DefaultButton</a> ()</td></tr>
-<tr class="separator:a09385cce1599585034fb556a0127eff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45ea7de2add206171a31fc1111c4c0f0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a45ea7de2add206171a31fc1111c4c0f0">DefaultTextBoxFont</a> ()</td></tr>
-<tr class="separator:a45ea7de2add206171a31fc1111c4c0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9bd01034ce09928a38711fe7b4fe944"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#af9bd01034ce09928a38711fe7b4fe944">DefaultTextBoxText</a> ()</td></tr>
-<tr class="separator:af9bd01034ce09928a38711fe7b4fe944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf44240ff00218d99af040b366bb8c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a7cf44240ff00218d99af040b366bb8c9">DefaultTextBox</a> ()</td></tr>
-<tr class="separator:a7cf44240ff00218d99af040b366bb8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d117199853a7dcc80ca186628d06866"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a9d117199853a7dcc80ca186628d06866">DefaultTitleText</a> (std::string _text)</td></tr>
+<tr class="separator:a9d117199853a7dcc80ca186628d06866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3590351fbcc5301a77152173af2af51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51">DefaultButtonText</a> ()</td></tr>
+<tr class="separator:ab3590351fbcc5301a77152173af2af51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2dbdb763b16cea45832c51fc0bca9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5e2dbdb763b16cea45832c51fc0bca9a">DefaultButtonText</a> (std::string _text)</td></tr>
+<tr class="separator:a5e2dbdb763b16cea45832c51fc0bca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce57051662df27b9952bdf71392d04e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structButtonBuilder.html">ButtonBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e">DefaultButton</a> (std::string _text, const <a class="el" href="structUtils_1_1Vector2I.html">Vector2I</a> &amp;pos)</td></tr>
+<tr class="separator:a5ce57051662df27b9952bdf71392d04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec494ba666b6bd29d9686b996426d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#adec494ba666b6bd29d9686b996426d43">DefaultTextBoxText</a> ()</td></tr>
+<tr class="separator:adec494ba666b6bd29d9686b996426d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa505617255ee355cddb80ccb2144a8bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#aa505617255ee355cddb80ccb2144a8bc">DefaultTextBox</a> (const rl::Vector2 &amp;_pos, const rl::Vector2 &amp;_size, std::function&lt; bool(const std::string &amp;)&gt; _validator)</td></tr>
+<tr class="separator:aa505617255ee355cddb80ccb2144a8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a09385cce1599585034fb556a0127eff6" name="a09385cce1599585034fb556a0127eff6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09385cce1599585034fb556a0127eff6">&#9670;&#160;</a></span>DefaultButton()</h2>
+<a id="a5ce57051662df27b9952bdf71392d04e" name="a5ce57051662df27b9952bdf71392d04e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce57051662df27b9952bdf71392d04e">&#9670;&#160;</a></span>DefaultButton()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structButtonBuilder.html">ButtonBuilder</a> &amp; Utils::DefaultButton </td>
+          <td class="memname"><a class="el" href="structButtonBuilder.html">ButtonBuilder</a> Utils::DefaultButton </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_text</em>, </td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abc2cd234ddfa3d746bcb64acb0929249" name="abc2cd234ddfa3d746bcb64acb0929249"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc2cd234ddfa3d746bcb64acb0929249">&#9670;&#160;</a></span>DefaultButtonFont()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp; Utils::DefaultButtonFont </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="structUtils_1_1Vector2I.html">Vector2I</a> &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
         </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a103d21334dd9df65b88bab0eb9579ec1" name="a103d21334dd9df65b88bab0eb9579ec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a103d21334dd9df65b88bab0eb9579ec1">&#9670;&#160;</a></span>DefaultButtonText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp; Utils::DefaultButtonText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
           <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00114">114</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_a5ce57051662df27b9952bdf71392d04e_cgraph.png" border="0" usemap="#anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_cgraph" alt=""/></div>
+<map name="anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_cgraph" id="anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,144,156,169"/>
+<area shape="rect" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51" title=" " alt="" coords="220,29,399,55"/>
+<area shape="rect" href="structButtonBuilder.html#a47e82df4cb10b93df1e47d13930530cb" title=" " alt="" coords="204,79,415,119"/>
+<area shape="rect" href="structButtonBuilder.html#aa8d4dcffec9fa37995589b66b62d0131" title=" " alt="" coords="238,144,381,169"/>
+<area shape="rect" href="structButtonBuilder.html#ac1b728d35f10f6c36d8c1f079588de33" title=" " alt="" coords="236,193,383,219"/>
+<area shape="rect" href="structButtonBuilder.html#a39a8db1b3de8606f2b432d8261c5b818" title=" " alt="" coords="226,243,393,268"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="473,5,611,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="463,55,621,80"/>
+</map>
 </div>
-</div>
-<a id="a7cf44240ff00218d99af040b366bb8c9" name="a7cf44240ff00218d99af040b366bb8c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf44240ff00218d99af040b366bb8c9">&#9670;&#160;</a></span>DefaultTextBox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp; Utils::DefaultTextBox </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a45ea7de2add206171a31fc1111c4c0f0" name="a45ea7de2add206171a31fc1111c4c0f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45ea7de2add206171a31fc1111c4c0f0">&#9670;&#160;</a></span>DefaultTextBoxFont()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp; Utils::DefaultTextBoxFont </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af9bd01034ce09928a38711fe7b4fe944" name="af9bd01034ce09928a38711fe7b4fe944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9bd01034ce09928a38711fe7b4fe944">&#9670;&#160;</a></span>DefaultTextBoxText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp; Utils::DefaultTextBoxText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a46ed5a527be0801161446a46b72e50ae" name="a46ed5a527be0801161446a46b72e50ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46ed5a527be0801161446a46b72e50ae">&#9670;&#160;</a></span>DefaultTitleFont()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classFontBuilder.html">FontBuilder</a> &amp; Utils::DefaultTitleFont </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a76d8666937d3946f945924d0e1c09048" name="a76d8666937d3946f945924d0e1c09048"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76d8666937d3946f945924d0e1c09048">&#9670;&#160;</a></span>DefaultTitleText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classTextBuilder.html">TextBuilder</a> &amp; Utils::DefaultTitleText </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="namespaceUtils_a76d8666937d3946f945924d0e1c09048_icgraph.png" border="0" usemap="#anamespaceUtils_a76d8666937d3946f945924d0e1c09048_icgraph" alt=""/></div>
-<map name="anamespaceUtils_a76d8666937d3946f945924d0e1c09048_icgraph" id="anamespaceUtils_a76d8666937d3946f945924d0e1c09048_icgraph">
-<area shape="rect" title=" " alt="" coords="189,5,353,31"/>
-<area shape="rect" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3" title=" " alt="" coords="5,5,141,31"/>
+<div class="center"><img src="namespaceUtils_a5ce57051662df27b9952bdf71392d04e_icgraph.png" border="0" usemap="#anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_icgraph" alt=""/></div>
+<map name="anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_icgraph" id="anamespaceUtils_a5ce57051662df27b9952bdf71392d04e_icgraph">
+<area shape="rect" title=" " alt="" coords="292,55,443,80"/>
+<area shape="rect" href="classView.html#a00f6d19453553a606ebd61c54a855263" title=" " alt="" coords="117,5,235,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="113,55,239,80"/>
+<area shape="rect" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3" title=" " alt="" coords="108,104,244,129"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab3590351fbcc5301a77152173af2af51" name="ab3590351fbcc5301a77152173af2af51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3590351fbcc5301a77152173af2af51">&#9670;&#160;</a></span>DefaultButtonText() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextBuilder.html">TextBuilder</a> Utils::DefaultButtonText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00105">105</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_ab3590351fbcc5301a77152173af2af51_cgraph.png" border="0" usemap="#anamespaceUtils_ab3590351fbcc5301a77152173af2af51_cgraph" alt=""/></div>
+<map name="anamespaceUtils_ab3590351fbcc5301a77152173af2af51_cgraph" id="anamespaceUtils_ab3590351fbcc5301a77152173af2af51_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,184,56"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="243,5,380,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="232,55,391,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_ab3590351fbcc5301a77152173af2af51_icgraph.png" border="0" usemap="#anamespaceUtils_ab3590351fbcc5301a77152173af2af51_icgraph" alt=""/></div>
+<map name="anamespaceUtils_ab3590351fbcc5301a77152173af2af51_icgraph" id="anamespaceUtils_ab3590351fbcc5301a77152173af2af51_icgraph">
+<area shape="rect" title=" " alt="" coords="519,80,697,105"/>
+<area shape="rect" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e" title=" " alt="" coords="306,55,457,80"/>
+<area shape="rect" href="namespaceUtils.html#a5e2dbdb763b16cea45832c51fc0bca9a" title=" " alt="" coords="292,104,471,129"/>
+<area shape="rect" href="classView.html#a00f6d19453553a606ebd61c54a855263" title=" " alt="" coords="117,5,235,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="113,55,239,80"/>
+<area shape="rect" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3" title=" " alt="" coords="108,104,244,129"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,80,60,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e2dbdb763b16cea45832c51fc0bca9a" name="a5e2dbdb763b16cea45832c51fc0bca9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e2dbdb763b16cea45832c51fc0bca9a">&#9670;&#160;</a></span>DefaultButtonText() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextBuilder.html">TextBuilder</a> Utils::DefaultButtonText </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00110">110</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_a5e2dbdb763b16cea45832c51fc0bca9a_cgraph.png" border="0" usemap="#anamespaceUtils_a5e2dbdb763b16cea45832c51fc0bca9a_cgraph" alt=""/></div>
+<map name="anamespaceUtils_a5e2dbdb763b16cea45832c51fc0bca9a_cgraph" id="anamespaceUtils_a5e2dbdb763b16cea45832c51fc0bca9a_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,184,80"/>
+<area shape="rect" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51" title=" " alt="" coords="232,29,411,55"/>
+<area shape="rect" href="structTextBuilder.html#ad8c8c7d087830ad7b0fcb12f5b208144" title=" " alt="" coords="256,79,387,104"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="469,5,607,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="459,55,617,80"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa505617255ee355cddb80ccb2144a8bc" name="aa505617255ee355cddb80ccb2144a8bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa505617255ee355cddb80ccb2144a8bc">&#9670;&#160;</a></span>DefaultTextBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a> Utils::DefaultTextBox </td>
+          <td>(</td>
+          <td class="paramtype">const rl::Vector2 &amp;&#160;</td>
+          <td class="paramname"><em>_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const rl::Vector2 &amp;&#160;</td>
+          <td class="paramname"><em>_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; bool(const std::string &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>_validator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00126">126</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_aa505617255ee355cddb80ccb2144a8bc_cgraph.png" border="0" usemap="#anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_cgraph" alt=""/></div>
+<map name="anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_cgraph" id="anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,128,165,153"/>
+<area shape="rect" href="namespaceUtils.html#adec494ba666b6bd29d9686b996426d43" title=" " alt="" coords="213,29,400,55"/>
+<area shape="rect" href="structTextBoxBuilder.html#a9b4a20ae79902e33e0d0010bcb75efd9" title=" " alt="" coords="231,79,382,104"/>
+<area shape="rect" href="structTextBoxBuilder.html#a3b2ee838af2729fa0f56dfaaf8d1da6a" title=" " alt="" coords="229,128,384,153"/>
+<area shape="rect" href="structTextBoxBuilder.html#a40190eab2fbf268850ab70b9c8c660cf" title=" " alt="" coords="229,177,384,203"/>
+<area shape="rect" href="structTextBoxBuilder.html#a248e6d5a75c0abefb770296a9ced131b" title=" " alt="" coords="213,227,400,252"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="459,5,596,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="448,55,607,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_aa505617255ee355cddb80ccb2144a8bc_icgraph.png" border="0" usemap="#anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_icgraph" alt=""/></div>
+<map name="anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_icgraph" id="anamespaceUtils_aa505617255ee355cddb80ccb2144a8bc_icgraph">
+<area shape="rect" title=" " alt="" coords="281,5,441,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adec494ba666b6bd29d9686b996426d43" name="adec494ba666b6bd29d9686b996426d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec494ba666b6bd29d9686b996426d43">&#9670;&#160;</a></span>DefaultTextBoxText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextBuilder.html">TextBuilder</a> Utils::DefaultTextBoxText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00120">120</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_adec494ba666b6bd29d9686b996426d43_cgraph.png" border="0" usemap="#anamespaceUtils_adec494ba666b6bd29d9686b996426d43_cgraph" alt=""/></div>
+<map name="anamespaceUtils_adec494ba666b6bd29d9686b996426d43_cgraph" id="anamespaceUtils_adec494ba666b6bd29d9686b996426d43_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,192,56"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="251,5,388,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="240,55,399,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_adec494ba666b6bd29d9686b996426d43_icgraph.png" border="0" usemap="#anamespaceUtils_adec494ba666b6bd29d9686b996426d43_icgraph" alt=""/></div>
+<map name="anamespaceUtils_adec494ba666b6bd29d9686b996426d43_icgraph" id="anamespaceUtils_adec494ba666b6bd29d9686b996426d43_icgraph">
+<area shape="rect" title=" " alt="" coords="489,5,676,31"/>
+<area shape="rect" href="namespaceUtils.html#aa505617255ee355cddb80ccb2144a8bc" title=" " alt="" coords="281,5,441,31"/>
+<area shape="rect" href="classView.html#a42e22c654604d54f556595924b59d919" title=" " alt="" coords="108,5,233,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9d117199853a7dcc80ca186628d06866" name="a9d117199853a7dcc80ca186628d06866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d117199853a7dcc80ca186628d06866">&#9670;&#160;</a></span>DefaultTitleText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTextBuilder.html">TextBuilder</a> Utils::DefaultTitleText </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>_text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ViewUtils_8cpp_source.html#l00100">100</a> of file <a class="el" href="ViewUtils_8cpp_source.html">ViewUtils.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_a9d117199853a7dcc80ca186628d06866_cgraph.png" border="0" usemap="#anamespaceUtils_a9d117199853a7dcc80ca186628d06866_cgraph" alt=""/></div>
+<map name="anamespaceUtils_a9d117199853a7dcc80ca186628d06866_cgraph" id="anamespaceUtils_a9d117199853a7dcc80ca186628d06866_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,169,80"/>
+<area shape="rect" href="structTextBuilder.html#acf0e691e5e4cff6f2c73aeb0e06c67ac" title=" " alt="" coords="228,5,365,31"/>
+<area shape="rect" href="structTextBuilder.html#a228192e4369309c739d018c3e7ed4192" title=" " alt="" coords="217,55,376,80"/>
+<area shape="rect" href="structTextBuilder.html#ad8c8c7d087830ad7b0fcb12f5b208144" title=" " alt="" coords="231,104,362,129"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceUtils_a9d117199853a7dcc80ca186628d06866_icgraph.png" border="0" usemap="#anamespaceUtils_a9d117199853a7dcc80ca186628d06866_icgraph" alt=""/></div>
+<map name="anamespaceUtils_a9d117199853a7dcc80ca186628d06866_icgraph" id="anamespaceUtils_a9d117199853a7dcc80ca186628d06866_icgraph">
+<area shape="rect" title=" " alt="" coords="292,5,456,31"/>
+<area shape="rect" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3" title=" " alt="" coords="108,5,244,31"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 </map>
 </div>
 

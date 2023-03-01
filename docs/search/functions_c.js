@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['setfocus_0',['SetFocus',['../classTextBox.html#aeea0407593a82e4da14ae4badd0bfb1c',1,'TextBox']]],
-  ['setposition_1',['SetPosition',['../classTextBox.html#ab3ccd6119428ac368338b886c010b3fe',1,'TextBox']]],
-  ['signedtounsigned_2',['SignedToUnsigned',['../namespaceUtils.html#ab462a3263ddd14d1abd3e63130dadf49',1,'Utils']]],
-  ['solve_3',['solve',['../classBot.html#a50c54f329c493e1947f72ab2b14165ef',1,'Bot::solve(const Maze &amp;maze)'],['../classBot.html#a50c54f329c493e1947f72ab2b14165ef',1,'Bot::solve(const Maze &amp;maze)']]],
-  ['startscreen_4',['StartScreen',['../classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3',1,'View']]],
-  ['system_5',['System',['../classSystem.html#a7ffb94a5a2db03014de0a8440f0cee3a',1,'System']]]
+  ['paintpath_0',['PaintPath',['../classMaze.html#ab3aa6a1c9307639a0d3f43f95d327481',1,'Maze::PaintPath(const std::unordered_set&lt; square, HashPair &gt; &amp;path)'],['../classMaze.html#a931826cb95964110cc6efd21e5704dfd',1,'Maze::PaintPath(const std::unordered_set&lt; square, HashPair &gt; &amp;solution, const std::unordered_set&lt; square, HashPair &gt; &amp;searchedPath)']]],
+  ['pos_1',['Pos',['../structButtonBuilder.html#aa8d4dcffec9fa37995589b66b62d0131',1,'ButtonBuilder::Pos()'],['../structTextBoxBuilder.html#a9b4a20ae79902e33e0d0010bcb75efd9',1,'TextBoxBuilder::Pos()']]],
+  ['positioncalc_2',['PositionCalc',['../structUtils_1_1PositionCalc.html#ad84253926dae27ec7ce0d0cb40308d66',1,'Utils::PositionCalc']]],
+  ['printmaze_3',['PrintMaze',['../classMaze.html#a4108bbbb8269d87ff566aacb260b09d1',1,'Maze']]],
+  ['printmaze_4',['printMaze',['../namespacekruskalGeneration.html#ae2920b42fc753d0af3f4e1eab70277f3',1,'kruskalGeneration']]]
 ];

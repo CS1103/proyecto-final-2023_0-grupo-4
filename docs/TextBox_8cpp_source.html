@@ -79,83 +79,96 @@ $(function() {
 <div class="contents">
 <a href="TextBox_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="TextBox_8hpp.html">TextBox.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classTextBox.html#a0e8d72d65a17156a3d34c41048a6d81c">    3</a></span><a class="code hl_function" href="classTextBox.html#a0e8d72d65a17156a3d34c41048a6d81c">TextBox::TextBox</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;builder)</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    : m_text(builder.text), m_rect(builder.pos),</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>      m_validator(builder.validator) {}</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">    7</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">TextBox::Draw</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  m_rect.Draw(WHITE);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> text_position =</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>      m_rect.GetPosition() + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  m_text.Draw(text_position);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// testing</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classTextBox.html#a19f8fc34100f5706e33a1e6bd8759da8">    6</a></span><a class="code hl_function" href="classTextBox.html#a19f8fc34100f5706e33a1e6bd8759da8">TextBox::TextBox</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structTextBoxBuilder.html">TextBoxBuilder</a> &amp;builder)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    : m_text(builder.text), m_rect(builder.pos, builder.size),</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>      m_color(builder.color), m_validator(builder.validator) {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  m_text.SetText(<span class="stringliteral">&quot;a&quot;</span>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">auto</span> max_width = m_rect.width;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">auto</span> char_width = m_text.Measure();</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">TextBox::CheckFocus</a>() {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keywordtype">bool</span> mouse_on_rect = CheckCollisionPointRec(GetMousePosition(), m_rect);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">if</span> (mouse_on_rect) {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    SetMouseCursor(MOUSE_CURSOR_IBEAM);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  }</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (IsMouseButtonPressed(0)) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    m_focus = mouse_on_rect;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">TextBox::IsFocused</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_focus; }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">   26</a></span><span class="keyword">inline</span> rl::Vector2 <a class="code hl_function" href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">TextBox::GetSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_rect.GetSize(); }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">TextBox::SetPosition</a>(<a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> pos) { m_rect.SetPosition(pos); }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  m_maxLength =</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>      <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(max_width) / char_width - 1);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  m_text.SetText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">TextBox::Draw</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  m_rect.Draw(m_color);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">auto</span> size = m_text.MeasureEx();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> text_position =</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      m_rect.GetPosition() + m_rect.GetSize() / 2 - m_text.MeasureEx() / 2;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  m_text.Draw(text_position);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">   30</a></span>std::string <a class="code hl_function" href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">TextBox::GetText</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_text.GetText(); }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">TextBox::CheckFocus</a>() {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">   32</a></span>[[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextBox::TextIsValid</a>() {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordflow">return</span> m_validator(m_text.GetText());</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="TextBox_8cpp.html#a3727e5c0402efa59a94f2803aa41147b">   36</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="TextBox_8cpp.html#a3727e5c0402efa59a94f2803aa41147b">BACKSPACE</a> = 8;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="TextBox_8cpp.html#a3c25f6d2c2b9d43c55db56508380487e">   37</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="TextBox_8cpp.html#a3c25f6d2c2b9d43c55db56508380487e">ENTER</a> = 13;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="TextBox_8cpp.html#aed1de6ebdbe8b5ac7c7a54203ff0e5b6">   38</a></span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="TextBox_8cpp.html#aed1de6ebdbe8b5ac7c7a54203ff0e5b6">ESC</a> = 27;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">if</span> (IsMouseButtonPressed(0)) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    m_focus = m_rect.CheckCollision(GetMousePosition());</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">TextBox::IsFocused</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_focus; }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">   38</a></span><span class="keyword">inline</span> rl::Vector2 <a class="code hl_function" href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">TextBox::GetSize</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_rect.GetSize(); }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classTextBox.html#aa35e15a4487dd90eef7f5185a930c55d">   40</a></span>std::optional&lt;bool&gt; <a class="code hl_function" href="classTextBox.html#aa35e15a4487dd90eef7f5185a930c55d">TextBox::HandleInput</a>() {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">if</span> (!m_focus) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">int</span> key = GetKeyPressed();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordflow">while</span> (key != 0) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (key == <a class="code hl_variable" href="TextBox_8cpp.html#a3727e5c0402efa59a94f2803aa41147b">BACKSPACE</a>) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>      m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">TextBox::SetPosition</a>(<a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> pos) { m_rect.SetPosition(pos); }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">   42</a></span>std::string <a class="code hl_function" href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">TextBox::GetText</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_text.GetText(); }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/************************************************</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">Detailed descripción: TextBox::TextIsValid</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">option 1</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> ***********************************************/</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">   48</a></span>[[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextBox::TextIsValid</a>() {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">return</span> m_validator(m_text.GetText());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <a class="code hl_variable" href="TextBox_8cpp.html#a3c25f6d2c2b9d43c55db56508380487e">ENTER</a>) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextIsValid</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <a class="code hl_variable" href="TextBox_8cpp.html#aed1de6ebdbe8b5ac7c7a54203ff0e5b6">ESC</a>) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      m_focus = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      m_text.SetText(m_text.GetText() + <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(key));</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    key = GetKeyPressed();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classTextBox.html#a0bc3bd52e85e3ce251e66db5d96de20b">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTextBox.html#a0bc3bd52e85e3ce251e66db5d96de20b">TextBox::HandleInput</a>() {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">if</span> (!m_focus) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">int</span> key = GetCharPressed();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">while</span> (key &gt; 0) {</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aTextBox_8cpp_html_a3727e5c0402efa59a94f2803aa41147b"><div class="ttname"><a href="TextBox_8cpp.html#a3727e5c0402efa59a94f2803aa41147b">BACKSPACE</a></div><div class="ttdeci">constexpr int BACKSPACE</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00036">TextBox.cpp:36</a></div></div>
-<div class="ttc" id="aTextBox_8cpp_html_a3c25f6d2c2b9d43c55db56508380487e"><div class="ttname"><a href="TextBox_8cpp.html#a3c25f6d2c2b9d43c55db56508380487e">ENTER</a></div><div class="ttdeci">constexpr int ENTER</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00037">TextBox.cpp:37</a></div></div>
-<div class="ttc" id="aTextBox_8cpp_html_aed1de6ebdbe8b5ac7c7a54203ff0e5b6"><div class="ttname"><a href="TextBox_8cpp.html#aed1de6ebdbe8b5ac7c7a54203ff0e5b6">ESC</a></div><div class="ttdeci">constexpr int ESC</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00038">TextBox.cpp:38</a></div></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">auto</span> text = m_text.GetText();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// NOTE: Only allow keys in range [32..125]</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> ((key &gt;= 32) &amp;&amp; (key &lt;= 125) &amp;&amp; (text.size() &lt; m_maxLength)) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      m_text.SetText(m_text.GetText() + <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(key));</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    key = GetCharPressed();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keywordflow">if</span> (IsKeyPressed(KEY_BACKSPACE)) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    m_text.SetText(m_text.GetText().substr(0, m_text.GetText().size() - 1));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classTextBox.html#a21b23ed6e9d8e5e45cbe14e3b2720463">   78</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classTextBox.html#a21b23ed6e9d8e5e45cbe14e3b2720463">TextBox::CheckCollision</a>(<a class="code hl_struct" href="structUtils_1_1Vector2I.html">Utils::Vector2I</a> point)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">return</span> m_rect.CheckCollision(point);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
 <div class="ttc" id="aTextBox_8hpp_html"><div class="ttname"><a href="TextBox_8hpp.html">TextBox.hpp</a></div></div>
-<div class="ttc" id="aclassTextBox_html_a0e8d72d65a17156a3d34c41048a6d81c"><div class="ttname"><a href="classTextBox.html#a0e8d72d65a17156a3d34c41048a6d81c">TextBox::TextBox</a></div><div class="ttdeci">TextBox(const TextBoxBuilder &amp;builder=Utils::DefaultTextBox())</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00003">TextBox.cpp:3</a></div></div>
-<div class="ttc" id="aclassTextBox_html_a31e095df0dd877c9ba5339aa7a925324"><div class="ttname"><a href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">TextBox::GetSize</a></div><div class="ttdeci">rl::Vector2 GetSize() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00026">TextBox.cpp:26</a></div></div>
-<div class="ttc" id="aclassTextBox_html_a7376ff6f734082e62fe9fbb48c8952d3"><div class="ttname"><a href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextBox::TextIsValid</a></div><div class="ttdeci">bool TextIsValid()</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00032">TextBox.cpp:32</a></div></div>
-<div class="ttc" id="aclassTextBox_html_a9b972b5f1cd20edf4b8e02b30359ff71"><div class="ttname"><a href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">TextBox::CheckFocus</a></div><div class="ttdeci">void CheckFocus()</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00014">TextBox.cpp:14</a></div></div>
-<div class="ttc" id="aclassTextBox_html_aa35e15a4487dd90eef7f5185a930c55d"><div class="ttname"><a href="classTextBox.html#aa35e15a4487dd90eef7f5185a930c55d">TextBox::HandleInput</a></div><div class="ttdeci">std::optional&lt; bool &gt; HandleInput()</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00040">TextBox.cpp:40</a></div></div>
-<div class="ttc" id="aclassTextBox_html_ab3ccd6119428ac368338b886c010b3fe"><div class="ttname"><a href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">TextBox::SetPosition</a></div><div class="ttdeci">void SetPosition(Utils::Vector2I pos)</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00028">TextBox.cpp:28</a></div></div>
-<div class="ttc" id="aclassTextBox_html_abc3025cb5fa529079baada662aa55f31"><div class="ttname"><a href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">TextBox::Draw</a></div><div class="ttdeci">void Draw() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00007">TextBox.cpp:7</a></div></div>
-<div class="ttc" id="aclassTextBox_html_ad5450672b5c4336cc27e4a331f4c5d26"><div class="ttname"><a href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">TextBox::GetText</a></div><div class="ttdeci">std::string GetText() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00030">TextBox.cpp:30</a></div></div>
-<div class="ttc" id="aclassTextBox_html_af99a3379f34f6d115f06368386a1899a"><div class="ttname"><a href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">TextBox::IsFocused</a></div><div class="ttdeci">bool IsFocused() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00024">TextBox.cpp:24</a></div></div>
-<div class="ttc" id="astructTextBoxBuilder_html"><div class="ttname"><a href="structTextBoxBuilder.html">TextBoxBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="TextBoxBuilder_8hpp_source.html#l00008">TextBoxBuilder.hpp:8</a></div></div>
-<div class="ttc" id="astructUtils_1_1Vector2I_html"><div class="ttname"><a href="structUtils_1_1Vector2I.html">Utils::Vector2I</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00010">Vector2I.hpp:10</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a0bc3bd52e85e3ce251e66db5d96de20b"><div class="ttname"><a href="classTextBox.html#a0bc3bd52e85e3ce251e66db5d96de20b">TextBox::HandleInput</a></div><div class="ttdeci">void HandleInput()</div><div class="ttdoc">Breve descripción, solo una línea, triple /.</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00053">TextBox.cpp:53</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a19f8fc34100f5706e33a1e6bd8759da8"><div class="ttname"><a href="classTextBox.html#a19f8fc34100f5706e33a1e6bd8759da8">TextBox::TextBox</a></div><div class="ttdeci">TextBox(const TextBoxBuilder &amp;builder)</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00006">TextBox.cpp:6</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a21b23ed6e9d8e5e45cbe14e3b2720463"><div class="ttname"><a href="classTextBox.html#a21b23ed6e9d8e5e45cbe14e3b2720463">TextBox::CheckCollision</a></div><div class="ttdeci">bool CheckCollision(Utils::Vector2I point) const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00078">TextBox.cpp:78</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a31e095df0dd877c9ba5339aa7a925324"><div class="ttname"><a href="classTextBox.html#a31e095df0dd877c9ba5339aa7a925324">TextBox::GetSize</a></div><div class="ttdeci">rl::Vector2 GetSize() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00038">TextBox.cpp:38</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a7376ff6f734082e62fe9fbb48c8952d3"><div class="ttname"><a href="classTextBox.html#a7376ff6f734082e62fe9fbb48c8952d3">TextBox::TextIsValid</a></div><div class="ttdeci">bool TextIsValid()</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00048">TextBox.cpp:48</a></div></div>
+<div class="ttc" id="aclassTextBox_html_a9b972b5f1cd20edf4b8e02b30359ff71"><div class="ttname"><a href="classTextBox.html#a9b972b5f1cd20edf4b8e02b30359ff71">TextBox::CheckFocus</a></div><div class="ttdeci">void CheckFocus()</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00030">TextBox.cpp:30</a></div></div>
+<div class="ttc" id="aclassTextBox_html_ab3ccd6119428ac368338b886c010b3fe"><div class="ttname"><a href="classTextBox.html#ab3ccd6119428ac368338b886c010b3fe">TextBox::SetPosition</a></div><div class="ttdeci">void SetPosition(Utils::Vector2I pos)</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00040">TextBox.cpp:40</a></div></div>
+<div class="ttc" id="aclassTextBox_html_abc3025cb5fa529079baada662aa55f31"><div class="ttname"><a href="classTextBox.html#abc3025cb5fa529079baada662aa55f31">TextBox::Draw</a></div><div class="ttdeci">void Draw() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00019">TextBox.cpp:19</a></div></div>
+<div class="ttc" id="aclassTextBox_html_ad5450672b5c4336cc27e4a331f4c5d26"><div class="ttname"><a href="classTextBox.html#ad5450672b5c4336cc27e4a331f4c5d26">TextBox::GetText</a></div><div class="ttdeci">std::string GetText() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00042">TextBox.cpp:42</a></div></div>
+<div class="ttc" id="aclassTextBox_html_af99a3379f34f6d115f06368386a1899a"><div class="ttname"><a href="classTextBox.html#af99a3379f34f6d115f06368386a1899a">TextBox::IsFocused</a></div><div class="ttdeci">bool IsFocused() const</div><div class="ttdef"><b>Definition:</b> <a href="TextBox_8cpp_source.html#l00036">TextBox.cpp:36</a></div></div>
+<div class="ttc" id="astructTextBoxBuilder_html"><div class="ttname"><a href="structTextBoxBuilder.html">TextBoxBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="TextBoxBuilder_8hpp_source.html#l00010">TextBoxBuilder.hpp:10</a></div></div>
+<div class="ttc" id="astructUtils_1_1Vector2I_html"><div class="ttname"><a href="structUtils_1_1Vector2I.html">Utils::Vector2I</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector2I_8hpp_source.html#l00012">Vector2I.hpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

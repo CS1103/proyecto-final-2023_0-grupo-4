@@ -81,26 +81,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ViewUtils_8hpp_source.html">ViewUtils.hpp</a>&quot;</code><br />
+<code>#include &lt;utility&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ViewUtils.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="ViewUtils_8cpp__incl.png" border="0" usemap="#asrc_2View_2ViewUtils_2ViewUtils_8cpp" alt=""/></div>
 <map name="asrc_2View_2ViewUtils_2ViewUtils_8cpp" id="asrc_2View_2ViewUtils_2ViewUtils_8cpp">
-<area shape="rect" title=" " alt="" coords="493,5,636,45"/>
-<area shape="rect" href="ViewUtils_8hpp.html" title=" " alt="" coords="509,93,621,119"/>
-<area shape="rect" href="Builders_8hpp.html" title=" " alt="" coords="292,167,395,192"/>
-<area shape="rect" title=" " alt="" coords="520,387,631,412"/>
-<area shape="rect" title=" " alt="" coords="449,313,563,339"/>
-<area shape="rect" title=" " alt="" coords="638,167,697,192"/>
-<area shape="rect" href="ButtonBuilder_8hpp.html" title=" " alt="" coords="357,240,495,265"/>
-<area shape="rect" href="TextBoxBuilder_8hpp.html" title=" " alt="" coords="186,240,333,265"/>
-<area shape="rect" href="TextBuiler_8hpp.html" title=" " alt="" coords="47,240,162,265"/>
-<area shape="rect" href="Vector2I_8hpp.html" title=" " alt="" coords="321,313,424,339"/>
-<area shape="rect" title=" " alt="" coords="347,387,446,412"/>
-<area shape="rect" title=" " alt="" coords="236,387,323,412"/>
-<area shape="rect" title=" " alt="" coords="109,313,186,339"/>
-<area shape="rect" title=" " alt="" coords="211,313,297,339"/>
-<area shape="rect" title=" " alt="" coords="5,313,84,339"/>
+<area shape="rect" title=" " alt="" coords="775,5,918,45"/>
+<area shape="rect" href="ViewUtils_8hpp.html" title=" " alt="" coords="736,93,848,119"/>
+<area shape="rect" title=" " alt="" coords="873,93,933,119"/>
+<area shape="rect" href="Builders_8hpp.html" title=" " alt="" coords="401,167,503,192"/>
+<area shape="rect" href="Vector2I_8hpp.html" title=" " alt="" coords="678,313,781,339"/>
+<area shape="rect" title=" " alt="" coords="833,387,943,412"/>
+<area shape="rect" title=" " alt="" coords="856,167,915,192"/>
+<area shape="rect" href="ButtonBuilder_8hpp.html" title=" " alt="" coords="449,240,588,265"/>
+<area shape="rect" href="TextBuilder_8hpp.html" title=" " alt="" coords="323,313,445,339"/>
+<area shape="rect" href="TextBoxBuilder_8hpp.html" title=" " alt="" coords="140,313,287,339"/>
+<area shape="rect" title=" " alt="" coords="461,387,574,412"/>
+<area shape="rect" title=" " alt="" coords="469,313,568,339"/>
+<area shape="rect" title=" " alt="" coords="358,387,437,412"/>
+<area shape="rect" title=" " alt="" coords="256,387,333,412"/>
+<area shape="rect" title=" " alt="" coords="145,387,231,412"/>
+<area shape="rect" title=" " alt="" coords="599,387,697,412"/>
+<area shape="rect" title=" " alt="" coords="722,387,809,412"/>
+<area shape="rect" title=" " alt="" coords="5,387,120,412"/>
 </map>
 </div>
 </div>
@@ -115,12 +119,26 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aea6259b573ae88f777afa390dcacaf53"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#aea6259b573ae88f777afa390dcacaf53">Utils::Validators::Name</a> (const std::string &amp;)</td></tr>
-<tr class="separator:aea6259b573ae88f777afa390dcacaf53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e5f22308d958f8351143a68f176b7e4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#a4e5f22308d958f8351143a68f176b7e4">Utils::Validators::NumSmall</a> (const std::string &amp;)</td></tr>
-<tr class="separator:a4e5f22308d958f8351143a68f176b7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a506e2520b9ca0aee878abc1adebd01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#a5a506e2520b9ca0aee878abc1adebd01">Utils::Validators::NumLarge</a> (const std::string &amp;)</td></tr>
-<tr class="separator:a5a506e2520b9ca0aee878abc1adebd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1044a4742312662f9a3990e7fb3e0955"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#a1044a4742312662f9a3990e7fb3e0955">Utils::Validators::Name</a> (const std::string &amp;input)</td></tr>
+<tr class="separator:a1044a4742312662f9a3990e7fb3e0955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7019e0e201d73fe44c14827bac38675"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#aa7019e0e201d73fe44c14827bac38675">Utils::Validators::NumSmall</a> (const std::string &amp;input)</td></tr>
+<tr class="separator:aa7019e0e201d73fe44c14827bac38675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc327dd88a9185b9ee21edae381df22"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#a3fc327dd88a9185b9ee21edae381df22">Utils::Validators::NumLarge</a> (const std::string &amp;input)</td></tr>
+<tr class="separator:a3fc327dd88a9185b9ee21edae381df22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d1014a131872c2d015d7309bf99921"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils_1_1Validators.html#ae1d1014a131872c2d015d7309bf99921">Utils::Validators::None</a> (const std::string &amp;)</td></tr>
+<tr class="separator:ae1d1014a131872c2d015d7309bf99921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d117199853a7dcc80ca186628d06866"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a9d117199853a7dcc80ca186628d06866">Utils::DefaultTitleText</a> (std::string _text)</td></tr>
+<tr class="separator:a9d117199853a7dcc80ca186628d06866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3590351fbcc5301a77152173af2af51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#ab3590351fbcc5301a77152173af2af51">Utils::DefaultButtonText</a> ()</td></tr>
+<tr class="separator:ab3590351fbcc5301a77152173af2af51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2dbdb763b16cea45832c51fc0bca9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5e2dbdb763b16cea45832c51fc0bca9a">Utils::DefaultButtonText</a> (std::string _text)</td></tr>
+<tr class="separator:a5e2dbdb763b16cea45832c51fc0bca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce57051662df27b9952bdf71392d04e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structButtonBuilder.html">ButtonBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#a5ce57051662df27b9952bdf71392d04e">Utils::DefaultButton</a> (std::string _text, const Vector2I &amp;pos)</td></tr>
+<tr class="separator:a5ce57051662df27b9952bdf71392d04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec494ba666b6bd29d9686b996426d43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBuilder.html">TextBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#adec494ba666b6bd29d9686b996426d43">Utils::DefaultTextBoxText</a> ()</td></tr>
+<tr class="separator:adec494ba666b6bd29d9686b996426d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa505617255ee355cddb80ccb2144a8bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTextBoxBuilder.html">TextBoxBuilder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUtils.html#aa505617255ee355cddb80ccb2144a8bc">Utils::DefaultTextBox</a> (const rl::Vector2 &amp;_pos, const rl::Vector2 &amp;_size, std::function&lt; bool(const std::string &amp;)&gt; _validator)</td></tr>
+<tr class="separator:aa505617255ee355cddb80ccb2144a8bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -77,16 +77,39 @@ $(function() {
   <div class="headertitle"><div class="title">main.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="System_8hpp.html">System/System.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    3</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>  <a class="code hl_class" href="classSystem.html">System</a> sistema;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>  sistema.<a class="code hl_function" href="classSystem.html#afa39feb75f96798930f4bfb48205f40b">run</a>();</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
-<div class="ttc" id="aSystem_8hpp_html"><div class="ttname"><a href="System_8hpp.html">System.hpp</a></div></div>
-<div class="ttc" id="aclassSystem_html"><div class="ttname"><a href="classSystem.html">System</a></div><div class="ttdef"><b>Definition:</b> <a href="System_8hpp_source.html#l00010">System.hpp:10</a></div></div>
-<div class="ttc" id="aclassSystem_html_afa39feb75f96798930f4bfb48205f40b"><div class="ttname"><a href="classSystem.html#afa39feb75f96798930f4bfb48205f40b">System::run</a></div><div class="ttdeci">void run()</div><div class="ttdef"><b>Definition:</b> <a href="System_8cpp_source.html#l00007">System.cpp:7</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00003">main.cpp:3</a></div></div>
+<a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Game_8hpp.html">Game.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="View_8hpp.html">View.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">    5</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>() {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>  <a class="code hl_class" href="classView.html">View</a> view;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  view.<a class="code hl_function" href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3">StartScreen</a>();</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <a class="code hl_struct" href="structConfig.html">Config</a> settings = view.<a class="code hl_function" href="classView.html#a42e22c654604d54f556595924b59d919">GetConfig</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keywordflow">if</span> (settings.<a class="code hl_variable" href="structConfig.html#ac6ce2f7f7a239e0fc01d09e259740f4c">playerT</a> == <a class="code hl_enumvalue" href="Config_8hpp.html#abb63530e25befe79984cb270206e53c9aa36c6719f4d3207d858cf956ef1e93b6">PLAYER_TYPE::HUMAN</a>) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_class" href="classGame.html">Game&lt;PLAYER_TYPE::HUMAN&gt;</a> game(settings, view);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    game.<a class="code hl_function" href="classGameBase.html#a9b1e6d98aff230ad639981178edaad07">Run</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classGame.html">Game&lt;PLAYER_TYPE::COMPUTER&gt;</a> game(settings, view);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    game.<a class="code hl_function" href="classGameBase.html#a9b1e6d98aff230ad639981178edaad07">Run</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="ttc" id="aConfig_8hpp_html_abb63530e25befe79984cb270206e53c9aa36c6719f4d3207d858cf956ef1e93b6"><div class="ttname"><a href="Config_8hpp.html#abb63530e25befe79984cb270206e53c9aa36c6719f4d3207d858cf956ef1e93b6">PLAYER_TYPE::HUMAN</a></div><div class="ttdeci">@ HUMAN</div></div>
+<div class="ttc" id="aGame_8hpp_html"><div class="ttname"><a href="Game_8hpp.html">Game.hpp</a></div></div>
+<div class="ttc" id="aView_8hpp_html"><div class="ttname"><a href="View_8hpp.html">View.hpp</a></div></div>
+<div class="ttc" id="aclassGameBase_html_a9b1e6d98aff230ad639981178edaad07"><div class="ttname"><a href="classGameBase.html#a9b1e6d98aff230ad639981178edaad07">GameBase::Run</a></div><div class="ttdeci">virtual void Run()=0</div></div>
+<div class="ttc" id="aclassGame_html"><div class="ttname"><a href="classGame.html">Game</a></div><div class="ttdef"><b>Definition:</b> <a href="Game_8hpp_source.html#l00023">Game.hpp:23</a></div></div>
+<div class="ttc" id="aclassView_html"><div class="ttname"><a href="classView.html">View</a></div><div class="ttdef"><b>Definition:</b> <a href="View_8hpp_source.html#l00029">View.hpp:29</a></div></div>
+<div class="ttc" id="aclassView_html_a42e22c654604d54f556595924b59d919"><div class="ttname"><a href="classView.html#a42e22c654604d54f556595924b59d919">View::GetConfig</a></div><div class="ttdeci">Config GetConfig()</div><div class="ttdef"><b>Definition:</b> <a href="View_8cpp_source.html#l00068">View.cpp:68</a></div></div>
+<div class="ttc" id="aclassView_html_a79001f5b9d8ffd795ffcca2fbaaffcc3"><div class="ttname"><a href="classView.html#a79001f5b9d8ffd795ffcca2fbaaffcc3">View::StartScreen</a></div><div class="ttdeci">void StartScreen()</div><div class="ttdef"><b>Definition:</b> <a href="View_8cpp_source.html#l00026">View.cpp:26</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00005">main.cpp:5</a></div></div>
+<div class="ttc" id="astructConfig_html"><div class="ttname"><a href="structConfig.html">Config</a></div><div class="ttdef"><b>Definition:</b> <a href="Config_8hpp_source.html#l00016">Config.hpp:16</a></div></div>
+<div class="ttc" id="astructConfig_html_ac6ce2f7f7a239e0fc01d09e259740f4c"><div class="ttname"><a href="structConfig.html#ac6ce2f7f7a239e0fc01d09e259740f4c">Config::playerT</a></div><div class="ttdeci">PLAYER_TYPE playerT</div><div class="ttdef"><b>Definition:</b> <a href="Config_8hpp_source.html#l00022">Config.hpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

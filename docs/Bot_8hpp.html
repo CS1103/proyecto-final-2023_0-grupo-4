@@ -82,20 +82,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Maze_8hpp_source.html">../Maze/Maze.hpp</a>&quot;</code><br />
-<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Bot.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Bot_8hpp__incl.png" border="0" usemap="#asrc_2Bot_2Bot_8hpp" alt=""/></div>
 <map name="asrc_2Bot_2Bot_8hpp" id="asrc_2Bot_2Bot_8hpp">
-<area shape="rect" title=" " alt="" coords="349,5,470,31"/>
-<area shape="rect" href="Maze_8hpp.html" title=" " alt="" coords="289,79,425,104"/>
-<area shape="rect" title=" " alt="" coords="531,152,645,177"/>
-<area shape="rect" title=" " alt="" coords="5,152,72,177"/>
-<area shape="rect" title=" " alt="" coords="96,152,171,177"/>
-<area shape="rect" title=" " alt="" coords="195,152,271,177"/>
-<area shape="rect" title=" " alt="" coords="295,152,419,177"/>
-<area shape="rect" title=" " alt="" coords="443,152,506,177"/>
+<area shape="rect" title=" " alt="" coords="329,5,450,31"/>
+<area shape="rect" href="Maze_8hpp.html" title=" " alt="" coords="260,79,396,104"/>
+<area shape="rect" title=" " alt="" coords="421,79,483,104"/>
+<area shape="rect" href="Config_8hpp.html" title=" " alt="" coords="76,152,167,177"/>
+<area shape="rect" title=" " alt="" coords="5,225,72,251"/>
+<area shape="rect" title=" " alt="" coords="191,152,265,177"/>
+<area shape="rect" title=" " alt="" coords="290,152,366,177"/>
+<area shape="rect" title=" " alt="" coords="390,152,514,177"/>
+<area shape="rect" title=" " alt="" coords="539,152,653,177"/>
+<area shape="rect" title=" " alt="" coords="678,152,741,177"/>
+<area shape="rect" title=" " alt="" coords="97,225,151,251"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -103,9 +106,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Bot_8hpp__dep__incl.png" border="0" usemap="#asrc_2Bot_2Bot_8hppdep" alt=""/></div>
 <map name="asrc_2Bot_2Bot_8hppdep" id="asrc_2Bot_2Bot_8hppdep">
-<area shape="rect" title=" " alt="" coords="90,5,211,31"/>
+<area shape="rect" title=" " alt="" coords="102,5,223,31"/>
 <area shape="rect" href="Bot_8cpp.html" title=" " alt="" coords="5,79,125,104"/>
-<area shape="rect" href="System_8cpp.html" title=" " alt="" coords="150,79,325,104"/>
+<area shape="rect" href="Game_8cpp.html" title=" " alt="" coords="123,225,277,251"/>
+<area shape="rect" href="View_8hpp.html" title=" " alt="" coords="265,79,405,104"/>
+<area shape="rect" href="Game_8hpp.html" title=" " alt="" coords="200,152,355,177"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="321,225,426,251"/>
+<area shape="rect" href="View_8cpp.html" title=" " alt="" coords="429,152,568,177"/>
 </map>
 </div>
 </div>
@@ -127,7 +134,7 @@ Concepts</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:aeead1612e2f846fe32e4c50e1ab3d7c3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3">ALGORITHM</a> { <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3ac1bb62b63c65be3760b715faad0bdf8d">DFS</a>
 , <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3a838fea3c1a3e8dd6c22fe9605a701668">BFS</a>
-, <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3ad140102c50921e600d47d1f04d52a02c">GBGS</a>
+, <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3a93db9614693aafb7d3a8edc1084cc9bd">GBFS</a>
 , <a class="el" href="Bot_8hpp.html#aeead1612e2f846fe32e4c50e1ab3d7c3a8f5bd5beaca9beed753294613261f4ce">A_STAR</a>
  }</td></tr>
 <tr class="separator:aeead1612e2f846fe32e4c50e1ab3d7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,7 +162,7 @@ Enumerations</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeead1612e2f846fe32e4c50e1ab3d7c3ac1bb62b63c65be3760b715faad0bdf8d" name="aeead1612e2f846fe32e4c50e1ab3d7c3ac1bb62b63c65be3760b715faad0bdf8d"></a>DFS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aeead1612e2f846fe32e4c50e1ab3d7c3a838fea3c1a3e8dd6c22fe9605a701668" name="aeead1612e2f846fe32e4c50e1ab3d7c3a838fea3c1a3e8dd6c22fe9605a701668"></a>BFS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeead1612e2f846fe32e4c50e1ab3d7c3ad140102c50921e600d47d1f04d52a02c" name="aeead1612e2f846fe32e4c50e1ab3d7c3ad140102c50921e600d47d1f04d52a02c"></a>GBGS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aeead1612e2f846fe32e4c50e1ab3d7c3a93db9614693aafb7d3a8edc1084cc9bd" name="aeead1612e2f846fe32e4c50e1ab3d7c3a93db9614693aafb7d3a8edc1084cc9bd"></a>GBFS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aeead1612e2f846fe32e4c50e1ab3d7c3a8f5bd5beaca9beed753294613261f4ce" name="aeead1612e2f846fe32e4c50e1ab3d7c3a8f5bd5beaca9beed753294613261f4ce"></a>A_STAR&#160;</td><td class="fielddoc"></td></tr>
 </table>
 

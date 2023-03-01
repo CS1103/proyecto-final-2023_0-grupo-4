@@ -1,11 +1,10 @@
 <map id="src/View/Builders/TextBoxBuilder.hpp" name="src/View/Builders/TextBoxBuilder.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="419,5,609,45"/>
-<area shape="rect" id="node2" href="$Builders_8hpp.html" title=" " alt="" coords="405,93,623,119"/>
-<area shape="rect" id="node3" href="$ViewUtils_8hpp.html" title=" " alt="" coords="443,167,585,207"/>
-<area shape="rect" id="node4" href="$Button_8hpp.html" title=" " alt="" coords="183,262,381,287"/>
-<area shape="rect" id="node7" href="$TextBox_8hpp.html" title=" " alt="" coords="405,262,623,287"/>
-<area shape="rect" id="node9" href="$ViewUtils_8cpp.html" title=" " alt="" coords="647,255,789,295"/>
-<area shape="rect" id="node5" href="$Button_8cpp.html" title=" " alt="" coords="5,343,204,368"/>
-<area shape="rect" id="node6" href="$View_8cpp.html" title=" " alt="" coords="229,343,367,368"/>
-<area shape="rect" id="node8" href="$TextBox_8cpp.html" title=" " alt="" coords="406,343,622,368"/>
+<area shape="rect" id="node1" title=" " alt="" coords="249,5,439,45"/>
+<area shape="rect" id="node2" href="$Builders_8hpp.html" title=" " alt="" coords="5,101,224,126"/>
+<area shape="rect" id="node6" href="$TextBoxBuilder_8cpp.html" title=" " alt="" coords="249,93,439,133"/>
+<area shape="rect" id="node7" href="$TextBox_8hpp.html" title=" " alt="" coords="463,101,681,126"/>
+<area shape="rect" id="node3" href="$ViewUtils_8hpp.html" title=" " alt="" coords="62,181,205,221"/>
+<area shape="rect" id="node4" href="$View_8cpp.html" title=" " alt="" coords="265,277,404,302"/>
+<area shape="rect" id="node5" href="$ViewUtils_8cpp.html" title=" " alt="" coords="62,269,205,309"/>
+<area shape="rect" id="node8" href="$TextBox_8cpp.html" title=" " alt="" coords="464,189,680,214"/>
 </map>
