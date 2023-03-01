@@ -34,7 +34,7 @@ Principalmente el proyecto cuenta con 2 grandes grupos de estructuras de datos, 
 
 ## Organización del código fuente:
 
-Nuestro proyecto se divide principalmente en los siguientes módulos:
+Nuestro proyecto se divide principalmente en 4 módulos principales:
 - Game: Encargado de la jugabilidad. Es decir, recibe la información de quien está jugando (un humano o el bot). Acto
 seguido, si juega el bot, le otorgará a su funcionamiento el algoritmo de búsqueda seleccionado. Por el contrario, si 
 juega un humano, habilitará los controles direccionales. 

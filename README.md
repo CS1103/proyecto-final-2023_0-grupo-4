@@ -215,6 +215,7 @@ Distribuido bajo la licencia MIT. Ver [`LICENSE`](LICENSE) para más informació
 Decidimos usar una matriz como estructura de datos debido a que el laberinto es cuadrado 
 
 ## Link del video
+[https://youtu.be/P9PDjKmyTfA](Video)
 
 ## Autores
 
@@ -239,7 +240,7 @@ Utilizamos el block del desarrollador Jamis Buck para comparar y entender los di
 En esta pagina encontramos un snipet para un singleto que nos llevo a entender más sobre el fiasco de inicialización y construir las funciónes estaticas de las texturas.
 
 - Mejores prácticas para seguir con el proyecto y patrones de diseño para analizar.
-Refactoring.Guru. (s. f.-b). Refactoring and Design Patterns. https://refactoring.guru/
+Refactoring.Guru. (s. f.-b). Refactoring and Design Patterns. https://refactoring.guru/  
 En esta pagina encontramos amplia información sobre refactoring, mejores practicas y, sobre todo, patrones de diseño.
 La utilizamos principalemente para el análisis de patrones en [`patrones.md`](Patrones).
 
